@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Heavy.ttf">
+            <string>Lato-Heavy</string>
+        </mutableArray>
+        <mutableArray key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,6 +30,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="581" y="881"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="akk-z5-OB0">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Nrs-UP-y7d" customClass="PageViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkS-UL-YZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="346"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="vXb-ik-XP3">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="cBk-W4-0at" customClass="PageContentViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JJc-he-lGe"/>
+                        <viewControllerLayoutGuide type="bottom" id="45Y-4u-TuE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g7n-Ns-0K8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-er-LMD">
+                                <rect key="frame" x="279" y="280" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-C8-wmW">
+                                <rect key="frame" x="279" y="280" width="42" height="21"/>
+                                <string key="text">We’ll teach you to canvas
+your neighborhood and learn
+useful talking points.</string>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-map" translatesAutoresizingMaskIntoConstraints="NO" id="64W-yy-bFO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="TDt-RO-0D8"/>
+                                    <constraint firstAttribute="width" secondItem="64W-yy-bFO" secondAttribute="height" multiplier="1:1" id="eGU-7k-V1J"/>
+                                    <constraint firstAttribute="height" constant="206" id="wrH-4s-ViC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TDt-RO-0D8"/>
+                                        <exclude reference="eGU-7k-V1J"/>
+                                        <exclude reference="wrH-4s-ViC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TDt-RO-0D8"/>
+                                        <include reference="eGU-7k-V1J"/>
+                                        <include reference="wrH-4s-ViC"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.5607843137254902" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="L9r-C8-wmW" secondAttribute="leading" id="96a-nV-Vu3"/>
+                            <constraint firstItem="45Y-4u-TuE" firstAttribute="top" secondItem="L9r-C8-wmW" secondAttribute="bottom" constant="41" id="AF8-rx-DYP"/>
+                            <constraint firstItem="DPy-er-LMD" firstAttribute="centerX" secondItem="g7n-Ns-0K8" secondAttribute="centerX" id="G0K-kf-q3K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L9r-C8-wmW" secondAttribute="trailing" id="eVC-Ip-7mn"/>
+                            <constraint firstItem="DPy-er-LMD" firstAttribute="top" secondItem="64W-yy-bFO" secondAttribute="bottom" constant="38" id="gTe-LC-buH"/>
+                            <constraint firstItem="L9r-C8-wmW" firstAttribute="top" secondItem="DPy-er-LMD" secondAttribute="bottom" constant="8" id="saU-Ui-ucM"/>
+                            <constraint firstItem="64W-yy-bFO" firstAttribute="centerX" secondItem="g7n-Ns-0K8" secondAttribute="centerX" id="t2w-2K-2tS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="L9r-C8-wmW"/>
+                                <exclude reference="64W-yy-bFO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="t2w-2K-2tS"/>
+                                <exclude reference="G0K-kf-q3K"/>
+                                <exclude reference="gTe-LC-buH"/>
+                                <exclude reference="96a-nV-Vu3"/>
+                                <exclude reference="eVC-Ip-7mn"/>
+                                <exclude reference="saU-Ui-ucM"/>
+                                <exclude reference="AF8-rx-DYP"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="L9r-C8-wmW"/>
+                                <include reference="64W-yy-bFO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="t2w-2K-2tS"/>
+                                <include reference="G0K-kf-q3K"/>
+                                <include reference="gTe-LC-buH"/>
+                                <include reference="96a-nV-Vu3"/>
+                                <include reference="eVC-Ip-7mn"/>
+                                <include reference="saU-Ui-ucM"/>
+                                <include reference="AF8-rx-DYP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="L9r-C8-wmW" id="cW0-8m-j5E"/>
+                        <outlet property="image" destination="64W-yy-bFO" id="8hJ-lB-Ub5"/>
+                        <outlet property="titleLabel" destination="DPy-er-LMD" id="kIx-nn-auI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpa-1y-gZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="1037"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="intro-map" width="206" height="206"/>
+    </resources>
 </document>
