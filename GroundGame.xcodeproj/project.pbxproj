@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; settings = {ASSET_TAGS = (); }; };
+		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
 		A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
@@ -19,6 +21,7 @@
 		A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A579801BB2105E00D8885E /* Lato-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = ../SignupViewController.swift; sourceTree = "<group>"; };
 		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = ../OnboardingViewController.swift; sourceTree = "<group>"; };
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +64,7 @@
 		A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Heavy.ttf"; path = "../../../Downloads/lato/Lato-Heavy.ttf"; sourceTree = "<group>"; };
 		A7A579801BB2105E00D8885E /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Medium.ttf"; path = "../../../Downloads/lato/Lato-Medium.ttf"; sourceTree = "<group>"; };
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9040382566C74E41AE064FF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30F76A0B0ACC05C453BE70FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5315A268882C6EDDEBA8834 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */,
+				50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A74FCE971BBB376A005C4D34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
+				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A74FCE981BBB377E005C4D34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7A579531BB092E100D8885E /* Main.storyboard */,
+				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A74FCE991BBB3788005C4D34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
+				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
+				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
+				A7A5795B1BB092E100D8885E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A74FCE9A1BBB37A9005C4D34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
+				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
+				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		A7A579431BB092E100D8885E = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +156,8 @@
 				A7A579631BB092E100D8885E /* GroundGameTests */,
 				A7A5796E1BB092E100D8885E /* GroundGameUITests */,
 				A7A5794D1BB092E100D8885E /* Products */,
+				A5315A268882C6EDDEBA8834 /* Pods */,
+				30F76A0B0ACC05C453BE70FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,16 +174,11 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
-				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
-				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
-				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
-				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
-				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
-				A7A579531BB092E100D8885E /* Main.storyboard */,
+				A74FCE971BBB376A005C4D34 /* Models */,
+				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
+				A74FCE981BBB377E005C4D34 /* Views */,
+				A74FCE991BBB3788005C4D34 /* Supporting Files */,
 				A7A579561BB092E100D8885E /* Assets.xcassets */,
-				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
-				A7A5795B1BB092E100D8885E /* Info.plist */,
-				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
 				A7A579831BB211F500D8885E /* PageViewController.swift */,
 			);
 			path = GroundGame;
@@ -147,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A579741BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGame" */;
 			buildPhases = (
+				10139E6C0B2CDCFDBC6C1823 /* Check Pods Manifest.lock */,
 				A7A579481BB092E100D8885E /* Sources */,
 				A7A579491BB092E100D8885E /* Frameworks */,
 				A7A5794A1BB092E100D8885E /* Resources */,
+				763ABEC8DF2BA228CB194899 /* Embed Pods Frameworks */,
+				E57C11B2C7F5767650378D3E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,14 +335,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10139E6C0B2CDCFDBC6C1823 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		763ABEC8DF2BA228CB194899 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57C11B2C7F5767650378D3E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7A579481BB092E100D8885E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
+				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,
 			);
@@ -417,6 +532,7 @@
 		};
 		A7A579751BB092E100D8885E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GroundGame/Info.plist;
@@ -429,6 +545,7 @@
 		};
 		A7A579761BB092E100D8885E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GroundGame/Info.plist;

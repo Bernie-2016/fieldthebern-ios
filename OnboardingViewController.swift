@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import p2_OAuth2
+import SwiftyJSON
 
 class OnboardingViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
@@ -53,6 +55,13 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let session = Session.sharedInstance
+        session.authorize("joshdotsmith@gmail.com", password: "password") { success in
+            if success {
+                HTTP().request(.GET, "http://api.lvh.me:3000/ping", parameters: nil)
+            }
+        }
         
         self.view.backgroundColor = UIColor(red:0.22, green:0.56, blue:0.85, alpha:1.0)
         
@@ -115,4 +124,5 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
+    
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8di-8k-tZr">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -26,6 +27,7 @@
                         <viewControllerLayoutGuide type="bottom" id="flv-XL-jDq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RWz-yZ-dWX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -155,6 +157,7 @@ useful talking points.</string>
                         <viewControllerLayoutGuide type="bottom" id="rpE-N9-jZ3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c2P-FJ-oC7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53Q-6M-W8Z">
@@ -231,18 +234,18 @@ useful talking points.</string>
                                 <exclude reference="Z2J-pZ-Tho"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="LyB-MN-Fxe"/>
-                                <exclude reference="iih-MS-jaT"/>
-                                <exclude reference="ipH-OA-GMC"/>
-                                <exclude reference="7JF-Mh-url"/>
-                                <exclude reference="7WO-Vm-QfO"/>
-                                <exclude reference="uEo-Ed-r5d"/>
                                 <exclude reference="Eas-iX-6tH"/>
                                 <exclude reference="V3x-Ox-z9d"/>
                                 <exclude reference="et1-XX-5KD"/>
+                                <exclude reference="LyB-MN-Fxe"/>
+                                <exclude reference="iih-MS-jaT"/>
+                                <exclude reference="ipH-OA-GMC"/>
                                 <exclude reference="2Lc-v2-lD6"/>
                                 <exclude reference="GN0-at-VxP"/>
                                 <exclude reference="gPH-34-ak3"/>
+                                <exclude reference="7JF-Mh-url"/>
+                                <exclude reference="7WO-Vm-QfO"/>
+                                <exclude reference="uEo-Ed-r5d"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -253,18 +256,18 @@ useful talking points.</string>
                                 <include reference="Z2J-pZ-Tho"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="LyB-MN-Fxe"/>
-                                <include reference="iih-MS-jaT"/>
-                                <include reference="ipH-OA-GMC"/>
-                                <include reference="7JF-Mh-url"/>
-                                <include reference="7WO-Vm-QfO"/>
-                                <include reference="uEo-Ed-r5d"/>
                                 <include reference="Eas-iX-6tH"/>
                                 <include reference="V3x-Ox-z9d"/>
                                 <include reference="et1-XX-5KD"/>
+                                <include reference="LyB-MN-Fxe"/>
+                                <include reference="iih-MS-jaT"/>
+                                <include reference="ipH-OA-GMC"/>
                                 <include reference="2Lc-v2-lD6"/>
                                 <include reference="GN0-at-VxP"/>
                                 <include reference="gPH-34-ak3"/>
+                                <include reference="7JF-Mh-url"/>
+                                <include reference="7WO-Vm-QfO"/>
+                                <include reference="uEo-Ed-r5d"/>
                             </mask>
                         </variation>
                     </view>

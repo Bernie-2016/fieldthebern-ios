@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (3.0.0-beta.3)
+  - p2.OAuth2 (2.0.1)
+  - SwiftyJSON (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0.0-beta.3)
+  - p2.OAuth2
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 3b5d0d4e0c19173b1bf0dc823bde25ad870f70c0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: c89149e58431f6f94527e8c01f920456afe39bd0
+  p2.OAuth2: 6d4183a4dcec05cc6df3bab1110551854a116b9c
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+
+COCOAPODS: 0.38.2
