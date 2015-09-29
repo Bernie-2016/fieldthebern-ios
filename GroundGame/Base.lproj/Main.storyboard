@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8di-8k-tZr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -11,34 +12,35 @@
         </mutableArray>
         <mutableArray key="Lato-Medium.ttf">
             <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Onboarding View Controller-->
+        <scene sceneID="mtj-CL-OHz">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8di-8k-tZr" customClass="OnboardingViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="TMg-b2-1TI"/>
+                        <viewControllerLayoutGuide type="bottom" id="flv-XL-jDq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="RWz-yZ-dWX">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72e-Uc-Zrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="881"/>
+            <point key="canvasLocation" x="-235.5" y="1037"/>
         </scene>
         <!--Page View Controller-->
-        <scene sceneID="akk-z5-OB0">
+        <scene sceneID="67Q-tR-7Yu">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Nrs-UP-y7d" customClass="PageViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NkS-UL-YZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="OnboardingPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="csa-MF-aZf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ixy-yD-1mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="346"/>
+            <point key="canvasLocation" x="409.5" y="1037"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="vXb-ik-XP3">
@@ -52,13 +54,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-er-LMD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-er-LMD">
                                 <rect key="frame" x="279" y="280" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="155" y="359" width="92" height="46"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-C8-wmW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-C8-wmW">
                                 <rect key="frame" x="279" y="280" width="42" height="21"/>
                                 <string key="text">We’ll teach you to canvas
 your neighborhood and learn
@@ -93,7 +98,7 @@ useful talking points.</string>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.5607843137254902" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="L9r-C8-wmW" secondAttribute="leading" id="96a-nV-Vu3"/>
-                            <constraint firstItem="45Y-4u-TuE" firstAttribute="top" secondItem="L9r-C8-wmW" secondAttribute="bottom" constant="41" id="AF8-rx-DYP"/>
+                            <constraint firstItem="45Y-4u-TuE" firstAttribute="top" secondItem="L9r-C8-wmW" secondAttribute="bottom" constant="100" id="AF8-rx-DYP"/>
                             <constraint firstItem="DPy-er-LMD" firstAttribute="centerX" secondItem="g7n-Ns-0K8" secondAttribute="centerX" id="G0K-kf-q3K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L9r-C8-wmW" secondAttribute="trailing" id="eVC-Ip-7mn"/>
                             <constraint firstItem="DPy-er-LMD" firstAttribute="top" secondItem="64W-yy-bFO" secondAttribute="bottom" constant="38" id="gTe-LC-buH"/>
@@ -106,13 +111,13 @@ useful talking points.</string>
                                 <exclude reference="64W-yy-bFO"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="AF8-rx-DYP"/>
                                 <exclude reference="t2w-2K-2tS"/>
-                                <exclude reference="G0K-kf-q3K"/>
-                                <exclude reference="gTe-LC-buH"/>
                                 <exclude reference="96a-nV-Vu3"/>
                                 <exclude reference="eVC-Ip-7mn"/>
                                 <exclude reference="saU-Ui-ucM"/>
-                                <exclude reference="AF8-rx-DYP"/>
+                                <exclude reference="G0K-kf-q3K"/>
+                                <exclude reference="gTe-LC-buH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,13 +126,13 @@ useful talking points.</string>
                                 <include reference="64W-yy-bFO"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="AF8-rx-DYP"/>
                                 <include reference="t2w-2K-2tS"/>
-                                <include reference="G0K-kf-q3K"/>
-                                <include reference="gTe-LC-buH"/>
                                 <include reference="96a-nV-Vu3"/>
                                 <include reference="eVC-Ip-7mn"/>
                                 <include reference="saU-Ui-ucM"/>
-                                <include reference="AF8-rx-DYP"/>
+                                <include reference="G0K-kf-q3K"/>
+                                <include reference="gTe-LC-buH"/>
                             </mask>
                         </variation>
                     </view>
@@ -140,6 +145,137 @@ useful talking points.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zpa-1y-gZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047" y="1037"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="NDE-tk-T3e">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" id="Oar-fh-wvi" customClass="SignupViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8xp-Hu-ihK"/>
+                        <viewControllerLayoutGuide type="bottom" id="rpE-N9-jZ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c2P-FJ-oC7">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53Q-6M-W8Z">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmc-kw-s4H">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="7fb-fu-sk9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7fb-fu-sk9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7fb-fu-sk9"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-Cv-zex">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-pZ-Tho">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="F43-TB-bt7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="F43-TB-bt7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="F43-TB-bt7"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z2J-pZ-Tho" firstAttribute="top" secondItem="1ra-Cv-zex" secondAttribute="bottom" constant="8" id="2Lc-v2-lD6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wmc-kw-s4H" secondAttribute="trailing" id="7JF-Mh-url"/>
+                            <constraint firstItem="wmc-kw-s4H" firstAttribute="top" secondItem="53Q-6M-W8Z" secondAttribute="bottom" constant="8" id="7WO-Vm-QfO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1ra-Cv-zex" secondAttribute="leading" id="Eas-iX-6tH"/>
+                            <constraint firstItem="Z2J-pZ-Tho" firstAttribute="leading" secondItem="1ra-Cv-zex" secondAttribute="leading" id="GN0-at-VxP"/>
+                            <constraint firstItem="53Q-6M-W8Z" firstAttribute="top" secondItem="8xp-Hu-ihK" secondAttribute="bottom" constant="130" id="LyB-MN-Fxe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1ra-Cv-zex" secondAttribute="trailing" id="V3x-Ox-z9d"/>
+                            <constraint firstItem="1ra-Cv-zex" firstAttribute="top" secondItem="wmc-kw-s4H" secondAttribute="bottom" constant="28" id="et1-XX-5KD"/>
+                            <constraint firstItem="Z2J-pZ-Tho" firstAttribute="width" secondItem="wmc-kw-s4H" secondAttribute="width" id="gPH-34-ak3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="53Q-6M-W8Z" secondAttribute="leading" id="iih-MS-jaT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="53Q-6M-W8Z" secondAttribute="trailing" id="ipH-OA-GMC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wmc-kw-s4H" secondAttribute="leading" id="uEo-Ed-r5d"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="53Q-6M-W8Z"/>
+                                <exclude reference="wmc-kw-s4H"/>
+                                <exclude reference="1ra-Cv-zex"/>
+                                <exclude reference="Z2J-pZ-Tho"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LyB-MN-Fxe"/>
+                                <exclude reference="iih-MS-jaT"/>
+                                <exclude reference="ipH-OA-GMC"/>
+                                <exclude reference="7JF-Mh-url"/>
+                                <exclude reference="7WO-Vm-QfO"/>
+                                <exclude reference="uEo-Ed-r5d"/>
+                                <exclude reference="Eas-iX-6tH"/>
+                                <exclude reference="V3x-Ox-z9d"/>
+                                <exclude reference="et1-XX-5KD"/>
+                                <exclude reference="2Lc-v2-lD6"/>
+                                <exclude reference="GN0-at-VxP"/>
+                                <exclude reference="gPH-34-ak3"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="53Q-6M-W8Z"/>
+                                <include reference="wmc-kw-s4H"/>
+                                <include reference="1ra-Cv-zex"/>
+                                <include reference="Z2J-pZ-Tho"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LyB-MN-Fxe"/>
+                                <include reference="iih-MS-jaT"/>
+                                <include reference="ipH-OA-GMC"/>
+                                <include reference="7JF-Mh-url"/>
+                                <include reference="7WO-Vm-QfO"/>
+                                <include reference="uEo-Ed-r5d"/>
+                                <include reference="Eas-iX-6tH"/>
+                                <include reference="V3x-Ox-z9d"/>
+                                <include reference="et1-XX-5KD"/>
+                                <include reference="2Lc-v2-lD6"/>
+                                <include reference="GN0-at-VxP"/>
+                                <include reference="gPH-34-ak3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="firstNameField" destination="53Q-6M-W8Z" id="KBw-Ly-j7D"/>
+                        <outlet property="lastNameField" destination="1ra-Cv-zex" id="jPo-qS-aFF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-Yu-gpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="1037"/>
         </scene>
     </scenes>
     <resources>
