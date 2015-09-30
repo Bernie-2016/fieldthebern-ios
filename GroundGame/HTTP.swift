@@ -11,24 +11,32 @@ import p2_OAuth2
 import Alamofire
 import SwiftyJSON
 
+typealias HTTPCallback = (Response<AnyObject, NSError>) -> Void
+
 class HTTP {
     
-    private var url: String!
-    private var method: Alamofire.Method!
-    private var parameters: [String: AnyObject]?
     private let session: Session = Session.sharedInstance
         
-    func request(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?) {
+    func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, callback: HTTPCallback) {
         session.reauthorize { (success) -> Void in
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
                     let headers = ["Authorization": "Bearer \(accessToken)"]
                     Alamofire.request(method, url, parameters: parameters, headers: headers)
+                        .validate()
                         .responseJSON { response in
-                            print(response)
+                            callback(response)
                     }
                 }
             }
+        }
+    }
+    
+    func unauthorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, callback: HTTPCallback) {
+        Alamofire.request(method, url, parameters: parameters)
+            .validate()
+            .responseJSON { response in
+                callback(response)
         }
     }
 }

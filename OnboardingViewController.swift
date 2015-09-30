@@ -56,13 +56,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let session = Session.sharedInstance
-        session.authorize("joshdotsmith@gmail.com", password: "password") { success in
-            if success {
-                HTTP().request(.GET, "http://api.lvh.me:3000/ping", parameters: nil)
-            }
-        }
-        
         self.view.backgroundColor = UIColor(red:0.22, green:0.56, blue:0.85, alpha:1.0)
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! UIPageViewController
@@ -125,4 +118,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         return 0
     }
     
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
 }
