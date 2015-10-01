@@ -16,6 +16,10 @@ struct OAuth {
     static let TokenURI = "http://api.lvh.me:3000/oauth/token"
 }
 
+enum SessionType {
+    case Facebook, Email
+}
+
 class Session {
     
     static let sharedInstance = Session()
@@ -34,7 +38,9 @@ class Session {
             "keychain": true,
             "username": email,
             "password": password
-            ] as OAuth2JSON
+        ] as OAuth2JSON
+        
+        print(settings)
         
         self.oauth2 = OAuth2PasswordGrant(settings: settings)
 
@@ -43,6 +49,10 @@ class Session {
     
     func reauthorize(callback: (Bool) -> Void) {
         internalAuthorize(self.oauth2, callback: callback)
+    }
+    
+    func authorizeWithFacebook(token: String, callback: (Bool) -> Void) {
+        self.authorize("facebook", password: token, callback: callback)
     }
     
     func logout() {

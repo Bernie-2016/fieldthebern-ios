@@ -53,11 +53,17 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/Bolts.framework'
+  install_framework 'Pods/FBSDKCoreKit.framework'
+  install_framework 'Pods/FBSDKLoginKit.framework'
   install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/p2_OAuth2.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/Bolts.framework'
+  install_framework 'Pods/FBSDKCoreKit.framework'
+  install_framework 'Pods/FBSDKLoginKit.framework'
   install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/p2_OAuth2.framework'
 fi

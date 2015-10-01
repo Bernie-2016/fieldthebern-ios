@@ -56,7 +56,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red:0.22, green:0.56, blue:0.85, alpha:1.0)
+        self.view.backgroundColor = Color.Blue
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! UIPageViewController
         self.pageViewController.dataSource = self

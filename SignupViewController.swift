@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
     
@@ -52,7 +54,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var submitButton: UIButton!
+    
+    @IBOutlet weak var facebookButton: UIButton!
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    @IBOutlet weak var facebookSpinner: UIActivityIndicatorView!
     
     func submitForm() {
         let firstName = firstNameField.text
@@ -99,6 +106,34 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func pressSignUp() {
         submitForm()
+    }
+    
+    @IBAction func pressFacebookButton() {
+        facebookSpinner.startAnimating()
+        facebookButton.titleLabel?.layer.opacity = 0
+
+        let login: FBSDKLoginManager = FBSDKLoginManager()
+        login.loginBehavior = FBSDKLoginBehavior.Native
+        login.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
+            self.facebookButton.titleLabel?.layer.opacity = 1
+            self.facebookSpinner.stopAnimating()
+
+            if error != nil {
+                NSLog("Process error")
+            } else {
+                if result.isCancelled {
+                    NSLog("Cancelled")
+                } else {
+                    NSLog("Logged in")
+                    print(result.token.tokenString)
+                    let session = Session.sharedInstance
+                    session.authorizeWithFacebook(result.token.tokenString, callback: { (success) -> Void in
+                        print(success)
+                        self.performSegueWithIdentifier("Login", sender: self)
+                    })
+                }
+            }
+        })
     }
     
     // MARK: - Text Field Delegate Methods
