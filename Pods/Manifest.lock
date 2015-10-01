@@ -17,6 +17,7 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.1.0):
     - FBSDKCoreKit
+  - KeychainAccess (2.0.0)
   - p2.OAuth2 (2.0.1)
   - SwiftyJSON (2.3.0)
 
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.0.0-beta.3)
   - FBSDKCoreKit (= 4.1)
   - FBSDKLoginKit (= 4.1)
+  - KeychainAccess
   - p2.OAuth2
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -41,6 +43,7 @@ SPEC CHECKSUMS:
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
   FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
+  KeychainAccess: 1e705665a234b3af69d653aaa3c8f696e4a992f1
   p2.OAuth2: 6d4183a4dcec05cc6df3bab1110551854a116b9c
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let session = Session.sharedInstance
+        session.attemptAuthorizationFromKeychain { (success) -> Void in
+            
+            if success {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+
+                self.window!.rootViewController = rootController
+            }
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

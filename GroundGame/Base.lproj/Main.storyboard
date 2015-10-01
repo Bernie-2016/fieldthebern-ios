@@ -46,7 +46,7 @@
         <!--Item-->
         <scene sceneID="OET-xt-bFM">
             <objects>
-                <viewController id="kJk-XX-FXw" sceneMemberID="viewController">
+                <viewController id="kJk-XX-FXw" customClass="ProfileViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oZG-a3-YQe"/>
                         <viewControllerLayoutGuide type="bottom" id="XMn-1P-bvV"/>
@@ -54,9 +54,43 @@
                     <view key="view" contentMode="scaleToFill" id="sI2-ct-ANl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMl-dU-hDc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logout:" destination="kJk-XX-FXw" eventType="touchUpInside" id="BzB-BZ-ufX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wMl-dU-hDc" firstAttribute="centerY" secondItem="sI2-ct-ANl" secondAttribute="centerY" id="JOP-7u-14L"/>
+                            <constraint firstItem="wMl-dU-hDc" firstAttribute="centerX" secondItem="sI2-ct-ANl" secondAttribute="centerX" id="uDV-WM-gAV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wMl-dU-hDc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="JOP-7u-14L"/>
+                                <exclude reference="uDV-WM-gAV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wMl-dU-hDc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="JOP-7u-14L"/>
+                                <include reference="uDV-WM-gAV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="IcR-UG-hNB"/>
+                    <connections>
+                        <segue destination="8di-8k-tZr" kind="show" identifier="Logout" id="kII-1k-Avf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXq-Ir-X1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +124,8 @@
                                         <exclude reference="eXk-Cl-QG6"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="174" y="327" width="206" height="206"/>
                                     <mask key="constraints">
                                         <exclude reference="bcL-H5-uoA"/>
                                         <exclude reference="eXk-Cl-QG6"/>
@@ -116,12 +151,12 @@
                                 <exclude reference="EIh-Or-xmg"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="AZo-EK-nTl"/>
+                                <exclude reference="zue-jA-wWT"/>
                                 <exclude reference="5fW-yp-JZe"/>
                                 <exclude reference="AnX-jv-01j"/>
                                 <exclude reference="jjS-E3-x4w"/>
                                 <exclude reference="qGu-33-83Q"/>
-                                <exclude reference="AZo-EK-nTl"/>
-                                <exclude reference="zue-jA-wWT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -130,12 +165,12 @@
                                 <include reference="EIh-Or-xmg"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="AZo-EK-nTl"/>
+                                <include reference="zue-jA-wWT"/>
                                 <include reference="5fW-yp-JZe"/>
                                 <include reference="AnX-jv-01j"/>
                                 <include reference="jjS-E3-x4w"/>
                                 <include reference="qGu-33-83Q"/>
-                                <include reference="AZo-EK-nTl"/>
-                                <include reference="zue-jA-wWT"/>
                             </mask>
                         </variation>
                     </view>
@@ -171,7 +206,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="3mt-98-Nyj">
             <objects>
-                <tabBarController id="zI1-8A-tOm" customClass="TabBarViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="zI1-8A-tOm" customClass="TabBarViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3hc-eN-C5E" customClass="TabBar" customModule="GroundGame" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

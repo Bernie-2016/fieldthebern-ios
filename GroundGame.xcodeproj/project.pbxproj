@@ -15,6 +15,8 @@
 		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F21BBCA9B000DBDFEA /* TabBar.swift */; settings = {ASSET_TAGS = (); }; };
+		A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
+		A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA361BBB910E007FA40B /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA401BBC913A007FA40B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +63,9 @@
 		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = ../OnboardingViewController.swift; sourceTree = "<group>"; };
 		A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		A768C1F21BBCA9B000DBDFEA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A76ABA361BBB910E007FA40B /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		A76ABA381BBC44EE007FA40B /* FBSDKBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBSDKBridgingHeader.h; sourceTree = "<group>"; };
 		A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +162,8 @@
 		A74FCE991BBB3788005C4D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */,
+				A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */,
 				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
 				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
 				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
@@ -175,6 +182,7 @@
 				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
+				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -421,7 +429,9 @@
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
+				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
+				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import p2_OAuth2
+import KeychainAccess
 
 struct OAuth {
     static let ClientId = "0ad2e3ecb80393a5e83732b0e89c15d0eecedcc31f22bfb3cbc0f31e2be11410"
@@ -26,6 +27,8 @@ class Session {
 
     var oauth2: OAuth2PasswordGrant?
     
+    let keychain = Keychain(service: "com.groundgameapp.api")
+    
     func authorize(email: String, password: String, callback: (Bool) -> Void) {
     
         let settings = [
@@ -40,9 +43,11 @@ class Session {
             "password": password
         ] as OAuth2JSON
         
-        print(settings)
-        
         self.oauth2 = OAuth2PasswordGrant(settings: settings)
+        
+        keychain["email"] = email
+        keychain["password"] = password
+        keychain["lastAuthentication"] = "email"
 
         internalAuthorize(self.oauth2, callback: callback)
     }
@@ -53,6 +58,28 @@ class Session {
     
     func authorizeWithFacebook(token: String, callback: (Bool) -> Void) {
         self.authorize("facebook", password: token, callback: callback)
+        
+        keychain["facebookAccessToken"] = token
+        keychain["lastAuthentication"] = "facebook"
+    }
+    
+    func attemptAuthorizationFromKeychain(callback: (Bool) -> Void) {
+        
+        if let lastAuthentication = keychain["lastAuthentication"] {
+            if lastAuthentication == "email" {
+                if let email = keychain["email"], let password = keychain["password"] {
+                    self.authorize(email, password: password) { (success) -> Void in
+                        callback(success)
+                    }
+                }
+            } else if lastAuthentication == "facebook" {
+                if let accessToken = keychain["facebookAccessToken"] {
+                    self.authorizeWithFacebook(accessToken) { (success) -> Void in
+                        callback(success)
+                    }
+                }
+            }
+        }
     }
     
     func logout() {

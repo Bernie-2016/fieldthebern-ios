@@ -125,6 +125,30 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         self.changedRegion = true
+        
+        let region = mapView.region
+        let center = mapView.centerCoordinate
+        let latitudeDelta = region.span.latitudeDelta
+        let longitudeDelta = region.span.longitudeDelta
+
+        let longestDelta = max(latitudeDelta, longitudeDelta)
+
+        let centerLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude)
+        var newLocation = centerLocation
+        if longestDelta == latitudeDelta {
+            newLocation = CLLocation.init(latitude: center.latitude + latitudeDelta, longitude: center.longitude)
+        } else {
+            newLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude + longitudeDelta)
+        }
+
+        let distance = centerLocation.distanceFromLocation(newLocation)
+        
+        let dropPin = MKPointAnnotation()
+        dropPin.coordinate = newLocation.coordinate
+        dropPin.title = "Farthest Point"
+        mapView.addAnnotation(dropPin)
+
+        print(distance, center.latitude, center.longitude)
     }
     
     // MARK: - Location Fetching
