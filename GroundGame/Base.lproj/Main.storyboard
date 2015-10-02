@@ -124,15 +124,14 @@
                                         <exclude reference="eXk-Cl-QG6"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="174" y="327" width="206" height="206"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="bcL-H5-uoA"/>
                                         <exclude reference="eXk-Cl-QG6"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="locate:" destination="q3D-ZR-KaW" eventType="touchUpInside" id="65a-FS-BYh"/>
+                                    <action selector="changeLocationButtonState:" destination="q3D-ZR-KaW" eventType="touchUpInside" id="kX3-Ix-Llk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -610,9 +609,6 @@ useful talking points.</string>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="174" y="232" width="54" height="18"/>
-                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rI-kX-ynB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -642,8 +638,7 @@ useful talking points.</string>
                                         <exclude reference="YjG-n6-2sV"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="247" y="241" width="103" height="1"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="YjG-n6-2sV"/>
                                     </mask>
@@ -655,7 +650,7 @@ useful talking points.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="132" y="30" width="137" height="45"/>
+                                    <rect key="frame" x="132" y="30" width="137" height="44.5"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Yo-fRk">

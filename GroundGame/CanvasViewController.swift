@@ -16,19 +16,19 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     // MARK: - Location Button State
     
     enum LocationButtonState {
-        case Normal, Tracking, Compass
+        case None, Follow, FollowWithHeading
     }
     
-    var locationButtonState: LocationButtonState = .Normal {
+    var locationButtonState: LocationButtonState = .None {
         didSet {
             switch locationButtonState {
-            case .Normal:
+            case .None:
                 mapView.userTrackingMode = MKUserTrackingMode.None
                 locationButton.setImage(UIImage(named: "gray-arrow"), forState: UIControlState.Normal)
-            case .Tracking:
+            case .Follow:
                 mapView.userTrackingMode = MKUserTrackingMode.Follow
                 locationButton.setImage(UIImage(named: "blue-arrow"), forState: UIControlState.Normal)
-            case .Compass:
+            case .FollowWithHeading:
                 mapView.userTrackingMode = MKUserTrackingMode.FollowWithHeading
                 locationButton.setImage(UIImage(named: "blue-compass"), forState: UIControlState.Normal)
             }
@@ -56,7 +56,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             
             if let location = locationManager.location {
                 centerMapOnLocation(location)
-                locationButtonState = .Tracking
+                locationButtonState = .Follow
             }
         }
         
@@ -87,15 +87,15 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     var changedRegion: Bool = false
 
-    @IBAction func locate(sender: UIButton) {
+    @IBAction func changeLocationButtonState(sender: UIButton) {
 
         switch locationButtonState {
-        case .Normal:
-            locationButtonState = .Tracking
-        case .Tracking:
-            locationButtonState = .Compass
-        case .Compass:
-            locationButtonState = .Tracking
+        case .None:
+            locationButtonState = .Follow
+        case .Follow:
+            locationButtonState = .FollowWithHeading
+        case .FollowWithHeading:
+            locationButtonState = .Follow
         }
     }
 
@@ -107,13 +107,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func didDragMap(gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
-            locationButtonState = .Normal
+            locationButtonState = .None
         }
     }
     
     func didZoomMap(gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
-            locationButtonState = .Normal
+            locationButtonState = .None
         }
     }
 
@@ -147,6 +147,16 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         mapView.addAnnotation(dropPin)
 
         print(distance, center.latitude, center.longitude)
+    }
+    
+    func mapView(mapView: MKMapView, didChangeUserTrackingMode mode: MKUserTrackingMode, animated: Bool) {
+        
+        // When the compass is tapped in iOS 9, change the button state back to tracking
+        if mode == .Follow {
+            if locationButtonState != .Follow {
+                locationButtonState = .Follow
+            }
+        }
     }
     
 //    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -208,11 +218,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 //        print("Distance from last known location: \(lastKnownLocation.distanceFromLocation(currentLocation))")
 //        
 //        switch locationButtonState {
-//        case .Tracking:
+//        case .Follow:
 //            centerMapOnLocation(currentLocation)
-//        case .Compass:
+//        case .FollowWithHeading:
 //            centerMapOnLocation(currentLocation)
-//        case .Normal:
+//        case .None:
 //            break
 //        }
 //    }
