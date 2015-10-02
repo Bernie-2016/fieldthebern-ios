@@ -12,16 +12,14 @@ class API {
     private let http = HTTP()
     private let baseURL = "http://api.lvh.me:3000"
     
-    func get(endpoint: String, ids: [Int]?) {
-//        if let ids = ids {
-            let url = baseURL + "/" + endpoint
-//        }
-        http.authorizedRequest(.GET, url, parameters: nil) { response in
+    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool) -> Void) {
+        let url = baseURL + "/" + endpoint
+        http.authorizedRequest(.GET, url, parameters: parameters) { response in
             switch response.result {
             case .Success:
-                print(response.data!)
+                callback(response.data, true)
             case .Failure(let error):
-                print(error)
+                callback(nil, false)
             }
         }
     }

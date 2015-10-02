@@ -17,18 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let session = Session.sharedInstance
-        session.attemptAuthorizationFromKeychain { (success) -> Void in
-            
-            if success {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
 
-                self.window!.rootViewController = rootController
-            }
-        }
-        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -48,6 +37,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        let session = Session.sharedInstance
+        session.attemptAuthorizationFromKeychain { (success) -> Void in
+            
+            if success {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+                
+                self.window!.rootViewController = rootController
+            }
+        }
+        
         FBSDKAppEvents.activateApp()
     }
 

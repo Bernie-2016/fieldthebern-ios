@@ -134,13 +134,26 @@
                                     <action selector="changeLocationButtonState:" destination="q3D-ZR-KaW" eventType="touchUpInside" id="kX3-Ix-Llk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9m-Ee-pw1">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="addLocation:" destination="q3D-ZR-KaW" eventType="touchUpInside" id="ejT-MU-GyN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Q9m-Ee-pw1" firstAttribute="top" secondItem="m3s-qQ-yBF" secondAttribute="bottom" constant="-89" id="0Kz-1t-f6R"/>
                             <constraint firstItem="m3s-qQ-yBF" firstAttribute="top" secondItem="JdT-lf-tzS" secondAttribute="top" id="5fW-yp-JZe"/>
                             <constraint firstItem="Lqf-Ax-BtP" firstAttribute="top" secondItem="EIh-Or-xmg" secondAttribute="bottom" constant="18" id="AZo-EK-nTl"/>
                             <constraint firstAttribute="trailing" secondItem="m3s-qQ-yBF" secondAttribute="trailing" id="AnX-jv-01j"/>
+                            <constraint firstItem="EIh-Or-xmg" firstAttribute="centerY" secondItem="Q9m-Ee-pw1" secondAttribute="centerY" id="Gf6-dJ-2b7"/>
+                            <constraint firstItem="Q9m-Ee-pw1" firstAttribute="bottom" secondItem="EIh-Or-xmg" secondAttribute="bottom" id="UF1-Ux-3Ft"/>
+                            <constraint firstItem="Lqf-Ax-BtP" firstAttribute="top" secondItem="Q9m-Ee-pw1" secondAttribute="bottom" constant="8" id="hTN-8P-nYE"/>
+                            <constraint firstItem="Q9m-Ee-pw1" firstAttribute="width" secondItem="m3s-qQ-yBF" secondAttribute="height" multiplier="71:551" id="hWG-ha-GXh"/>
                             <constraint firstItem="m3s-qQ-yBF" firstAttribute="leading" secondItem="JdT-lf-tzS" secondAttribute="leading" id="jjS-E3-x4w"/>
+                            <constraint firstItem="Q9m-Ee-pw1" firstAttribute="centerX" secondItem="m3s-qQ-yBF" secondAttribute="centerX" id="m76-8s-yZe"/>
                             <constraint firstItem="m3s-qQ-yBF" firstAttribute="bottom" secondItem="Lqf-Ax-BtP" secondAttribute="top" id="qGu-33-83Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EIh-Or-xmg" secondAttribute="trailing" id="zue-jA-wWT"/>
                         </constraints>
@@ -148,40 +161,73 @@
                             <mask key="subviews">
                                 <exclude reference="m3s-qQ-yBF"/>
                                 <exclude reference="EIh-Or-xmg"/>
+                                <exclude reference="Q9m-Ee-pw1"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="AZo-EK-nTl"/>
-                                <exclude reference="zue-jA-wWT"/>
                                 <exclude reference="5fW-yp-JZe"/>
                                 <exclude reference="AnX-jv-01j"/>
                                 <exclude reference="jjS-E3-x4w"/>
                                 <exclude reference="qGu-33-83Q"/>
+                                <exclude reference="0Kz-1t-f6R"/>
+                                <exclude reference="UF1-Ux-3Ft"/>
+                                <exclude reference="hWG-ha-GXh"/>
+                                <exclude reference="m76-8s-yZe"/>
+                                <exclude reference="AZo-EK-nTl"/>
+                                <exclude reference="hTN-8P-nYE"/>
+                                <exclude reference="Gf6-dJ-2b7"/>
+                                <exclude reference="zue-jA-wWT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="m3s-qQ-yBF"/>
                                 <include reference="EIh-Or-xmg"/>
+                                <include reference="Q9m-Ee-pw1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="AZo-EK-nTl"/>
-                                <include reference="zue-jA-wWT"/>
                                 <include reference="5fW-yp-JZe"/>
                                 <include reference="AnX-jv-01j"/>
                                 <include reference="jjS-E3-x4w"/>
                                 <include reference="qGu-33-83Q"/>
+                                <include reference="0Kz-1t-f6R"/>
+                                <exclude reference="UF1-Ux-3Ft"/>
+                                <exclude reference="hWG-ha-GXh"/>
+                                <include reference="m76-8s-yZe"/>
+                                <exclude reference="AZo-EK-nTl"/>
+                                <include reference="hTN-8P-nYE"/>
+                                <include reference="Gf6-dJ-2b7"/>
+                                <include reference="zue-jA-wWT"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="EQh-iF-rJk"/>
                     <connections>
+                        <outlet property="addLocationButton" destination="Q9m-Ee-pw1" id="zNl-nf-EO0"/>
                         <outlet property="locationButton" destination="EIh-Or-xmg" id="NTy-aE-IQV"/>
                         <outlet property="mapView" destination="m3s-qQ-yBF" id="Whj-Wi-2yy"/>
+                        <segue destination="TZx-YJ-yqh" kind="presentation" identifier="AddLocation" id="fBg-Nv-zYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="165-gl-Kj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524.5" y="2511"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n3j-wn-idT">
+            <objects>
+                <viewController id="TZx-YJ-yqh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zwL-Bs-Dv7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q6o-A1-QS4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hsh-ms-0np">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffm-b6-2VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3255" y="2511"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="SBC-Pg-zSq">
@@ -887,5 +933,6 @@ useful talking points.</string>
     <resources>
         <image name="gray-arrow" width="48" height="48"/>
         <image name="intro-map" width="206" height="206"/>
+        <image name="location" width="71" height="71"/>
     </resources>
 </document>

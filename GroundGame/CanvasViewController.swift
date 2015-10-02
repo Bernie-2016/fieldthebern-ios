@@ -40,6 +40,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             locationButton.setImage(UIImage(named: "blue-arrow"), forState: UIControlState.Selected)
         }
     }
+    @IBOutlet weak var addLocationButton: UIButton!
+    
+    @IBAction func addLocation(sender: UIButton) {
+        self.performSegueWithIdentifier("AddLocation", sender: self)
+    }
     
     // MARK: - Lifecycle Functions
     
@@ -141,10 +146,26 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         let distance = centerLocation.distanceFromLocation(newLocation)
         
-        let dropPin = MKPointAnnotation()
-        dropPin.coordinate = newLocation.coordinate
-        dropPin.title = "Farthest Point"
-        mapView.addAnnotation(dropPin)
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        
+        let addressService = AddressService()
+        addressService.getAddresses(center.latitude, longitude: center.longitude, radius: distance) { (addresses) in
+            if let addresses = addresses {
+                for address in addresses {
+                    let dropPin = MKPointAnnotation()
+                    dropPin.coordinate = address.coordinate!
+                    print(address)
+                    if let title = address.street1 {
+                        dropPin.title = title
+                    }
+                    if let subtitle = address.city {
+                        dropPin.subtitle = subtitle
+                    }
+                    mapView.addAnnotation(dropPin)
+                }
+            }
+        }
+        
 
         print(distance, center.latitude, center.longitude)
     }
