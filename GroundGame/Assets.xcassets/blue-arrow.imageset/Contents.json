@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "blue-arrow.png",
+      "filename" : "blue-arrow@1x.png",
       "scale" : "1x"
     },
     {

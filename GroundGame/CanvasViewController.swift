@@ -23,10 +23,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         didSet {
             switch locationButtonState {
             case .Normal:
+                mapView.userTrackingMode = MKUserTrackingMode.None
                 locationButton.setImage(UIImage(named: "gray-arrow"), forState: UIControlState.Normal)
             case .Tracking:
+                mapView.userTrackingMode = MKUserTrackingMode.Follow
                 locationButton.setImage(UIImage(named: "blue-arrow"), forState: UIControlState.Normal)
             case .Compass:
+                mapView.userTrackingMode = MKUserTrackingMode.FollowWithHeading
                 locationButton.setImage(UIImage(named: "blue-compass"), forState: UIControlState.Normal)
             }
         }
@@ -88,15 +91,10 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         switch locationButtonState {
         case .Normal:
-            if let location = locationManager.location {
-                self.centerMapOnLocation(location)
-            }
             locationButtonState = .Tracking
         case .Tracking:
-            mapView.userTrackingMode = MKUserTrackingMode.FollowWithHeading
             locationButtonState = .Compass
         case .Compass:
-            mapView.userTrackingMode = MKUserTrackingMode.None
             locationButtonState = .Tracking
         }
     }
@@ -136,9 +134,9 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let centerLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude)
         var newLocation = centerLocation
         if longestDelta == latitudeDelta {
-            newLocation = CLLocation.init(latitude: center.latitude + latitudeDelta, longitude: center.longitude)
+            newLocation = CLLocation.init(latitude: center.latitude + latitudeDelta / 2, longitude: center.longitude)
         } else {
-            newLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude + longitudeDelta)
+            newLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude + longitudeDelta / 2)
         }
 
         let distance = centerLocation.distanceFromLocation(newLocation)
@@ -151,11 +149,24 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         print(distance, center.latitude, center.longitude)
     }
     
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        var pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin") as? MKPinAnnotationView
+//
+//        if pinAnnotation == nil {
+//            pinAnnotation = MKPinAnnotationView.init(annotation: annotation, reuseIdentifier: "Pin")
+//        }
+//        
+//        pinAnnotation?.pinColor = MKPinAnnotationColor.Green
+//        
+//        return pinAnnotation
+//    }
+    
     // MARK: - Location Fetching
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     
+    var lastKnownLocation: CLLocation?
     var locality: String?
     var administrativeArea: String?
     
@@ -168,7 +179,10 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = manager.location!
-     
+        
+        // Keep the map centered if required
+//        keepMapCentered(currentLocation)
+        
         geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
             if let placemarksArray = placemarks {
                 if placemarksArray.count > 0 {
@@ -180,10 +194,26 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     }
                 }
             }
-                    }
+        }
+        
+        // Update the last known location
+        lastKnownLocation = currentLocation
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error while updating location " + error.localizedDescription)
     }
+    
+//    private func keepMapCentered(currentLocation: CLLocation) {
+//        print("Distance from last known location: \(lastKnownLocation.distanceFromLocation(currentLocation))")
+//        
+//        switch locationButtonState {
+//        case .Tracking:
+//            centerMapOnLocation(currentLocation)
+//        case .Compass:
+//            centerMapOnLocation(currentLocation)
+//        case .Normal:
+//            break
+//        }
+//    }
 }
