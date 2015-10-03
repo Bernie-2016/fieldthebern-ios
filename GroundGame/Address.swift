@@ -10,7 +10,12 @@ import Foundation
 import MapKit
 import SwiftyJSON
 
+enum VisitResult {
+    case NotVisited, NotHome, NotInterested, NotSure, Interested
+}
+
 struct Address {
+    let id: String?
     let latitude: CLLocationDegrees?
     let longitude: CLLocationDegrees?
     let street1: String?
@@ -19,8 +24,40 @@ struct Address {
     let stateCode: String?
     let zipCode: String?
     let coordinate: CLLocationCoordinate2D?
+
+    var result: VisitResult = .NotVisited
+
+    var title: String {
+        get {
+            if let street1 = street1, street2 = street2 {
+                return street1 + ", " + street2
+            } else if let street1 = street1 {
+                return street1
+            } else {
+                return ""
+            }
+        }
+    }
     
-    init(addressJSON: JSON) {
+    var subtitle: String {
+        get {
+            switch result {
+            case .NotVisited:
+                return "Not visited yet"
+            case .NotHome:
+                return "No one was home"
+            case .NotInterested:
+                return "Not interested"
+            case .NotSure:
+                return "Not sure"
+            case .Interested:
+                return "Feelin' the Bern"
+            }
+        }
+    }
+    
+    init(id: String?, addressJSON: JSON) {
+        self.id = id
         latitude = addressJSON["latitude"].number as? CLLocationDegrees
         longitude = addressJSON["longitude"].number as? CLLocationDegrees
         street1 = addressJSON["street_1"].string
@@ -28,6 +65,23 @@ struct Address {
         city = addressJSON["city"].string
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
+        
+        if let resultString = addressJSON["result"].string {
+            switch resultString {
+            case "not_visited":
+                result = .NotVisited
+            case "not_home":
+                result = .NotHome
+            case "not_interested":
+                result = .NotInterested
+            case "interested":
+                result = .Interested
+            case "unsure":
+                result = .NotSure
+            default:
+                result = .NotVisited
+            }
+        }
         
         if let latitude = latitude, let longitude = longitude {
             coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)

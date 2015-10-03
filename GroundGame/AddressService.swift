@@ -19,7 +19,7 @@ struct AddressService {
         api.get("addresses", parameters: ["latitude": latitude, "longitude": longitude, "radius": radius]) { (data, success) in
             
             if success {
-                
+                // Extract our addresses into models
                 if let data = data {
                     
                     let json = JSON(data: data)
@@ -28,7 +28,7 @@ struct AddressService {
                     
                     for (_, addresses) in json {
                         for (_, address) in addresses {
-                            let newAddress = Address(addressJSON: address["attributes"])
+                            let newAddress = Address(id: address["id"].string, addressJSON: address["attributes"])
                             addressesArray.append(newAddress)
                         }
                     }
@@ -37,6 +37,7 @@ struct AddressService {
                 }
                 
             } else {
+                // API call failed with no addresses
                 callback(nil)
             }
         }

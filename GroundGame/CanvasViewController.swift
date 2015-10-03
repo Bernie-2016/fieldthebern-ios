@@ -152,15 +152,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         addressService.getAddresses(center.latitude, longitude: center.longitude, radius: distance) { (addresses) in
             if let addresses = addresses {
                 for address in addresses {
-                    let dropPin = MKPointAnnotation()
+                    let dropPin = AddressPointAnnotation()
+                    dropPin.result = address.result
                     dropPin.coordinate = address.coordinate!
-                    print(address)
-                    if let title = address.street1 {
-                        dropPin.title = title
-                    }
-                    if let subtitle = address.city {
-                        dropPin.subtitle = subtitle
-                    }
+                    dropPin.title = address.title
+                    dropPin.subtitle = address.subtitle
                     mapView.addAnnotation(dropPin)
                 }
             }
@@ -180,17 +176,44 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         }
     }
     
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-//        var pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin") as? MKPinAnnotationView
-//
-//        if pinAnnotation == nil {
-//            pinAnnotation = MKPinAnnotationView.init(annotation: annotation, reuseIdentifier: "Pin")
-//        }
-//        
-//        pinAnnotation?.pinColor = MKPinAnnotationColor.Green
-//        
-//        return pinAnnotation
-//    }
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+
+        if annotation.isKindOfClass(AddressPointAnnotation) {
+            let addressAnnotation = annotation as? AddressPointAnnotation
+            
+            var pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin")
+
+            if pinAnnotation == nil {
+                pinAnnotation = MKAnnotationView.init(annotation: addressAnnotation, reuseIdentifier: "Pin")
+            }
+            
+            print(addressAnnotation?.result)
+            
+            if let result: VisitResult = addressAnnotation?.result {
+                switch result {
+                case .NotVisited:
+                    pinAnnotation?.image = UIImage(named: "grey-pin")
+                case .NotSure:
+                    pinAnnotation?.image = UIImage(named: "white-pin")
+                case .NotInterested:
+                    pinAnnotation?.image = UIImage(named: "red-pin")
+                case .Interested:
+                    pinAnnotation?.image = UIImage(named: "blue-pin")
+                default:
+                    pinAnnotation?.image = UIImage(named: "grey-pin")
+                }
+            
+            }
+
+            pinAnnotation?.layer.anchorPoint = CGPointMake(0.5, 1.0)
+            pinAnnotation?.canShowCallout = true
+        
+            return pinAnnotation
+
+        } else {
+            return nil
+        }
+    }
     
     // MARK: - Location Fetching
     

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
+		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
+		A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
 		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; settings = {ASSET_TAGS = (); }; };
 		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
 		A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9B1BBB3933005C4D34 /* UserService.swift */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +61,8 @@
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A73D663C1BBEE44000127245 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A73D663E1BBEE87400127245 /* AddressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
+		A73D66401BBF36A900127245 /* AddressPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPinView.swift; sourceTree = "<group>"; };
+		A73D66421BBF373600127245 /* AddressPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPointAnnotation.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A74FCE9B1BBB3933005C4D34 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A73D66441BBF3EF900127245 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
+				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		A74FCE971BBB376A005C4D34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +159,9 @@
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
-				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
-				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A73D663C1BBEE44000127245 /* Address.swift */,
 				A73D663E1BBEE87400127245 /* AddressService.swift */,
+				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -161,6 +173,7 @@
 				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
 				A76ABA361BBB910E007FA40B /* PaddedTextField.swift */,
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
+				A73D66401BBF36A900127245 /* AddressPinView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,6 +231,7 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A73D66441BBF3EF900127245 /* Extensions */,
 				A74FCE971BBB376A005C4D34 /* Models */,
 				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
 				A74FCE981BBB377E005C4D34 /* Views */,
@@ -435,6 +449,7 @@
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
+				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
@@ -450,6 +465,7 @@
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
 				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
+				A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
