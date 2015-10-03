@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-235.5" y="1037"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="OET-xt-bFM">
             <objects>
-                <viewController id="kJk-XX-FXw" customClass="ProfileViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kJk-XX-FXw" userLabel="Profile" customClass="ProfileViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oZG-a3-YQe"/>
                         <viewControllerLayoutGuide type="bottom" id="XMn-1P-bvV"/>
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="2524.5" y="3172"/>
         </scene>
-        <!--Item 2-->
+        <!--Canvas-->
         <scene sceneID="RRh-1v-zWz">
             <objects>
-                <viewController id="q3D-ZR-KaW" customClass="CanvasViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q3D-ZR-KaW" userLabel="Canvas" customClass="CanvasViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ove-lT-p7O"/>
                         <viewControllerLayoutGuide type="bottom" id="Lqf-Ax-BtP"/>
@@ -164,18 +164,18 @@
                                 <exclude reference="Q9m-Ee-pw1"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5fW-yp-JZe"/>
-                                <exclude reference="AnX-jv-01j"/>
-                                <exclude reference="jjS-E3-x4w"/>
-                                <exclude reference="qGu-33-83Q"/>
-                                <exclude reference="0Kz-1t-f6R"/>
-                                <exclude reference="UF1-Ux-3Ft"/>
-                                <exclude reference="hWG-ha-GXh"/>
-                                <exclude reference="m76-8s-yZe"/>
                                 <exclude reference="AZo-EK-nTl"/>
                                 <exclude reference="hTN-8P-nYE"/>
                                 <exclude reference="Gf6-dJ-2b7"/>
                                 <exclude reference="zue-jA-wWT"/>
+                                <exclude reference="0Kz-1t-f6R"/>
+                                <exclude reference="UF1-Ux-3Ft"/>
+                                <exclude reference="hWG-ha-GXh"/>
+                                <exclude reference="m76-8s-yZe"/>
+                                <exclude reference="5fW-yp-JZe"/>
+                                <exclude reference="AnX-jv-01j"/>
+                                <exclude reference="jjS-E3-x4w"/>
+                                <exclude reference="qGu-33-83Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -185,18 +185,18 @@
                                 <include reference="Q9m-Ee-pw1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5fW-yp-JZe"/>
-                                <include reference="AnX-jv-01j"/>
-                                <include reference="jjS-E3-x4w"/>
-                                <include reference="qGu-33-83Q"/>
-                                <include reference="0Kz-1t-f6R"/>
-                                <exclude reference="UF1-Ux-3Ft"/>
-                                <exclude reference="hWG-ha-GXh"/>
-                                <include reference="m76-8s-yZe"/>
                                 <exclude reference="AZo-EK-nTl"/>
                                 <include reference="hTN-8P-nYE"/>
                                 <include reference="Gf6-dJ-2b7"/>
                                 <include reference="zue-jA-wWT"/>
+                                <include reference="0Kz-1t-f6R"/>
+                                <exclude reference="UF1-Ux-3Ft"/>
+                                <exclude reference="hWG-ha-GXh"/>
+                                <include reference="m76-8s-yZe"/>
+                                <include reference="5fW-yp-JZe"/>
+                                <include reference="AnX-jv-01j"/>
+                                <include reference="jjS-E3-x4w"/>
+                                <include reference="qGu-33-83Q"/>
                             </mask>
                         </variation>
                     </view>
@@ -221,6 +221,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Q6o-A1-QS4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hsh-ms-0np">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -229,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="3255" y="2511"/>
         </scene>
-        <!--Item 1-->
+        <!--Learn-->
         <scene sceneID="SBC-Pg-zSq">
             <objects>
-                <viewController id="8hJ-nU-RGp" sceneMemberID="viewController">
+                <viewController id="8hJ-nU-RGp" userLabel="Learn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QUq-lO-h91"/>
                         <viewControllerLayoutGuide type="bottom" id="C4g-yV-JZJ"/>
@@ -440,8 +441,7 @@ useful talking points.</string>
                                         <exclude reference="uU6-Rg-QyA"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="149" width="400" height="56"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="uU6-Rg-QyA"/>
                                     </mask>
@@ -656,9 +656,6 @@ useful talking points.</string>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="174" y="233" width="54" height="18"/>
-                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rI-kX-ynB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -671,8 +668,7 @@ useful talking points.</string>
                                         <exclude reference="vKX-ko-hCF"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="241" width="104" height="1"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="vKX-ko-hCF"/>
                                     </mask>
@@ -689,8 +685,7 @@ useful talking points.</string>
                                         <exclude reference="YjG-n6-2sV"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="247" y="241" width="104" height="1"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="YjG-n6-2sV"/>
                                     </mask>
@@ -702,7 +697,7 @@ useful talking points.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="132" y="30" width="137" height="45"/>
+                                    <rect key="frame" x="132" y="30" width="137" height="44.5"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Yo-fRk">
@@ -733,9 +728,6 @@ useful talking points.</string>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="DaO-Q9-3gF">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="190" y="167" width="20" height="20"/>
-                                </variation>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
