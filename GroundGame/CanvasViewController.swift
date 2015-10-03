@@ -14,10 +14,16 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBOutlet weak var mapView: MKMapView!
 
-    // MARK: - Location Button State
+    // MARK: - Location Button
     
     enum LocationButtonState {
         case None, Follow, FollowWithHeading
+    }
+    
+    struct LocationButtonImage {
+        static let GrayArrow = UIImage(named: "gray-arrow")
+        static let BlueArrow = UIImage(named: "blue-arrow")
+        static let BlueCompass = UIImage(named: "blue-compass")
     }
     
     var locationButtonState: LocationButtonState = .None {
@@ -25,13 +31,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             switch locationButtonState {
             case .None:
                 mapView.userTrackingMode = MKUserTrackingMode.None
-                locationButton.setImage(UIImage(named: "gray-arrow"), forState: UIControlState.Normal)
+                locationButton.setImage(LocationButtonImage.GrayArrow, forState: UIControlState.Normal)
             case .Follow:
                 mapView.userTrackingMode = MKUserTrackingMode.Follow
-                locationButton.setImage(UIImage(named: "blue-arrow"), forState: UIControlState.Normal)
+                locationButton.setImage(LocationButtonImage.BlueArrow, forState: UIControlState.Normal)
             case .FollowWithHeading:
                 mapView.userTrackingMode = MKUserTrackingMode.FollowWithHeading
-                locationButton.setImage(UIImage(named: "blue-compass"), forState: UIControlState.Normal)
+                locationButton.setImage(LocationButtonImage.BlueCompass, forState: UIControlState.Normal)
             }
         }
     }
@@ -41,6 +47,9 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             locationButton.setImage(UIImage(named: "blue-arrow"), forState: UIControlState.Selected)
         }
     }
+    
+    // MARK: - Add Location Button
+    
     @IBOutlet weak var addLocationButton: UIButton!
     
     @IBAction func addLocation(sender: UIButton) {
