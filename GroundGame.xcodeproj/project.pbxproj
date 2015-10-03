@@ -26,6 +26,7 @@
 		A76ABA401BBC913A007FA40B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9E81BC05A3900510924 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
 		A7A579571BB092E100D8885E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A579561BB092E100D8885E /* Assets.xcassets */; };
@@ -474,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A775B9E81BC05A3900510924 /* CanvasViewController.swift in Sources */,
 				A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

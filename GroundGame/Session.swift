@@ -91,7 +91,6 @@ class Session {
     private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: (Bool) -> Void) {
         if let oauth2 = oauth2 {
             oauth2.onAuthorize = { parameters in
-                print("Did authorize with parameters: \(parameters)")
                 callback(true)
             }
             

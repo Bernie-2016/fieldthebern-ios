@@ -6,5 +6,6 @@ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'FBSDKCoreKit', '4.1'
 pod 'FBSDKLoginKit', '4.1'
 pod 'KeychainAccess'
+pod 'Dollar'
 
 use_frameworks!

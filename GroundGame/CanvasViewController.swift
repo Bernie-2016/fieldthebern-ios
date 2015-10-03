@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Dollar
 
 class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
@@ -53,7 +54,6 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         // Set up our location manager
         if CLLocationManager.locationServicesEnabled() {
-            print("Location services enabled")
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestWhenInUseAuthorization()
@@ -126,16 +126,12 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         return true
     }
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        self.changedRegion = true
-        
-        let region = mapView.region
-        let center = mapView.centerCoordinate
+    func getFurthestDistanceFromRegionCenter(region: MKCoordinateRegion, center: CLLocationCoordinate2D) -> CLLocationDistance {
         let latitudeDelta = region.span.latitudeDelta
         let longitudeDelta = region.span.longitudeDelta
-
+        
         let longestDelta = max(latitudeDelta, longitudeDelta)
-
+        
         let centerLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude)
         var newLocation = centerLocation
         if longestDelta == latitudeDelta {
@@ -143,27 +139,70 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         } else {
             newLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude + longitudeDelta / 2)
         }
-
-        let distance = centerLocation.distanceFromLocation(newLocation)
         
-        self.mapView.removeAnnotations(self.mapView.annotations)
+        let distance = centerLocation.distanceFromLocation(newLocation)
+        return distance
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        self.changedRegion = true
+        
+        let center = mapView.centerCoordinate
+        let distance = getFurthestDistanceFromRegionCenter(mapView.region, center: center)
         
         let addressService = AddressService()
-        addressService.getAddresses(center.latitude, longitude: center.longitude, radius: distance) { (addresses) in
-            if let addresses = addresses {
+        
+        addressService.getAddresses(center.latitude, longitude: center.longitude, radius: distance) { (addressResults) in
+            
+            if let addresses = addressResults {
+
+                var annotationsToAdd: [MKAnnotation] = []
+                var annotationsToRemove: [MKAnnotation] = []
+                var annotationsToKeep: [MKAnnotation] = []
+                
                 for address in addresses {
-                    let dropPin = AddressPointAnnotation()
-                    dropPin.result = address.result
-                    dropPin.coordinate = address.coordinate!
-                    dropPin.title = address.title
-                    dropPin.subtitle = address.subtitle
-                    mapView.addAnnotation(dropPin)
+                    let result = self.annotationsContainAddress(address)
+                    if result.success {
+                        annotationsToKeep.append(result.annotation!)
+                    } else {
+                        let annotation = self.addressToPin(address)
+                        annotationsToKeep.append(annotation)
+                        annotationsToAdd.append(annotation)
+                    }
+                }
+                
+                annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
+                
+                print("Removing \(annotationsToRemove.count) annotations")
+                print("Should keep \(annotationsToKeep.count) annotations")
+                print("Should add \(annotationsToAdd.count) annotations")
+                
+                mapView.removeAnnotations(annotationsToRemove)
+                mapView.addAnnotations(annotationsToAdd)
+            }
+        }
+    }
+    
+    func differenceBetweenAnnotations(firstArray: [MKAnnotation], secondArray: [MKAnnotation]) -> [MKAnnotation] {
+        var map: [MKAnnotation] = []
+        
+        outerLoop: for elem in firstArray {
+            if elem.isKindOfClass(MKUserLocation) {
+                continue
+            }
+            map.append(elem)
+            for secondElem in secondArray {
+                if elem.coordinate.latitude == secondElem.coordinate.latitude
+                && elem.coordinate.longitude == secondElem.coordinate.longitude
+                && elem.title! == secondElem.title!
+                && elem.subtitle! == secondElem.subtitle! {
+                    map.removeLast()
+                    continue outerLoop
                 }
             }
         }
         
-
-        print(distance, center.latitude, center.longitude)
+        return map
     }
     
     func mapView(mapView: MKMapView, didChangeUserTrackingMode mode: MKUserTrackingMode, animated: Bool) {
@@ -187,24 +226,8 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 pinAnnotation = MKAnnotationView.init(annotation: addressAnnotation, reuseIdentifier: "Pin")
             }
             
-            print(addressAnnotation?.result)
+            pinAnnotation?.image = addressAnnotation?.image
             
-            if let result: VisitResult = addressAnnotation?.result {
-                switch result {
-                case .NotVisited:
-                    pinAnnotation?.image = UIImage(named: "grey-pin")
-                case .NotSure:
-                    pinAnnotation?.image = UIImage(named: "white-pin")
-                case .NotInterested:
-                    pinAnnotation?.image = UIImage(named: "red-pin")
-                case .Interested:
-                    pinAnnotation?.image = UIImage(named: "blue-pin")
-                default:
-                    pinAnnotation?.image = UIImage(named: "grey-pin")
-                }
-            
-            }
-
             pinAnnotation?.layer.anchorPoint = CGPointMake(0.5, 1.0)
             pinAnnotation?.canShowCallout = true
         
@@ -213,6 +236,33 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         } else {
             return nil
         }
+    }
+    
+    func addressToPin(address: Address) -> AddressPointAnnotation {
+        let dropPin = AddressPointAnnotation()
+
+        dropPin.result = address.result
+        dropPin.coordinate = address.coordinate!
+        dropPin.title = address.title
+        dropPin.subtitle = address.subtitle
+        
+        return dropPin
+    }
+    
+    func annotationsContainAddress(address: Address) -> (success: Bool, annotation: AddressPointAnnotation?) {
+        for existingAnnotation in self.mapView.annotations {
+            if let existingAddressAnnotation = existingAnnotation as? AddressPointAnnotation {
+                if existingAddressAnnotation.coordinate.latitude == address.latitude
+                    && existingAddressAnnotation.coordinate.longitude == address.longitude
+                    && existingAddressAnnotation.title == address.title
+                    && existingAddressAnnotation.subtitle == address.subtitle
+                {
+                    print("Contains address")
+                    return (true, existingAddressAnnotation)
+                }
+            }
+        }
+        return (false, nil)
     }
     
     // MARK: - Location Fetching
@@ -234,9 +284,6 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = manager.location!
         
-        // Keep the map centered if required
-//        keepMapCentered(currentLocation)
-        
         geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
             if let placemarksArray = placemarks {
                 if placemarksArray.count > 0 {
@@ -257,17 +304,4 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error while updating location " + error.localizedDescription)
     }
-    
-//    private func keepMapCentered(currentLocation: CLLocation) {
-//        print("Distance from last known location: \(lastKnownLocation.distanceFromLocation(currentLocation))")
-//        
-//        switch locationButtonState {
-//        case .Follow:
-//            centerMapOnLocation(currentLocation)
-//        case .FollowWithHeading:
-//            centerMapOnLocation(currentLocation)
-//        case .None:
-//            break
-//        }
-//    }
 }
