@@ -88,10 +88,8 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     // MARK: - Map Interactions
     
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 500
     
-    var changedRegion: Bool = false
-
     @IBAction func changeLocationButtonState(sender: UIButton) {
 
         switch locationButtonState {
@@ -125,34 +123,14 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
-    
-    func getFurthestDistanceFromRegionCenter(region: MKCoordinateRegion, center: CLLocationCoordinate2D) -> CLLocationDistance {
-        let latitudeDelta = region.span.latitudeDelta
-        let longitudeDelta = region.span.longitudeDelta
-        
-        let longestDelta = max(latitudeDelta, longitudeDelta)
-        
-        let centerLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude)
-        var newLocation = centerLocation
-        if longestDelta == latitudeDelta {
-            newLocation = CLLocation.init(latitude: center.latitude + latitudeDelta / 2, longitude: center.longitude)
-        } else {
-            newLocation = CLLocation.init(latitude: center.latitude, longitude: center.longitude + longitudeDelta / 2)
-        }
-        
-        let distance = centerLocation.distanceFromLocation(newLocation)
-        return distance
-    }
-    
+
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        self.changedRegion = true
         
-        let center = mapView.centerCoordinate
-        let distance = getFurthestDistanceFromRegionCenter(mapView.region, center: center)
+        let distance = mapView.getFurthestDistanceFromRegionCenter()
         
         let addressService = AddressService()
         
-        addressService.getAddresses(center.latitude, longitude: center.longitude, radius: distance) { (addressResults) in
+        addressService.getAddresses(self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude, radius: distance) { (addressResults) in
             
             if let addresses = addressResults {
 
@@ -173,12 +151,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 
                 annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
                 
-                print("Removing \(annotationsToRemove.count) annotations")
-                print("Should keep \(annotationsToKeep.count) annotations")
-                print("Should add \(annotationsToAdd.count) annotations")
-                
-                mapView.removeAnnotations(annotationsToRemove)
-                mapView.addAnnotations(annotationsToAdd)
+                // Update UI
+                dispatch_async(dispatch_get_main_queue()) {
+                    mapView.removeAnnotations(annotationsToRemove)
+                    mapView.addAnnotations(annotationsToAdd)
+                }
             }
         }
     }
@@ -215,6 +192,8 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         }
     }
     
+    let anchorPoint = CGPointMake(0.5, 1.0)
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
         if annotation.isKindOfClass(AddressPointAnnotation) {
@@ -228,7 +207,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             
             pinAnnotation?.image = addressAnnotation?.image
             
-            pinAnnotation?.layer.anchorPoint = CGPointMake(0.5, 1.0)
+            pinAnnotation?.layer.anchorPoint = anchorPoint
             pinAnnotation?.canShowCallout = true
         
             return pinAnnotation
@@ -257,7 +236,6 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     && existingAddressAnnotation.title == address.title
                     && existingAddressAnnotation.subtitle == address.subtitle
                 {
-                    print("Contains address")
                     return (true, existingAddressAnnotation)
                 }
             }

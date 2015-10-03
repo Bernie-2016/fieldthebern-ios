@@ -27,6 +27,7 @@
 		A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9E81BC05A3900510924 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
 		A7A579571BB092E100D8885E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A579561BB092E100D8885E /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		A76ABA3F1BBC913A007FA40B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Overlay.swift"; sourceTree = "<group>"; };
 		A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A579541BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
+				A775B9EB1BC0692100510924 /* MKMapView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
+				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
 				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
 				A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */,
