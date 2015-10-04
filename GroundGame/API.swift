@@ -10,7 +10,7 @@ import Foundation
 
 class API {
     private let http = HTTP()
-    private let baseURL = "http://api.lvh.me:3000"
+    private let baseURL = APIURL.url
     
     func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool) -> Void) {
         let url = baseURL + "/" + endpoint

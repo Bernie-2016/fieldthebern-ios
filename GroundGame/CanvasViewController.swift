@@ -14,6 +14,45 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBOutlet weak var mapView: MKMapView!
 
+    @IBOutlet weak var nearestAddressLabel: UILabel!
+    @IBOutlet weak var nearestAddressSubtitleLabel: UILabel!
+    
+    @IBOutlet weak var nearestAddressImage: UIImageView!
+    
+    @IBOutlet weak var nearestAddressView: UIView! {
+        didSet {
+            nearestAddressView.layer.cornerRadius = 8.0
+            
+            let gesture = UITapGestureRecognizer(target: self, action: "someAction:")
+            nearestAddressView.addGestureRecognizer(gesture)
+            
+            let swipeGesture = UISwipeGestureRecognizer(target: self, action: "swipedNearestAddressView:")
+            nearestAddressView.addGestureRecognizer(swipeGesture)
+
+            let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: "swipedNearestAddressView:")
+            leftSwipeGesture.direction = .Left
+            nearestAddressView.addGestureRecognizer(leftSwipeGesture)
+        }
+    }
+    
+    func someAction(sender: UITapGestureRecognizer) {
+        for annotation in self.mapView.annotations {
+            if let addressAnnotation = annotation as? AddressPointAnnotation {
+                if self.closestAddress?.id == addressAnnotation.id {
+                    self.mapView.selectAnnotation(annotation, animated: true)
+                }
+            }
+        }
+    }
+    
+    func swipedNearestAddressView(sender: UISwipeGestureRecognizer) {
+        if sender.direction == .Left {
+            nearestAddressView.layer.backgroundColor = Color.TransparentBlue.CGColor
+        } else if sender.direction == .Right {
+            nearestAddressView.layer.backgroundColor = Color.Blue.CGColor
+        }
+    }
+    
     // MARK: - Location Button
     
     enum LocationButtonState {
@@ -99,6 +138,9 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     let regionRadius: CLLocationDistance = 500
     
+    var lastUpdated: NSDate?
+    var nearbyAddresses: [Address] = []
+    
     @IBAction func changeLocationButtonState(sender: UIButton) {
 
         switch locationButtonState {
@@ -135,36 +177,95 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
+        let currentTime = NSDate()
+
+        if let updatedTime = lastUpdated {
+            // Already fetched
+            var timeThreshold = 0
+
+            switch mapView.userTrackingMode {
+            case .None:
+                timeThreshold = 0 // User initiated region changes should call the API no matter what
+            case .Follow:
+                timeThreshold = 2 // This will update often enough while walking that we can do 2 seconds
+            case .FollowWithHeading:
+                timeThreshold = 4 // We need to really throttle this because of the compass
+            }
+
+            if currentTime.secondsFrom(updatedTime) >= timeThreshold { fetchAddresses() }
+        } else {
+            // First address fetch
+            fetchAddresses()
+        }
+    }
+    
+    func fetchAddresses() {
+        lastUpdated = NSDate()
+        
         let distance = mapView.getFurthestDistanceFromRegionCenter()
         
         let addressService = AddressService()
         
-        addressService.getAddresses(self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude, radius: distance) { (addressResults) in
-            
-            if let addresses = addressResults {
-
-                var annotationsToAdd: [MKAnnotation] = []
-                var annotationsToRemove: [MKAnnotation] = []
-                var annotationsToKeep: [MKAnnotation] = []
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            addressService.getAddresses(self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude, radius: distance) { (addressResults) in
                 
-                for address in addresses {
-                    let result = self.annotationsContainAddress(address)
-                    if result.success {
-                        annotationsToKeep.append(result.annotation!)
-                    } else {
-                        let annotation = self.addressToPin(address)
-                        annotationsToKeep.append(annotation)
-                        annotationsToAdd.append(annotation)
+                if let addresses = addressResults {
+                    
+                    var annotationsToAdd: [MKAnnotation] = []
+                    var annotationsToRemove: [MKAnnotation] = []
+                    var annotationsToKeep: [MKAnnotation] = []
+                    
+                    self.nearbyAddresses = addresses
+                    
+                    for address in addresses {
+                        let result = self.annotationsContainAddress(address)
+                        if result.success {
+                            annotationsToKeep.append(result.annotation!)
+                        } else {
+                            let annotation = self.addressToPin(address)
+                            annotationsToKeep.append(annotation)
+                            annotationsToAdd.append(annotation)
+                        }
+                    }
+                    
+                    self.updateClosestLocation()
+                    
+                    annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
+                    
+                    // Update UI
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.mapView.removeAnnotations(annotationsToRemove)
+                        self.mapView.addAnnotations(annotationsToAdd)
                     }
                 }
+            }
+        }
+    }
+    
+    var closestAddress: Address?
+    
+    func updateClosestLocation() {
+
+        dispatch_async(dispatch_get_main_queue()) {
+
+            var closestLocations: [(distance: CLLocationDistance?, address: Address)] = []
+
+            for address in self.nearbyAddresses {
+
+                let location = CLLocation(latitude: address.coordinate!.latitude, longitude: address.coordinate!.longitude)
+                let distanceFrom = self.locationManager.location?.distanceFromLocation(location)
+                closestLocations.append(distance: distanceFrom, address: address)
+
+                // Sort by the nearest locations
+                closestLocations.sortInPlace({ $0.distance < $1.distance })
                 
-                annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
-                
-                // Update UI
-                dispatch_async(dispatch_get_main_queue()) {
-                    mapView.removeAnnotations(annotationsToRemove)
-                    mapView.addAnnotations(annotationsToAdd)
+                if let closestLocation = closestLocations.first {
+                    self.closestAddress = closestLocation.address
+                    self.nearestAddressLabel.text = closestLocation.address.title
+                    self.nearestAddressSubtitleLabel.text = closestLocation.address.subtitle
+                    self.nearestAddressImage.image = closestLocation.address.image
                 }
+
             }
         }
     }
@@ -229,10 +330,12 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func addressToPin(address: Address) -> AddressPointAnnotation {
         let dropPin = AddressPointAnnotation()
 
+        dropPin.id = address.id
         dropPin.result = address.result
         dropPin.coordinate = address.coordinate!
         dropPin.title = address.title
         dropPin.subtitle = address.subtitle
+        dropPin.image = address.image
         
         return dropPin
     }
@@ -270,6 +373,8 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = manager.location!
+        
+        updateClosestLocation()
         
         geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
             if let placemarksArray = placemarks {

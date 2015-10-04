@@ -13,8 +13,8 @@ import KeychainAccess
 struct OAuth {
     static let ClientId = "0ad2e3ecb80393a5e83732b0e89c15d0eecedcc31f22bfb3cbc0f31e2be11410"
     static let ClientSecret = "5dc507867184b8d77b0928ba51dd3f724e4c5ac786d3f153f53f34802abae682"
-    static let AuthorizeURI = "http://api.lvh.me:3000/oauth/token"
-    static let TokenURI = "http://api.lvh.me:3000/oauth/token"
+    static let AuthorizeURI = APIURL.url + "/oauth/token"
+    static let TokenURI = APIURL.url + "http://api.lvh.me:3000/oauth/token"
 }
 
 enum SessionType {

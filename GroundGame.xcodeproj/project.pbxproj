@@ -28,6 +28,8 @@
 		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9E81BC05A3900510924 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
 		A7A579571BB092E100D8885E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A579561BB092E100D8885E /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Overlay.swift"; sourceTree = "<group>"; };
 		A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		A775B9ED1BC077E400510924 /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		A775B9EF1BC0967D00510924 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A579541BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A775B9EB1BC0692100510924 /* MKMapView.swift */,
+				A775B9EF1BC0967D00510924 /* NSDate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				A73D663C1BBEE44000127245 /* Address.swift */,
 				A73D663E1BBEE87400127245 /* AddressService.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
+				A775B9ED1BC077E400510924 /* APIURL.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
+				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
@@ -462,6 +469,7 @@
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
+				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
