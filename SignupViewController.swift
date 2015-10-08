@@ -10,12 +10,12 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+struct Text {
+    static let PlaceholderAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    static let Font = UIFont(name: "Lato-Medium", size: 18)
+}
+
 class SignupViewController: UIViewController, UITextFieldDelegate {
-    
-    struct Text {
-        static let PlaceholderAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        static let Font = UIFont(name: "Lato-Medium", size: 18)
-    }
     
     var bottomConstraintValue: CGFloat?
     
@@ -147,7 +147,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case emailField:
             return passwordField.becomeFirstResponder()
         case passwordField:
-            submitForm()
             return passwordField.resignFirstResponder()
         default:
             return false

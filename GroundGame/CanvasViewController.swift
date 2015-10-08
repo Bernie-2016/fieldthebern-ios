@@ -13,6 +13,8 @@ import Dollar
 class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    // MARK: - Nearest Address View
 
     @IBOutlet weak var nearestAddressLabel: UILabel!
     @IBOutlet weak var nearestAddressSubtitleLabel: UILabel!
@@ -23,7 +25,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         didSet {
             nearestAddressView.layer.cornerRadius = 8.0
             
-            let gesture = UITapGestureRecognizer(target: self, action: "someAction:")
+            let gesture = UITapGestureRecognizer(target: self, action: "tappedNearestAddressView:")
             nearestAddressView.addGestureRecognizer(gesture)
             
             let swipeGesture = UISwipeGestureRecognizer(target: self, action: "swipedNearestAddressView:")
@@ -35,7 +37,56 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         }
     }
     
-    func someAction(sender: UITapGestureRecognizer) {
+    @IBOutlet weak var nearestAddressViewTopConstraint: NSLayoutConstraint! {
+        didSet {
+            nearestAddressViewTopConstraint.constant = -90
+        }
+    }
+    
+    func animateNearestAddressViewIfNeeded() {
+        if let userCoordinate = self.mapView.userLocation.location?.coordinate {
+            let userPoint = MKMapPointForCoordinate(userCoordinate)
+            let mapRect = self.mapView.visibleMapRect
+            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint)
+
+            if userLocationInsideMapView {
+                if self.nearbyAddresses.count > 0 {
+                    // We have addresses to show, show the address view
+                    animateNearestAddressViewIn()
+                } else {
+                    // No addresses, hide the address view
+                    animateNearestAddressViewOut()
+                }
+
+            } else {
+                // The user's location isn't visible, don't show nearest address view
+                animateNearestAddressViewOut()
+            }
+        } else {
+            // We don't have the user's location
+            animateNearestAddressViewOut()
+        }
+    }
+    
+    func animateNearestAddressViewIn() {
+        dispatch_async(dispatch_get_main_queue()) {
+            UIView.animateWithDuration(Double(0.3), delay: Double(0.0), usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.LayoutSubviews, animations: { () -> Void in
+                    self.nearestAddressViewTopConstraint.constant = 5
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
+    }
+    
+    func animateNearestAddressViewOut() {
+        dispatch_async(dispatch_get_main_queue()) {
+            UIView.animateWithDuration(Double(0.1), animations: { () -> Void in
+                self.nearestAddressViewTopConstraint.constant = -90
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    func tappedNearestAddressView(sender: UITapGestureRecognizer) {
         for annotation in self.mapView.annotations {
             if let addressAnnotation = annotation as? AddressPointAnnotation {
                 if self.closestAddress?.id == addressAnnotation.id {
@@ -93,6 +144,14 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func addLocation(sender: UIButton) {
         self.performSegueWithIdentifier("AddLocation", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddLocation" {
+            if let destinationViewController = segue.destinationViewController as? AddAddressNavigationController {
+                destinationViewController.location = locationManager.location
+            }
+        }
     }
     
     // MARK: - Lifecycle Functions
@@ -229,6 +288,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     }
                     
                     self.updateClosestLocation()
+                    self.animateNearestAddressViewIfNeeded()
                     
                     annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
                     
@@ -375,6 +435,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let currentLocation = manager.location!
         
         updateClosestLocation()
+        self.animateNearestAddressViewIfNeeded()
         
         geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
             if let placemarksArray = placemarks {
