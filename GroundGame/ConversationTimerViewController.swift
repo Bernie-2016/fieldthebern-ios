@@ -15,12 +15,16 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
 
     var location: CLLocation?
     var placemark: CLPlacemark?
+    
+    @IBOutlet weak var timerLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.setHidesBackButton(true, animated: true)        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        startTimer()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +57,56 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
         alert.addAction(OKAction)
 
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    var startTime = NSTimeInterval()
+    var cachedElapsedTime = NSTimeInterval()
+    var elapsedTime = NSTimeInterval()
+    
+    var queue: dispatch_queue_t?
+    var asyncTimer: dispatch_source_t?
+    
+    func updateTime() {
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        elapsedTime = currentTime - startTime
+        cachedElapsedTime = elapsedTime
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        
+        let strMinutes = String(minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
+        }
+        
+    }
+    
+    func startTimer() {
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        queue = dispatch_queue_create("myTimer", nil)
+        asyncTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
+        
+        dispatch_source_set_timer(asyncTimer!, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
+        
+        dispatch_source_set_event_handler(asyncTimer!) {
+            self.updateTime()
+        }
+        
+        dispatch_resume(asyncTimer!)
     }
     
 

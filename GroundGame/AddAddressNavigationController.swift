@@ -23,7 +23,7 @@ class AddAddressNavigationController: UINavigationController {
         self.navigationBar.shadowImage = image
         let attributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Heavy", size: 18)!]
         self.navigationBar.titleTextAttributes = attributes
-   }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

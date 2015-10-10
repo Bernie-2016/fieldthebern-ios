@@ -77,7 +77,6 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
                         
                         if let streetName = pm.thoroughfare {
                             if streetName != "" {
-                                print(pm)
                                 self.performSegueWithIdentifier("SubmitAddress", sender: self)
                             }
                         }
@@ -90,7 +89,6 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if(identifier == "SubmitAddress") {
-                print(segue.destinationViewController)
                 let conversationTimerViewController = segue.destinationViewController as? ConversationTimerViewController
                 conversationTimerViewController?.location = self.location
                 conversationTimerViewController?.placemark = self.placemark
