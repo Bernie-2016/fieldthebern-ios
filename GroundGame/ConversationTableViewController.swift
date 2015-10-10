@@ -30,6 +30,11 @@ class ConversationTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         
+        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil)
+        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democratic")
+        
+        people = [josh, molly]
+        
 //        let states = States()
 //        if let pm = placemark {
 //            if let stateName = pm.administrativeArea {
@@ -99,10 +104,13 @@ class ConversationTableViewController: UITableViewController {
             if indexPath.row < people.count {
                 // We have a person's info to display
                 let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell") as! PersonTableViewCell
-                cell.checked = true
-                cell.nameLabel.text = "Josh Smith"
-                cell.phoneLabel.text = "(555) 555-5555"
-                cell.resultLabel.text = "Very interested"
+                
+                cell.checked = false
+                if let name = people[indexPath.row].name {
+                    cell.nameLabel.text = name
+                }
+                cell.resultLabel.text = "Not Sure"
+                cell.
                 
                 return cell
             } else {
@@ -129,7 +137,9 @@ class ConversationTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             if indexPath.row < people.count {
-            
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! PersonTableViewCell
+
+                cell.checked = !cell.checked
             } else {
                 let cell = tableView.cellForRowAtIndexPath(indexPath)
                 

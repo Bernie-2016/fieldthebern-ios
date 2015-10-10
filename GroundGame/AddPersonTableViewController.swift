@@ -10,11 +10,19 @@ import UIKit
 
 class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var nameField: PaddedTextField! {
+    @IBOutlet weak var firstNameField: PaddedTextField! {
         didSet {
-            nameField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: Text.PlaceholderAttributes)
-            nameField.font = Text.Font
-            nameField.delegate = self
+            firstNameField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes: Text.PlaceholderAttributes)
+            firstNameField.font = Text.Font
+            firstNameField.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var lastNameField: PaddedTextField! {
+        didSet {
+            lastNameField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: Text.PlaceholderAttributes)
+            lastNameField.font = Text.Font
+            lastNameField.delegate = self
         }
     }
     
@@ -36,7 +44,7 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func backToNameField(sender: UIBarButtonItem) {
-        nameField.becomeFirstResponder()
+        lastNameField.becomeFirstResponder()
     }
     
     func doneWithPhoneNumber(sender: UIBarButtonItem) {
@@ -57,8 +65,13 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         switch textField {
-        case nameField:
-            if let cell = nameField.superview?.superview?.superview as? UITableViewCell,
+        case firstNameField:
+            if let cell = firstNameField.superview?.superview?.superview as? UITableViewCell,
+                let indexPath = tableView.indexPathForCell(cell) {
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+            }
+        case lastNameField:
+            if let cell = lastNameField.superview?.superview?.superview as? UITableViewCell,
                 let indexPath = tableView.indexPathForCell(cell) {
                     tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             }
@@ -74,7 +87,9 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField {
-        case nameField:
+        case firstNameField:
+            return lastNameField.becomeFirstResponder()
+        case lastNameField:
             return phoneNumberField.becomeFirstResponder()
         case phoneNumberField:
             return phoneNumberField.resignFirstResponder()

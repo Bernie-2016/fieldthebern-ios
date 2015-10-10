@@ -53,6 +53,7 @@
 		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; settings = {ASSET_TAGS = (); }; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponse.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
+				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
+				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
