@@ -13,6 +13,7 @@ class PersonTableViewCell: BlueTableViewCell {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var partyAffiliationImage: UIImageView!
     
     var checked: Bool = false {
         didSet {

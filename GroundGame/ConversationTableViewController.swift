@@ -30,8 +30,8 @@ class ConversationTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         
-        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil)
-        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democratic")
+        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil, canvasResponse: .LeaningFor)
+        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democrat", canvasResponse: .StronglyFor)
         
         people = [josh, molly]
         
@@ -106,11 +106,14 @@ class ConversationTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell") as! PersonTableViewCell
                 
                 cell.checked = false
-                if let name = people[indexPath.row].name {
+                
+                let person = people[indexPath.row] as Person
+                
+                if let name = person.name {
                     cell.nameLabel.text = name
                 }
-                cell.resultLabel.text = "Not Sure"
-                cell.
+                cell.resultLabel.text = person.canvasResponseString
+                cell.partyAffiliationImage.image = person.partyAffiliationImage
                 
                 return cell
             } else {

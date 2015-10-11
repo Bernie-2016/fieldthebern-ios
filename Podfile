@@ -8,4 +8,17 @@ pod 'FBSDKLoginKit', '4.1'
 pod 'KeychainAccess'
 pod 'Dollar'
 
+def testing_pods
+    pod 'Quick'
+    pod 'Nimble', '2.0.0'
+end
+
+target 'GroundGameTests' do
+    testing_pods
+end
+
+target 'GroundGameUITests' do
+    testing_pods
+end
+
 use_frameworks!

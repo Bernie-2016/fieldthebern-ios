@@ -22,7 +22,7 @@ struct PartyAffiliationImage {
     static let Republican = UIImage(named: "republican-icon")
 }
 
-struct Person {
+public struct Person {
     let id: String?
     let firstName: String?
     let lastName: String?
@@ -85,7 +85,7 @@ struct Person {
 
     }
     
-    init(firstName: String?, lastName: String?, partyAffiliation: String?) {
+    init(firstName: String?, lastName: String?, partyAffiliation: String?, canvasResponse: CanvasResponse) {
         self.id = nil
         self.firstName = firstName
         self.lastName = lastName
@@ -93,6 +93,8 @@ struct Person {
         if let partyAffiliationString = partyAffiliation {
             setPartyAffiliation(partyAffiliationString)
         }
+        
+        self.canvasResponse = canvasResponse
     }
     
     private mutating func setPartyAffiliation(partyAffiliationString: String) {

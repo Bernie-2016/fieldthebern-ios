@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Color {
     static let Blue: UIColor = UIColor(red: 0.22, green: 0.56, blue: 0.85, alpha: 1.0)
