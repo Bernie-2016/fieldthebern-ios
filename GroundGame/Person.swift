@@ -74,13 +74,33 @@ public struct Person {
         }
     }
     
-    init(id: String?, personJSON: JSON) {
-        self.id = id
-        firstName = personJSON["first_name"].string
-        lastName = personJSON["last_name"].string
+    init(json: JSON) {
+        print(json)
+        self.id = json["id"].string
+        let attributes = json["attributes"]
+        firstName = attributes["first_name"].string
+        lastName = attributes["last_name"].string
         
-        if let partyAffiliationString = personJSON["party_affiliation"].string {
+        if let partyAffiliationString = attributes["party_affiliation"].string {
             setPartyAffiliation(partyAffiliationString)
+        }
+        
+        if let response = attributes["canvas_response"].string {
+        
+            switch response {
+            case "strongly_against":
+                canvasResponse = .StronglyAgainst
+            case "leaning_against":
+                canvasResponse = .LeaningAgainst
+            case "undecided":
+                canvasResponse = .Undecided
+            case "leaning_for":
+                canvasResponse = .LeaningFor
+            case "strongly_for":
+                canvasResponse = .StronglyFor
+            default:
+                canvasResponse = .Unknown
+            }
         }
 
     }
