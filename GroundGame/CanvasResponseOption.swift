@@ -1,0 +1,59 @@
+//
+//  CanvasResponseOption.swift
+//  GroundGame
+//
+//  Created by Josh Smith on 10/12/15.
+//  Copyright © 2015 Josh Smith. All rights reserved.
+//
+
+import Foundation
+
+struct CanvasResponseList {
+    
+    let options: [CanvasResponseOption]
+    
+    init() {
+        options = [
+            CanvasResponseOption(canvasResponse: .StronglyFor),
+            CanvasResponseOption(canvasResponse: .LeaningFor),
+            CanvasResponseOption(canvasResponse: .Undecided),
+            CanvasResponseOption(canvasResponse: .LeaningAgainst),
+            CanvasResponseOption(canvasResponse: .StronglyAgainst)
+        ]
+    }
+}
+
+struct CanvasResponseOption {
+    let title: String
+    let textColor: UIColor
+    let backgroundColor: UIColor
+    
+    init(canvasResponse: CanvasResponse) {
+        switch canvasResponse {
+        case .StronglyAgainst:
+            title = "Strongly against Bernie"
+            textColor = UIColor.whiteColor()
+            backgroundColor = Color.Red
+        case .LeaningAgainst:
+            title = "Leaning against Bernie"
+            textColor = UIColor.whiteColor()
+            backgroundColor = Color.Pink
+        case .Undecided:
+            title = "Undecided"
+            textColor = UIColor.blackColor()
+            backgroundColor = UIColor.whiteColor()
+        case .LeaningFor:
+            title = "Leaning for Bernie"
+            textColor = UIColor.whiteColor()
+            backgroundColor = Color.Blue
+        case .StronglyFor:
+            title = "Strongly for Bernie"
+            textColor = UIColor.whiteColor()
+            backgroundColor = Color.DarkBlue
+        case .Unknown:
+            title = "Unknown"
+            textColor = UIColor.blackColor()
+            backgroundColor = UIColor.whiteColor()
+        }
+    }
+}

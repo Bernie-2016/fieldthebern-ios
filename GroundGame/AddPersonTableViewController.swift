@@ -26,29 +26,8 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var phoneNumberField: PaddedTextField! {
-        didSet {
-            phoneNumberField.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: Text.PlaceholderAttributes)
-            phoneNumberField.font = Text.Font
-            phoneNumberField.delegate = self
-            
-            let keyboardDoneButtonView = UIToolbar()
-            keyboardDoneButtonView.sizeToFit()
-            let previousButton = UIBarButtonItem.init(title: "Previous", style: UIBarButtonItemStyle.Plain, target: self, action: "backToNameField:")
-            let space = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-            let doneButton = UIBarButtonItem.init(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneWithPhoneNumber:")
-            keyboardDoneButtonView.setItems([previousButton, space, doneButton], animated: false)
-            phoneNumberField.inputAccessoryView = keyboardDoneButtonView
-            
-        }
-    }
-    
     func backToNameField(sender: UIBarButtonItem) {
         lastNameField.becomeFirstResponder()
-    }
-    
-    func doneWithPhoneNumber(sender: UIBarButtonItem) {
-        phoneNumberField.resignFirstResponder()
     }
 
     override func viewDidLoad() {
@@ -75,11 +54,6 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
                 let indexPath = tableView.indexPathForCell(cell) {
                     tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             }
-        case phoneNumberField:
-            if let cell = phoneNumberField.superview?.superview?.superview as? UITableViewCell,
-                let indexPath = tableView.indexPathForCell(cell) {
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-            }
         default:
             break
         }
@@ -90,65 +64,21 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
         case firstNameField:
             return lastNameField.becomeFirstResponder()
         case lastNameField:
-            return phoneNumberField.becomeFirstResponder()
-        case phoneNumberField:
-            return phoneNumberField.resignFirstResponder()
+            return lastNameField.resignFirstResponder()
         default:
             return false
         }
     }
-
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if textField == phoneNumberField
-        {
-            if let text = textField.text {
-                let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-                let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-
-                let decimalString = components.joinWithSeparator("") as NSString
-                let length = decimalString.length
-
-                let hasLeadingOne = length > 0 && newString[newString.startIndex] == "1"
-
-                if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
-                {
-                    let newLength = (text as NSString).length + (string as NSString).length - range.length as Int
-
-                    return (newLength > 10) ? false : true
-                }
-                var index = 0 as Int
-                let formattedString = NSMutableString()
-
-                if hasLeadingOne && !(range.location == 1 && range.length == 1)
-                {
-                    let leadingOne = decimalString.substringWithRange(NSMakeRange(index, 1))
-                    formattedString.appendFormat("%@ ", leadingOne)
-                    index += 1
-                }
-
-                if (length - index) > 3
-                {
-                    let areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
-                    formattedString.appendFormat("(%@) ", areaCode)
-                    index += 3
-                }
-                if length - index > 3
-                {
-                    let prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
-                    formattedString.appendFormat("%@-", prefix)
-                    index += 3
-                }
-
-                let remainder = decimalString.substringFromIndex(index)
-                formattedString.appendString(remainder)
-                textField.text = formattedString as String
-                return false
-            } else {
-                return true
-            }
-        } else {
-            return true
-        }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let additionalSeparatorThickness = CGFloat(1)
+        let additionalSeparator = UIView(frame: CGRectMake(0,
+            cell.frame.size.height - additionalSeparatorThickness,
+            cell.frame.size.width,
+            additionalSeparatorThickness))
+        additionalSeparator.backgroundColor = Color.Blue
+        cell.addSubview(additionalSeparator)
     }
 
 }

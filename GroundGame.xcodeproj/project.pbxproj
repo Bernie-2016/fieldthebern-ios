@@ -72,6 +72,12 @@
 		A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F01BCB065100232234 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F31BCB0C6E00232234 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D3F6F21BCB0C6E00232234 /* Person.json */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6F51BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6F91BCC2F7100232234 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6FD1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -155,6 +161,12 @@
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponse.swift; sourceTree = "<group>"; };
 		A7D3F6F21BCB0C6E00232234 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
+		A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonPartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
+		A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckableTableViewCell.swift; sourceTree = "<group>"; };
+		A7D3F6F81BCC2F7100232234 /* PartySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelection.swift; sourceTree = "<group>"; };
+		A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliation.swift; sourceTree = "<group>"; };
+		A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonCanvasResponseTableViewController.swift; sourceTree = "<group>"; };
+		A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOption.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD56034328EFAB3F616C8A5 /* Pods-GroundGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +257,9 @@
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
+				A7D3F6F81BCC2F7100232234 /* PartySelection.swift */,
+				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
+				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -260,6 +275,7 @@
 				A76ABA361BBB910E007FA40B /* PaddedTextField.swift */,
 				A76890311BC8680E008F394C /* PersonTableViewCell.swift */,
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
+				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -286,6 +302,7 @@
 				A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */,
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
 				A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */,
+				A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */,
 				A768903B1BC87FAD008F394C /* AddPersonTableViewController.swift */,
 				A768903D1BC88527008F394C /* AddPersonViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
@@ -297,6 +314,7 @@
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
+				A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -636,6 +654,7 @@
 				A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
+				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
@@ -649,6 +668,7 @@
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
+				A7D3F6FD1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
@@ -656,16 +676,20 @@
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
 				A768903E1BC88527008F394C /* AddPersonViewController.swift in Sources */,
+				A7D3F6F51BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
+				A7D3F6F91BCC2F7100232234 /* PartySelection.swift in Sources */,
 				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,
+				A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
 				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
 				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
+				A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */,
 				A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */,
 				A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,

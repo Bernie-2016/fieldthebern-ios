@@ -10,18 +10,6 @@ import Foundation
 import SwiftyJSON
 import UIKit
 
-enum PartyAffiliation {
-    case Republican, Democrat, Independent, Undeclared, Unknown
-}
-
-struct PartyAffiliationImage {
-    static let Unknown = UIImage(named: "unknown-icon")
-    static let Undeclared = UIImage(named: "undeclared-icon")
-    static let Democrat = UIImage(named: "democrat-icon")
-    static let Independent = UIImage(named: "independent-icon")
-    static let Republican = UIImage(named: "republican-icon")
-}
-
 public struct Person {
     let id: String?
     let firstName: String?
@@ -70,6 +58,8 @@ public struct Person {
                 return PartyAffiliationImage.Independent
             case .Democrat:
                 return PartyAffiliationImage.Democrat
+            case .Other:
+                return PartyAffiliationImage.Other
             }
         }
     }
