@@ -264,15 +264,15 @@
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
 				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
+				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
 				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
+				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
+				A7D3F6F81BCC2F7100232234 /* PartySelection.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
-				A7D3F6F81BCC2F7100232234 /* PartySelection.swift */,
-				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
-				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

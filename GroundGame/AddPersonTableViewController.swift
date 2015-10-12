@@ -10,6 +10,7 @@ import UIKit
 
 class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate {
     
+    var person: Person?
     var partySelection: PartySelection?
     var canvasResponseOption: CanvasResponseOption?
 
@@ -44,6 +45,24 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         self.edgesForExtendedLayout = UIRectEdge.None
+        
+        if let person = self.person {
+            // Set their first name
+            if let firstName = person.firstName {
+                firstNameField.text = firstName
+            }
+            // Set their last name
+            if let lastName = person.lastName {
+                lastNameField.text = lastName
+            }
+            // Select their party affiliation
+            let personPartySelection = PartySelection(partyAffiliation: person.partyAffiliation)
+            self.didSelectParty(personPartySelection)
+
+            // Select their canvas response
+            let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
+            self.didSelectCanvasResponseOption(personCanvasResponse)
+        }
     }
     
     // MARK: - Text Field Delegate Methods

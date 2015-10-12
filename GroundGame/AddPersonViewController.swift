@@ -10,6 +10,10 @@ import UIKit
 
 class AddPersonViewController: UIViewController {
 
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var person: Person?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +43,15 @@ class AddPersonViewController: UIViewController {
         alert.addAction(OKAction)
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if(identifier == "AddPersonEmbedSegue") {
+                let addPersonTableViewController = segue.destinationViewController as? AddPersonTableViewController
+                addPersonTableViewController?.person = self.person
+            }
+        }
     }
 
 }

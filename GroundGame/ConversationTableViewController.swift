@@ -14,6 +14,7 @@ class ConversationTableViewController: UITableViewController {
     var location: CLLocation?
     var placemark: CLPlacemark?
     var people: [Person] = []
+    var selectedPerson: Person?
 
 //    @IBOutlet weak var stateImage: UIImageView!
 //    @IBOutlet weak var stateNameLabel: UILabel!
@@ -57,6 +58,15 @@ class ConversationTableViewController: UITableViewController {
 //        }
     }
 
+    @IBAction func editPerson(sender: UIButton) {
+        if let cell = sender.superview?.superview as? UITableViewCell {
+            if let indexPath = tableView.indexPathForCell(cell) {
+                selectedPerson = people[indexPath.row]
+                performSegueWithIdentifier("EditPersonSegue", sender: self)
+            }
+        }
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -150,6 +160,15 @@ class ConversationTableViewController: UITableViewController {
             }
         default:
             break
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditPersonSegue" {
+            print("Preparing for person segue")
+            if let addPersonViewController = segue.destinationViewController as? AddPersonViewController {
+                addPersonViewController.person = self.selectedPerson
+            }
         }
     }
 
