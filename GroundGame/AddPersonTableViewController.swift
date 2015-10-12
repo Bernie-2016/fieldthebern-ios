@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate {
+class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
     
     var person: Person?
     var partySelection: PartySelection?
@@ -135,6 +135,11 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         self.canvasResponseLabel.text = canvasResponseOption.title
         self.canvasResponseLabel.textColor = canvasResponseOption.textColor
         self.canvasResponseCell.backgroundColor = canvasResponseOption.backgroundColor
+    }
+    
+    func willSubmit() -> Person? {
+        print("Hit will submit")
+        return self.person
     }
     
 }

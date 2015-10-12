@@ -12,8 +12,8 @@ import UIKit
 
 public struct Person {
     let id: String?
-    let firstName: String?
-    let lastName: String?
+    var firstName: String?
+    var lastName: String?
 
     var partyAffiliation: PartyAffiliation = .Unknown
     var canvasResponse: CanvasResponse = .Unknown

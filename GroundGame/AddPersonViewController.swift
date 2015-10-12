@@ -13,7 +13,8 @@ class AddPersonViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     var person: Person?
-    
+    var delegate: AddOrEditPersonDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,8 +57,23 @@ class AddPersonViewController: UIViewController {
             if(identifier == "AddPersonEmbedSegue") {
                 let addPersonTableViewController = segue.destinationViewController as? AddPersonTableViewController
                 addPersonTableViewController?.person = self.person
+                self.delegate = addPersonTableViewController
             }
         }
     }
 
+    @IBAction func submit() {
+        if let returnedPerson = self.delegate?.willSubmit() {
+            if let firstName = returnedPerson.firstName,
+            let lastName = returnedPerson.lastName {
+                if firstName != ""
+                    && returnedPerson.partyAffiliation != .Unknown
+                    && returnedPerson.canvasResponse != .Unknown {
+                        print("We have everything")
+                } else {
+                    print("We're missing details")
+                }
+            }
+        }
+    }
 }

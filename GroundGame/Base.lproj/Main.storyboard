@@ -1274,6 +1274,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="pressSubmitAddress:" destination="gcE-3f-de3" eventType="touchUpInside" id="ADR-dS-ZUl"/>
+                                    <action selector="submit" destination="Mpi-oq-ItK" eventType="touchUpInside" id="2Dm-ps-fba"/>
                                 </connections>
                             </button>
                         </subviews>
