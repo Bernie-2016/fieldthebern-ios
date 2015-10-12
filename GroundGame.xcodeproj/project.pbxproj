@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -105,6 +107,8 @@
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelectionDelegate.swift; sourceTree = "<group>"; };
+		A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOptionSelectionDelegate.swift; sourceTree = "<group>"; };
 		A73D663C1BBEE44000127245 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A73D663E1BBEE87400127245 /* AddressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
 		A73D66401BBF36A900127245 /* AddressPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPinView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,15 @@
 				D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A72F88AF1BCC4979001B185B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
+				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		A73D66441BBF3EF900127245 /* Extensions */ = {
@@ -344,6 +357,7 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A72F88AF1BCC4979001B185B /* Delegates */,
 				A73D66441BBF3EF900127245 /* Extensions */,
 				A74FCE971BBB376A005C4D34 /* Models */,
 				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
@@ -658,6 +672,7 @@
 				A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
+				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
 				A768903C1BC87FAD008F394C /* AddPersonTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
@@ -668,6 +683,7 @@
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
+				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
 				A7D3F6FD1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,

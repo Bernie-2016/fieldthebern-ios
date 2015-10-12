@@ -14,23 +14,31 @@ class AddPersonViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.edgesForExtendedLayout = UIRectEdge.None
-    }
+        self.title = "Add Person"
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.edgesForExtendedLayout = UIRectEdge.None
+
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        let backButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
     }
-    */
+    
+    func cancel(sender: UINavigationItem) {
+        let alert = UIAlertController(title: "Cancel", message: "You'll lose all your progress.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancelAction = UIAlertAction(title: "Undo", style: .Cancel) { (_) in }
+        let OKAction = UIAlertAction(title: "OK", style: .Destructive) { (action) in
+            // Return to map
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(OKAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
 }

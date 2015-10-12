@@ -20,8 +20,16 @@
             <string>Lato-Heavy</string>
             <string>Lato-Heavy</string>
             <string>Lato-Heavy</string>
+            <string>Lato-Heavy</string>
         </mutableArray>
         <mutableArray key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
@@ -437,7 +445,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="58" y="54.5" width="326" height="35"/>
+                                        <rect key="frame" x="58" y="46" width="166" height="52.5"/>
                                     </variation>
                                 </label>
                             </subviews>
@@ -502,6 +510,9 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
+                                                            </variation>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -528,7 +539,8 @@
                                                             <exclude reference="qq3-X3-bpo"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                                         <mask key="subviews">
                                                             <include reference="Jst-8g-kRm"/>
                                                         </mask>
@@ -550,6 +562,9 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
+                                                            </variation>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -576,7 +591,8 @@
                                                             <exclude reference="e1U-Jw-jhu"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="49" width="240" height="48"/>
                                                         <mask key="subviews">
                                                             <include reference="Shm-rx-DX1"/>
                                                         </mask>
@@ -595,7 +611,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="105" width="364" height="33"/>
+                                                        <rect key="frame" x="18" y="105" width="204" height="49"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -851,9 +867,10 @@
                             <tableViewSection id="dZQ-GR-r5Y">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="l9b-5Z-PCT">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l9b-5Z-PCT" id="mJ3-zS-eIl">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-VK-jwu" customClass="PaddedTextField" customModule="GroundGame" customModuleProvider="target">
@@ -863,7 +880,7 @@
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="47"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="48.5"/>
                                                     </variation>
                                                 </textField>
                                             </subviews>
@@ -901,9 +918,10 @@
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="ljt-th-swg">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="48" width="240" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ljt-th-swg" id="fHA-Ee-CPf">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-XM-OWZ" customClass="PaddedTextField" customModule="GroundGame" customModuleProvider="target">
@@ -912,6 +930,9 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="48.5"/>
+                                                    </variation>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -946,9 +967,10 @@
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="jG1-XK-uDk">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="96" width="240" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jG1-XK-uDk" id="2QE-9D-iPq">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6H-F7-Evu">
@@ -956,6 +978,9 @@
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="8" width="200" height="32"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="zQI-dS-Jlw">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -969,7 +994,8 @@
                                                             <exclude reference="seb-3H-qd1"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="212" y="16" width="10" height="16"/>
                                                         <mask key="constraints">
                                                             <include reference="X4V-hT-Gh7"/>
                                                             <include reference="seb-3H-qd1"/>
@@ -993,12 +1019,12 @@
                                                     <exclude reference="zQI-dS-Jlw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="gFn-d9-eMW"/>
-                                                    <exclude reference="bBA-Xp-NeD"/>
                                                     <exclude reference="1Jz-Vh-zHe"/>
                                                     <exclude reference="QI7-Hb-aXS"/>
-                                                    <exclude reference="VVF-w2-p0a"/>
+                                                    <exclude reference="bBA-Xp-NeD"/>
+                                                    <exclude reference="gFn-d9-eMW"/>
                                                     <exclude reference="6QZ-3G-Zs3"/>
+                                                    <exclude reference="VVF-w2-p0a"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1007,12 +1033,12 @@
                                                     <include reference="zQI-dS-Jlw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="gFn-d9-eMW"/>
-                                                    <include reference="bBA-Xp-NeD"/>
                                                     <include reference="1Jz-Vh-zHe"/>
                                                     <include reference="QI7-Hb-aXS"/>
-                                                    <include reference="VVF-w2-p0a"/>
+                                                    <include reference="bBA-Xp-NeD"/>
+                                                    <include reference="gFn-d9-eMW"/>
                                                     <include reference="6QZ-3G-Zs3"/>
+                                                    <include reference="VVF-w2-p0a"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1022,9 +1048,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="qQu-cQ-3ij">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="240" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qQu-cQ-3ij" id="dfx-Rz-Jep">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How interested in Bernie?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-Wh-11c">
@@ -1032,6 +1059,9 @@
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="8" width="200" height="32"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-Rj-Dja">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1041,14 +1071,15 @@
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="JvC-yj-viU"/>
                                                             <exclude reference="H7x-6D-YZR"/>
+                                                            <exclude reference="JvC-yj-viU"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="212" y="16" width="10" height="16"/>
                                                         <mask key="constraints">
-                                                            <include reference="JvC-yj-viU"/>
                                                             <include reference="H7x-6D-YZR"/>
+                                                            <include reference="JvC-yj-viU"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -1107,8 +1138,11 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="canvasResponseCell" destination="qQu-cQ-3ij" id="JhC-AD-vgd"/>
+                        <outlet property="canvasResponseLabel" destination="g1L-Wh-11c" id="b76-Ei-f6m"/>
                         <outlet property="firstNameField" destination="EcX-VK-jwu" id="deH-8q-NBb"/>
                         <outlet property="lastNameField" destination="ThZ-XM-OWZ" id="bIv-c7-6YL"/>
+                        <outlet property="partyLabel" destination="c6H-F7-Evu" id="YLU-aB-g42"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-zO-ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1120,12 +1154,15 @@
             <objects>
                 <tableViewController id="QQf-by-csz" customClass="AddPersonPartyAffiliationTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="YXS-VA-ElF">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" id="WeP-fI-See" customClass="CheckableTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="400" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WeP-fI-See" id="dM7-fR-ETl">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="47.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Democrat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfL-b1-UlQ">
@@ -1133,6 +1170,9 @@
                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="50" y="13" width="342" height="21"/>
+                                            </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="4df-Cf-EzD">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1153,11 +1193,11 @@
                                             <exclude reference="4df-Cf-EzD"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="t9V-o9-If3"/>
                                             <exclude reference="TdQ-wt-qe2"/>
                                             <exclude reference="o4S-qt-YVz"/>
                                             <exclude reference="vbZ-wi-rfA"/>
                                             <exclude reference="w50-RH-pg7"/>
+                                            <exclude reference="t9V-o9-If3"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -1166,11 +1206,11 @@
                                             <include reference="4df-Cf-EzD"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="t9V-o9-If3"/>
                                             <include reference="TdQ-wt-qe2"/>
                                             <include reference="o4S-qt-YVz"/>
                                             <include reference="vbZ-wi-rfA"/>
                                             <include reference="w50-RH-pg7"/>
+                                            <include reference="t9V-o9-If3"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1192,12 +1232,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoL-bz-nvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8631" y="2363"/>
+            <point key="canvasLocation" x="8650.5" y="2451"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Person View Controller-->
         <scene sceneID="Yt3-sl-kJI">
             <objects>
-                <viewController id="Mpi-oq-ItK" sceneMemberID="viewController">
+                <viewController id="Mpi-oq-ItK" customClass="AddPersonViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kry-U0-wh7"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ic-tF-p7c"/>
@@ -2435,14 +2475,11 @@ useful talking points.</string>
                         <viewControllerLayoutGuide type="bottom" id="ML5-4g-dLM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XVf-OL-g0m">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcY-1O-kRo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="220"/>
-                                </variation>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-dd-2ur">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2459,14 +2496,14 @@ useful talking points.</string>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="SXb-N3-Ydx"/>
                                         <exclude reference="DUy-9J-7M0"/>
+                                        <exclude reference="SXb-N3-Ydx"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="SXb-N3-Ydx"/>
                                         <include reference="DUy-9J-7M0"/>
+                                        <exclude reference="SXb-N3-Ydx"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -2527,7 +2564,7 @@ useful talking points.</string>
             <objects>
                 <tableViewController title="Edit Person" id="MP8-Gt-kh0" customClass="AddPersonTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AHj-KA-b0e">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2536,9 +2573,10 @@ useful talking points.</string>
                             <tableViewSection id="Z5J-8h-dap">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="iRo-Eb-xtM">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iRo-Eb-xtM" id="xzs-a0-kiO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-LL-KUd" customClass="PaddedTextField" customModule="GroundGame" customModuleProvider="target">
@@ -2547,9 +2585,6 @@ useful talking points.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="47"/>
-                                                    </variation>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -2586,9 +2621,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="9zF-H5-9iw">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="48" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zF-H5-9iw" id="25e-8X-w8z">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnf-HR-3Lk" customClass="PaddedTextField" customModule="GroundGame" customModuleProvider="target">
@@ -2610,8 +2646,8 @@ useful talking points.</string>
                                                     <exclude reference="mnf-HR-3Lk"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Gdp-vo-ksP"/>
                                                     <exclude reference="0RM-I1-Jpd"/>
+                                                    <exclude reference="Gdp-vo-ksP"/>
                                                     <exclude reference="HoN-H6-cwo"/>
                                                     <exclude reference="RVV-af-Z0h"/>
                                                 </mask>
@@ -2621,8 +2657,8 @@ useful talking points.</string>
                                                     <include reference="mnf-HR-3Lk"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Gdp-vo-ksP"/>
                                                     <include reference="0RM-I1-Jpd"/>
+                                                    <include reference="Gdp-vo-ksP"/>
                                                     <include reference="HoN-H6-cwo"/>
                                                     <include reference="RVV-af-Z0h"/>
                                                 </mask>
@@ -2631,9 +2667,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="ub2-8W-ewp">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="96" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ub2-8W-ewp" id="txA-pE-3bS">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGm-Wc-gqG">
@@ -2650,14 +2687,14 @@ useful talking points.</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="ekC-gT-9d8"/>
                                                             <exclude reference="dJ9-ug-Sva"/>
+                                                            <exclude reference="ekC-gT-9d8"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="ekC-gT-9d8"/>
                                                             <include reference="dJ9-ug-Sva"/>
+                                                            <include reference="ekC-gT-9d8"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -2678,12 +2715,12 @@ useful talking points.</string>
                                                     <exclude reference="eCL-AI-ZQy"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="gYY-Yv-kxa"/>
                                                     <exclude reference="I1r-se-p8j"/>
+                                                    <exclude reference="gYY-Yv-kxa"/>
                                                     <exclude reference="iio-Bt-RXT"/>
                                                     <exclude reference="vIb-Qi-dhg"/>
-                                                    <exclude reference="cpQ-vp-LQg"/>
                                                     <exclude reference="Yu6-yn-O25"/>
+                                                    <exclude reference="cpQ-vp-LQg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -2692,21 +2729,22 @@ useful talking points.</string>
                                                     <include reference="eCL-AI-ZQy"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="gYY-Yv-kxa"/>
                                                     <include reference="I1r-se-p8j"/>
+                                                    <include reference="gYY-Yv-kxa"/>
                                                     <include reference="iio-Bt-RXT"/>
                                                     <include reference="vIb-Qi-dhg"/>
-                                                    <include reference="cpQ-vp-LQg"/>
                                                     <include reference="Yu6-yn-O25"/>
+                                                    <include reference="cpQ-vp-LQg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="51k-fB-QD2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="51k-fB-QD2" id="vV8-J1-Gdb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How interested in Bernie?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-sP-tJX">
@@ -2751,12 +2789,12 @@ useful talking points.</string>
                                                     <exclude reference="5nz-jP-sS9"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="Qt4-Li-8WX"/>
                                                     <exclude reference="Rgw-GA-l9D"/>
                                                     <exclude reference="XIq-2R-ktR"/>
-                                                    <exclude reference="Qt4-Li-8WX"/>
                                                     <exclude reference="pKa-2L-vZc"/>
-                                                    <exclude reference="iCV-56-efS"/>
                                                     <exclude reference="ZDT-9Y-TQg"/>
+                                                    <exclude reference="iCV-56-efS"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -2765,12 +2803,12 @@ useful talking points.</string>
                                                     <include reference="5nz-jP-sS9"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="Qt4-Li-8WX"/>
                                                     <include reference="Rgw-GA-l9D"/>
                                                     <include reference="XIq-2R-ktR"/>
-                                                    <include reference="Qt4-Li-8WX"/>
                                                     <include reference="pKa-2L-vZc"/>
-                                                    <include reference="iCV-56-efS"/>
                                                     <include reference="ZDT-9Y-TQg"/>
+                                                    <include reference="iCV-56-efS"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2794,17 +2832,20 @@ useful talking points.</string>
             </objects>
             <point key="canvasLocation" x="7714.5" y="3060"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Person Canvas Response Table View Controller-->
         <scene sceneID="Ygc-mf-OBe">
             <objects>
-                <tableViewController id="2Nb-wL-JZO" sceneMemberID="viewController">
+                <tableViewController id="2Nb-wL-JZO" customClass="AddPersonCanvasResponseTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="eaY-xa-APz">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="G2d-xj-0ui" customClass="CheckableTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CanvasResponseCell" id="G2d-xj-0ui" customClass="CheckableTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="400" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G2d-xj-0ui" id="Gju-lL-J4y">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strongly for Bernie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-WH-QGX">
@@ -2813,14 +2854,11 @@ useful talking points.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="50" y="12" width="342" height="22"/>
+                                                <rect key="frame" x="50" y="13" width="342" height="21"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="qvK-jD-A4U">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="14" y="14.5" width="22" height="18"/>
-                                            </variation>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -2838,11 +2876,11 @@ useful talking points.</string>
                                             <exclude reference="qvK-jD-A4U"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="HzK-9w-jVY"/>
                                             <exclude reference="V23-CJ-IBS"/>
-                                            <exclude reference="zVe-U4-hFq"/>
                                             <exclude reference="dvV-q9-udi"/>
                                             <exclude reference="xFf-G0-huq"/>
+                                            <exclude reference="zVe-U4-hFq"/>
+                                            <exclude reference="HzK-9w-jVY"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -2851,17 +2889,18 @@ useful talking points.</string>
                                             <include reference="qvK-jD-A4U"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="HzK-9w-jVY"/>
                                             <include reference="V23-CJ-IBS"/>
-                                            <include reference="zVe-U4-hFq"/>
                                             <include reference="dvV-q9-udi"/>
                                             <include reference="xFf-G0-huq"/>
+                                            <include reference="zVe-U4-hFq"/>
+                                            <include reference="HzK-9w-jVY"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.36470588240000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="checkImage" destination="qvK-jD-A4U" id="MGO-x1-eUK"/>
+                                    <outlet property="checkImage" destination="qvK-jD-A4U" id="TN2-ZL-DVt"/>
+                                    <outlet property="label" destination="bXT-WH-QGX" id="0oc-C9-14n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

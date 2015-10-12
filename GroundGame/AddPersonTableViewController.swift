@@ -8,7 +8,10 @@
 
 import UIKit
 
-class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
+class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate {
+    
+    var partySelection: PartySelection?
+    var canvasResponseOption: CanvasResponseOption?
 
     @IBOutlet weak var firstNameField: PaddedTextField! {
         didSet {
@@ -30,6 +33,10 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
         lastNameField.becomeFirstResponder()
     }
 
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var canvasResponseLabel: UILabel!
+    @IBOutlet weak var canvasResponseCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +45,6 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
         self.tableView.estimatedRowHeight = 160.0
         self.edgesForExtendedLayout = UIRectEdge.None
     }
-    
     
     // MARK: - Text Field Delegate Methods
     
@@ -79,6 +85,36 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate {
             additionalSeparatorThickness))
         additionalSeparator.backgroundColor = Color.Blue
         cell.addSubview(additionalSeparator)
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        if segue.identifier == "AddPersonPartySegue" {
+            if let partyAffiliationViewController = segue.destinationViewController as? AddPersonPartyAffiliationTableViewController {
+                partyAffiliationViewController.delegate = self
+                partyAffiliationViewController.partySelection = partySelection
+            }
+        }
+        if segue.identifier == "AddPersonCanvasResponseSegue" {
+            if let canvasResponseViewController = segue.destinationViewController as? AddPersonCanvasResponseTableViewController {
+                canvasResponseViewController.delegate = self
+                canvasResponseViewController.canvasResponseOption = canvasResponseOption
+            }
+        }
+    }
+    
+    func didSelectParty(partySelection: PartySelection) {
+        self.partySelection = partySelection
+        partyLabel.text = partySelection.title
+    }
+    
+    func didSelectCanvasResponseOption(canvasResponseOption: CanvasResponseOption) {
+        self.canvasResponseOption = canvasResponseOption
+        self.canvasResponseLabel.text = canvasResponseOption.title
+        self.canvasResponseLabel.textColor = canvasResponseOption.textColor
+        self.canvasResponseCell.backgroundColor = canvasResponseOption.backgroundColor
+    }
+    
 }

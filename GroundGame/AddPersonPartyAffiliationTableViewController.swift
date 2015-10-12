@@ -9,16 +9,31 @@
 import UIKit
 
 class AddPersonPartyAffiliationTableViewController: UITableViewController {
+    
+    let partyOptions = PartySelectionList().options
+
+    var delegate: PartySelectionDelegate?
+    var partySelection: PartySelection?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.tableFooterView = UIView()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for (index, option) in partyOptions.enumerate() {
+            if option.partyAffiliation == partySelection?.partyAffiliation {
+                let rowToSelect = NSIndexPath(forRow: index, inSection: 0)
+                tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect)
+            }
+        }
+    }
 
     // MARK: - Table view data source
-    
-    let partyOptions = PartySelectionList().options
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return partyOptions.count
@@ -27,8 +42,11 @@ class AddPersonPartyAffiliationTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PartyCell") as! CheckableTableViewCell
 
+        let partyOption = partyOptions[indexPath.row]
+
         cell.checked = false
-        cell.label.text = partyOptions[indexPath.row].title
+        
+        cell.label.text = partyOption.title
         
         return cell
     }
@@ -50,13 +68,23 @@ class AddPersonPartyAffiliationTableViewController: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! CheckableTableViewCell
         
         cell.checked = true
+        
+        let partySelection = partyOptions[indexPath.row]
+        delegate?.didSelectParty(partySelection)
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! CheckableTableViewCell
         
+        print(cell.checked)
         if cell.checked {
             cell.checked = false
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            partySelection = partyOptions[indexPath.row]
         }
     }
 
