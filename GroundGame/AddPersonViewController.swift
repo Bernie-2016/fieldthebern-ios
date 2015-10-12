@@ -18,11 +18,17 @@ class AddPersonViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Add Person"
-
         self.edgesForExtendedLayout = UIRectEdge.None
 
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        if self.person != nil { // We were passed a person, so we're editing
+            self.title = "Edit Person"
+            self.submitButton.setTitle("Save Person".uppercaseString, forState: .Normal)
+        } else { // We weren't passed a person, so we're adding
+            self.title = "Add Person"
+            self.submitButton.setTitle("Add Person".uppercaseString, forState: .Normal)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

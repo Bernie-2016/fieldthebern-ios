@@ -46,7 +46,8 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         self.tableView.estimatedRowHeight = 160.0
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        if let person = self.person {
+        if let person = self.person { // We were passed a person, so we're editing
+            
             // Set their first name
             if let firstName = person.firstName {
                 firstNameField.text = firstName
