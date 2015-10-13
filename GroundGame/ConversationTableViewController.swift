@@ -32,10 +32,10 @@ class ConversationTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         
-        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil, canvasResponse: .LeaningFor)
-        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democrat", canvasResponse: .StronglyFor)
-        
-        people = [josh, molly]
+//        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil, canvasResponse: .LeaningFor)
+//        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democrat", canvasResponse: .StronglyFor)
+//        
+//        people = [josh, molly]
         
 //        let states = States()
 //        if let pm = placemark {
@@ -76,7 +76,7 @@ class ConversationTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 20
+            return 26
         default:
             return 0
         }
@@ -96,7 +96,7 @@ class ConversationTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Who's Home?".uppercaseString
+        return "Who did you talk to?".uppercaseString
     }
 
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -105,6 +105,11 @@ class ConversationTableViewController: UITableViewController {
             header.textLabel?.textAlignment = NSTextAlignment.Center
             header.textLabel?.font = UIFont(name: "Lato-Heavy", size: 12.0)
             header.textLabel?.textColor = UIColor.whiteColor()
+
+            let separatorWidth = CGFloat(0.5)
+            let separator = UIView.init(frame: CGRect(x: 0, y: header.frame.height - separatorWidth, width: self.tableView.frame.width, height: separatorWidth))
+            separator.backgroundColor = UIColor.whiteColor()
+            header.addSubview(separator)
         }
     }
     
@@ -117,10 +122,10 @@ class ConversationTableViewController: UITableViewController {
                 // We have a person's info to display
                 let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell") as! PersonTableViewCell
                 
-                cell.checked = false
-                
                 let person = people[indexPath.row] as Person
                 
+                cell.checked = person.atHomeStatus
+
                 if let name = person.name {
                     cell.nameLabel.text = name
                 }
@@ -155,9 +160,9 @@ class ConversationTableViewController: UITableViewController {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! PersonTableViewCell
 
                 cell.checked = !cell.checked
-            } else {
-                let cell = tableView.cellForRowAtIndexPath(indexPath)
                 
+                people[indexPath.row].atHomeStatus = cell.checked
+            } else {
                 performSegueWithIdentifier("AddPersonSegue", sender: self)
             }
         default:

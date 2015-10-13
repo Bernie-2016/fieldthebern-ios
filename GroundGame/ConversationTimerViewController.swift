@@ -89,7 +89,7 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
+//            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
         }
         
     }

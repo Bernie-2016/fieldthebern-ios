@@ -46,7 +46,7 @@ class AddPersonViewController: UIViewController {
     }
     
     func cancel(sender: UINavigationItem) {
-        let alert = UIAlertController(title: "Cancel", message: "You'll lose all your progress.", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Cancel", message: "You'll lose any edits you've made.", preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancelAction = UIAlertAction(title: "Undo", style: .Cancel) { (_) in }
         let OKAction = UIAlertAction(title: "OK", style: .Destructive) { (action) in

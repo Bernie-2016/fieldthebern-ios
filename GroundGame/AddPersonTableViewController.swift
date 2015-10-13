@@ -46,6 +46,10 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         self.tableView.estimatedRowHeight = 160.0
         self.edgesForExtendedLayout = UIRectEdge.None
         
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard:")
+        gestureRecognizer.cancelsTouchesInView = false
+        self.tableView.addGestureRecognizer(gestureRecognizer)
+
         if let person = self.person { // We were passed a person, so we're editing
             
             // Set their first name
@@ -111,6 +115,14 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         }
     }
     
+    func dismissKeyboard(gesture: UITapGestureRecognizer) {
+        hideKeyboard()
+    }
+    
+    func hideKeyboard() {
+        self.tableView.superview?.endEditing(true)
+    }
+    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let additionalSeparatorThickness = CGFloat(1)
@@ -122,6 +134,10 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
         cell.addSubview(additionalSeparator)
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        hideKeyboard()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -161,6 +177,7 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     func willSubmit() -> Person? {
         self.person?.firstName = firstNameField.text
         self.person?.lastName = lastNameField.text
+        self.person?.atHomeStatus = true
 
         return self.person
     }
