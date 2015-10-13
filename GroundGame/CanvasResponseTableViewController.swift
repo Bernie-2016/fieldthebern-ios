@@ -1,5 +1,5 @@
 //
-//  AddPersonCanvasResponseTableViewController.swift
+//  CanvasResponseTableViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPersonCanvasResponseTableViewController: UITableViewController {
+class CanvasResponseTableViewController: UITableViewController {
     
     let canvasResponseOptions = CanvasResponseList().options
 

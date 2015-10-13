@@ -26,8 +26,8 @@
 		A76890341BC86AD0008F394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76890331BC86AD0008F394C /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
 		A76890381BC8732D008F394C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; settings = {ASSET_TAGS = (); }; };
-		A768903C1BC87FAD008F394C /* AddPersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903B1BC87FAD008F394C /* AddPersonTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A768903E1BC88527008F394C /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903D1BC88527008F394C /* AddPersonViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903D1BC88527008F394C /* PersonDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F21BBCA9B000DBDFEA /* TabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
@@ -75,11 +75,11 @@
 		A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F01BCB065100232234 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F31BCB0C6E00232234 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D3F6F21BCB0C6E00232234 /* Person.json */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6F51BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6F91BCC2F7100232234 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6FD1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -125,8 +125,8 @@
 		A76890331BC86AD0008F394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableHeaderView.swift; sourceTree = "<group>"; };
 		A76890371BC8732D008F394C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		A768903B1BC87FAD008F394C /* AddPersonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonTableViewController.swift; sourceTree = "<group>"; };
-		A768903D1BC88527008F394C /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsTableViewController.swift; sourceTree = "<group>"; };
+		A768903D1BC88527008F394C /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		A768C1F21BBCA9B000DBDFEA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
@@ -167,11 +167,11 @@
 		A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonDelegate.swift; sourceTree = "<group>"; };
 		A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponse.swift; sourceTree = "<group>"; };
 		A7D3F6F21BCB0C6E00232234 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
-		A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonPartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
+		A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
 		A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckableTableViewCell.swift; sourceTree = "<group>"; };
 		A7D3F6F81BCC2F7100232234 /* PartySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelection.swift; sourceTree = "<group>"; };
 		A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliation.swift; sourceTree = "<group>"; };
-		A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonCanvasResponseTableViewController.swift; sourceTree = "<group>"; };
+		A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseTableViewController.swift; sourceTree = "<group>"; };
 		A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOption.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,19 +318,19 @@
 				A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */,
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
 				A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */,
-				A7D3F6F41BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift */,
-				A768903B1BC87FAD008F394C /* AddPersonTableViewController.swift */,
-				A768903D1BC88527008F394C /* AddPersonViewController.swift */,
+				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
 				A775B9F91BC3135800510924 /* ConversationTableViewController.swift */,
 				A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */,
 				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
 				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
 				A7A579831BB211F500D8885E /* PageViewController.swift */,
+				A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */,
+				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
+				A768903D1BC88527008F394C /* PersonDetailsViewController.swift */,
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
-				A7D3F6FC1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -677,7 +677,7 @@
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
-				A768903C1BC87FAD008F394C /* AddPersonTableViewController.swift in Sources */,
+				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
@@ -687,15 +687,15 @@
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
-				A7D3F6FD1BCC36BF00232234 /* AddPersonCanvasResponseTableViewController.swift in Sources */,
+				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
-				A768903E1BC88527008F394C /* AddPersonViewController.swift in Sources */,
-				A7D3F6F51BCC2A3600232234 /* AddPersonPartyAffiliationTableViewController.swift in Sources */,
+				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
+				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,

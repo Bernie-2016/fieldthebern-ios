@@ -172,14 +172,14 @@ class ConversationTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditPersonSegue" {
-            if let addPersonViewController = segue.destinationViewController as? AddPersonViewController {
-                addPersonViewController.person = self.selectedPerson
+            if let PersonDetailsViewController = segue.destinationViewController as? PersonDetailsViewController {
+                PersonDetailsViewController.person = self.selectedPerson
                 print("selected index path \(selectedIndexPath)")
-                addPersonViewController.personIndexPath = self.selectedIndexPath
+                PersonDetailsViewController.personIndexPath = self.selectedIndexPath
             }
         }
     }
-    
+        
     @IBAction func unwind(segue: UIStoryboardSegue) {
     }
     

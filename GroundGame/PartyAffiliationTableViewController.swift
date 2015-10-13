@@ -1,5 +1,5 @@
 //
-//  AddPersonPartyAffiliationTableViewController.swift
+//  PartyAffiliationTableViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPersonPartyAffiliationTableViewController: UITableViewController {
+class PartyAffiliationTableViewController: UITableViewController {
     
     let partyOptions = PartySelectionList().options
 

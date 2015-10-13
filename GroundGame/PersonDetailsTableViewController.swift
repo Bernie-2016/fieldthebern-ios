@@ -1,5 +1,5 @@
 //
-//  AddPersonTableViewController.swift
+//  PersonDetailsTableViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/9/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
+class PersonDetailsTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
     
     var person: Person?
     var partySelection: PartySelection?
@@ -24,7 +24,7 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     
     @IBOutlet weak var lastNameField: PaddedTextField! {
         didSet {
-            lastNameField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: Text.PlaceholderAttributes)
+            lastNameField.attributedPlaceholder = NSAttributedString(string: "Last Name (optional)", attributes: Text.PlaceholderAttributes)
             lastNameField.font = Text.Font
             lastNameField.delegate = self
         }
@@ -142,14 +142,14 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        if segue.identifier == "AddPersonPartySegue" {
-            if let partyAffiliationViewController = segue.destinationViewController as? AddPersonPartyAffiliationTableViewController {
+        if segue.identifier == "PersonDetailsPartySegue" {
+            if let partyAffiliationViewController = segue.destinationViewController as? PartyAffiliationTableViewController {
                 partyAffiliationViewController.delegate = self
                 partyAffiliationViewController.partySelection = partySelection
             }
         }
-        if segue.identifier == "AddPersonCanvasResponseSegue" {
-            if let canvasResponseViewController = segue.destinationViewController as? AddPersonCanvasResponseTableViewController {
+        if segue.identifier == "CanvasResponseSegue" {
+            if let canvasResponseViewController = segue.destinationViewController as? CanvasResponseTableViewController {
                 canvasResponseViewController.delegate = self
                 canvasResponseViewController.canvasResponseOption = canvasResponseOption
             }

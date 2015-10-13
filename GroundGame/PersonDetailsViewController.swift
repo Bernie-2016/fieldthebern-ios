@@ -1,5 +1,5 @@
 //
-//  AddPersonViewController.swift
+//  PersonDetailsViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/9/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPersonViewController: UIViewController {
+class PersonDetailsViewController: UIViewController {
 
     @IBOutlet weak var submitButton: UIButton!
     
@@ -61,10 +61,10 @@ class AddPersonViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            if identifier == "AddPersonEmbedSegue" {
-                let addPersonTableViewController = segue.destinationViewController as? AddPersonTableViewController
-                addPersonTableViewController?.person = self.person
-                self.delegate = addPersonTableViewController
+            if identifier == "PersonDetailsEmbedSegue" {
+                let personDetailsTableViewController = segue.destinationViewController as? PersonDetailsTableViewController
+                personDetailsTableViewController?.person = self.person
+                self.delegate = personDetailsTableViewController
             }
             
             if identifier == "UnwindToConversationTableSegue" {
