@@ -73,8 +73,11 @@ class AddPersonViewController: UIViewController {
                     if self.editingPerson {
                         if let person = self.returnedPerson,
                             let indexPath = self.personIndexPath {
-                                print(person,indexPath)
                                 conversationTableViewController.updatePerson(person, indexPath: indexPath)
+                        }
+                    } else {
+                        if let person = self.returnedPerson {
+                            conversationTableViewController.addPerson(person)
                         }
                     }
                 }
