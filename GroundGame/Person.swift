@@ -64,8 +64,15 @@ public struct Person {
         }
     }
     
+    init() {
+        self.id = nil
+        firstName = nil
+        lastName = nil
+        partyAffiliation = .Unknown
+        canvasResponse = .Unknown
+    }
+    
     init(json: JSON) {
-        print(json)
         self.id = json["id"].string
         let attributes = json["attributes"]
         firstName = attributes["first_name"].string

@@ -1273,8 +1273,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="pressSubmitAddress:" destination="gcE-3f-de3" eventType="touchUpInside" id="ADR-dS-ZUl"/>
-                                    <action selector="submit" destination="Mpi-oq-ItK" eventType="touchUpInside" id="2Dm-ps-fba"/>
+                                    <segue destination="8Tj-fg-kbq" kind="unwind" identifier="UnwindToConversationTableSegue" unwindAction="unwind:" id="OhS-fz-J6i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1326,6 +1325,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4p-W4-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8Tj-fg-kbq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6987" y="2510.5"/>
         </scene>
@@ -2567,6 +2567,6 @@ useful talking points.</string>
         <image name="unknown-icon" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kTI-DK-Khn"/>
+        <segue reference="zz4-Sw-ZH9"/>
     </inferredMetricsTieBreakers>
 </document>

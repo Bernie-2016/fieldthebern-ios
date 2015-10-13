@@ -15,6 +15,7 @@ class ConversationTableViewController: UITableViewController {
     var placemark: CLPlacemark?
     var people: [Person] = []
     var selectedPerson: Person?
+    var selectedIndexPath: NSIndexPath?
 
 //    @IBOutlet weak var stateImage: UIImageView!
 //    @IBOutlet weak var stateNameLabel: UILabel!
@@ -62,6 +63,7 @@ class ConversationTableViewController: UITableViewController {
         if let cell = sender.superview?.superview as? UITableViewCell {
             if let indexPath = tableView.indexPathForCell(cell) {
                 selectedPerson = people[indexPath.row]
+                selectedIndexPath = indexPath
                 performSegueWithIdentifier("EditPersonSegue", sender: self)
             }
         }
@@ -165,11 +167,24 @@ class ConversationTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditPersonSegue" {
-            print("Preparing for person segue")
             if let addPersonViewController = segue.destinationViewController as? AddPersonViewController {
                 addPersonViewController.person = self.selectedPerson
+                print("selected index path \(selectedIndexPath)")
+                addPersonViewController.personIndexPath = self.selectedIndexPath
             }
         }
     }
-
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+    }
+    
+    func updatePerson(person: Person, indexPath: NSIndexPath) {
+        people[indexPath.row] = person
+        tableView.reloadData()
+    }
+    
+    func addPerson(person: Person) {
+        people.append(person)
+        tableView.reloadData()
+    }
 }

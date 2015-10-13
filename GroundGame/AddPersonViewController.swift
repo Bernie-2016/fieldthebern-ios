@@ -13,7 +13,10 @@ class AddPersonViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     var person: Person?
+    var personIndexPath: NSIndexPath?
+    var returnedPerson: Person?
     var delegate: AddOrEditPersonDelegate?
+    var editingPerson: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,10 @@ class AddPersonViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         if self.person != nil { // We were passed a person, so we're editing
+            self.editingPerson = true
+        }
+        
+        if self.editingPerson {
             self.title = "Edit Person"
             self.submitButton.setTitle("Save Person".uppercaseString, forState: .Normal)
         } else { // We weren't passed a person, so we're adding
@@ -54,26 +61,46 @@ class AddPersonViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            if(identifier == "AddPersonEmbedSegue") {
+            if identifier == "AddPersonEmbedSegue" {
                 let addPersonTableViewController = segue.destinationViewController as? AddPersonTableViewController
                 addPersonTableViewController?.person = self.person
                 self.delegate = addPersonTableViewController
             }
-        }
-    }
-
-    @IBAction func submit() {
-        if let returnedPerson = self.delegate?.willSubmit() {
-            if let firstName = returnedPerson.firstName,
-            let lastName = returnedPerson.lastName {
-                if firstName != ""
-                    && returnedPerson.partyAffiliation != .Unknown
-                    && returnedPerson.canvasResponse != .Unknown {
-                        print("We have everything")
-                } else {
-                    print("We're missing details")
+            
+            if identifier == "UnwindToConversationTableSegue" {
+                if let conversationTableViewController = segue.destinationViewController as? ConversationTableViewController {
+                    print(self.editingPerson, self.returnedPerson, self.personIndexPath)
+                    if self.editingPerson {
+                        if let person = self.returnedPerson,
+                            let indexPath = self.personIndexPath {
+                                print(person,indexPath)
+                                conversationTableViewController.updatePerson(person, indexPath: indexPath)
+                        }
+                    }
                 }
             }
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "UnwindToConversationTableSegue" {
+            if let returnedPerson = self.delegate?.willSubmit() {
+                self.returnedPerson = returnedPerson
+                if let firstName = returnedPerson.firstName,
+                    let lastName = returnedPerson.lastName {
+                        if firstName != ""
+                            && returnedPerson.partyAffiliation != .Unknown
+                            && returnedPerson.canvasResponse != .Unknown {
+                                // We have all the details we need
+                                return true
+                        } else {
+                            print("We're missing details")
+                            return false
+                        }
+                }
+            }
+        }
+        
+        return true
     }
 }

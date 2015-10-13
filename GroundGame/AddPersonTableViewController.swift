@@ -63,6 +63,9 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
             // Select their canvas response
             let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
             self.didSelectCanvasResponseOption(personCanvasResponse)
+        } else {
+            // We have no person, but we need a new one to save changes to
+            self.person = Person()
         }
     }
     
@@ -80,6 +83,18 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
                 let indexPath = tableView.indexPathForCell(cell) {
                     tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             }
+        default:
+            break
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        // We need to update the person's name
+        switch textField {
+        case firstNameField:
+            self.person?.firstName = firstNameField.text
+        case lastNameField:
+            self.person?.lastName = lastNameField.text
         default:
             break
         }
@@ -110,7 +125,7 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(segue.identifier)
+
         if segue.identifier == "AddPersonPartySegue" {
             if let partyAffiliationViewController = segue.destinationViewController as? AddPersonPartyAffiliationTableViewController {
                 partyAffiliationViewController.delegate = self
@@ -126,11 +141,17 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     }
     
     func didSelectParty(partySelection: PartySelection) {
+        // Update the person we're returning
+        self.person?.partyAffiliation = partySelection.partyAffiliation
+        
         self.partySelection = partySelection
         partyLabel.text = partySelection.title
     }
     
     func didSelectCanvasResponseOption(canvasResponseOption: CanvasResponseOption) {
+        // Update the person we're returning
+        self.person?.canvasResponse = canvasResponseOption.canvasResponse
+        
         self.canvasResponseOption = canvasResponseOption
         self.canvasResponseLabel.text = canvasResponseOption.title
         self.canvasResponseLabel.textColor = canvasResponseOption.textColor
@@ -138,7 +159,9 @@ class AddPersonTableViewController: UITableViewController, UITextFieldDelegate, 
     }
     
     func willSubmit() -> Person? {
-        print("Hit will submit")
+        self.person?.firstName = firstNameField.text
+        self.person?.lastName = lastNameField.text
+
         return self.person
     }
     
