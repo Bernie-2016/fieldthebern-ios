@@ -16,6 +16,12 @@
 		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
+		A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A742797E1BCED6030020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424E1BCD942900D62868 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
@@ -123,6 +129,9 @@
 		A73D663E1BBEE87400127245 /* AddressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
 		A73D66401BBF36A900127245 /* AddressPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPinView.swift; sourceTree = "<group>"; };
 		A73D66421BBF373600127245 /* AddressPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPointAnnotation.swift; sourceTree = "<group>"; };
+		A74279791BCED5BB0020EE29 /* AddressJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressJSON.swift; sourceTree = "<group>"; };
+		A742797B1BCED5DB0020EE29 /* VisitJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSON.swift; sourceTree = "<group>"; };
+		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -289,7 +298,10 @@
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
+				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
+				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -700,6 +712,7 @@
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
+				A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
 				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
@@ -714,6 +727,7 @@
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
 				A7D3F6F91BCC2F7100232234 /* PartySelection.swift in Sources */,
+				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,
 				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,
 				A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
@@ -726,6 +740,7 @@
 				A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */,
 				A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */,
 				A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */,
+				A742797E1BCED6030020EE29 /* PersonJSON.swift in Sources */,
 				A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,
 				A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */,
@@ -738,6 +753,7 @@
 			files = (
 				A7D3F6EE1BCB064600232234 /* HTTP.swift in Sources */,
 				A7D3F6F01BCB065100232234 /* Session.swift in Sources */,
+				A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */,
 				A7D3F6EA1BCB062100232234 /* NSDate.swift in Sources */,
 				A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */,
 				A7D3F6E81BCB05FF00232234 /* AddAddressNavigationController.swift in Sources */,
@@ -747,6 +763,7 @@
 				A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */,
 				A7D3F6EB1BCB062A00232234 /* MKMapView.swift in Sources */,
 				A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */,
+				A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */,
 				A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */,
 				A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */,
 				A7D3F6ED1BCB064300232234 /* API.swift in Sources */,
@@ -756,6 +773,7 @@
 				A74842501BCD945500D62868 /* Visit.swift in Sources */,
 				A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */,
 				A7D3F6E91BCB060E00232234 /* UIImage+Color.swift in Sources */,
+				A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */,
 				A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */,
 				A7D3F6E61BCB05CA00232234 /* Address.swift in Sources */,
 				A748424C1BCD926000D62868 /* VisitService.swift in Sources */,

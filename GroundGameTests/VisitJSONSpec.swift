@@ -27,7 +27,7 @@ class VistJSONSpec: QuickSpec {
                 beforeEach {
                     person = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
                     address = Address(latitude: 32.752768, longitude: -117.116992, street1: "4166 Wilson Ave", street2: "1", city: "San Diego", stateCode: "CA", zipCode: "92104", result: .NotHome)
-                    json = VisitJSON(duration: 1, address: address, people: [person]).json()
+                    json = VisitJSON(duration: 1, address: address, people: [person]).json
                 }
                 
                 it("has the right number of included") {
