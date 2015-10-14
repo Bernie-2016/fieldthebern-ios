@@ -46,6 +46,25 @@ public struct Person {
         }
     }
     
+    var partyAffiliationString: String {
+        get {
+            switch partyAffiliation {
+            case .Unknown:
+                return "Unknown"
+            case .Undeclared:
+                return "Undeclared"
+            case .Republican:
+                return "Republican"
+            case .Independent:
+                return "Independent"
+            case .Democrat:
+                return "Democrat"
+            case .Other:
+                return "Other"
+            }
+        }
+    }
+    
     var partyAffiliationImage: UIImage? {
         get {
             switch partyAffiliation {

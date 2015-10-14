@@ -17,12 +17,13 @@ class HTTP {
     
     private let session: Session = Session.sharedInstance
         
-    func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, callback: HTTPCallback) {
+    func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
         session.reauthorize { (success) -> Void in
+            print(success)
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
                     let headers = ["Authorization": "Bearer \(accessToken)"]
-                    Alamofire.request(method, url, parameters: parameters, headers: headers)
+                    Alamofire.request(method, url, parameters: parameters, encoding: encoding, headers: headers)
                         .validate()
                         .responseJSON { response in
                             callback(response)

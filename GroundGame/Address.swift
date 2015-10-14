@@ -82,6 +82,24 @@ struct Address {
             }
         }
     }
+    
+    var latitudeFloat: Float? {
+        get {
+            if let latitude = latitude {
+                return Float(latitude)
+            }
+            return nil
+        }
+    }
+
+    var longitudeFloat: Float? {
+        get {
+            if let longitude = longitude {
+                return Float(longitude)
+            }
+            return nil
+        }
+    }
 
     init(id: String?, addressJSON: JSON) {
         self.id = id
@@ -115,5 +133,19 @@ struct Address {
         } else {
             coordinate = nil
         }
+    }
+    
+    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, street1: String, street2: String, city: String, stateCode: String, zipCode: String, result: VisitResult) {
+        self.id = nil
+        self.latitude = latitude
+        self.longitude = longitude
+        self.street1 = street1
+        self.street2 = street2
+        self.city = city
+        self.stateCode = stateCode
+        self.zipCode = zipCode
+        self.result = result
+
+        self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
     }
 }

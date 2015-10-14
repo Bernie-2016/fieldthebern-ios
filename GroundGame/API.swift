@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class API {
     private let http = HTTP()
@@ -24,17 +25,21 @@ class API {
         }
     }
     
-    func post(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool) -> Void) {
+    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool) -> Void) {
 
         let url = baseURL + "/" + endpoint
         
+        print(url)
+        
         if let parameters = parameters {
-            http.authorizedRequest(.POST, url, parameters: ["data": ["attributes": parameters]]) { response in
+            http.authorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {
                 case .Success:
+                    print("success")
                     callback(response.data, true)
                 case .Failure(let error):
                     callback(nil, false)
+                    print(error)
                 }
             }
         }

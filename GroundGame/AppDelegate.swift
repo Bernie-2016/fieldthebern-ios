@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+    
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let session = Session.sharedInstance
 
         session.attemptAuthorizationFromKeychain { (success) -> Void in
-            
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
             if success {

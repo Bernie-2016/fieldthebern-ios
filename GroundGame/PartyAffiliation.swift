@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum PartyAffiliation {
     case Republican, Democrat, Independent, Other, Undeclared, Unknown

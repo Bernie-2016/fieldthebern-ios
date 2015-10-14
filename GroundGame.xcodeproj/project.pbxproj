@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
+		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
+		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
+		A748424E1BCD942900D62868 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
+		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
+		A74842501BCD945500D62868 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; settings = {ASSET_TAGS = (); }; };
 		A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33D51BCAFE4400191E3C /* PersonSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; settings = {ASSET_TAGS = (); }; };
 		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
@@ -81,6 +87,8 @@
 		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
+		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
+		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; settings = {ASSET_TAGS = (); }; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -108,6 +116,7 @@
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSONSpec.swift; sourceTree = "<group>"; };
 		A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelectionDelegate.swift; sourceTree = "<group>"; };
 		A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOptionSelectionDelegate.swift; sourceTree = "<group>"; };
 		A73D663C1BBEE44000127245 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -173,6 +182,8 @@
 		A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliation.swift; sourceTree = "<group>"; };
 		A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseTableViewController.swift; sourceTree = "<group>"; };
 		A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOption.swift; sourceTree = "<group>"; };
+		A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitService.swift; sourceTree = "<group>"; };
+		A7DAACC21BCD6FC200F0BDBC /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD56034328EFAB3F616C8A5 /* Pods-GroundGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F33D51BCAFE4400191E3C /* PersonSpec.swift */,
+				A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -276,6 +288,8 @@
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
+				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -707,10 +721,12 @@
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
 				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
+				A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */,
 				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
 				A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */,
 				A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */,
 				A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */,
+				A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,
 				A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */,
 			);
@@ -723,20 +739,26 @@
 				A7D3F6EE1BCB064600232234 /* HTTP.swift in Sources */,
 				A7D3F6F01BCB065100232234 /* Session.swift in Sources */,
 				A7D3F6EA1BCB062100232234 /* NSDate.swift in Sources */,
+				A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */,
 				A7D3F6E81BCB05FF00232234 /* AddAddressNavigationController.swift in Sources */,
 				A7D3F6E51BCB05C700232234 /* AddressPointAnnotation.swift in Sources */,
+				A748424E1BCD942900D62868 /* PartySelection.swift in Sources */,
 				A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */,
+				A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */,
 				A7D3F6EB1BCB062A00232234 /* MKMapView.swift in Sources */,
 				A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */,
+				A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */,
 				A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */,
 				A7D3F6ED1BCB064300232234 /* API.swift in Sources */,
 				A7D3F6E21BCB04A400232234 /* Person.swift in Sources */,
 				A7D3F6E41BCB05B900232234 /* CanvasViewController.swift in Sources */,
 				A7D3F6EC1BCB063700232234 /* AddressService.swift in Sources */,
+				A74842501BCD945500D62868 /* Visit.swift in Sources */,
 				A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */,
 				A7D3F6E91BCB060E00232234 /* UIImage+Color.swift in Sources */,
 				A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */,
 				A7D3F6E61BCB05CA00232234 /* Address.swift in Sources */,
+				A748424C1BCD926000D62868 /* VisitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
