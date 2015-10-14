@@ -33,6 +33,7 @@ struct VisitJSON {
             }
         }
         
+        
         let parameters: JSON = [
             "data": [
                 "attributes": [ "duration_sec": duration ]

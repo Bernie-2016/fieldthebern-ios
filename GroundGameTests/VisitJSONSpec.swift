@@ -15,19 +15,19 @@ import SwiftyJSON
 class VistJSONSpec: QuickSpec {
     override func spec() {
         
-        var person: Person!
+        var person1: Person!
+        var person2: Person!
         var address: Address!
         var json: JSON!
         
-        
         describe("VisitJSON") {
 
-            describe("returns the correct JSON") {
-
+            describe("with just one person") {
+                
                 beforeEach {
-                    person = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
+                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
                     address = Address(latitude: 32.752768, longitude: -117.116992, street1: "4166 Wilson Ave", street2: "1", city: "San Diego", stateCode: "CA", zipCode: "92104", result: .NotHome)
-                    json = VisitJSON(duration: 1, address: address, people: [person]).json
+                    json = VisitJSON(duration: 1, address: address, people: [person1]).json
                 }
                 
                 it("has the right number of included") {
@@ -48,11 +48,26 @@ class VistJSONSpec: QuickSpec {
                 
                 it("has the right attributes for the person") {
                     let personAttributes = json["included"][0]["attributes"]
-
+                    
                     expect(personAttributes["first_name"]).to(equal("Josh"))
                     expect(personAttributes["last_name"]).to(equal("Smith"))
                     expect(personAttributes["party_affiliation"]).to(equal("Democrat"))
                     expect(personAttributes["canvas_response"]).to(equal("Leaning for"))
+                }
+            }
+            
+            
+            describe("with more than one person") {
+                
+                beforeEach {
+                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
+                    person2 = Person(firstName: "Molly", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
+                    address = Address(latitude: 32.752768, longitude: -117.116992, street1: "4166 Wilson Ave", street2: "1", city: "San Diego", stateCode: "CA", zipCode: "92104", result: .NotHome)
+                    json = VisitJSON(duration: 1, address: address, people: [person1, person2]).json
+                }
+                
+                it("has the right number of included") {
+                    expect(json["included"].count).to(equal(3))
                 }
             }
         }
