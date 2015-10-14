@@ -10,6 +10,9 @@ import Foundation
 
 struct PersonJSON {
     
+    let attributes: [String: AnyObject]
+    let include: [String: AnyObject]
+    
     let id: String?
     let firstName: String?
     let lastName: String?
@@ -36,22 +39,18 @@ struct PersonJSON {
         case .Unknown:
             canvasResponseJSONString = "Unknown"
         }
-    }
-    
-    func attributes() -> [String: AnyObject] {
-        return [
+        
+        attributes = [
             "first_name": firstName ?? NSNull(),
             "last_name": lastName ?? NSNull(),
             "party_affiliation": partyAffiliationString,
             "canvas_response": canvasResponseJSONString
         ]
-    }
-    
-    func include() -> [String: AnyObject] {
-        return [
+        
+        include = [
             "type": "people",
             "id": id ?? NSNull(),
-            "attributes": self.attributes()
+            "attributes": self.attributes
         ]
     }
 }

@@ -22,13 +22,13 @@ struct VisitJSON {
         self.address = address
         self.people = people
         
-        let addressDictionary: [String: AnyObject] = AddressJSON(address: address).include()
+        let addressDictionary: [String: AnyObject] = AddressJSON(address: address).include
         let addressDictionaries: [[String: AnyObject]] = [addressDictionary]
         
         var peopleDictionaries: [[String: AnyObject]] = []
         if let people = people {
             for person in people {
-                let personDictionary = PersonJSON(person: person).include()
+                let personDictionary = PersonJSON(person: person).include
                 peopleDictionaries.append(personDictionary)
             }
         }

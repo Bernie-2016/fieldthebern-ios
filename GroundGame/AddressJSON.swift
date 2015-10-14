@@ -10,6 +10,9 @@ import Foundation
 
 struct AddressJSON {
     
+    let attributes: [String: AnyObject]
+    let include: [String: AnyObject]
+    
     let id: AnyObject
     let latitude: AnyObject
     let longitude: AnyObject
@@ -28,10 +31,8 @@ struct AddressJSON {
         city = address.city ?? NSNull()
         stateCode = address.stateCode ?? NSNull()
         zipCode = address.zipCode ?? NSNull()
-    }
-    
-    func attributes() -> [String: AnyObject] {
-        return [
+        
+        attributes = [
             "latitude": latitude,
             "longitude": longitude,
             "street_1": street1,
@@ -40,13 +41,11 @@ struct AddressJSON {
             "state_code": stateCode,
             "zip_code": zipCode
         ]
-    }
-    
-    func include() -> [String: AnyObject] {
-        return [
+
+        include = [
             "type": "addresses",
             "id": id,
-            "attributes": self.attributes()
+            "attributes": self.attributes
         ]
     }
 }
