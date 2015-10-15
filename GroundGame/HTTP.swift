@@ -18,8 +18,9 @@ class HTTP {
     private let session: Session = Session.sharedInstance
         
     func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
+
         session.reauthorize { (success) -> Void in
-            print(success)
+
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
                     let headers = ["Authorization": "Bearer \(accessToken)"]

@@ -15,6 +15,8 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
 
     var location: CLLocation?
     var placemark: CLPlacemark?
+    var people: [Person]?
+    var address: Address?
     
     @IBOutlet weak var timerLabel: UILabel!
 
@@ -129,14 +131,22 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
         }
     }
     
+    var conversationTableViewController: ConversationTableViewController?
+
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if(identifier == "ConversationTableEmbedSegue") {
-                let conversationTableViewController = segue.destinationViewController as? ConversationTableViewController
+                conversationTableViewController = segue.destinationViewController as? ConversationTableViewController
                 conversationTableViewController?.location = self.location
                 conversationTableViewController?.placemark = self.placemark
+                conversationTableViewController?.people = self.people ?? []
+                conversationTableViewController?.address = self.address
             }
         }
     }
     
+    @IBAction func pressSubmitButton(sender: UIButton) {
+        conversationTableViewController?.submitForm()
+    }
 }

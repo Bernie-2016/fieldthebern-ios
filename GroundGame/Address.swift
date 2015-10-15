@@ -12,7 +12,7 @@ import SwiftyJSON
 import UIKit
 
 enum VisitResult {
-    case NotVisited, NotHome, NotInterested, NotSure, Interested
+    case NotVisited, NotHome, Unknown, StronglyAgainst, LeaningAgainst, Undecided, LeaningFor, StronglyFor
 }
 
 struct PinImage {
@@ -40,7 +40,8 @@ struct Address {
     var title: String {
         get {
             if let street1 = street1, street2 = street2 {
-                return street1 + ", " + street2
+                let string = street1 + " " + street2
+                return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             } else if let street1 = street1 {
                 return street1
             } else {
@@ -53,15 +54,21 @@ struct Address {
         get {
             switch result {
             case .NotVisited:
-                return "Not visited yet"
+                return "Not yet visited"
             case .NotHome:
                 return "No one was home"
-            case .NotInterested:
-                return "Not interested"
-            case .NotSure:
-                return "Not sure"
-            case .Interested:
-                return "Feelin' the Bern"
+            case .Unknown:
+                return "Not yet visited"
+            case .LeaningAgainst:
+                return "Leaning against Bernie"
+            case .LeaningFor:
+                return "Leaning for Bernie"
+            case .StronglyAgainst:
+                return "Strongly against Bernie"
+            case .StronglyFor:
+                return "Strongly for Bernie"
+            case .Undecided:
+                return "Undecided about Bernie"
             }
         }
     }
@@ -71,14 +78,20 @@ struct Address {
             switch result {
             case .NotVisited:
                 return PinImage.Gray
-            case .NotSure:
-                return PinImage.White
-            case .NotInterested:
-                return PinImage.Red
-            case .Interested:
-                return PinImage.Blue
-            default:
+            case .NotHome:
                 return PinImage.Gray
+            case .Unknown:
+                return PinImage.Gray
+            case .LeaningAgainst:
+                return PinImage.Pink
+            case .LeaningFor:
+                return PinImage.LightBlue
+            case .StronglyAgainst:
+                return PinImage.Red
+            case .StronglyFor:
+                return PinImage.Blue
+            case .Undecided:
+                return PinImage.White
             }
         }
     }
@@ -111,18 +124,24 @@ struct Address {
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
         
-        if let resultString = addressJSON["result"].string {
+        if let resultString = addressJSON["best_canvas_response"].string {
             switch resultString {
             case "not_visited":
                 result = .NotVisited
             case "not_home":
                 result = .NotHome
-            case "not_interested":
-                result = .NotInterested
-            case "interested":
-                result = .Interested
-            case "unsure":
-                result = .NotSure
+            case "unknown":
+                result = .Unknown
+            case "strongly_for":
+                result = .StronglyFor
+            case "leaning_for":
+                result = .LeaningFor
+            case "undecided":
+                result = .Undecided
+            case "leaning_against":
+                result = .LeaningAgainst
+            case "strongly_against":
+                result = .StronglyAgainst
             default:
                 result = .NotVisited
             }
@@ -135,7 +154,7 @@ struct Address {
         }
     }
     
-    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, street1: String, street2: String, city: String, stateCode: String, zipCode: String, result: VisitResult) {
+    init(latitude: CLLocationDegrees?, longitude: CLLocationDegrees?, street1: String?, street2: String?, city: String?, stateCode: String?, zipCode: String?, result: VisitResult) {
         self.id = nil
         self.latitude = latitude
         self.longitude = longitude
@@ -146,6 +165,10 @@ struct Address {
         self.zipCode = zipCode
         self.result = result
 
-        self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
+        if let latitude = latitude, let longitude = longitude {
+            self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
+        } else {
+            coordinate = nil
+        }
     }
 }

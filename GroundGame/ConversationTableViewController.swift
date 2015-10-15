@@ -13,6 +13,7 @@ class ConversationTableViewController: UITableViewController {
     
     var location: CLLocation?
     var placemark: CLPlacemark?
+    var address: Address?
     var people: [Person] = []
     var selectedPerson: Person?
     var selectedIndexPath: NSIndexPath?
@@ -191,5 +192,13 @@ class ConversationTableViewController: UITableViewController {
     func addPerson(person: Person) {
         people.append(person)
         tableView.reloadData()
+    }
+    
+    func submitForm() {
+        if let address = self.address {
+            VisitService().postVisit(1, address: address, people: people)
+            NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 }

@@ -13,14 +13,14 @@ class API {
     private let http = HTTP()
     private let baseURL = APIURL.url
     
-    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool) -> Void) {
+    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, NSError?, NSHTTPURLResponse?) -> Void) {
         let url = baseURL + "/" + endpoint
         http.authorizedRequest(.GET, url, parameters: parameters) { response in
             switch response.result {
             case .Success:
-                callback(response.data, true)
+                callback(response.data, true, nil, response.response)
             case .Failure(let error):
-                callback(nil, false)
+                callback(nil, false, error, response.response)
             }
         }
     }
@@ -28,9 +28,7 @@ class API {
     func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool) -> Void) {
 
         let url = baseURL + "/" + endpoint
-        
-        print(url)
-        
+                
         if let parameters = parameters {
             http.authorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {

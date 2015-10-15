@@ -13,6 +13,9 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
     
     var location: CLLocation?
     var placemark: CLPlacemark?
+    var address: Address?
+    var people: [Person]?
+    var delegate: SubmitButtonDelegate?
     
     let geocoder = CLGeocoder()
     
@@ -67,31 +70,60 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     func submitForm() {
+        print("called submit form")
         if (streetAddress.text != "") {
-            let addressString = "\(streetAddress.text) \(apartmentNumber.text) \(self.placemark?.locality) \(self.placemark?.administrativeArea) \(self.placemark?.postalCode)"
-            geocoder.geocodeAddressString(addressString) { (placemarks, error) in
-                if let placemarksArray = placemarks {
 
-                    if placemarksArray.count > 0 {
-                        let pm = placemarks![0] as CLPlacemark
-                        
-                        if let streetName = pm.thoroughfare {
-                            if streetName != "" {
-                                self.performSegueWithIdentifier("SubmitAddress", sender: self)
-                            }
+            if let location = self.location, let placemark = self.placemark {
+                
+                delegate?.isSubmitting()
+                
+                let address = Address(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, street1: streetAddress.text, street2: apartmentNumber.text, city: placemark.locality, stateCode: placemark.administrativeArea, zipCode: placemark.postalCode, result: .NotVisited)
+
+                AddressService().getAddress(address, callback: { (returnedAddress, people, success, error) -> Void in
+
+                    if success {
+                        if returnedAddress != nil {
+                            self.people = people
+                            self.address = returnedAddress
+                        } else {
+                            self.address = address
                         }
+                        print("transitioning")
+                        self.performSegueWithIdentifier("SubmitAddress", sender: self)
+                    } else {
+                        print("error")
+                        self.delegate?.finishedSubmittingWithError("That address looks incomplete. Check for errors and try again.")
                     }
-                }
+                })
             }
+            
+//            let addressString = "\(streetAddress.text) \(apartmentNumber.text) \(self.placemark?.locality) \(self.placemark?.administrativeArea) \(self.placemark?.postalCode)"
+//            geocoder.geocodeAddressString(addressString) { (placemarks, error) in
+//                if let placemarksArray = placemarks {
+//
+//                    if placemarksArray.count > 0 {
+//                        let pm = placemarks![0] as CLPlacemark
+//                        
+//                        if let streetName = pm.thoroughfare {
+//                            if streetName != "" {
+//                                self.placemark = pm
+//                                self.performSegueWithIdentifier("SubmitAddress", sender: self)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
     }
-    
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if(identifier == "SubmitAddress") {
                 let conversationTimerViewController = segue.destinationViewController as? ConversationTimerViewController
                 conversationTimerViewController?.location = self.location
                 conversationTimerViewController?.placemark = self.placemark
+                conversationTimerViewController?.people = self.people
+                conversationTimerViewController?.address = self.address
             }
         }
     }

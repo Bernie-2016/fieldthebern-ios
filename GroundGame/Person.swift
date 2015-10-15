@@ -99,7 +99,22 @@ public struct Person {
         lastName = attributes["last_name"].string
         
         if let partyAffiliationString = attributes["party_affiliation"].string {
-            setPartyAffiliation(partyAffiliationString)
+            switch partyAffiliationString {
+            case "democrat_affiliation":
+                partyAffiliation = .Democrat
+            case "republican_affiliation":
+                partyAffiliation = .Republican
+            case "independent_affiliation":
+                partyAffiliation = .Independent
+            case "other_affiliation":
+                partyAffiliation = .Other
+            case "undeclared_affiliation":
+                partyAffiliation = .Undeclared
+            case "unknown_affiliation":
+                partyAffiliation = .Unknown
+            default:
+                partyAffiliation = .Unknown
+            }
         }
         
         if let response = attributes["canvas_response"].string {

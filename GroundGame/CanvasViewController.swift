@@ -190,6 +190,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didZoomMap:")
         tapRecognizer.delegate = self
         self.mapView.addGestureRecognizer(tapRecognizer)
+        
+        // Susbcribe to should reload notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldReloadMap:", name: "shouldReloadMap", object: nil)
+    }
+    
+    func shouldReloadMap(sender: AnyObject) {
+        fetchAddresses()
     }
     
     

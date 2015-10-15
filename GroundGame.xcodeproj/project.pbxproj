@@ -22,6 +22,7 @@
 		A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424E1BCD942900D62868 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
@@ -132,6 +133,7 @@
 		A74279791BCED5BB0020EE29 /* AddressJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressJSON.swift; sourceTree = "<group>"; };
 		A742797B1BCED5DB0020EE29 /* VisitJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSON.swift; sourceTree = "<group>"; };
 		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
+		A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonDelegate.swift; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
 				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
 				A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */,
+				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
 				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
+				A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */,
 				A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */,
 				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
 				A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */,
