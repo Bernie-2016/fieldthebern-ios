@@ -23,6 +23,8 @@
 		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424E1BCD942900D62868 /* PartySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F81BCC2F7100232234 /* PartySelection.swift */; settings = {ASSET_TAGS = (); }; };
@@ -68,6 +70,7 @@
 		A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A579801BB2105E00D8885E /* Lato-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; settings = {ASSET_TAGS = (); }; };
 		A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -134,6 +137,8 @@
 		A742797B1BCED5DB0020EE29 /* VisitJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSON.swift; sourceTree = "<group>"; };
 		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
 		A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonDelegate.swift; sourceTree = "<group>"; };
+		A74279841BD016190020EE29 /* ScoreContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreContainerViewController.swift; sourceTree = "<group>"; };
+		A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 		A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Heavy.ttf"; path = "../../../Downloads/lato/Lato-Heavy.ttf"; sourceTree = "<group>"; };
 		A7A579801BB2105E00D8885E /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Medium.ttf"; path = "../../../Downloads/lato/Lato-Medium.ttf"; sourceTree = "<group>"; };
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOneHomeTableViewCell.swift; sourceTree = "<group>"; };
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 				A76890311BC8680E008F394C /* PersonTableViewCell.swift */,
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
+				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -360,6 +367,8 @@
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
+				A74279841BD016190020EE29 /* ScoreContainerViewController.swift */,
+				A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -697,6 +706,7 @@
 			files = (
 				A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */,
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
+				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
 				A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
@@ -710,6 +720,7 @@
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
+				A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */,
 				A775B9F81BC2F8A600510924 /* ConversationTimerViewController.swift in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
@@ -727,6 +738,7 @@
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
+				A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
 				A7D3F6F91BCC2F7100232234 /* PartySelection.swift in Sources */,

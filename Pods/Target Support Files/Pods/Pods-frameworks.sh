@@ -57,7 +57,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Dollar.framework'
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
+  install_framework 'Pods/FLAnimatedImage.framework'
   install_framework 'Pods/KeychainAccess.framework'
+  install_framework 'Pods/Spring.framework'
   install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/p2_OAuth2.framework'
 fi
@@ -67,7 +69,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Dollar.framework'
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
+  install_framework 'Pods/FLAnimatedImage.framework'
   install_framework 'Pods/KeychainAccess.framework'
+  install_framework 'Pods/Spring.framework'
   install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/p2_OAuth2.framework'
 fi

@@ -18,6 +18,7 @@ public struct Person {
     var partyAffiliation: PartyAffiliation = .Unknown
     var canvasResponse: CanvasResponse = .Unknown
     var atHomeStatus: Bool = false
+    var askedToLeave: Bool = true
     
     var name: String? {
         get {

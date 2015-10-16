@@ -17,6 +17,7 @@ class ConversationTableViewController: UITableViewController {
     var people: [Person] = []
     var selectedPerson: Person?
     var selectedIndexPath: NSIndexPath?
+    var peopleAreHome: Bool = false
 
 //    @IBOutlet weak var stateImage: UIImageView!
 //    @IBOutlet weak var stateNameLabel: UILabel!
@@ -86,7 +87,10 @@ class ConversationTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return people.count + 1
+            var extraRows = 1
+            if !peopleAreHome { extraRows++ } // Show the extra row for saying someone's not home
+            
+            return people.count + extraRows
         default:
             return 1
         }
@@ -126,7 +130,7 @@ class ConversationTableViewController: UITableViewController {
                 let person = people[indexPath.row] as Person
                 
                 cell.checked = person.atHomeStatus
-
+                
                 if let name = person.name {
                     cell.nameLabel.text = name
                 }
@@ -134,13 +138,19 @@ class ConversationTableViewController: UITableViewController {
                 cell.partyAffiliationImage.image = person.partyAffiliationImage
                 
                 return cell
-            } else {
+            } else if indexPath.row == people.count {
                 // Show the "Add Person" cell
                 let cell = tableView.dequeueReusableCellWithIdentifier("AddPerson")!
                 
                 return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("NoOneHomeCell") as! NoOneHomeTableViewCell
+                
+                cell.noOneHomeSwitch.setOn(!peopleAreHome, animated: false)
+                
+                return cell
             }
-                        
+            
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("AddPerson")!
             
@@ -163,7 +173,10 @@ class ConversationTableViewController: UITableViewController {
                 cell.checked = !cell.checked
                 
                 people[indexPath.row].atHomeStatus = cell.checked
-            } else {
+                
+                updatePeopleAtHome()
+                self.tableView.reloadData()
+            } else if indexPath.row == people.count {
                 performSegueWithIdentifier("AddPersonSegue", sender: self)
             }
         default:
@@ -186,19 +199,31 @@ class ConversationTableViewController: UITableViewController {
     
     func updatePerson(person: Person, indexPath: NSIndexPath) {
         people[indexPath.row] = person
+        updatePeopleAtHome()
         tableView.reloadData()
     }
     
     func addPerson(person: Person) {
         people.append(person)
+        updatePeopleAtHome()
         tableView.reloadData()
+    }
+    
+    func updatePeopleAtHome() {
+        var updatedStatus = false
+        for person in people {
+            if person.atHomeStatus {
+                updatedStatus = true
+            }
+        }
+        peopleAreHome = updatedStatus
     }
     
     func submitForm() {
         if let address = self.address {
             VisitService().postVisit(1, address: address, people: people)
             NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
         }
     }
 }

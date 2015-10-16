@@ -30,6 +30,8 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         }
     }
     
+    @IBOutlet weak var askedToLeaveSwitch: UISwitch!
+    
     func backToNameField(sender: UIBarButtonItem) {
         lastNameField.becomeFirstResponder()
     }
@@ -178,6 +180,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         self.person?.firstName = firstNameField.text
         self.person?.lastName = lastNameField.text
         self.person?.atHomeStatus = true
+        self.person?.askedToLeave = askedToLeaveSwitch.on
 
         return self.person
     }

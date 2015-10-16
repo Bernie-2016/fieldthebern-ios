@@ -162,7 +162,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         // Set up our location manager
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
             

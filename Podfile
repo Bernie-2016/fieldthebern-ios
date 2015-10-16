@@ -7,6 +7,8 @@ pod 'FBSDKCoreKit', '4.1'
 pod 'FBSDKLoginKit', '4.1'
 pod 'KeychainAccess'
 pod 'Dollar'
+pod 'FLAnimatedImage', '~> 1.0'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 
 def testing_pods
     pod 'Quick'
