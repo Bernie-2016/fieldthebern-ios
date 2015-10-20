@@ -16,6 +16,24 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
     var address: Address?
     var people: [Person]?
     var delegate: SubmitButtonDelegate?
+
+    var addressString: String {
+        get {
+            let street = streetAddress.text
+            let number = apartmentNumber.text
+            
+            switch (street, number) {
+            case let (street?, number?):
+                return street + " " + number
+            case let (street?, nil):
+                return street
+            case let (nil, number?):
+                return number
+            case (nil, nil):
+                return ""
+            }
+        }
+    }
     
     let geocoder = CLGeocoder()
     

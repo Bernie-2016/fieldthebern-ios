@@ -10,6 +10,8 @@ import UIKit
 
 class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate {
 
+    var addAddressTableViewController: AddAddressTableViewController?
+
     @IBOutlet weak var submitButton: UIButton!
     
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -17,9 +19,24 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
     }
     
     @IBAction func pressSubmitAddress(sender: UIButton) {
-        print("pressed")
-        addAddressTableViewController?.submitForm()
+        if let addAddressTableViewController = addAddressTableViewController {
+            let alert = UIAlertController(title: "Verify Address", message: "\n\(addAddressTableViewController.addressString)\n\nAre you sure this is the right address? GPS is not 100% accurate.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in
+                
+            }
+            let OKAction = UIAlertAction(title: "Submit", style: .Default) { (action) in
+                // Return to map
+                addAddressTableViewController.submitForm()
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(OKAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
+    
+    // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +44,12 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
         // Do any additional setup after loading the view.
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
         
+        // Set submit button's submitting state
         submitButton.setTitle("Verifying Address".uppercaseString, forState: UIControlState.Disabled)
         submitButton.setBackgroundImage(UIImage.imageFromColor(Color.Gray), forState: UIControlState.Disabled)
     }
     
-    var addAddressTableViewController: AddAddressTableViewController?
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
@@ -49,16 +62,8 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    // MARK: - SubmitButtonDelegate Protocol Methods
     
     func isSubmitting() {
         submitButton.enabled = false
@@ -68,7 +73,9 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
         let alert = UIAlertController(title: "Missing Address Information", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
         alert.addAction(alertAction)
+        
         presentViewController(alert, animated: true) { () -> Void in }
+
         submitButton.enabled = true
     }
 
