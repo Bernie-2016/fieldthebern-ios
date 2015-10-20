@@ -140,6 +140,9 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     // MARK: - Add Location Button
     
+    var previousLocation: CLLocation?
+    var previousPlacemark: CLPlacemark?
+    
     @IBOutlet weak var addLocationButton: UIButton!
     
     @IBAction func addLocation(sender: UIButton) {
@@ -149,7 +152,14 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddLocation" {
             if let destinationViewController = segue.destinationViewController as? AddAddressNavigationController {
-                destinationViewController.location = locationManager.location
+                
+                let currentLocation = locationManager.location
+                destinationViewController.location = currentLocation
+                destinationViewController.previousLocation = previousLocation
+                destinationViewController.previousPlacemark = previousPlacemark
+                
+                // Reset the previous location
+                self.previousLocation = currentLocation
             }
         }
     }
@@ -193,10 +203,17 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         // Susbcribe to should reload notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldReloadMap:", name: "shouldReloadMap", object: nil)
+        
+        // Subscribe to placemark updated notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldUpdatePlacemark:", name: "placemarkUpdated", object: nil)
     }
     
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()
+    }
+    
+    func shouldUpdatePlacemark(notification: NSNotification) {
+        self.previousPlacemark = notification.userInfo?["placemark"] as? CLPlacemark
     }
     
     
@@ -439,26 +456,8 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let currentLocation = manager.location!
-        
         updateClosestLocation()
         self.animateNearestAddressViewIfNeeded()
-        
-        geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
-            if let placemarksArray = placemarks {
-                if placemarksArray.count > 0 {
-                    let pm = placemarks![0] as CLPlacemark
-                    if let localityString = pm.locality,
-                        let administrativeAreaString = pm.administrativeArea {
-                            self.locality = localityString
-                            self.administrativeArea = administrativeAreaString
-                    }
-                }
-            }
-        }
-        
-        // Update the last known location
-        lastKnownLocation = currentLocation
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

@@ -11,8 +11,10 @@ import MapKit
 
 class AddAddressTableViewController: UITableViewController, UITextFieldDelegate {
     
+    var previousLocation: CLLocation?
     var location: CLLocation?
     var placemark: CLPlacemark?
+    var previousPlacemark: CLPlacemark?
     var address: Address?
     var people: [Person]?
     var delegate: SubmitButtonDelegate?
@@ -60,31 +62,50 @@ class AddAddressTableViewController: UITableViewController, UITextFieldDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        if let currentLocation = location {
-            geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
-                if let placemarksArray = placemarks {
-                    if placemarksArray.count > 0 {
-                        let pm = placemarks![0] as CLPlacemark
-                        self.placemark = pm
-                        if let city = pm.locality,
-                            let state = pm.administrativeArea,
-                            let thoroughfare = pm.thoroughfare,
-                            let subThoroughfare = pm.subThoroughfare,
-                            let zipCode = pm.postalCode {
-                                self.streetAddress.text = "\(subThoroughfare) \(thoroughfare)"
+        placemark = previousPlacemark
+        
+        if locationNeedsUpdating() {
+            if let currentLocation = location {
+                geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
+                    if let placemarksArray = placemarks {
+                        if placemarksArray.count > 0 {
+                            let pm = placemarks![0] as CLPlacemark
+                            self.placemark = pm
+                            NSNotificationCenter.defaultCenter().postNotificationName("placemarkUpdated", object: self, userInfo: ["placemark": pm])
+                            self.updateAddressField()
                         }
                     }
                 }
             }
+        } else {
+            self.updateAddressField()
         }
 
+    }
+    
+    func didLocationChange() -> Bool {
+
+        if let currentLocation = location, previousLocation = previousLocation {
+            
+            if currentLocation.distanceFromLocation(previousLocation) >= 1 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func locationNeedsUpdating() -> Bool {
+        return didLocationChange() || self.placemark == nil
+    }
+    
+    func updateAddressField() {
+        if let placemark = self.placemark {
+            if let thoroughfare = placemark.thoroughfare,
+                let subThoroughfare = placemark.subThoroughfare {
+                    self.streetAddress.text = "\(subThoroughfare) \(thoroughfare)"
+            }
+        }
     }
     
     func submitForm() {

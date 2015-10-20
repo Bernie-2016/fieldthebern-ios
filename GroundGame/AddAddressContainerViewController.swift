@@ -23,7 +23,6 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
             let alert = UIAlertController(title: "Verify Address", message: "\n\(addAddressTableViewController.addressString)\n\nAre you sure this is the right address? GPS is not 100% accurate.", preferredStyle: UIAlertControllerStyle.Alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in
-                
             }
             let OKAction = UIAlertAction(title: "Submit", style: .Default) { (action) in
                 // Return to map
@@ -57,6 +56,8 @@ class AddAddressContainerViewController: UIViewController, SubmitButtonDelegate 
                 addAddressTableViewController = segue.destinationViewController as? AddAddressTableViewController
                 if let navigationController = self.navigationController as? AddAddressNavigationController {
                     addAddressTableViewController?.location = navigationController.location
+                    addAddressTableViewController?.previousLocation = navigationController.previousLocation
+                    addAddressTableViewController?.previousPlacemark = navigationController.previousPlacemark
                     addAddressTableViewController?.delegate = self
                 }
             }

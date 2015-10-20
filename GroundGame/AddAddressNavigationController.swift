@@ -12,6 +12,8 @@ import MapKit
 class AddAddressNavigationController: UINavigationController {
     
     var location: CLLocation?
+    var previousLocation: CLLocation?
+    var previousPlacemark: CLPlacemark?
 
     override func viewDidLoad() {
         super.viewDidLoad()
