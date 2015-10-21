@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PartySelectionDelegate {
-    func didSelectParty(partySelection: PartySelection)
+    func didSelectParty(partyAffiliation: PartyAffiliation)
 }
