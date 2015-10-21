@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ConversationTimerViewController: UIViewController, UIGestureRecognizerDelegate {
+class ConversationTimerViewController: UIViewController, UIGestureRecognizerDelegate, SubmitButtonDelegate {
     
     var savedGestureRecognizerDelegate: UIGestureRecognizerDelegate?
 
@@ -18,13 +18,17 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
     var people: [Person]?
     var address: Address?
     
-    @IBOutlet weak var timerLabel: UILabel!
-
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        // Set submit button's submitting state
+        submitButton.setTitle("Submitting Visit Details".uppercaseString, forState: UIControlState.Disabled)
+        submitButton.setBackgroundImage(UIImage.imageFromColor(Color.Gray), forState: UIControlState.Disabled)
         
         startTimer()
     }
@@ -142,11 +146,20 @@ class ConversationTimerViewController: UIViewController, UIGestureRecognizerDele
                 conversationTableViewController?.placemark = self.placemark
                 conversationTableViewController?.people = self.people ?? []
                 conversationTableViewController?.address = self.address
+                conversationTableViewController?.delegate = self
             }
         }
     }
     
     @IBAction func pressSubmitButton(sender: UIButton) {
         conversationTableViewController?.submitForm()
+    }
+    
+    func isSubmitting() {
+        submitButton.enabled = false
+    }
+    
+    func finishedSubmittingWithError(errorMessage: String) {
+        submitButton.enabled = true
     }
 }

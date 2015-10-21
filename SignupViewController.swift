@@ -165,7 +165,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     func keyboardWasHidden(notification: NSNotification) {
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = self.bottomConstraintValue!
+            if let value = self.bottomConstraintValue {
+                self.bottomConstraint.constant = value
+            }
         })
     }
 

@@ -14,11 +14,23 @@ struct VisitService {
     
     let api = API()
     
-    func postVisit(duration: Int, address: Address, people: [Person]?) {
+    func postVisit(duration: Int, address: Address, people: [Person]?, callback: (Visit? -> Void)) {
         
         let parameters = VisitJSON(duration: duration, address: address, people: people).json
         
         api.post("visits", parameters: parameters.object as? [String : AnyObject], encoding: .JSON) { (data, success) in
+            
+            if success {
+                // Extract our visit into a model
+                if let data = data {
+                    
+                    let json = JSON(data: data)
+                    
+                    let visit = Visit(json: json)
+                    
+                    callback(visit)
+                }
+            }
         }
     }
     

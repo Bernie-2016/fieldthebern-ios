@@ -18,6 +18,18 @@ class ConversationTableViewController: UITableViewController {
     var selectedPerson: Person?
     var selectedIndexPath: NSIndexPath?
     var peopleAreHome: Bool = false
+    var visit: Visit?
+    var delegate: SubmitButtonDelegate?
+    
+    var peopleAtHome: [Person] {
+        get {
+            var tempArray: [Person] = []
+            for person in people {
+                if person.atHomeStatus { tempArray.append(person) }
+            }
+            return tempArray
+        }
+    }
 
 //    @IBOutlet weak var stateImage: UIImageView!
 //    @IBOutlet weak var stateNameLabel: UILabel!
@@ -188,8 +200,14 @@ class ConversationTableViewController: UITableViewController {
         if segue.identifier == "EditPersonSegue" {
             if let PersonDetailsViewController = segue.destinationViewController as? PersonDetailsViewController {
                 PersonDetailsViewController.person = self.selectedPerson
-                print("selected index path \(selectedIndexPath)")
                 PersonDetailsViewController.personIndexPath = self.selectedIndexPath
+            }
+        }
+        
+        if segue.identifier == "SubmitVisitDetails" {
+            if let scoreContainerViewController = segue.destinationViewController as? ScoreContainerViewController {
+                scoreContainerViewController.people = self.peopleAtHome
+                scoreContainerViewController.visit = self.visit
             }
         }
     }
@@ -220,10 +238,13 @@ class ConversationTableViewController: UITableViewController {
     }
     
     func submitForm() {
+        delegate?.isSubmitting()
         if let address = self.address {
-            VisitService().postVisit(1, address: address, people: people)
-            NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
-            self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
+            VisitService().postVisit(1, address: address, people: peopleAtHome) { (visit) in
+                self.visit = visit
+                NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
+                self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
+            }
         }
     }
 }

@@ -10,6 +10,9 @@ import UIKit
 import FLAnimatedImage
 
 class ScoreContainerViewController: UIViewController {
+    
+    var people: [Person]?
+    var visit: Visit?
 
     @IBOutlet weak var gifContainer: UIImageView!
 
@@ -59,6 +62,18 @@ class ScoreContainerViewController: UIViewController {
     @IBAction func pressedBackToMap(sender: UIButton) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if(identifier == "ScoreTableEmbedSegue") {
+                if let scoreTableViewController = segue.destinationViewController as? ScoreTableViewController {
+                    scoreTableViewController.people = self.people
+                    scoreTableViewController.visit = self.visit
+                }
+            }
+        }
+    }
+
 
     /*
     // MARK: - Navigation

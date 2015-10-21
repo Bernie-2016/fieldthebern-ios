@@ -70,6 +70,8 @@
 		A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A579801BB2105E00D8885E /* Lato-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
 		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; settings = {ASSET_TAGS = (); }; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; settings = {ASSET_TAGS = (); }; };
@@ -187,6 +189,8 @@
 		A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Heavy.ttf"; path = "../../../Downloads/lato/Lato-Heavy.ttf"; sourceTree = "<group>"; };
 		A7A579801BB2105E00D8885E /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Medium.ttf"; path = "../../../Downloads/lato/Lato-Medium.ttf"; sourceTree = "<group>"; };
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalScoreTableViewCell.swift; sourceTree = "<group>"; };
+		A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOneHomeTableViewCell.swift; sourceTree = "<group>"; };
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				A73D663C1BBEE44000127245 /* Address.swift */,
+				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
 				A73D663E1BBEE87400127245 /* AddressService.swift */,
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
@@ -303,14 +308,13 @@
 				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
 				A7D3F6F81BCC2F7100232234 /* PartySelection.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
+				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
-				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
-				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
-				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
-				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
+				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
+				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -328,6 +332,8 @@
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
 				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
+				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
+				A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -725,9 +731,11 @@
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
+				A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
 				A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
+				A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */,
 				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
