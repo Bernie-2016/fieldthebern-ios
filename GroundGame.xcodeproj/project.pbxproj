@@ -52,6 +52,13 @@
 		A76ABA401BBC913A007FA40B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */; settings = {ASSET_TAGS = (); }; };
 		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C58C1BD812B200179F04 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58B1BD812B200179F04 /* States.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58D1BD8137700179F04 /* VisitResult.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C5901BD8139400179F04 /* PinImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58F1BD8139400179F04 /* PinImage.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5911BD813C900179F04 /* CanvasResponseList.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C5941BD813ED00179F04 /* PartyAffiliationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5931BD813ED00179F04 /* PartyAffiliationImage.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C5961BD8140100179F04 /* PartySelectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5951BD8140100179F04 /* PartySelectionList.swift */; settings = {ASSET_TAGS = (); }; };
+		A771C5981BD8141E00179F04 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5971BD8141E00179F04 /* OAuth.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -165,6 +172,13 @@
 		A76ABA3F1BBC913A007FA40B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Overlay.swift"; sourceTree = "<group>"; };
 		A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		A771C58B1BD812B200179F04 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		A771C58D1BD8137700179F04 /* VisitResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitResult.swift; sourceTree = "<group>"; };
+		A771C58F1BD8139400179F04 /* PinImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinImage.swift; sourceTree = "<group>"; };
+		A771C5911BD813C900179F04 /* CanvasResponseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseList.swift; sourceTree = "<group>"; };
+		A771C5931BD813ED00179F04 /* PartyAffiliationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliationImage.swift; sourceTree = "<group>"; };
+		A771C5951BD8140100179F04 /* PartySelectionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelectionList.swift; sourceTree = "<group>"; };
+		A771C5971BD8141E00179F04 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A775B9ED1BC077E400510924 /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		A775B9EF1BC0967D00510924 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
@@ -302,18 +316,25 @@
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
 				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
+				A771C5911BD813C900179F04 /* CanvasResponseList.swift */,
 				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
 				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
+				A771C5971BD8141E00179F04 /* OAuth.swift */,
 				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
+				A771C5931BD813ED00179F04 /* PartyAffiliationImage.swift */,
 				A7D3F6F81BCC2F7100232234 /* PartySelection.swift */,
+				A771C5951BD8140100179F04 /* PartySelectionList.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
 				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
+				A771C58F1BD8139400179F04 /* PinImage.swift */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
+				A771C58B1BD812B200179F04 /* States.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
+				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
 			);
 			name = Models;
@@ -322,18 +343,18 @@
 		A74FCE981BBB377E005C4D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A7A579531BB092E100D8885E /* Main.storyboard */,
-				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
 				A73D66401BBF36A900127245 /* AddressPinView.swift */,
 				A780A4D31BC863440090B979 /* BlueTableViewCell.swift */,
+				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
 				A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */,
+				A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */,
+				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
+				A7A579531BB092E100D8885E /* Main.storyboard */,
+				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
 				A76ABA361BBB910E007FA40B /* PaddedTextField.swift */,
 				A76890311BC8680E008F394C /* PersonTableViewCell.swift */,
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
-				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
-				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
-				A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -371,10 +392,10 @@
 				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
 				A768903D1BC88527008F394C /* PersonDetailsViewController.swift */,
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
-				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
-				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A74279841BD016190020EE29 /* ScoreContainerViewController.swift */,
 				A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */,
+				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
+				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -715,10 +736,13 @@
 				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
 				A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
+				A771C5961BD8140100179F04 /* PartySelectionList.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
+				A771C58C1BD812B200179F04 /* States.swift in Sources */,
 				A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
+				A771C5941BD813ED00179F04 /* PartyAffiliationImage.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
@@ -735,6 +759,7 @@
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
 				A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
+				A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */,
 				A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */,
 				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
@@ -742,6 +767,7 @@
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
+				A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */,
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
@@ -757,6 +783,7 @@
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
 				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,
+				A771C5901BD8139400179F04 /* PinImage.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
 				A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */,
 				A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */,
@@ -768,6 +795,7 @@
 				A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */,
 				A7A579841BB211F500D8885E /* PageViewController.swift in Sources */,
 				A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */,
+				A771C5981BD8141E00179F04 /* OAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

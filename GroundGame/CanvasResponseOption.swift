@@ -9,21 +9,6 @@
 import Foundation
 import UIKit
 
-struct CanvasResponseList {
-    
-    let options: [CanvasResponseOption]
-    
-    init() {
-        options = [
-            CanvasResponseOption(canvasResponse: .StronglyFor),
-            CanvasResponseOption(canvasResponse: .LeaningFor),
-            CanvasResponseOption(canvasResponse: .Undecided),
-            CanvasResponseOption(canvasResponse: .LeaningAgainst),
-            CanvasResponseOption(canvasResponse: .StronglyAgainst)
-        ]
-    }
-}
-
 struct CanvasResponseOption {
     let title: String
     let textColor: UIColor
