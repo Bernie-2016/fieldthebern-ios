@@ -81,4 +81,14 @@ enum PartyAffiliation {
             return .Unknown
         }
     }
+    
+    static func list() -> [PartyAffiliation] {
+        return [
+            .Democrat,
+            .Republican,
+            .Independent,
+            .Undeclared,
+            .Other
+        ]
+    }
 }
