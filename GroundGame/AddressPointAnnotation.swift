@@ -14,5 +14,4 @@ class AddressPointAnnotation: MKPointAnnotation {
     var id: String?
     var result: VisitResult?
     var image: UIImage?
-    
 }

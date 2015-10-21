@@ -8,21 +8,6 @@
 
 import Foundation
 
-struct PartySelectionList {
-
-    var options: [PartySelection]
-    
-    init() {
-        options = [
-            PartySelection.init(partyAffiliation: .Democrat),
-            PartySelection.init(partyAffiliation: .Republican),
-            PartySelection.init(partyAffiliation: .Independent),
-            PartySelection.init(partyAffiliation: .Undeclared),
-            PartySelection.init(partyAffiliation: .Other)
-        ]
-    }
-}
-
 struct PartySelection {
     
     let title: String
