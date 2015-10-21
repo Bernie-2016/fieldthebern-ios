@@ -10,10 +10,10 @@ import UIKit
 
 class PartyAffiliationTableViewController: UITableViewController {
     
-    let partyOptions = PartySelectionList().options
+    let partyOptions = PartyAffiliationList().options
 
     var delegate: PartySelectionDelegate?
-    var partySelection: PartySelection?
+    var partySelection: PartyAffiliation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class PartyAffiliationTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         for (index, option) in partyOptions.enumerate() {
-            if option.partyAffiliation == partySelection?.partyAffiliation {
+            if option == partySelection {
                 let rowToSelect = NSIndexPath(forRow: index, inSection: 0)
                 tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
                 self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect)
@@ -46,7 +46,7 @@ class PartyAffiliationTableViewController: UITableViewController {
 
         cell.checked = false
         
-        cell.label.text = partyOption.title
+        cell.label.text = partyOption.title()
         
         return cell
     }

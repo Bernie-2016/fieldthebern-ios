@@ -11,7 +11,7 @@ import UIKit
 class PersonDetailsTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
     
     var person: Person?
-    var partySelection: PartySelection?
+    var partySelection: PartyAffiliation?
     var canvasResponseOption: CanvasResponseOption?
 
     @IBOutlet weak var firstNameField: PaddedTextField! {
@@ -63,8 +63,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
                 lastNameField.text = lastName
             }
             // Select their party affiliation
-            let personPartySelection = PartySelection(partyAffiliation: person.partyAffiliation)
-            self.didSelectParty(personPartySelection)
+            self.didSelectParty(person.partyAffiliation)
 
             // Select their canvas response
             let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
@@ -158,12 +157,12 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         }
     }
     
-    func didSelectParty(partySelection: PartySelection) {
+    func didSelectParty(partySelection: PartyAffiliation) {
         // Update the person we're returning
-        self.person?.partyAffiliation = partySelection.partyAffiliation
+        self.person?.partyAffiliation = partySelection
         
         self.partySelection = partySelection
-        partyLabel.text = partySelection.title
+        partyLabel.text = partySelection.title()
     }
     
     func didSelectCanvasResponseOption(canvasResponseOption: CanvasResponseOption) {

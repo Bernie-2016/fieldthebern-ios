@@ -23,22 +23,8 @@ struct PersonJSON {
         id = person.id
         firstName = person.firstName
         lastName = person.lastName
-        partyAffiliationString = person.partyAffiliationString
-        
-        switch person.canvasResponse {
-        case .LeaningAgainst:
-            canvasResponseJSONString = "Leaning against"
-        case .LeaningFor:
-            canvasResponseJSONString = "Leaning for"
-        case .StronglyAgainst:
-            canvasResponseJSONString = "Strongly against"
-        case .StronglyFor:
-            canvasResponseJSONString = "Strongly for"
-        case .Undecided:
-            canvasResponseJSONString = "Undecided"
-        case .Unknown:
-            canvasResponseJSONString = "Unknown"
-        }
+        partyAffiliationString = person.partyAffiliationString        
+        canvasResponseJSONString = person.canvasResponse.JSONString()
         
         attributes = [
             "first_name": firstName ?? NSNull(),
