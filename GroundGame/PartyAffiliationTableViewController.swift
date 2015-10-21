@@ -10,7 +10,7 @@ import UIKit
 
 class PartyAffiliationTableViewController: UITableViewController {
     
-    let partyOptions = PartyAffiliationList().options
+    let partyOptions = PartyAffiliation.list()
 
     var delegate: PartySelectionDelegate?
     var partySelection: PartyAffiliation?
