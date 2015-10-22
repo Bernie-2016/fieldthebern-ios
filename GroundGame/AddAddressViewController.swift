@@ -112,11 +112,13 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         
         if let identifier = segue.identifier {
             if(identifier == "SubmitAddress") {
-                let conversationTimerViewController = segue.destinationViewController as? ConversationTimerViewController
-                conversationTimerViewController?.location = self.location
-                conversationTimerViewController?.placemark = self.placemark
-                conversationTimerViewController?.people = self.people
-                conversationTimerViewController?.address = self.address
+                let conversationViewController = segue.destinationViewController as? ConversationViewController
+                conversationViewController?.location = self.location
+                conversationViewController?.placemark = self.placemark
+                if let people = self.people {
+                    conversationViewController?.people = people
+                }
+                conversationViewController?.address = self.address
             }
         }
 
