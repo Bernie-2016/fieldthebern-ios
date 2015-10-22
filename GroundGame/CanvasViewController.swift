@@ -153,13 +153,15 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         if segue.identifier == "AddLocation" {
             if let destinationViewController = segue.destinationViewController as? AddAddressNavigationController {
                 
-                let currentLocation = locationManager.location
-                destinationViewController.location = currentLocation
-                destinationViewController.previousLocation = previousLocation
-                destinationViewController.previousPlacemark = previousPlacemark
-                
-                // Reset the previous location
-                self.previousLocation = currentLocation
+                if let rootController = destinationViewController.viewControllers[0] as? AddAddressViewController {
+                    let currentLocation = locationManager.location
+                    rootController.location = currentLocation
+                    rootController.previousLocation = previousLocation
+                    rootController.previousPlacemark = previousPlacemark
+                    
+                    // Reset the previous location
+                    self.previousLocation = currentLocation
+                }
             }
         }
     }

@@ -59,8 +59,7 @@
 		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F81BC2F8A600510924 /* ConversationTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F91BC3135800510924 /* ConversationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -176,8 +175,7 @@
 		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A775B9ED1BC077E400510924 /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		A775B9EF1BC0967D00510924 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressTableViewController.swift; sourceTree = "<group>"; };
-		A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressContainerViewController.swift; sourceTree = "<group>"; };
+		A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressNavigationController.swift; sourceTree = "<group>"; };
 		A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTimerViewController.swift; sourceTree = "<group>"; };
 		A775B9F91BC3135800510924 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
@@ -368,9 +366,8 @@
 		A74FCE9A1BBB37A9005C4D34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */,
+				A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */,
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
-				A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */,
 				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
 				A775B9F91BC3135800510924 /* ConversationTableViewController.swift */,
@@ -729,14 +726,13 @@
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,
-				A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
 				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
-				A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */,
+				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
 				A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */,
 				A775B9F81BC2F8A600510924 /* ConversationTimerViewController.swift in Sources */,
