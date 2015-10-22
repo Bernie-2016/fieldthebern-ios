@@ -82,6 +82,8 @@ class PartyAffiliationTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Segues
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             partySelection = partyOptions[indexPath.row]

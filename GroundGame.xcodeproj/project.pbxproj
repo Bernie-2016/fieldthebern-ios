@@ -23,8 +23,7 @@
 		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
@@ -59,11 +58,9 @@
 		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F81BC2F8A600510924 /* ConversationTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F91BC3135800510924 /* ConversationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780A4D31BC863440090B979 /* BlueTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
@@ -142,8 +139,7 @@
 		A742797B1BCED5DB0020EE29 /* VisitJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSON.swift; sourceTree = "<group>"; };
 		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
 		A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonDelegate.swift; sourceTree = "<group>"; };
-		A74279841BD016190020EE29 /* ScoreContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreContainerViewController.swift; sourceTree = "<group>"; };
-		A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
+		A74279841BD016190020EE29 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -176,11 +172,9 @@
 		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A775B9ED1BC077E400510924 /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		A775B9EF1BC0967D00510924 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressTableViewController.swift; sourceTree = "<group>"; };
-		A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressContainerViewController.swift; sourceTree = "<group>"; };
+		A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressNavigationController.swift; sourceTree = "<group>"; };
-		A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTimerViewController.swift; sourceTree = "<group>"; };
-		A775B9F91BC3135800510924 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
+		A775B9F71BC2F8A600510924 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		A780A4D31BC863440090B979 /* BlueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueTableViewCell.swift; sourceTree = "<group>"; };
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -368,13 +362,11 @@
 		A74FCE9A1BBB37A9005C4D34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A775B9F31BC1D4B000510924 /* AddAddressContainerViewController.swift */,
+				A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */,
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
-				A775B9F11BC1CBCC00510924 /* AddAddressTableViewController.swift */,
 				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
-				A775B9F91BC3135800510924 /* ConversationTableViewController.swift */,
-				A775B9F71BC2F8A600510924 /* ConversationTimerViewController.swift */,
+				A775B9F71BC2F8A600510924 /* ConversationViewController.swift */,
 				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
 				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
 				A7A579831BB211F500D8885E /* PageViewController.swift */,
@@ -382,8 +374,7 @@
 				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
 				A768903D1BC88527008F394C /* PersonDetailsViewController.swift */,
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
-				A74279841BD016190020EE29 /* ScoreContainerViewController.swift */,
-				A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */,
+				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 			);
@@ -724,22 +715,20 @@
 				A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */,
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
 				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
-				A775B9FA1BC3135800510924 /* ConversationTableViewController.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,
-				A775B9F21BC1CBCC00510924 /* AddAddressTableViewController.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
 				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
-				A775B9F41BC1D4B000510924 /* AddAddressContainerViewController.swift in Sources */,
+				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
-				A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */,
-				A775B9F81BC2F8A600510924 /* ConversationTimerViewController.swift in Sources */,
+				A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */,
+				A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
@@ -760,7 +749,6 @@
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
-				A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
 				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,

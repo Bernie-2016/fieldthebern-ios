@@ -1,5 +1,5 @@
 //
-//  ConversationTableViewController.swift
+//  ConversationTimerViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/5/15.
@@ -9,8 +9,10 @@
 import UIKit
 import MapKit
 
-class ConversationTableViewController: UITableViewController {
+class ConversationViewController: UIViewController, UIGestureRecognizerDelegate, SubmitButtonDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var savedGestureRecognizerDelegate: UIGestureRecognizerDelegate?
+
     var location: CLLocation?
     var placemark: CLPlacemark?
     var address: Address?
@@ -31,48 +33,118 @@ class ConversationTableViewController: UITableViewController {
         }
     }
 
-//    @IBOutlet weak var stateImage: UIImageView!
-//    @IBOutlet weak var stateNameLabel: UILabel!
-//    @IBOutlet weak var stateTypeAndStatusLabel: UILabel!
-//    @IBOutlet weak var stateDateLabel: UILabel!
-//    @IBOutlet weak var stateDetailsLabel: UILabel!
-//    @IBOutlet weak var stateDeadlineLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        // Set submit button's submitting state
+        submitButton.setTitle("Submitting Visit Details".uppercaseString, forState: UIControlState.Disabled)
+        submitButton.setBackgroundImage(UIImage.imageFromColor(Color.Gray), forState: UIControlState.Disabled)
+        
+        startTimer()
         
         self.tableView.indicatorStyle = UIScrollViewIndicatorStyle.White
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
-        
-//        let josh = Person.init(firstName: "Josh", lastName: "Smith", partyAffiliation: nil, canvasResponse: .LeaningFor)
-//        let molly = Person.init(firstName: "Molly", lastName: nil, partyAffiliation: "Democrat", canvasResponse: .StronglyFor)
-//        
-//        people = [josh, molly]
-        
-//        let states = States()
-//        if let pm = placemark {
-//            if let stateName = pm.administrativeArea {
-//                if let state = states.find(stateName as String) {
-//                    stateImage.image = state.icon
-//                    if let type = state.type,
-//                        let status = state.status {
-//                            stateTypeAndStatusLabel.text = "\(status) \(type)"
-//                    }
-//                    stateNameLabel.text = state.name
-//                    if let deadline = state.deadline {
-//                        stateDeadlineLabel.text = "Registration Deadline: \(deadline)"
-//                    }
-//                    if let date = state.date {
-//                        stateDateLabel.text = "on \(date)"
-//                    }
-//                    stateDetailsLabel.text = state.details
-//                }
-//            }
-//        }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        savedGestureRecognizerDelegate = self.navigationController?.interactivePopGestureRecognizer?.delegate
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
+        let backButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
+    }
+    
+    func cancel(sender: UINavigationItem) {
 
+        let alert = UIAlertController(title: "Cancel Visit", message: "You'll lose all your progress with this visit and go back to the map.", preferredStyle: UIAlertControllerStyle.Alert)
+
+        let cancelAction = UIAlertAction(title: "Undo", style: .Cancel) { (_) in
+            
+        }
+        let OKAction = UIAlertAction(title: "Back to Map", style: .Destructive) { (action) in
+            // Return to map
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(OKAction)
+
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    var startTime = NSTimeInterval()
+    var cachedElapsedTime = NSTimeInterval()
+    var elapsedTime = NSTimeInterval()
+    
+    var queue: dispatch_queue_t?
+    var asyncTimer: dispatch_source_t?
+    
+    func updateTime() {
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        elapsedTime = currentTime - startTime
+        cachedElapsedTime = elapsedTime
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+//            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
+        }
+        
+    }
+    
+    func startTimer() {
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        queue = dispatch_queue_create("myTimer", nil)
+        asyncTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
+        
+        dispatch_source_set_timer(asyncTimer!, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
+        
+        dispatch_source_set_event_handler(asyncTimer!) {
+            self.updateTime()
+        }
+        
+        dispatch_resume(asyncTimer!)
+    }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        switch gestureRecognizer {
+        case self.navigationController!.interactivePopGestureRecognizer!:
+            return false
+        default:
+            return true
+        }
+    }
+    
+    @IBAction func pressSubmitButton(sender: UIButton) {
+        self.submitForm()
+    }
+    
+    func isSubmitting() {
+        submitButton.enabled = false
+    }
+    
+    func finishedSubmittingWithError(errorMessage: String) {
+        submitButton.enabled = true
+    }
+    
     @IBAction func editPerson(sender: UIButton) {
         if let cell = sender.superview?.superview as? UITableViewCell {
             if let indexPath = tableView.indexPathForCell(cell) {
@@ -83,11 +155,11 @@ class ConversationTableViewController: UITableViewController {
         }
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
             return 26
@@ -96,7 +168,7 @@ class ConversationTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             var extraRows = 1
@@ -108,21 +180,21 @@ class ConversationTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Who did you talk to?".uppercaseString
     }
-
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = Color.Blue
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.textAlignment = NSTextAlignment.Center
             header.textLabel?.font = UIFont(name: "Lato-Heavy", size: 12.0)
             header.textLabel?.textColor = UIColor.whiteColor()
-
+            
             let separatorWidth = CGFloat(0.5)
             let separator = UIView.init(frame: CGRect(x: 0, y: header.frame.height - separatorWidth, width: self.tableView.frame.width, height: separatorWidth))
             separator.backgroundColor = UIColor.whiteColor()
@@ -130,7 +202,7 @@ class ConversationTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         switch indexPath.section {
             
@@ -170,18 +242,18 @@ class ConversationTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.layoutMargins = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
         cell.selectionStyle = UITableViewCellSelectionStyle.None
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case 0:
             if indexPath.row < people.count {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! PersonTableViewCell
-
+                
                 cell.checked = !cell.checked
                 
                 people[indexPath.row].atHomeStatus = cell.checked
@@ -205,13 +277,13 @@ class ConversationTableViewController: UITableViewController {
         }
         
         if segue.identifier == "SubmitVisitDetails" {
-            if let scoreContainerViewController = segue.destinationViewController as? ScoreContainerViewController {
-                scoreContainerViewController.people = self.peopleAtHome
-                scoreContainerViewController.visit = self.visit
+            if let scoreViewController = segue.destinationViewController as? ScoreViewController {
+                scoreViewController.people = self.peopleAtHome
+                scoreViewController.visit = self.visit
             }
         }
     }
-        
+    
     @IBAction func unwind(segue: UIStoryboardSegue) {
     }
     

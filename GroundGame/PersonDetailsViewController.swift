@@ -68,16 +68,16 @@ class PersonDetailsViewController: UIViewController {
             }
             
             if identifier == "UnwindToConversationTableSegue" {
-                if let conversationTableViewController = segue.destinationViewController as? ConversationTableViewController {
+                if let conversationViewController = segue.destinationViewController as? ConversationViewController {
                     print(self.editingPerson, self.returnedPerson, self.personIndexPath)
                     if self.editingPerson {
                         if let person = self.returnedPerson,
                             let indexPath = self.personIndexPath {
-                                conversationTableViewController.updatePerson(person, indexPath: indexPath)
+                                conversationViewController.updatePerson(person, indexPath: indexPath)
                         }
                     } else {
                         if let person = self.returnedPerson {
-                            conversationTableViewController.addPerson(person)
+                            conversationViewController.addPerson(person)
                         }
                     }
                 }
@@ -89,8 +89,7 @@ class PersonDetailsViewController: UIViewController {
         if identifier == "UnwindToConversationTableSegue" {
             if let returnedPerson = self.delegate?.willSubmit() {
                 self.returnedPerson = returnedPerson
-                if let firstName = returnedPerson.firstName,
-                    let lastName = returnedPerson.lastName {
+                if let firstName = returnedPerson.firstName {
                         if firstName != ""
                             && returnedPerson.partyAffiliation != .Unknown
                             && returnedPerson.canvasResponse != .Unknown {
