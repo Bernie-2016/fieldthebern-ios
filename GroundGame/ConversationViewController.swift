@@ -103,13 +103,6 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         
         elapsedTime -= NSTimeInterval(seconds)
         
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
-        
-        let strMinutes = String(minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-        
         dispatch_async(dispatch_get_main_queue()) {
 //            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
         }
@@ -284,9 +277,9 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         }
         
         if segue.identifier == "SubmitVisitDetails" {
-            if let scoreContainerViewController = segue.destinationViewController as? ScoreContainerViewController {
-                scoreContainerViewController.people = self.peopleAtHome
-                scoreContainerViewController.visit = self.visit
+            if let scoreViewController = segue.destinationViewController as? ScoreViewController {
+                scoreViewController.people = self.peopleAtHome
+                scoreViewController.visit = self.visit
             }
         }
     }

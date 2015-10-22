@@ -89,8 +89,7 @@ class PersonDetailsViewController: UIViewController {
         if identifier == "UnwindToConversationTableSegue" {
             if let returnedPerson = self.delegate?.willSubmit() {
                 self.returnedPerson = returnedPerson
-                if let firstName = returnedPerson.firstName,
-                    let lastName = returnedPerson.lastName {
+                if let firstName = returnedPerson.firstName {
                         if firstName != ""
                             && returnedPerson.partyAffiliation != .Unknown
                             && returnedPerson.canvasResponse != .Unknown {
