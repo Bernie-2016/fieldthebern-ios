@@ -23,8 +23,7 @@
 		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
 		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
@@ -140,8 +139,7 @@
 		A742797B1BCED5DB0020EE29 /* VisitJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSON.swift; sourceTree = "<group>"; };
 		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
 		A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonDelegate.swift; sourceTree = "<group>"; };
-		A74279841BD016190020EE29 /* ScoreContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreContainerViewController.swift; sourceTree = "<group>"; };
-		A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
+		A74279841BD016190020EE29 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -376,8 +374,7 @@
 				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
 				A768903D1BC88527008F394C /* PersonDetailsViewController.swift */,
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
-				A74279841BD016190020EE29 /* ScoreContainerViewController.swift */,
-				A74279861BD0211A0020EE29 /* ScoreTableViewController.swift */,
+				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 			);
@@ -730,7 +727,7 @@
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
-				A74279851BD016190020EE29 /* ScoreContainerViewController.swift in Sources */,
+				A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */,
 				A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
@@ -752,7 +749,6 @@
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
-				A74279871BD0211A0020EE29 /* ScoreTableViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
 				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,

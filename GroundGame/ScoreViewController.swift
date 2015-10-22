@@ -1,5 +1,5 @@
 //
-//  ScoreTableViewController.swift
+//  ScoreViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/15/15.
@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Spring
+import FLAnimatedImage
 
-class ScoreTableViewController: UITableViewController {
+class ScoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var people: [Person]?
     var visit: Visit?
-    
+
     var peopleCount: Int {
         get {
             if let people = people {
@@ -26,19 +26,24 @@ class ScoreTableViewController: UITableViewController {
     
     var score = 0
     var incrementedScore = 0
+
+    @IBOutlet weak var gifContainer: UIImageView!
+
+    let images = ["bernie-ellen", "bernie", "bernie-shrug", "bernie-dancing", "bernie-dance"]
+
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        loadBernieGif()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
-
+        
         if let points = visit?.totalPoints {
             self.score = points
         }
@@ -53,33 +58,39 @@ class ScoreTableViewController: UITableViewController {
         }
         
         dispatch_resume(asyncTimer!)
-        
-//        firstLabel.animation = "fadeInLeft"
-//        firstLabel.duration = 1.5
-//        secondLabel.animation = "fadeInLeft"
-//        secondLabel.delay = 0.5
-//        secondLabel.duration = 1.5
-//        thirdLabel.animation = "fadeInLeft"
-//        thirdLabel.duration = 1.5
-//        thirdLabel.delay = 1.0
-//        firstLabel.animate()
-//        secondLabel.animate()
-//        thirdLabel.animate()
-//
-//    
-//        firstSublabel.animation = "fadeInLeft"
-//        firstSublabel.duration = 1.5
-//        secondSublabel.animation = "fadeInLeft"
-//        secondSublabel.duration = 1.5
-//        secondSublabel.delay = 0.5
-//        thirdSublabel.animation = "fadeInLeft"
-//        thirdSublabel.duration = 1.5
-//        thirdSublabel.delay = 1.0
-//        firstSublabel.animate()
-//        secondSublabel.animate()
-//        thirdSublabel.animate()
     }
     
+    func loadBernieGif() {
+        let randomIndex = Int(arc4random_uniform(UInt32(images.count)))
+        let imageName = images[randomIndex]
+        
+        if let path = NSBundle.mainBundle().pathForResource(imageName, ofType: "gif") {
+            if let data = NSData(contentsOfFile: path) {
+                let imageSize = 100.0
+                let imageSizeFloat = CGFloat(imageSize)
+                let image = FLAnimatedImage(animatedGIFData: data)
+                let imageView: FLAnimatedImageView = FLAnimatedImageView()
+                imageView.animatedImage = image
+                imageView.frame = CGRectMake(3, 3, imageSizeFloat, imageSizeFloat)
+                
+                let innerFrame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+                let maskLayer = CAShapeLayer()
+                let circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: imageSizeFloat)
+                maskLayer.path = circlePath.CGPath
+                maskLayer.fillColor = UIColor.whiteColor().CGColor
+                
+                imageView.layer.mask = maskLayer
+                
+                gifContainer.addSubview(imageView)
+            }
+            
+        }
+    }
+    
+    @IBAction func pressedBackToMap(sender: UIButton) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     var queue: dispatch_queue_t?
     var asyncTimer: dispatch_source_t?
     var randomizer: UInt32 {
@@ -93,7 +104,7 @@ class ScoreTableViewController: UITableViewController {
     }
     
     func incrementScore() {
-
+        
         if incrementedScore < score {
             let increment = arc4random_uniform(randomizer)
             incrementedScore = incrementedScore + Int(increment)
@@ -110,14 +121,14 @@ class ScoreTableViewController: UITableViewController {
             dispatch_source_cancel(asyncTimer!)
         }
     }
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
@@ -128,7 +139,7 @@ class ScoreTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("TotalScoreCell") as! TotalScoreTableViewCell
@@ -143,7 +154,7 @@ class ScoreTableViewController: UITableViewController {
                 cell.explanationLabel.text = "for knocking"
             } else {
                 var explanationText = "for updating someone's info"
-
+                
                 if let people = people {
                     let person = people[personIndex]
                     if let firstName = person.firstName {
@@ -164,12 +175,12 @@ class ScoreTableViewController: UITableViewController {
     
     var preventAnimation = Set<NSIndexPath>()
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if indexPath.section == 1 {
             
             if let cell = cell as? IndividualScoreTableViewCell {
-            
+                
                 if !preventAnimation.contains(indexPath) {
                     preventAnimation.insert(indexPath)
                     
@@ -188,5 +199,4 @@ class ScoreTableViewController: UITableViewController {
             }
         }
     }
-
 }

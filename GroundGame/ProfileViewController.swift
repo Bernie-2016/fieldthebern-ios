@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController {
 
     }
 
-
     @IBAction func logout(sender: UIButton) {
         let session = Session.sharedInstance
         session.logout()
