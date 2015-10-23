@@ -16,9 +16,9 @@ struct LeaderboardService {
     
     let api = API()
     
-    func getEveryone(callback: (Leaderboard? -> Void)) {
-        
-        api.get("rankings", parameters: ["type": "all"]) { (data, success, error, response) in
+    func get(type: String, callback: (Leaderboard? -> Void)) {
+        // type is one of "everyone", "state", "friends"
+        api.get("rankings", parameters: ["type": type]) { (data, success, error, response) in
             
             if success {
                 // Extract our addresses into models

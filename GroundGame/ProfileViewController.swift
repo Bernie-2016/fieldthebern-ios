@@ -31,14 +31,34 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        LeaderboardService().getEveryone({ (leaderboard) -> Void in
+        getLeaderboard("friends")
+    }
+    
+    func getLeaderboard(type: String) {
+        LeaderboardService().get(type, callback: { (leaderboard) -> Void in
             if let leaderboard = leaderboard {
-                print(leaderboard.rankings)
                 self.rankings = leaderboard.rankings
                 self.tableView.reloadData()
             }
         })
+    }
+
+    @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            getLeaderboard("friends")
+        case 1:
+            getLeaderboard("state")
+        case 2:
+            getLeaderboard("everyone")
+        default:
+            break
+        }
     }
 
     @IBAction func logout(sender: UIButton) {
