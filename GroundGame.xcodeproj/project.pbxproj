@@ -188,8 +188,8 @@
 		A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundGameUITests.swift; sourceTree = "<group>"; };
 		A7A579711BB092E100D8885E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
-		A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Heavy.ttf"; path = "../../../Downloads/lato/Lato-Heavy.ttf"; sourceTree = "<group>"; };
-		A7A579801BB2105E00D8885E /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Medium.ttf"; path = "../../../Downloads/lato/Lato-Medium.ttf"; sourceTree = "<group>"; };
+		A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		A7A579801BB2105E00D8885E /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualScoreTableViewCell.swift; sourceTree = "<group>"; };
