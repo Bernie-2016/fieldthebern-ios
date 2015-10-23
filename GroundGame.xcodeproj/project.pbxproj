@@ -18,6 +18,8 @@
 		A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */; settings = {ASSET_TAGS = (); }; };
 		A73A0B211BD9F19E008ECC2E /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B201BD9F19E008ECC2E /* Ranking.swift */; settings = {ASSET_TAGS = (); }; };
 		A73A0B231BD9F457008ECC2E /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B221BD9F457008ECC2E /* Leaderboard.swift */; settings = {ASSET_TAGS = (); }; };
+		A73A0B251BDA9997008ECC2E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B261BDA9E7D008ECC2E /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
 		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -143,6 +145,8 @@
 		A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardService.swift; sourceTree = "<group>"; };
 		A73A0B201BD9F19E008ECC2E /* Ranking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		A73A0B221BD9F457008ECC2E /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A73A0B261BDA9E7D008ECC2E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A73D663C1BBEE44000127245 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A73D663E1BBEE87400127245 /* AddressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
 		A73D66401BBF36A900127245 /* AddressPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPinView.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
 				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
 				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
+				A73A0B261BDA9E7D008ECC2E /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */,
 				A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */,
+				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
+				A73A0B251BDA9997008ECC2E /* SettingsTableViewController.swift in Sources */,
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
 				A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */,
 				A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */,
@@ -774,6 +781,7 @@
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
 				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,
+				A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */,
 				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,
 				A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */,
 				A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */,

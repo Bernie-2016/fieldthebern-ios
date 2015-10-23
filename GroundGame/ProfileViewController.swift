@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Profile"
 
         // Set the fonts for the segmented control
         let medium = [NSFontAttributeName: UIFont(name: "Lato-Medium", size: 13.0)!]
@@ -37,6 +39,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidAppear(animated)
         
         getLeaderboard("friends")
+        UserService().me { (user) -> Void in
+            if let user = user {
+                if let name = user.name {
+                    self.title = name
+                }
+            }
+        }
     }
     
     func getLeaderboard(type: String) {
@@ -59,12 +68,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         default:
             break
         }
-    }
-
-    @IBAction func logout(sender: UIButton) {
-        let session = Session.sharedInstance
-        session.logout()
-        self.performSegueWithIdentifier("Logout", sender: self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

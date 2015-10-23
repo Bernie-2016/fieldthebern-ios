@@ -407,10 +407,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="AbW-G5-zK8"/>
+                    <navigationItem key="navigationItem" id="AbW-G5-zK8">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="g58-12-Mkm">
+                            <connections>
+                                <segue destination="re1-9R-3K6" kind="show" id="Tep-U5-pmK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="FCi-Rf-Idf" id="P7F-ZF-GeF"/>
-                        <segue destination="8di-8k-tZr" kind="show" identifier="Logout" id="kII-1k-Avf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXq-Ir-X1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2177,6 +2182,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCZ-0D-hvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3999" y="2511"/>
+        </scene>
+        <!--Settings Table View Controller-->
+        <scene sceneID="YfZ-w4-xgr">
+            <objects>
+                <tableViewController id="re1-9R-3K6" customClass="SettingsTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="b9s-Pd-1bK">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="KV5-Oc-KNa">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xiX-9D-J1L">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xiX-9D-J1L" id="mH7-SK-pAH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q3K-zZ-5pZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q3K-zZ-5pZ" id="cvm-XD-fo5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="76Y-Rm-qKv">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76Y-Rm-qKv" id="GHo-4r-Ks4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-8B-YdS">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ym6-8B-YdS" firstAttribute="centerY" secondItem="GHo-4r-Ks4" secondAttribute="centerY" id="TOj-wM-DuG"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ym6-8B-YdS" secondAttribute="leading" id="dHZ-Ay-oGS"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="ym6-8B-YdS"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="TOj-wM-DuG"/>
+                                                    <exclude reference="dHZ-Ay-oGS"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="ym6-8B-YdS"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="TOj-wM-DuG"/>
+                                                    <include reference="dHZ-Ay-oGS"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="re1-9R-3K6" id="Meh-gV-Db4"/>
+                            <outlet property="delegate" destination="re1-9R-3K6" id="Sna-gv-CE2"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="8di-8k-tZr" kind="presentation" identifier="Logout" id="ovj-FK-nQJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVf-Xb-oKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3999" y="3172"/>
         </scene>
         <!--Learn-->
         <scene sceneID="SBC-Pg-zSq">

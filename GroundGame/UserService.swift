@@ -19,4 +19,26 @@ struct UserService {
             completion(true)
         }
     }
+    
+    func get(id: String, callback: (User?) -> Void) {
+        api.get("users", parameters: ["id": id]) { (data, success, error, response) -> Void in
+            
+        }
+    }
+    
+    func me(callback: (User?) -> Void) {
+        api.get("users/me", parameters: nil) { (data, success, error, response) -> Void in
+            if success {
+                // Extract our visit into a model
+                if let data = data {
+                    
+                    let json = JSON(data: data)
+                    
+                    let user = User(json: json)
+                    
+                    callback(user)
+                }
+            }
+        }
+    }
 }
