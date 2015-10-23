@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var rankings: [Ranking] = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,6 +31,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        LeaderboardService().getEveryone({ (leaderboard) -> Void in
+            if let leaderboard = leaderboard {
+                print(leaderboard.rankings)
+                self.rankings = leaderboard.rankings
+                self.tableView.reloadData()
+            }
+        })
     }
 
     @IBAction func logout(sender: UIButton) {
@@ -51,11 +61,28 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return rankings.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UserScoreCell") as! UserScoreTableViewCell
+
+        let ranking = rankings[indexPath.row]
+
+        if let rank = ranking.rank {
+            cell.rankLabel.text = "\(rank)"
+        }
+        if let scoreString = ranking.scoreString {
+            cell.pointsLabel.text = scoreString
+        }
+        if let name = ranking.name {
+            cell.nameLabel.text = "\(name)"
+        }
+        
         return cell
     }
 

@@ -157,7 +157,7 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="bgY-SH-i4V" secondAttribute="leading" id="R5l-rr-SqC"/>
                                                 <constraint firstItem="9bX-bj-Cox" firstAttribute="centerY" secondItem="Lmm-A6-YJP" secondAttribute="centerY" id="Tcn-1A-vwG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bGY-79-vZn" secondAttribute="trailing" constant="6" id="YTE-gF-wJt">
-                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                    <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
                                                 <constraint firstItem="bgY-SH-i4V" firstAttribute="centerY" secondItem="Lmm-A6-YJP" secondAttribute="centerY" id="cfa-Em-cQA"/>
                                                 <constraint firstItem="Lmm-A6-YJP" firstAttribute="leading" secondItem="bgY-SH-i4V" secondAttribute="trailing" constant="7" id="gEF-Of-u4d"/>
@@ -265,7 +265,9 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,234,567" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3I-rx-4Bz">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="scQ-zh-OYS"/>
+                                                        <constraint firstAttribute="width" constant="96" id="scQ-zh-OYS">
+                                                            <variation key="widthClass=compact" constant="86"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,7 +292,9 @@
                                                 <constraint firstItem="g7d-mg-yDC" firstAttribute="centerY" secondItem="Ehb-pY-wJc" secondAttribute="centerY" id="bL7-ud-M38"/>
                                                 <constraint firstItem="h3I-rx-4Bz" firstAttribute="centerY" secondItem="Ehb-pY-wJc" secondAttribute="centerY" id="dJz-6a-xkp"/>
                                                 <constraint firstItem="g7d-mg-yDC" firstAttribute="leading" secondItem="Ehb-pY-wJc" secondAttribute="trailing" constant="8" id="jMG-uP-bfJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="h3I-rx-4Bz" secondAttribute="trailing" id="oHL-sL-Oog"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="h3I-rx-4Bz" secondAttribute="trailing" id="oHL-sL-Oog">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
                                                 <constraint firstItem="Ehb-pY-wJc" firstAttribute="leading" secondItem="3dq-fo-Ifb" secondAttribute="trailing" constant="8" id="rrf-eD-rNu"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="3dq-fo-Ifb" secondAttribute="leading" id="w9D-Rk-t7h"/>
                                                 <constraint firstItem="h3I-rx-4Bz" firstAttribute="leading" secondItem="g7d-mg-yDC" secondAttribute="trailing" constant="8" id="yaI-Pl-hVX"/>
@@ -339,6 +343,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="g7d-mg-yDC" id="Dtd-K7-YbP"/>
+                                            <outlet property="pointsLabel" destination="h3I-rx-4Bz" id="3FG-Tp-kz3"/>
+                                            <outlet property="rankLabel" destination="3dq-fo-Ifb" id="6vR-3i-hO6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
