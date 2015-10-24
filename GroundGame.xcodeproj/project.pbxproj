@@ -70,6 +70,9 @@
 		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780A4D31BC863440090B979 /* BlueTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A79ECAC71BDC105100923C36 /* UserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC61BDC105100923C36 /* UserJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		A79ECAC91BDC276200923C36 /* InviteFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A79ECACB1BDC2B0F00923C36 /* CellButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
 		A7A5795A1BB092E100D8885E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579581BB092E100D8885E /* LaunchScreen.storyboard */; };
@@ -192,6 +195,9 @@
 		A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressNavigationController.swift; sourceTree = "<group>"; };
 		A775B9F71BC2F8A600510924 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		A780A4D31BC863440090B979 /* BlueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueTableViewCell.swift; sourceTree = "<group>"; };
+		A79ECAC61BDC105100923C36 /* UserJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserJSON.swift; sourceTree = "<group>"; };
+		A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellButtonDelegate.swift; sourceTree = "<group>"; };
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A579541BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
 				A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */,
 				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
+				A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
 				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
 				A73A0B261BDA9E7D008ECC2E /* User.swift */,
+				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
+				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -738,6 +747,7 @@
 			files = (
 				A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */,
 				A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */,
+				A79ECAC71BDC105100923C36 /* UserJSON.swift in Sources */,
 				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
@@ -777,9 +787,11 @@
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
+				A79ECACB1BDC2B0F00923C36 /* CellButtonDelegate.swift in Sources */,
 				A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */,
 				A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */,
 				A76890381BC8732D008F394C /* Person.swift in Sources */,
+				A79ECAC91BDC276200923C36 /* InviteFriendsTableViewCell.swift in Sources */,
 				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,
 				A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */,
 				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,

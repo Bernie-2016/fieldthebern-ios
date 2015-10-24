@@ -8,21 +8,26 @@
 
 import UIKit
 import KFSwiftImageLoader
+import FBSDKShareKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CellButtonDelegate, FBSDKAppInviteDialogDelegate {
     
     var rankings: [Ranking] = []
+    var imagePicker = UIImagePickerController()
 
     @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var doorsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewLoadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Profile"
 
+        // Set the navigation elements
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
 
         // Set the fonts for the segmented control
@@ -37,8 +42,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         
+        // Set the table view's data source and delegate
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        // Set profile image view to be rounded photo
+        self.profileImageView.layer.borderWidth = 1
+        self.profileImageView.layer.masksToBounds = true
+        self.profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.profileImageView.layer.cornerRadius = 30
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,45 +59,88 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         getLeaderboard("friends")
         UserService().me { (user) -> Void in
             if let user = user {
-                if let name = user.name {
-                    self.navigationItem.title = name
-                }
-                if let points = user.totalPointsString {
-                    self.pointsLabel.text = points
-                }
-                if let doors = user.visitsCountString {
-                    self.doorsLabel.text = doors
-                }
-                
-                let imageSize = 60.0
-                let imageSizeFloat = CGFloat(imageSize)
-                let imageView: UIImageView = UIImageView.init()
-                imageView.frame = CGRectMake(0, 0, imageSizeFloat, imageSizeFloat)
-                
-                let innerFrame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
-                let maskLayer = CAShapeLayer()
-                let circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: imageSizeFloat)
-                maskLayer.path = circlePath.CGPath
-                maskLayer.fillColor = UIColor.whiteColor().CGColor
-                
-                imageView.layer.mask = maskLayer
-                if let url = user.photoLargeURL {
-                    imageView.loadImageFromURLString(url)
-                }
-                self.imageContainer.addSubview(imageView)
+                self.updateProfileUI(user)
+            }
+        }
+    }
+    
+    func updateProfileUI(user: User) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            if let name = user.name {
+                self.navigationItem.title = name
+            }
+            if let points = user.totalPointsString {
+                self.pointsLabel.text = points
+            }
+            if let doors = user.visitsCountString {
+                self.doorsLabel.text = doors
+            }
+            if let url = user.photoLargeURL {
+                self.profileImageView.loadImageFromURLString(url)
             }
         }
     }
     
     func getLeaderboard(type: String) {
+        rankings = []
+        tableView.reloadData()
+        tableViewLoadingIndicator.hidden = false
+        tableViewLoadingIndicator.startAnimating()
         LeaderboardService().get(type, callback: { (leaderboard) -> Void in
             if let leaderboard = leaderboard {
                 self.rankings = leaderboard.rankings
                 self.tableView.reloadData()
+                self.tableViewLoadingIndicator.stopAnimating()
+                self.tableViewLoadingIndicator.hidden = true
             }
         })
     }
 
+    @IBAction func tapPhoto() {
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+        })
+        let chooseAction = UIAlertAction(title: "Choose from Library", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.pickImage()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(takePhotoAction)
+        optionMenu.addAction(chooseAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    func pickImage() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+        
+        let imageData = UIImagePNGRepresentation(image)
+        if let base64String = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) {
+            UserService().editMePhoto(base64String) { (user) -> Void in
+                print("uploaded")
+            }
+
+            self.profileImageView.image = image
+        }
+    }
+    
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -114,46 +169,63 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return rankings.count
+            return rankings.count + 1
         } else {
             return 0
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UserScoreCell") as! UserScoreTableViewCell
-
-        let ranking = rankings[indexPath.row]
-
-        if let rank = ranking.rank {
-            cell.rankLabel.text = "\(rank)"
-        }
-        if let scoreString = ranking.scoreString {
-            cell.pointsLabel.text = scoreString
-        }
-        if let name = ranking.name {
-            cell.nameLabel.text = "\(name)"
-        }
-        if let url = ranking.photoThumbURL {
-
-            let imageSize = 30.0
-            let imageSizeFloat = CGFloat(imageSize)
-            let imageView: UIImageView = UIImageView.init()
-            imageView.frame = CGRectMake(0, 0, imageSizeFloat, imageSizeFloat)
+        if indexPath.row < rankings.count {
+            let cell = tableView.dequeueReusableCellWithIdentifier("UserScoreCell") as! UserScoreTableViewCell
             
-            let innerFrame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
-            let maskLayer = CAShapeLayer()
-            let circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: imageSizeFloat)
-            maskLayer.path = circlePath.CGPath
-            maskLayer.fillColor = UIColor.whiteColor().CGColor
+            let ranking = rankings[indexPath.row]
             
-            imageView.layer.mask = maskLayer
-            imageView.loadImageFromURLString(url)
-
-            cell.imageContainer.addSubview(imageView)
+            if let rank = ranking.rank {
+                cell.rankLabel.text = "\(rank)"
+            }
+            if let scoreString = ranking.scoreString {
+                cell.pointsLabel.text = scoreString
+            }
+            if let name = ranking.name {
+                cell.nameLabel.text = "\(name)"
+            }
+            if let url = ranking.photoThumbURL {
+                
+                let imageView: UIImageView = UIImageView.init()
+                imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+                imageView.loadImageFromURLString(url)
+                
+                imageView.layer.borderWidth = 1
+                imageView.layer.masksToBounds = true
+                imageView.layer.borderColor = UIColor.whiteColor().CGColor
+                imageView.layer.cornerRadius = imageView.frame.height/2
+                
+                cell.imageContainer.addSubview(imageView)
+            }
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("InviteFriendsCell") as! InviteFriendsTableViewCell
+            
+            cell.delegate = self
+            
+            return cell
         }
-        
-        return cell
     }
-
+    
+    func didPressButton() {
+        print("pressed invite friends")
+        let content: FBSDKAppInviteContent = FBSDKAppInviteContent()
+        content.appLinkURL = NSURL(string: "https://www.mydomain.com/myapplink")
+        FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+        print("Complete invite without error")
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
+        print("Error in invite \(error)")
+    }
 }
