@@ -86,30 +86,37 @@ class PersonDetailsViewController: UIViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    
+        switch identifier {
+    
+            case "PersonDetailsEmbedSegue":
+                return true
         
-        guard identifier == "UnwindToConversationTableSegue" else { return false }
-        guard let returnedPerson = self.delegate?.willSubmit() else { return false }
-        
-        self.returnedPerson = returnedPerson
-        
-        guard let firstName = returnedPerson.firstName else { return false }
-        
-        // present an alert if not all details are there
-        if firstName.isEmpty
-            || returnedPerson.partyAffiliation == .Unknown
-            || returnedPerson.canvasResponse == .Unknown {
-
-                let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter a name and select party affiliation and feeling towards Bernie", preferredStyle: UIAlertControllerStyle.Alert)
+            case "UnwindToConversationTableSegue":
                 
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
-                alert.addAction(okAction)
+                guard let returnedPerson = self.delegate?.willSubmit() else { print("should not happen"); break }
+                guard let firstName = returnedPerson.firstName else { print("should not happen"); break }
                 
-                self.presentViewController(alert, animated: true, completion: nil)
-                
+                if !firstName.isEmpty
+                    && returnedPerson.partyAffiliation != .Unknown
+                    && returnedPerson.canvasResponse != .Unknown {
+                        
+                        self.returnedPerson = returnedPerson
+                        return true
+                }
+                else {
+                        let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter a name, select party affiliation and feeling towards Bernie", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
+                        alert.addAction(okAction)
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+            
+            default:
                 return false
-
         }
         
-        return true
+        return false
     }
 }

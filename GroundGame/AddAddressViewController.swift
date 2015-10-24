@@ -63,9 +63,9 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     @IBAction func pressSubmitAddress(sender: UIButton) {
 
         
-        if (addressString.isEmpty) {
+        if (streetAddress.text!.isEmpty) {
             
-            let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter all details", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Incomplete information", message: "Please enter a street address", preferredStyle: UIAlertControllerStyle.Alert)
             
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
             alert.addAction(okAction)
