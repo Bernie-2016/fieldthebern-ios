@@ -110,6 +110,8 @@
 	<array>
 		<string>fbauth2</string>
 		<string>fbauth</string>
+		<string>fbapi</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>privacy - location usage description</key>
 	<string>Location services are required to help you canvas.</string>

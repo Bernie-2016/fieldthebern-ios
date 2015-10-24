@@ -9,109 +9,109 @@
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B191BD99141008ECC2E /* BlueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B1D1BD995AD008ECC2E /* UserScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B211BD9F19E008ECC2E /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B201BD9F19E008ECC2E /* Ranking.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B231BD9F457008ECC2E /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B221BD9F457008ECC2E /* Leaderboard.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B251BDA9997008ECC2E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B261BDA9E7D008ECC2E /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
-		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
-		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; settings = {ASSET_TAGS = (); }; };
-		A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
-		A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A742797E1BCED6030020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
-		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
-		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
-		A74842501BCD945500D62868 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; settings = {ASSET_TAGS = (); }; };
-		A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33D51BCAFE4400191E3C /* PersonSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; settings = {ASSET_TAGS = (); }; };
-		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
-		A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9B1BBB3933005C4D34 /* UserService.swift */; settings = {ASSET_TAGS = (); }; };
-		A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; settings = {ASSET_TAGS = (); }; };
-		A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890311BC8680E008F394C /* PersonTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A76890341BC86AD0008F394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76890331BC86AD0008F394C /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
-		A76890381BC8732D008F394C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; settings = {ASSET_TAGS = (); }; };
-		A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903D1BC88527008F394C /* PersonDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F21BBCA9B000DBDFEA /* TabBar.swift */; settings = {ASSET_TAGS = (); }; };
-		A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
-		A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA361BBB910E007FA40B /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
-		A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A76ABA401BBC913A007FA40B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; settings = {ASSET_TAGS = (); }; };
-		A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */; settings = {ASSET_TAGS = (); }; };
-		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
-		A771C58C1BD812B200179F04 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58B1BD812B200179F04 /* States.swift */; settings = {ASSET_TAGS = (); }; };
-		A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58D1BD8137700179F04 /* VisitResult.swift */; settings = {ASSET_TAGS = (); }; };
-		A771C5901BD8139400179F04 /* PinImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58F1BD8139400179F04 /* PinImage.swift */; settings = {ASSET_TAGS = (); }; };
-		A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5911BD813C900179F04 /* CanvasResponseList.swift */; settings = {ASSET_TAGS = (); }; };
-		A771C5981BD8141E00179F04 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5971BD8141E00179F04 /* OAuth.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780A4D31BC863440090B979 /* BlueTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A79ECAC71BDC105100923C36 /* UserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC61BDC105100923C36 /* UserJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		A79ECAC91BDC276200923C36 /* InviteFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A79ECACB1BDC2B0F00923C36 /* CellButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
+		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; };
+		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; };
+		A73A0B191BD99141008ECC2E /* BlueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */; };
+		A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */; };
+		A73A0B1D1BD995AD008ECC2E /* UserScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */; };
+		A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */; };
+		A73A0B211BD9F19E008ECC2E /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B201BD9F19E008ECC2E /* Ranking.swift */; };
+		A73A0B231BD9F457008ECC2E /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B221BD9F457008ECC2E /* Leaderboard.swift */; };
+		A73A0B251BDA9997008ECC2E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */; };
+		A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B261BDA9E7D008ECC2E /* User.swift */; };
+		A73D663D1BBEE44000127245 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; };
+		A73D663F1BBEE87400127245 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; };
+		A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66401BBF36A900127245 /* AddressPinView.swift */; };
+		A73D66431BBF373600127245 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; };
+		A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; };
+		A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; };
+		A742797E1BCED6030020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; };
+		A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797B1BCED5DB0020EE29 /* VisitJSON.swift */; };
+		A74279801BCED6730020EE29 /* PersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742797D1BCED6030020EE29 /* PersonJSON.swift */; };
+		A74279811BCED6750020EE29 /* AddressJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279791BCED5BB0020EE29 /* AddressJSON.swift */; };
+		A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */; };
+		A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreViewController.swift */; };
+		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
+		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; };
+		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
+		A74842501BCD945500D62868 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
+		A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33D51BCAFE4400191E3C /* PersonSpec.swift */; };
+		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; };
+		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; };
+		A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9B1BBB3933005C4D34 /* UserService.swift */; };
+		A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; };
+		A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */; };
+		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; };
+		A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890311BC8680E008F394C /* PersonTableViewCell.swift */; };
+		A76890341BC86AD0008F394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76890331BC86AD0008F394C /* Assets.xcassets */; };
+		A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */; };
+		A76890381BC8732D008F394C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
+		A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */; };
+		A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903D1BC88527008F394C /* PersonDetailsViewController.swift */; };
+		A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; };
+		A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F21BBCA9B000DBDFEA /* TabBar.swift */; };
+		A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */; };
+		A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */; };
+		A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA361BBB910E007FA40B /* PaddedTextField.swift */; };
+		A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */; };
+		A76ABA401BBC913A007FA40B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; };
+		A76ABA421BBC93C3007FA40B /* UIImage+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */; };
+		A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; };
+		A771C58C1BD812B200179F04 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58B1BD812B200179F04 /* States.swift */; };
+		A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58D1BD8137700179F04 /* VisitResult.swift */; };
+		A771C5901BD8139400179F04 /* PinImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58F1BD8139400179F04 /* PinImage.swift */; };
+		A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5911BD813C900179F04 /* CanvasResponseList.swift */; };
+		A771C5981BD8141E00179F04 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5971BD8141E00179F04 /* OAuth.swift */; };
+		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; };
+		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; };
+		A775B9F01BC0967D00510924 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; };
+		A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */; };
+		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; };
+		A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationViewController.swift */; };
+		A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780A4D31BC863440090B979 /* BlueTableViewCell.swift */; };
+		A79ECAC71BDC105100923C36 /* UserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC61BDC105100923C36 /* UserJSON.swift */; };
+		A79ECAC91BDC276200923C36 /* InviteFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */; };
+		A79ECACB1BDC2B0F00923C36 /* CellButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
 		A7A5795A1BB092E100D8885E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579581BB092E100D8885E /* LaunchScreen.storyboard */; };
 		A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579641BB092E100D8885E /* GroundGameTests.swift */; };
 		A7A579701BB092E100D8885E /* GroundGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */; };
-		A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */; settings = {ASSET_TAGS = (); }; };
-		A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A579801BB2105E00D8885E /* Lato-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
-		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; settings = {ASSET_TAGS = (); }; };
-		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E21BCB04A400232234 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E41BCB05B900232234 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E51BCB05C700232234 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E61BCB05CA00232234 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E81BCB05FF00232234 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6E91BCB060E00232234 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6EA1BCB062100232234 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6EB1BCB062A00232234 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6EC1BCB063700232234 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6ED1BCB064300232234 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6EE1BCB064600232234 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6F01BCB065100232234 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6F31BCB0C6E00232234 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D3F6F21BCB0C6E00232234 /* Person.json */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; settings = {ASSET_TAGS = (); }; };
-		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; settings = {ASSET_TAGS = (); }; };
-		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; settings = {ASSET_TAGS = (); }; };
+		A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */; };
+		A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */; };
+		A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A579801BB2105E00D8885E /* Lato-Medium.ttf */; };
+		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; };
+		A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */; };
+		A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */; };
+		A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */; };
+		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; };
+		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; };
+		A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */; };
+		A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; };
+		A7D3F6E21BCB04A400232234 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
+		A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; };
+		A7D3F6E41BCB05B900232234 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; };
+		A7D3F6E51BCB05C700232234 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; };
+		A7D3F6E61BCB05CA00232234 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; };
+		A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; };
+		A7D3F6E81BCB05FF00232234 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; };
+		A7D3F6E91BCB060E00232234 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */; };
+		A7D3F6EA1BCB062100232234 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EF1BC0967D00510924 /* NSDate.swift */; };
+		A7D3F6EB1BCB062A00232234 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; };
+		A7D3F6EC1BCB063700232234 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663E1BBEE87400127245 /* AddressService.swift */; };
+		A7D3F6ED1BCB064300232234 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; };
+		A7D3F6EE1BCB064600232234 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; };
+		A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; };
+		A7D3F6F01BCB065100232234 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; };
+		A7D3F6F31BCB0C6E00232234 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D3F6F21BCB0C6E00232234 /* Person.json */; };
+		A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */; };
+		A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */; };
+		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; };
+		A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */; };
+		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
+		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
+		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -287,11 +287,11 @@
 		A72F88AF1BCC4979001B185B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
-				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
 				A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */,
-				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
+				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
 				A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */,
+				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
+				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -330,24 +330,24 @@
 				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
 				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
+				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
+				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
 				A771C5971BD8141E00179F04 /* OAuth.swift */,
 				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
 				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
 				A771C58F1BD8139400179F04 /* PinImage.swift */,
+				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A771C58B1BD812B200179F04 /* States.swift */,
+				A73A0B261BDA9E7D008ECC2E /* User.swift */,
+				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
-				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
-				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
-				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
-				A73A0B261BDA9E7D008ECC2E /* User.swift */,
-				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -392,8 +392,9 @@
 		A74FCE9A1BBB37A9005C4D34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */,
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
+				A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */,
+				A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */,
 				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
 				A775B9F71BC2F8A600510924 /* ConversationViewController.swift */,
@@ -403,13 +404,12 @@
 				A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */,
 				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
 				A768903D1BC88527008F394C /* PersonDetailsViewController.swift */,
+				A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */,
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 				A74279841BD016190020EE29 /* ScoreViewController.swift */,
+				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
-				A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */,
-				A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */,
-				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
