@@ -14,6 +14,8 @@ class UserScoreTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    @IBOutlet weak var imageContainer: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

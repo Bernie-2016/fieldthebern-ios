@@ -16,7 +16,7 @@ struct Ranking {
     let score: Int?
 
     var name: String? = nil
-    var imageURL: String? = nil
+    var photoThumbURL: String? = nil
     
     var scoreString: String? {
         get {
@@ -29,7 +29,7 @@ struct Ranking {
             }
         }
     }
-
+    
     init(json: JSON) {
         self.userId = json["member"].string
 
@@ -50,7 +50,8 @@ struct Ranking {
                 let json = JSON(data: dataFromString)
 
                 self.name = json["name"].string
-                self.imageURL = json["image_url"].string
+                print(json)
+                self.photoThumbURL = json["photo_thumb_url"].string
             }
         }
     }

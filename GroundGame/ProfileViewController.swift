@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import KFSwiftImageLoader
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var rankings: [Ranking] = []
 
+    @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var doorsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Profile"
+
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
 
         // Set the fonts for the segmented control
         let medium = [NSFontAttributeName: UIFont(name: "Lato-Medium", size: 13.0)!]
@@ -42,8 +48,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         UserService().me { (user) -> Void in
             if let user = user {
                 if let name = user.name {
-                    self.title = name
+                    self.navigationItem.title = name
                 }
+                if let points = user.totalPointsString {
+                    self.pointsLabel.text = points
+                }
+                if let doors = user.visitsCountString {
+                    self.doorsLabel.text = doors
+                }
+                
+                let imageSize = 60.0
+                let imageSizeFloat = CGFloat(imageSize)
+                let imageView: UIImageView = UIImageView.init()
+                imageView.frame = CGRectMake(0, 0, imageSizeFloat, imageSizeFloat)
+                
+                let innerFrame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+                let maskLayer = CAShapeLayer()
+                let circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: imageSizeFloat)
+                maskLayer.path = circlePath.CGPath
+                maskLayer.fillColor = UIColor.whiteColor().CGColor
+                
+                imageView.layer.mask = maskLayer
+                if let url = user.photoLargeURL {
+                    imageView.loadImageFromURLString(url)
+                }
+                self.imageContainer.addSubview(imageView)
             }
         }
     }
@@ -104,6 +133,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         if let name = ranking.name {
             cell.nameLabel.text = "\(name)"
+        }
+        if let url = ranking.photoThumbURL {
+
+            let imageSize = 30.0
+            let imageSizeFloat = CGFloat(imageSize)
+            let imageView: UIImageView = UIImageView.init()
+            imageView.frame = CGRectMake(0, 0, imageSizeFloat, imageSizeFloat)
+            
+            let innerFrame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+            let maskLayer = CAShapeLayer()
+            let circlePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: imageSizeFloat)
+            maskLayer.path = circlePath.CGPath
+            maskLayer.fillColor = UIColor.whiteColor().CGColor
+            
+            imageView.layer.mask = maskLayer
+            imageView.loadImageFromURLString(url)
+
+            cell.imageContainer.addSubview(imageView)
         }
         
         return cell
