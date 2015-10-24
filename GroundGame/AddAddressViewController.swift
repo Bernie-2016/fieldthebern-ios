@@ -61,6 +61,21 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     }
     
     @IBAction func pressSubmitAddress(sender: UIButton) {
+
+        
+        if (addressString.isEmpty) {
+            
+            let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter all details", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
+            alert.addAction(okAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        
         let alert = UIAlertController(title: "Verify Address", message: "\n\(addressString)\n\nAre you sure this is the right address? GPS is not 100% accurate.", preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in

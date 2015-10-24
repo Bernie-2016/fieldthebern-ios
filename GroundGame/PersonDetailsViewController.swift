@@ -86,21 +86,28 @@ class PersonDetailsViewController: UIViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "UnwindToConversationTableSegue" {
-            if let returnedPerson = self.delegate?.willSubmit() {
-                self.returnedPerson = returnedPerson
-                if let firstName = returnedPerson.firstName {
-                        if firstName != ""
-                            && returnedPerson.partyAffiliation != .Unknown
-                            && returnedPerson.canvasResponse != .Unknown {
-                                // We have all the details we need
-                                return true
-                        } else {
-                            print("We're missing details")
-                            return false
-                        }
-                }
-            }
+        
+        guard identifier == "UnwindToConversationTableSegue" else { return false }
+        guard let returnedPerson = self.delegate?.willSubmit() else { return false }
+        
+        self.returnedPerson = returnedPerson
+        
+        guard let firstName = returnedPerson.firstName else { return false }
+        
+        // present an alert if not all details are there
+        if firstName.isEmpty
+            || returnedPerson.partyAffiliation == .Unknown
+            || returnedPerson.canvasResponse == .Unknown {
+
+                let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter a name and select party affiliation and feeling towards Bernie", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
+                alert.addAction(okAction)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                return false
+
         }
         
         return true
