@@ -53,6 +53,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
+        
+        self.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
