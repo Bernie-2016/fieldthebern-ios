@@ -61,11 +61,26 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var facebookSpinner: UIActivityIndicatorView!
     
+    
     func submitForm() {
         let firstName = firstNameField.text
         let lastName = lastNameField.text
         let email = emailField.text
         let password = passwordField.text
+        
+        
+        if (firstName!.isEmpty || lastName!.isEmpty || password!.isEmpty || !email!.isValidEmail) {
+            
+            let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter all details and a valid email address", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
+            alert.addAction(okAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
         
         print(firstName, lastName, email, password)
         
@@ -73,11 +88,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         submitButton.titleLabel?.layer.opacity = 0
         
         let userService = UserService()
+    
         userService.createUser(email: email!, password: password!) { success in
             self.submitButton.titleLabel?.layer.opacity = 1
             self.spinner.stopAnimating()
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
