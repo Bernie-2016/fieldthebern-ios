@@ -14,6 +14,7 @@ import MessageUI
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CellButtonDelegate, FBSDKAppInviteDialogDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     var rankings: [Ranking] = []
+    var loadingRankings = false
     var imagePicker = UIImagePickerController()
 
     @IBOutlet weak var imageContainer: UIView!
@@ -99,6 +100,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func getLeaderboard(type: String) {
+        loadingRankings = true
         rankings = []
         tableView.reloadData()
         tableViewLoadingIndicator.hidden = false
@@ -106,6 +108,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         LeaderboardService().get(type, callback: { (leaderboard) -> Void in
             if let leaderboard = leaderboard {
                 self.rankings = leaderboard.rankings
+                self.loadingRankings = false
                 self.tableView.reloadData()
                 self.tableViewLoadingIndicator.stopAnimating()
                 self.tableViewLoadingIndicator.hidden = true
@@ -229,11 +232,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("InviteFriendsCell") as! InviteFriendsTableViewCell
-            
-            cell.delegate = self
-            
-            return cell
+            if loadingRankings {
+                let cell = tableView.dequeueReusableCellWithIdentifier("LoadingCell") as! LoadingTableViewCell
+                
+                cell.activityIndicator.startAnimating()
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("InviteFriendsCell") as! InviteFriendsTableViewCell
+                
+                cell.delegate = self
+                
+                return cell
+            }
         }
     }
     
