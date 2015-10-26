@@ -463,6 +463,6 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Error while updating location " + error.localizedDescription)
+        log.error("Error while updating location \(error.localizedDescription)")
     }
 }

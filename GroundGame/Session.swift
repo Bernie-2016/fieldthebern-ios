@@ -88,7 +88,7 @@ class Session {
             
             oauth2.onFailure = { error in        // `error` is nil on cancel
                 if error != nil {
-                    print("Authorization went wrong: \(error!.localizedDescription)")
+                    log.error("Authorization went wrong: \(error!.localizedDescription)")
                 }
                 callback(false)
             }

@@ -50,7 +50,6 @@ struct Ranking {
                 let json = JSON(data: dataFromString)
 
                 self.name = json["name"].string
-                print(json)
                 self.photoThumbURL = json["photo_thumb_url"].string
             }
         }

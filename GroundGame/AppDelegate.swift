@@ -8,16 +8,33 @@
 
 import UIKit
 import KeychainAccess
+import XCGLogger
+
+let log: XCGLogger = {
+    let log = XCGLogger.defaultInstance()
+    log.xcodeColorsEnabled = true // Or set the XcodeColors environment variable in your scheme to YES
+    log.xcodeColors = [
+        .Verbose: .lightGrey,
+        .Debug: .darkGrey,
+        .Info: .darkGreen,
+        .Warning: .orange,
+        .Error: .red,
+        .Severe: XCGLogger.XcodeColor(fg: (255, 255, 255), bg: (255, 0, 0)) // Optionally use RGB values directly
+    ]
+    
+    return log
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
     
+        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
