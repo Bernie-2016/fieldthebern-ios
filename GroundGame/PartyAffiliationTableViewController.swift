@@ -76,7 +76,6 @@ class PartyAffiliationTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! CheckableTableViewCell
         
-        print(cell.checked)
         if cell.checked {
             cell.checked = false
         }
