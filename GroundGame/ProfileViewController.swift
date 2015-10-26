@@ -9,8 +9,9 @@
 import UIKit
 import KFSwiftImageLoader
 import FBSDKShareKit
+import MessageUI
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CellButtonDelegate, FBSDKAppInviteDialogDelegate {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CellButtonDelegate, FBSDKAppInviteDialogDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     var rankings: [Ranking] = []
     var imagePicker = UIImagePickerController()
@@ -102,6 +103,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
         let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.takePhoto()
         })
         let chooseAction = UIAlertAction(title: "Choose from Library", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
             self.pickImage()
@@ -115,7 +117,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
-    
+
+    func takePhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+
     func pickImage() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
             imagePicker.delegate = self
@@ -154,6 +166,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    // MARK: - Table View Controller Delegate Methods
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -175,6 +189,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+    }
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row < rankings.count {
             let cell = tableView.dequeueReusableCellWithIdentifier("UserScoreCell") as! UserScoreTableViewCell
@@ -214,12 +232,95 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    // MARK: - Invite Friends
+    
     func didPressButton() {
-        print("pressed invite friends")
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        let facebookAction = UIAlertAction(title: "Invite Facebook Friends", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.showFacebookInviteDialog()
+        })
+        let textAction = UIAlertAction(title: "Invite by Text", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.composeTextMessage()
+        })
+        let emailAction = UIAlertAction(title: "Invite by Email", style: .Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.composeEmail()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(facebookAction)
+        optionMenu.addAction(textAction)
+        optionMenu.addAction(emailAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    func showFacebookInviteDialog() {
         let content: FBSDKAppInviteContent = FBSDKAppInviteContent()
-        content.appLinkURL = NSURL(string: "https://www.mydomain.com/myapplink")
+        content.appLinkURL = NSURL(string: "https://fb.me/835938513187372")
         FBSDKAppInviteDialog.showWithContent(content, delegate: self)
     }
+    
+    func composeTextMessage() {
+        if MFMessageComposeViewController.canSendText() {
+            let messageVC = MFMessageComposeViewController()
+                
+            messageVC.body = "Enter a message"
+            messageVC.messageComposeDelegate = self
+            
+            self.presentViewController(messageVC, animated: false, completion: nil)
+        }
+    }
+    
+    func composeEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailVC = MFMailComposeViewController()
+            
+            mailVC.setMessageBody("", isHTML: false)
+            mailVC.mailComposeDelegate = self
+            
+            self.presentViewController(mailVC, animated: false, completion: nil)
+        }
+    }
+    
+    // MARK: - MFMessageComposeViewControllerDelegate Methods
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        switch (result) {
+        case MessageComposeResultCancelled:
+            print("Message was cancelled")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MessageComposeResultFailed:
+            print("Message failed")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MessageComposeResultSent:
+            print("Message was sent")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        default:
+            break;
+        }
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate Methods
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result {
+        case MFMailComposeResultCancelled:
+            print("Message was cancelled")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MFMailComposeResultFailed:
+            print("Message failed")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MFMailComposeResultSent:
+            print("Message was sent")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        default:
+            break;
+        }
+    }
+    
+    // MARK: - FBSDKAppInviteDialogDelegate Methods
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
         print("Complete invite without error")
