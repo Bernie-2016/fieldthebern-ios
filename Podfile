@@ -11,6 +11,7 @@ pod 'Dollar'
 pod 'FLAnimatedImage', '~> 1.0'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 pod 'KFSwiftImageLoader', '~> 2.0'
+pod 'XCGLogger'
 
 def testing_pods
     pod 'Quick'
