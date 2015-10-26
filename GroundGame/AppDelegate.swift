@@ -62,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
             if success {
+                
                 if let rootViewController = self.window!.rootViewController {
                     if rootViewController.isKindOfClass(OnboardingViewController) {
                         let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController

@@ -47,6 +47,11 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>s3.amazonaws.com</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>groundgameapp-staging.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -94,6 +99,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb823950097719547</string>
+				<string>groundGame</string>
 			</array>
 		</dict>
 	</array>
@@ -105,6 +111,14 @@
 	<array>
 		<string>fbauth2</string>
 		<string>fbauth</string>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>privacy - location usage description</key>
 	<string>Location services are required to help you canvas.</string>

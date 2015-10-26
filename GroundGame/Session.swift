@@ -9,6 +9,7 @@
 import Foundation
 import p2_OAuth2
 import KeychainAccess
+import FBSDKLoginKit
 
 class Session {
     
@@ -75,6 +76,8 @@ class Session {
         if let oauth2 = self.oauth2 {
             oauth2.forgetTokens()
         }
+        keychain["facebookAccessToken"] = nil
+        FBSDKLoginManager().logOut()
     }
     
     private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: (Bool) -> Void) {
