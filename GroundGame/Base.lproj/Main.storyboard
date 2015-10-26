@@ -2884,6 +2884,9 @@ useful talking points.</string>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6uw-Mc-d5Y">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <animations/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="190" y="454" width="20" height="20"/>
+                                </variation>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZQ-J4-U7K">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -3046,7 +3049,6 @@ useful talking points.</string>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.65098039215686276" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="022-ZH-pH3"/>
                                     <constraint firstAttribute="trailing" secondItem="Wr6-ah-7WD" secondAttribute="trailing" constant="20" id="DYK-7R-i5J">
                                         <variation key="widthClass=compact" constant="0.0"/>
                                     </constraint>
@@ -3061,7 +3063,6 @@ useful talking points.</string>
                                         <exclude reference="Wr6-ah-7WD"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="022-ZH-pH3"/>
                                         <exclude reference="DYK-7R-i5J"/>
                                         <exclude reference="Zg2-Pf-84D"/>
                                         <exclude reference="ie7-m1-4t9"/>
@@ -3073,7 +3074,6 @@ useful talking points.</string>
                                         <include reference="Wr6-ah-7WD"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="022-ZH-pH3"/>
                                         <include reference="DYK-7R-i5J"/>
                                         <include reference="Zg2-Pf-84D"/>
                                         <include reference="ie7-m1-4t9"/>
@@ -3148,7 +3148,7 @@ useful talking points.</string>
                             <constraint firstItem="Kpb-BQ-U6X" firstAttribute="centerX" secondItem="c2P-FJ-oC7" secondAttribute="centerX" id="02Z-20-LG3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1ra-Cv-zex" secondAttribute="trailing" constant="20" id="0J2-uy-w8g"/>
                             <constraint firstItem="swJ-ez-KDn" firstAttribute="width" secondItem="8rI-kX-ynB" secondAttribute="width" id="1g5-p5-IDz"/>
-                            <constraint firstItem="1ha-xD-m17" firstAttribute="top" secondItem="Kpb-BQ-U6X" secondAttribute="bottom" constant="28" id="1hk-QV-3fe"/>
+                            <constraint firstItem="1ha-xD-m17" firstAttribute="top" secondItem="Kpb-BQ-U6X" secondAttribute="bottom" constant="1" id="1hk-QV-3fe"/>
                             <constraint firstItem="4k8-yd-2yY" firstAttribute="centerX" secondItem="c2P-FJ-oC7" secondAttribute="centerX" id="2S0-nA-4h4"/>
                             <constraint firstItem="yZQ-J4-U7K" firstAttribute="height" secondItem="wba-Yo-fRk" secondAttribute="height" id="2ai-rU-sj7"/>
                             <constraint firstItem="yZQ-J4-U7K" firstAttribute="width" secondItem="dUo-li-9x9" secondAttribute="width" id="3Yh-Wp-uNc"/>
@@ -3170,11 +3170,14 @@ useful talking points.</string>
                             <constraint firstItem="6uw-Mc-d5Y" firstAttribute="centerY" secondItem="4k8-yd-2yY" secondAttribute="centerY" id="CHg-hy-Wfk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zXf-cG-szc" secondAttribute="trailing" constant="-20" id="CRL-Z9-kLO"/>
                             <constraint firstItem="8rI-kX-ynB" firstAttribute="leading" secondItem="c2P-FJ-oC7" secondAttribute="leadingMargin" constant="30" id="CXv-WD-Hos"/>
+                            <constraint firstItem="1ha-xD-m17" firstAttribute="height" secondItem="Kpb-BQ-U6X" secondAttribute="height" id="G1z-sI-Cu0"/>
                             <constraint firstItem="dUo-li-9x9" firstAttribute="leading" secondItem="yZQ-J4-U7K" secondAttribute="trailing" constant="1" id="IDX-TF-Xnd"/>
-                            <constraint firstItem="yZQ-J4-U7K" firstAttribute="top" secondItem="1ha-xD-m17" secondAttribute="bottom" constant="28" id="IEr-1H-YH9"/>
+                            <constraint firstItem="yZQ-J4-U7K" firstAttribute="top" secondItem="1ha-xD-m17" secondAttribute="bottom" constant="1" id="IEr-1H-YH9"/>
                             <constraint firstItem="swJ-ez-KDn" firstAttribute="centerY" secondItem="1ha-xD-m17" secondAttribute="centerY" id="K7Y-TF-ZWh"/>
                             <constraint firstItem="yZQ-J4-U7K" firstAttribute="height" secondItem="4k8-yd-2yY" secondAttribute="height" id="KfL-5n-aVA"/>
-                            <constraint firstItem="Kpb-BQ-U6X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8xp-Hu-ihK" secondAttribute="bottom" constant="20" id="NI9-Jj-rcR"/>
+                            <constraint firstItem="Kpb-BQ-U6X" firstAttribute="top" secondItem="8xp-Hu-ihK" secondAttribute="bottom" id="NI9-Jj-rcR">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="wba-Yo-fRk" firstAttribute="width" secondItem="c2P-FJ-oC7" secondAttribute="width" id="NdR-rY-sW1"/>
                             <constraint firstItem="6uw-Mc-d5Y" firstAttribute="centerX" secondItem="4k8-yd-2yY" secondAttribute="centerX" id="OGM-3A-pbc"/>
                             <constraint firstItem="yZQ-J4-U7K" firstAttribute="leading" secondItem="c2P-FJ-oC7" secondAttribute="leadingMargin" id="PPY-Mu-agG"/>
@@ -3221,10 +3224,17 @@ useful talking points.</string>
                                 <exclude reference="02Z-20-LG3"/>
                                 <exclude reference="NI9-Jj-rcR"/>
                                 <exclude reference="UeR-yl-InU"/>
-                                <exclude reference="CXv-WD-Hos"/>
-                                <exclude reference="u0T-TT-1yf"/>
                                 <exclude reference="Sov-k8-SDp"/>
                                 <exclude reference="bzH-en-gjM"/>
+                                <exclude reference="1hk-QV-3fe"/>
+                                <exclude reference="G1z-sI-Cu0"/>
+                                <exclude reference="fsA-Uu-MtI"/>
+                                <exclude reference="CXv-WD-Hos"/>
+                                <exclude reference="u0T-TT-1yf"/>
+                                <exclude reference="1g5-p5-IDz"/>
+                                <exclude reference="K7Y-TF-ZWh"/>
+                                <exclude reference="VOk-x7-Ow0"/>
+                                <exclude reference="owK-qV-Upa"/>
                                 <exclude reference="2ai-rU-sj7"/>
                                 <exclude reference="3Yh-Wp-uNc"/>
                                 <exclude reference="Aeu-Qh-o57"/>
@@ -3235,17 +3245,11 @@ useful talking points.</string>
                                 <exclude reference="iNU-o6-DDd"/>
                                 <exclude reference="p6d-wR-IsC"/>
                                 <exclude reference="qRN-Gg-UsK"/>
-                                <exclude reference="1hk-QV-3fe"/>
-                                <exclude reference="fsA-Uu-MtI"/>
                                 <exclude reference="CRL-Z9-kLO"/>
                                 <exclude reference="Qk6-Q1-vkt"/>
                                 <exclude reference="fbU-fZ-3gh"/>
                                 <exclude reference="mZr-Hb-g26"/>
                                 <exclude reference="zCT-GS-IXF"/>
-                                <exclude reference="1g5-p5-IDz"/>
-                                <exclude reference="K7Y-TF-ZWh"/>
-                                <exclude reference="VOk-x7-Ow0"/>
-                                <exclude reference="owK-qV-Upa"/>
                                 <exclude reference="0J2-uy-w8g"/>
                                 <exclude reference="IDX-TF-Xnd"/>
                                 <exclude reference="PtH-zy-kLx"/>
@@ -3287,10 +3291,17 @@ useful talking points.</string>
                                 <include reference="02Z-20-LG3"/>
                                 <include reference="NI9-Jj-rcR"/>
                                 <include reference="UeR-yl-InU"/>
-                                <include reference="CXv-WD-Hos"/>
-                                <include reference="u0T-TT-1yf"/>
                                 <include reference="Sov-k8-SDp"/>
                                 <include reference="bzH-en-gjM"/>
+                                <include reference="1hk-QV-3fe"/>
+                                <include reference="G1z-sI-Cu0"/>
+                                <include reference="fsA-Uu-MtI"/>
+                                <include reference="CXv-WD-Hos"/>
+                                <include reference="u0T-TT-1yf"/>
+                                <include reference="1g5-p5-IDz"/>
+                                <include reference="K7Y-TF-ZWh"/>
+                                <include reference="VOk-x7-Ow0"/>
+                                <include reference="owK-qV-Upa"/>
                                 <include reference="2ai-rU-sj7"/>
                                 <include reference="3Yh-Wp-uNc"/>
                                 <include reference="Aeu-Qh-o57"/>
@@ -3301,17 +3312,11 @@ useful talking points.</string>
                                 <include reference="iNU-o6-DDd"/>
                                 <include reference="p6d-wR-IsC"/>
                                 <include reference="qRN-Gg-UsK"/>
-                                <include reference="1hk-QV-3fe"/>
-                                <include reference="fsA-Uu-MtI"/>
                                 <include reference="CRL-Z9-kLO"/>
                                 <include reference="Qk6-Q1-vkt"/>
                                 <include reference="fbU-fZ-3gh"/>
                                 <exclude reference="mZr-Hb-g26"/>
                                 <include reference="zCT-GS-IXF"/>
-                                <include reference="1g5-p5-IDz"/>
-                                <include reference="K7Y-TF-ZWh"/>
-                                <include reference="VOk-x7-Ow0"/>
-                                <include reference="owK-qV-Upa"/>
                                 <exclude reference="0J2-uy-w8g"/>
                                 <include reference="IDX-TF-Xnd"/>
                                 <exclude reference="PtH-zy-kLx"/>
