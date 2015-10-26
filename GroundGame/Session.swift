@@ -38,7 +38,7 @@ class Session {
         keychain["email"] = email
         keychain["password"] = password
         keychain["lastAuthentication"] = "email"
-
+        
         internalAuthorize(self.oauth2, callback: callback)
     }
     
@@ -83,6 +83,7 @@ class Session {
     private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: (Bool) -> Void) {
         if let oauth2 = oauth2 {
             oauth2.onAuthorize = { parameters in
+                print(parameters)
                 callback(true)
             }
             

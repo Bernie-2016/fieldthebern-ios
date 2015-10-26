@@ -89,9 +89,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         let userService = UserService()
     
-        userService.createUser(email: email!, password: password!) { success in
+        userService.createUser(email: email!, password: password!, firstName: firstName!, lastName: lastName!) { success in
             self.submitButton.titleLabel?.layer.opacity = 1
-            self.spinner.stopAnimating()
+            if success {
+                let session = Session.sharedInstance
+                session.authorize(email!, password: password!, callback: { (success) -> Void in
+                    self.performSegueWithIdentifier("Login", sender: self)
+                    self.spinner.stopAnimating()
+                })
+            } else {
+                self.spinner.stopAnimating()
+            }
         }
     }
 

@@ -13,10 +13,9 @@ struct UserService {
     
     let api = API()
 
-    func createUser(email email: String, password: String, completion: (Bool) -> Void) {
-        api.unauthorizedPost("users", parameters: ["email": email, "password": password]) { response in
-            print(response)
-            completion(true)
+    func createUser(email email: String, password: String, firstName: String, lastName: String, completion: (Bool) -> Void) {
+        api.unauthorizedPost("users", parameters: ["email": email, "password": password, "first_name": firstName, "last_name": lastName]) { (data, success, error, response) in
+            completion(success)
         }
     }
     

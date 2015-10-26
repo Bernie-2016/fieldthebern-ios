@@ -33,17 +33,15 @@ class API {
             http.authorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {
                 case .Success:
-                    print("success")
                     callback(response.data, true)
                 case .Failure(let error):
                     callback(nil, false)
-                    print(error)
                 }
             }
         }
     }
     
-    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool) -> Void) {
+    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, NSError?, NSHTTPURLResponse?) -> Void) {
         
         let url = baseURL + "/" + endpoint
         
@@ -51,9 +49,9 @@ class API {
             http.unauthorizedRequest(.POST, url, parameters: ["data": ["attributes": parameters]]) { response in
                 switch response.result {
                 case .Success:
-                    callback(response.data, true)
+                    callback(response.data, true, nil, response.response)
                 case .Failure(let error):
-                    callback(nil, false)
+                    callback(nil, false, error, response.response)
                 }
             }
         }
