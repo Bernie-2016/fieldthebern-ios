@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         [
             "title": "Learn",
             "description": "We’ll teach you to canvas your neighborhood and learn useful talking points.",
-            "image": "intro-map"
+            "image": "intro-learn"
         ],
         [
             "title": "Canvas",

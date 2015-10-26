@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var doorsLabel: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewLoadingIndicator: UIActivityIndicatorView!
     
@@ -57,7 +58,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        getLeaderboard("friends")
+        getLeaderboardWithSegmentedControl(segmentedControl)
         UserService().me { (user) -> Void in
             if let user = user {
                 self.updateProfileUI(user)
@@ -81,6 +82,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let url = user.photoLargeURL {
                 self.profileImageView.loadImageFromURLString(url)
             }
+        }
+    }
+    
+    func getLeaderboardWithSegmentedControl(segmentedControl: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            getLeaderboard("friends")
+        case 1:
+            getLeaderboard("state")
+        case 2:
+            getLeaderboard("everyone")
+        default:
+            break
         }
     }
     
@@ -154,16 +168,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            getLeaderboard("friends")
-        case 1:
-            getLeaderboard("state")
-        case 2:
-            getLeaderboard("everyone")
-        default:
-            break
-        }
+        getLeaderboardWithSegmentedControl(sender)
     }
     
     // MARK: - Table View Controller Delegate Methods
