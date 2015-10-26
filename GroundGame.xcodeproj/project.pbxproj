@@ -914,7 +914,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Coderly LLC (XCUKPHF39R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Coderly LLC (XCUKPHF39R)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -931,6 +932,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DRelease -DProduction";
+				PROVISIONING_PROFILE = "fef49889-ae34-4b5d-a695-79529b5797a0";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
 				VALIDATE_PRODUCT = YES;
@@ -946,7 +948,7 @@
 				INFOPLIST_FILE = GroundGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.groundgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
 			};
@@ -1035,7 +1037,7 @@
 				INFOPLIST_FILE = GroundGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.groundgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
 			};
@@ -1124,7 +1126,7 @@
 				INFOPLIST_FILE = GroundGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.groundgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
 			};
@@ -1157,6 +1159,97 @@
 			};
 			name = DebugLocal;
 		};
+		A7A7BB9F1BDED28E004ED201 /* ReleaseStaging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Coderly LLC (XCUKPHF39R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Coderly LLC (XCUKPHF39R)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DRelease -DStaging";
+				PROVISIONING_PROFILE = "fef49889-ae34-4b5d-a695-79529b5797a0";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = ReleaseStaging;
+		};
+		A7A7BBA01BDED28E004ED201 /* ReleaseStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				INFOPLIST_FILE = GroundGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.groundgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+			};
+			name = ReleaseStaging;
+		};
+		A7A7BBA11BDED28E004ED201 /* ReleaseStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCD56034328EFAB3F616C8A5 /* Pods-GroundGameTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEFINES_MODULE = YES;
+				INFOPLIST_FILE = GroundGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroundGame.app/GroundGame";
+			};
+			name = ReleaseStaging;
+		};
+		A7A7BBA21BDED28E004ED201 /* ReleaseStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = GroundGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GroundGame;
+				USES_XCTRUNNER = YES;
+			};
+			name = ReleaseStaging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1165,6 +1258,7 @@
 			buildConfigurations = (
 				A7A7BB971BDEC7E4004ED201 /* DebugStaging */,
 				A7A7BB9B1BDEC877004ED201 /* DebugLocal */,
+				A7A7BB9F1BDED28E004ED201 /* ReleaseStaging */,
 				A7A579731BB092E100D8885E /* ReleaseProduction */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1175,6 +1269,7 @@
 			buildConfigurations = (
 				A7A7BB981BDEC7E4004ED201 /* DebugStaging */,
 				A7A7BB9C1BDEC877004ED201 /* DebugLocal */,
+				A7A7BBA01BDED28E004ED201 /* ReleaseStaging */,
 				A7A579761BB092E100D8885E /* ReleaseProduction */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1185,6 +1280,7 @@
 			buildConfigurations = (
 				A7A7BB991BDEC7E4004ED201 /* DebugStaging */,
 				A7A7BB9D1BDEC877004ED201 /* DebugLocal */,
+				A7A7BBA11BDED28E004ED201 /* ReleaseStaging */,
 				A7A579791BB092E100D8885E /* ReleaseProduction */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1195,6 +1291,7 @@
 			buildConfigurations = (
 				A7A7BB9A1BDEC7E4004ED201 /* DebugStaging */,
 				A7A7BB9E1BDEC877004ED201 /* DebugLocal */,
+				A7A7BBA21BDED28E004ED201 /* ReleaseStaging */,
 				A7A5797C1BB092E100D8885E /* ReleaseProduction */,
 			);
 			defaultConfigurationIsVisible = 0;
