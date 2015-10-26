@@ -51,7 +51,7 @@ code_sign_if_enabled() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
+if [[ "$CONFIGURATION" == "DebugStaging" ]]; then
   install_framework 'Pods-GroundGameTests/Alamofire.framework'
   install_framework 'Pods-GroundGameTests/Bolts.framework'
   install_framework 'Pods-GroundGameTests/Dollar.framework'
@@ -68,7 +68,24 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-GroundGameTests/Nimble.framework'
   install_framework 'Pods-GroundGameTests/Quick.framework'
 fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION" == "DebugLocal" ]]; then
+  install_framework 'Pods-GroundGameTests/Alamofire.framework'
+  install_framework 'Pods-GroundGameTests/Bolts.framework'
+  install_framework 'Pods-GroundGameTests/Dollar.framework'
+  install_framework 'Pods-GroundGameTests/FBSDKCoreKit.framework'
+  install_framework 'Pods-GroundGameTests/FBSDKLoginKit.framework'
+  install_framework 'Pods-GroundGameTests/FBSDKShareKit.framework'
+  install_framework 'Pods-GroundGameTests/FLAnimatedImage.framework'
+  install_framework 'Pods-GroundGameTests/KFSwiftImageLoader.framework'
+  install_framework 'Pods-GroundGameTests/KeychainAccess.framework'
+  install_framework 'Pods-GroundGameTests/Spring.framework'
+  install_framework 'Pods-GroundGameTests/SwiftyJSON.framework'
+  install_framework 'Pods-GroundGameTests/XCGLogger.framework'
+  install_framework 'Pods-GroundGameTests/p2_OAuth2.framework'
+  install_framework 'Pods-GroundGameTests/Nimble.framework'
+  install_framework 'Pods-GroundGameTests/Quick.framework'
+fi
+if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
   install_framework 'Pods-GroundGameTests/Alamofire.framework'
   install_framework 'Pods-GroundGameTests/Bolts.framework'
   install_framework 'Pods-GroundGameTests/Dollar.framework'
