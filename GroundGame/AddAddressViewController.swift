@@ -38,6 +38,8 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     
     let geocoder = CLGeocoder()
     
+    @IBOutlet weak var addressActivityContainer: UIView!
+    
     @IBOutlet weak var streetAddress: PaddedTextField! {
         didSet {
             streetAddress.attributedPlaceholder = NSAttributedString(string: "Street Address", attributes: Text.PlaceholderAttributes)
@@ -104,6 +106,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         placemark = previousPlacemark
         
         if locationNeedsUpdating() {
+            self.addressIsLoading()
             if let currentLocation = location {
                 geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
                     if let placemarksArray = placemarks {
@@ -112,6 +115,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                             self.placemark = pm
                             NSNotificationCenter.defaultCenter().postNotificationName("placemarkUpdated", object: self, userInfo: ["placemark": pm])
                             self.updateAddressField()
+                            self.addressDidLoad()
                         }
                     }
                 }
@@ -197,6 +201,18 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                     self.streetAddress.text = "\(subThoroughfare) \(thoroughfare)"
             }
         }
+    }
+    
+    func addressIsLoading() {
+        self.addressActivityContainer.hidden = false
+        self.streetAddress.enabled = false
+        self.apartmentNumber.enabled = false
+    }
+    
+    func addressDidLoad() {
+        self.addressActivityContainer.hidden = true
+        self.streetAddress.enabled = true
+        self.apartmentNumber.enabled = true
     }
     
     // MARK: - Submitting form
