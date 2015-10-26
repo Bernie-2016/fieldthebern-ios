@@ -10,6 +10,12 @@
 import Foundation
 
 struct APIURL {
-    static let url = "http://api.groundgameapp-staging.com"
-//    static let url = "http://api.lvh.me:3000"
+    
+    #if Local
+        static let url = "http://api.lvh.me:3000"
+    #endif
+
+    #if Staging
+        static let url = "http://api.groundgameapp-staging.com"
+    #endif
 }
