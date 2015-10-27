@@ -173,15 +173,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     // MARK: - Lifecycle Functions
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        findMyLocation()
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        findMyLocation()
         
         // Set the map view
         mapView.delegate = self
@@ -463,15 +459,17 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var administrativeArea: String?
     
     func findMyLocation() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        
-        if let location = locationManager.location {
-            centerMapOnLocation(location)
-            locationButtonState = .Follow
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            
+            
+            if let location = locationManager.location {
+                centerMapOnLocation(location)
+                locationButtonState = .Follow
+            }
         }
         
     }
