@@ -19,6 +19,13 @@ class LearnTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = "Learn"
+
+        self.tableView.tableFooterView = UIView()
+        self.edgesForExtendedLayout = UIRectEdge.None
     }
 
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+    }
 }

@@ -518,10 +518,10 @@
 		A7A579431BB092E100D8885E = {
 			isa = PBXGroup;
 			children = (
-				30F76A0B0ACC05C453BE70FF /* Frameworks */,
 				A7A5794E1BB092E100D8885E /* GroundGame */,
 				A7A579631BB092E100D8885E /* GroundGameTests */,
 				A7A5796E1BB092E100D8885E /* GroundGameUITests */,
+				30F76A0B0ACC05C453BE70FF /* Frameworks */,
 				A5315A268882C6EDDEBA8834 /* Pods */,
 				A7A5794D1BB092E100D8885E /* Products */,
 			);
@@ -540,15 +540,15 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A72F88AF1BCC4979001B185B /* Delegates */,
+				A73D66441BBF3EF900127245 /* Extensions */,
+				A7CA34291BDFE6C2007A9495 /* Managers */,
 				A7CA34441BDFE6E9007A9495 /* Operations */,
 				A7CA34491BDFE6E9007A9495 /* Reachability */,
 				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
-				A72F88AF1BCC4979001B185B /* Delegates */,
-				A7CA34291BDFE6C2007A9495 /* Managers */,
-				A73D66441BBF3EF900127245 /* Extensions */,
 				A74FCE971BBB376A005C4D34 /* Models */,
-				A74FCE991BBB3788005C4D34 /* Supporting Files */,
 				A74FCE981BBB377E005C4D34 /* Views */,
+				A74FCE991BBB3788005C4D34 /* Supporting Files */,
 			);
 			path = GroundGame;
 			sourceTree = "<group>";
