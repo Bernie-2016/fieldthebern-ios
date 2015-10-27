@@ -53,6 +53,9 @@ class PageDetailViewController: UITableViewController {
             case let paragraph as ParagraphModel:
                 return paragraphContentCell(FTBConfig.ParagraphCell, indexPath: indexPath, model: paragraph)
 
+            case let list as ListModel:
+                return listContentCell(FTBConfig.ParagraphCell, indexPath: indexPath, model: list)
+
             case let image as ImageModel:
                 return imageContentCell(FTBConfig.ImageCell, indexPath: indexPath, model: image)
 
@@ -87,7 +90,13 @@ class PageDetailViewController: UITableViewController {
         
         return cell
     }
-    
+
+    func listContentCell(identifier: String, indexPath: NSIndexPath, model: ListModel) -> TextViewContentCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TextViewContentCell
+        cell.contentTextView.text = model.text
+        return cell
+    }
+
     func sizeForImageCell(cell: ImageContentCell, indexPath: NSIndexPath) -> CGSize {
         let horizontalPadding = cell.leftPaddingLayoutConstraint.constant + cell.rightPaddingLayoutConstraint.constant
         let verticalPadding = cell.topPaddingLayoutConstraint.constant + cell.bottomPaddingLayoutConstraint.constant
@@ -161,6 +170,9 @@ class PageDetailViewController: UITableViewController {
 
             case let paragraph as ParagraphModel:
                 return heightForText(paragraph.paragraph, font: FTBConfig.ParagraphFont!, width: width, horizontalPad: 16.0, verticalPad: 8.0)
+
+            case let list as ListModel:
+                return heightForText(list.text, font: FTBConfig.ParagraphFont!, width: width, horizontalPad: 16.0, verticalPad: 4.0)
 
             case let image as ImageModel:
                 if image.width > 0 && image.height > 0 {

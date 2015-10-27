@@ -34,6 +34,8 @@ class ModelMap {
                 model = ImageModel()
             case "video":
                 model = VideoModel()
+            case "list":
+                model = ListModel()
             default:
             return model
         }

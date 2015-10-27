@@ -44,6 +44,7 @@ class FTBConfig {
     static let ImageThumbKey = "image_url_thumb"
     static let ItemsKey = "items"
     static let ContentKey = "content"
+    static let ListKey = "list"
     
     //
     // MARK: Segues
@@ -70,7 +71,7 @@ class FTBConfig {
     
     static let CaptionCell = "CaptionCell"
     static let CaptionFont = UIFont(name: "Lato-Medium", size: 18.0)
-    
+
     static let ParagraphCell = "ParagraphCell"
     static let ParagraphFont = UIFont(name: "Lato-Medium", size: 15.0)
     
