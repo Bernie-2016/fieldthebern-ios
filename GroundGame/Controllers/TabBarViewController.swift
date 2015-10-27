@@ -26,7 +26,8 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         UITabBar.appearance().backgroundImage = UIImage.imageFromColor(Color.Blue).imageWithRenderingMode(.AlwaysOriginal)
-        
+        UITabBar.appearance().translucent = false
+
         UITabBar.appearance().selectionIndicatorImage = UIImage.imageFromColor(Color.DarkBlue).imageWithRenderingMode(.AlwaysOriginal)
         self.tabBar.selectionIndicatorImage = nil
         self.tabBar.selectionIndicatorImage = UIImage.imageFromColor(Color.DarkBlue).imageWithRenderingMode(.AlwaysOriginal)
