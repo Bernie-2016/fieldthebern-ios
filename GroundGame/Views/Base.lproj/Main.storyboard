@@ -330,6 +330,9 @@
                                                     <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="114" y="15" width="174" height="18"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,598" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-fo-Ifb">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -367,7 +370,8 @@
                                                             <exclude reference="scQ-zh-OYS"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="296" y="15" width="86" height="18"/>
                                                         <mask key="constraints">
                                                             <include reference="scQ-zh-OYS"/>
                                                         </mask>
@@ -3726,7 +3730,8 @@ useful talking points.</string>
                                         <exclude reference="YjG-n6-2sV"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="247" y="154" width="104" height="1"/>
                                     <mask key="constraints">
                                         <include reference="YjG-n6-2sV"/>
                                     </mask>
