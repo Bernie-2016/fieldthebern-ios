@@ -47,6 +47,13 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>youtube.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>www.pewresearch.org</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
