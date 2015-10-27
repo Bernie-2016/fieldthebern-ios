@@ -168,8 +168,8 @@
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A74FCE9B1BBB3933005C4D34 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A74FCE9D1BBB3BFB005C4D34 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = ../SignupViewController.swift; sourceTree = "<group>"; };
-		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = ../OnboardingViewController.swift; sourceTree = "<group>"; };
+		A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A76890311BC8680E008F394C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		A76890331BC86AD0008F394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableHeaderView.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
 				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
 			);
-			name = Delegates;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		A73D66441BBF3EF900127245 /* Extensions */ = {
@@ -309,11 +309,11 @@
 			children = (
 				A775B9EB1BC0692100510924 /* MKMapView.swift */,
 				A775B9EF1BC0967D00510924 /* NSDate.swift */,
+				DFE22E071BDBA417009565E1 /* String.swift */,
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
-				DFE22E071BDBA417009565E1 /* String.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A74F33D21BCAFABA00191E3C /* Models */ = {
@@ -322,18 +322,18 @@
 				A74F33D51BCAFE4400191E3C /* PersonSpec.swift */,
 				A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A74FCE971BBB376A005C4D34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
+				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A73D663C1BBEE44000127245 /* Address.swift */,
 				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
 				A73D663E1BBEE87400127245 /* AddressService.swift */,
-				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
-				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
 				A771C5911BD813C900179F04 /* CanvasResponseList.swift */,
 				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
@@ -358,7 +358,7 @@
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A74FCE981BBB377E005C4D34 /* Views */ = {
@@ -368,8 +368,11 @@
 				A780A4D31BC863440090B979 /* BlueTableViewCell.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
 				A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */,
+				A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */,
 				A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */,
+				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
 				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
+				A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */,
 				A7A579531BB092E100D8885E /* Main.storyboard */,
 				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
 				A76ABA361BBB910E007FA40B /* PaddedTextField.swift */,
@@ -377,27 +380,24 @@
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
-				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
-				A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */,
-				A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A74FCE991BBB3788005C4D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
+				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
+				A76890331BC86AD0008F394C /* Assets.xcassets */,
+				A76ABA381BBC44EE007FA40B /* FBSDKBridgingHeader.h */,
+				A7A5795B1BB092E100D8885E /* Info.plist */,
 				A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */,
 				A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */,
-				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
 				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
-				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
-				A7A5795B1BB092E100D8885E /* Info.plist */,
-				A76ABA381BBC44EE007FA40B /* FBSDKBridgingHeader.h */,
-				A76890331BC86AD0008F394C /* Assets.xcassets */,
+				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
+				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A74FCE9A1BBB37A9005C4D34 /* Controllers */ = {
@@ -409,6 +409,7 @@
 				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
 				A775B9F71BC2F8A600510924 /* ConversationViewController.swift */,
+				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
 				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
 				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
 				A7A579831BB211F500D8885E /* PageViewController.swift */,
@@ -421,20 +422,19 @@
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
-				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A7A579431BB092E100D8885E = {
 			isa = PBXGroup;
 			children = (
+				30F76A0B0ACC05C453BE70FF /* Frameworks */,
 				A7A5794E1BB092E100D8885E /* GroundGame */,
 				A7A579631BB092E100D8885E /* GroundGameTests */,
 				A7A5796E1BB092E100D8885E /* GroundGameUITests */,
-				A7A5794D1BB092E100D8885E /* Products */,
 				A5315A268882C6EDDEBA8834 /* Pods */,
-				30F76A0B0ACC05C453BE70FF /* Frameworks */,
+				A7A5794D1BB092E100D8885E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -451,12 +451,12 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
 				A72F88AF1BCC4979001B185B /* Delegates */,
 				A73D66441BBF3EF900127245 /* Extensions */,
 				A74FCE971BBB376A005C4D34 /* Models */,
-				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
-				A74FCE981BBB377E005C4D34 /* Views */,
 				A74FCE991BBB3788005C4D34 /* Supporting Files */,
+				A74FCE981BBB377E005C4D34 /* Views */,
 			);
 			path = GroundGame;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 			children = (
 				A7D3F6F21BCB0C6E00232234 /* Person.json */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -896,6 +896,7 @@
 				A7A579541BB092E100D8885E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		A7A579581BB092E100D8885E /* LaunchScreen.storyboard */ = {
@@ -904,6 +905,7 @@
 				A7A579591BB092E100D8885E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -957,7 +959,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = GroundGame/Info.plist;
+				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1046,7 +1048,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = GroundGame/Info.plist;
+				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1135,7 +1137,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = GroundGame/Info.plist;
+				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1226,7 +1228,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = GroundGame/Info.plist;
+				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
