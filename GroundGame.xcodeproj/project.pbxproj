@@ -113,6 +113,8 @@
 		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
 		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
 		A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */; };
+		A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */; };
+		A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DFE22E081BDBA417009565E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE22E071BDBA417009565E1 /* String.swift */; };
 /* End PBXBuildFile section */
@@ -231,6 +233,8 @@
 		A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitService.swift; sourceTree = "<group>"; };
 		A7DAACC21BCD6FC200F0BDBC /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
+		A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailsViewController.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFE22E071BDBA417009565E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
 				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
 				A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */,
+				A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
+				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */,
 				A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */,
 				A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */,
+				A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */,
 				A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
@@ -788,6 +795,7 @@
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
+				A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */,
 				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
 				A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,

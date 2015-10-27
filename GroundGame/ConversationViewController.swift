@@ -13,6 +13,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     
     var savedGestureRecognizerDelegate: UIGestureRecognizerDelegate?
 
+    let states = States()
+    
     var location: CLLocation?
     var placemark: CLPlacemark?
     var address: Address?
@@ -30,6 +32,16 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
                 if person.atHomeStatus { tempArray.append(person) }
             }
             return tempArray
+        }
+    }
+    
+    var state: State? {
+        get {
+            if let stateName = placemark?.administrativeArea {
+               return states.find(stateName)
+            } else {
+                return nil
+            }
         }
     }
 
@@ -158,12 +170,14 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
+            return 26
+        case 1:
             return 26
         default:
             return 0
@@ -187,7 +201,13 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Who did you talk to?".uppercaseString
+        if section == 0 {
+            return "Who did you talk to?".uppercaseString
+        } else if section == 1 {
+            return "Primary & policy info".uppercaseString
+        } else {
+            return nil
+        }
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -236,7 +256,19 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
                 
                 return cell
             }
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("ElectionCell") as! ElectionTableViewCell
             
+            if let state = self.state {
+                cell.stateImage.image = state.icon
+                cell.stateName.text = state.name
+                cell.electionType.text = state.type
+                if let date = state.date {
+                    cell.electionDate.text = "on \(date)"
+                }
+            }
+            
+            return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("AddPerson")!
             
@@ -265,6 +297,10 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
             } else if indexPath.row == people.count {
                 performSegueWithIdentifier("AddPersonSegue", sender: self)
             }
+        case 1:
+            if indexPath.row == 0 {
+                performSegueWithIdentifier("ShowElectionDetails", sender: self)
+            }
         default:
             break
         }
@@ -277,7 +313,11 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
                 PersonDetailsViewController.personIndexPath = self.selectedIndexPath
             }
         }
-        
+        if segue.identifier == "ShowElectionDetails" {
+            if let electionDetailsViewController = segue.destinationViewController as? ElectionDetailsViewController {
+                electionDetailsViewController.state = self.state
+            }
+        }
         if segue.identifier == "SubmitVisitDetails" {
             if let scoreViewController = segue.destinationViewController as? ScoreViewController {
                 scoreViewController.people = self.peopleAtHome
