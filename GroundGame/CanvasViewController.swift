@@ -146,6 +146,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var addLocationButton: UIButton!
     
     @IBAction func addLocation(sender: UIButton) {
+        
+        if !CLLocationManager.locationServicesEnabled() || CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse {
+            
+            displayLocationServicesAlert()
+        }
+        
+        
         self.performSegueWithIdentifier("AddLocation", sender: self)
     }
     
@@ -165,25 +172,21 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
     }
+   
     
     // MARK: - Lifecycle Functions
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // This gets called when we transition into this controller from another controller
+        findMyLocation()
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set up our location manager
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-            
-            if let location = locationManager.location {
-                centerMapOnLocation(location)
-                locationButtonState = .Follow
-            }
-        }
-        
         // Set the map view
         mapView.delegate = self
         mapView?.showsUserLocation = true
@@ -441,6 +444,18 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         return (false, nil)
     }
     
+    func displayLocationServicesAlert() {
+
+        let alert = UIAlertController(title: "Location Services", message: "Please press OK to be taken to the Settings page so that you can enable Location Services for Ground Game App", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+            (_) in UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)}
+        
+        alert.addAction(okAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Location Fetching
     
     let locationManager = CLLocationManager()
@@ -450,11 +465,18 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var locality: String?
     var administrativeArea: String?
     
-    @IBAction func findMyLocation(sender: AnyObject) {
+    func findMyLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
+        if let location = locationManager.location {
+            centerMapOnLocation(location)
+            locationButtonState = .Follow
+        }
+
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -463,6 +485,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        log.error("Error while updating location \(error.localizedDescription)")
+      
+        
+        if error.domain == kCLErrorDomain && CLError(rawValue: error.code) == CLError.Denied {
+
+            displayLocationServicesAlert()
+        }
     }
 }
