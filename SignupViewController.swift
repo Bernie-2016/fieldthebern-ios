@@ -145,6 +145,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+    @IBAction func pressSignIn() {
+        performSegueWithIdentifier("SignInModalSegue", sender: self)
+    }
+    
     // MARK: - Text Field Delegate Methods
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
