@@ -39,6 +39,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var canvasResponseLabel: UILabel!
     @IBOutlet weak var canvasResponseCell: UITableViewCell!
+    @IBOutlet weak var canvasResponseDisclosure: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,6 +174,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         self.canvasResponseLabel.text = canvasResponseOption.title
         self.canvasResponseLabel.textColor = canvasResponseOption.textColor
         self.canvasResponseCell.backgroundColor = canvasResponseOption.backgroundColor
+        self.canvasResponseDisclosure.image = canvasResponseOption.disclosureImage
     }
     
     func willSubmit() -> Person? {

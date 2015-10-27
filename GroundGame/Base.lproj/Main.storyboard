@@ -1563,7 +1563,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="71" y="14" width="321" height="20"/>
+                                                        <rect key="frame" x="71" y="14" width="161" height="20"/>
                                                     </variation>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-AP-pVF">
@@ -2285,6 +2285,7 @@
                     <connections>
                         <outlet property="askedToLeaveSwitch" destination="4No-xf-Svz" id="iVp-BL-2wZ"/>
                         <outlet property="canvasResponseCell" destination="qQu-cQ-3ij" id="JhC-AD-vgd"/>
+                        <outlet property="canvasResponseDisclosure" destination="aB5-Rj-Dja" id="ZeT-BZ-APj"/>
                         <outlet property="canvasResponseLabel" destination="g1L-Wh-11c" id="b76-Ei-f6m"/>
                         <outlet property="firstNameField" destination="EcX-VK-jwu" id="deH-8q-NBb"/>
                         <outlet property="lastNameField" destination="ThZ-XM-OWZ" id="bIv-c7-6YL"/>
@@ -2427,12 +2428,18 @@
                                 <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="68" y="72" width="40" height="20"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-Vm-cnW">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="68" y="93" width="30" height="17"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-Ow-6T8">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2476,20 +2483,20 @@
                                 <exclude reference="vCi-Gx-ibv"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="GKx-GD-YZH"/>
-                                <exclude reference="Ucm-I1-ZnT"/>
-                                <exclude reference="U1a-E7-3CX"/>
-                                <exclude reference="hjA-ba-h9U"/>
-                                <exclude reference="6UO-zs-dh3"/>
-                                <exclude reference="8AZ-s1-RJk"/>
-                                <exclude reference="2zA-d9-MvL"/>
-                                <exclude reference="Jgw-ob-LGL"/>
-                                <exclude reference="sNs-Q3-nqc"/>
-                                <exclude reference="AlO-Zw-kwc"/>
-                                <exclude reference="m5H-jq-S8a"/>
                                 <exclude reference="Z5a-8a-AC3"/>
                                 <exclude reference="aRy-gr-xr0"/>
                                 <exclude reference="mq1-v6-F36"/>
+                                <exclude reference="6UO-zs-dh3"/>
+                                <exclude reference="8AZ-s1-RJk"/>
+                                <exclude reference="AlO-Zw-kwc"/>
+                                <exclude reference="m5H-jq-S8a"/>
+                                <exclude reference="U1a-E7-3CX"/>
+                                <exclude reference="hjA-ba-h9U"/>
+                                <exclude reference="2zA-d9-MvL"/>
+                                <exclude reference="Jgw-ob-LGL"/>
+                                <exclude reference="sNs-Q3-nqc"/>
+                                <exclude reference="GKx-GD-YZH"/>
+                                <exclude reference="Ucm-I1-ZnT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2502,20 +2509,20 @@
                                 <include reference="vCi-Gx-ibv"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="GKx-GD-YZH"/>
-                                <include reference="Ucm-I1-ZnT"/>
-                                <include reference="U1a-E7-3CX"/>
-                                <include reference="hjA-ba-h9U"/>
-                                <include reference="6UO-zs-dh3"/>
-                                <include reference="8AZ-s1-RJk"/>
-                                <include reference="2zA-d9-MvL"/>
-                                <include reference="Jgw-ob-LGL"/>
-                                <include reference="sNs-Q3-nqc"/>
-                                <include reference="AlO-Zw-kwc"/>
-                                <include reference="m5H-jq-S8a"/>
                                 <include reference="Z5a-8a-AC3"/>
                                 <include reference="aRy-gr-xr0"/>
                                 <include reference="mq1-v6-F36"/>
+                                <include reference="6UO-zs-dh3"/>
+                                <include reference="8AZ-s1-RJk"/>
+                                <include reference="AlO-Zw-kwc"/>
+                                <include reference="m5H-jq-S8a"/>
+                                <include reference="U1a-E7-3CX"/>
+                                <include reference="hjA-ba-h9U"/>
+                                <include reference="2zA-d9-MvL"/>
+                                <include reference="Jgw-ob-LGL"/>
+                                <include reference="sNs-Q3-nqc"/>
+                                <include reference="GKx-GD-YZH"/>
+                                <include reference="Ucm-I1-ZnT"/>
                             </mask>
                         </variation>
                     </view>

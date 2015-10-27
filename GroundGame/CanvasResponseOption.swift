@@ -15,6 +15,7 @@ struct CanvasResponseOption {
     let backgroundColor: UIColor
     let canvasResponse: CanvasResponse
     let checkImage: UIImage?
+    let disclosureImage: UIImage?
     
     init(canvasResponse: CanvasResponse) {
 
@@ -26,31 +27,37 @@ struct CanvasResponseOption {
             textColor = UIColor.whiteColor()
             backgroundColor = Color.Red
             self.checkImage = UIImage(named: "check")
+            self.disclosureImage = UIImage(named: "disclosure")
         case .LeaningAgainst:
             title = "Leaning against Bernie"
             textColor = UIColor.whiteColor()
             backgroundColor = Color.Pink
             self.checkImage = UIImage(named: "check")
+            self.disclosureImage = UIImage(named: "disclosure")
         case .Undecided:
             title = "Undecided"
             textColor = UIColor.blackColor()
             backgroundColor = UIColor.whiteColor()
             self.checkImage = UIImage(named: "check-black")
+            self.disclosureImage = UIImage(named: "disclosure-black")
         case .LeaningFor:
             title = "Leaning for Bernie"
             textColor = UIColor.whiteColor()
             backgroundColor = Color.LightBlue
             self.checkImage = UIImage(named: "check")
+            self.disclosureImage = UIImage(named: "disclosure")
         case .StronglyFor:
             title = "Strongly for Bernie"
             textColor = UIColor.whiteColor()
             backgroundColor = Color.DarkBlue
             self.checkImage = UIImage(named: "check")
+            self.disclosureImage = UIImage(named: "disclosure")
         case .Unknown:
             title = "Unknown"
             textColor = UIColor.blackColor()
             backgroundColor = UIColor.whiteColor()
             self.checkImage = UIImage(named: "check-black")
+            self.disclosureImage = UIImage(named: "disclosure-black")
         }
     }
 }
