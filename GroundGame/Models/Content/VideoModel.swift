@@ -14,7 +14,7 @@ class VideoModel: FTBContentModel {
     
     override func updateToDictionary(dictionary: NSDictionary) {
         super.updateToDictionary(dictionary)
-        self.videoURLString = dictionary.getOptionalOrDefaultForKey(FTBConfig.SourceKey, defaultValue: "")
+        self.videoURLString = dictionary.getOptionalOrDefaultForKey(FTBConfig.VideoSourceKey, defaultValue: "")
         self.youtubeId = dictionary.getOptionalOrDefaultForKey(FTBConfig.IDKey, defaultValue: "")
     }
     

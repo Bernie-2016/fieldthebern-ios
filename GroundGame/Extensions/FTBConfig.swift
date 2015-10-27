@@ -36,6 +36,7 @@ class FTBConfig {
     static let HeightKey = "height"
     static let CaptionKey = "caption"
     static let SourceKey = "source"
+    static let VideoSourceKey = "src"
     static let StartKey = "start"
     static let EndKey = "end"
     static let LinksKey = "links"
@@ -61,19 +62,19 @@ class FTBConfig {
     static let VideoCell = "VideoCell"
     
     static let HeaderCell = "HeaderCell"
-    static let HeaderFont = UIFont(name: "Lato-Medium", size: 24.0)
+    static let HeaderFont = UIFont(name: "Lato-Heavy", size: 20.0)
     
     static let TitleCell = "TitleCell"
-    static let TitleFont = UIFont(name: "Lato-Medium", size: 22.0)
+    static let TitleFont = UIFont(name: "Lato-Heavy", size: 17.0)
     
     static let SubtitleCell = "SubtitleCell"
-    static let SubtitleFont = UIFont(name: "Lato-Medium", size: 20.0)
+    static let SubtitleFont = UIFont(name: "Lato-Medium", size: 17.0)
     
     static let CaptionCell = "CaptionCell"
-    static let CaptionFont = UIFont(name: "Lato-Medium", size: 18.0)
+    static let CaptionFont = UIFont(name: "Lato-Medium", size: 14.0)
 
     static let ParagraphCell = "ParagraphCell"
-    static let ParagraphFont = UIFont(name: "Lato-Medium", size: 15.0)
+    static let ParagraphFont = UIFont(name: "Lato-Medium", size: 14.0)
     
     //
     // MARK: Errors
