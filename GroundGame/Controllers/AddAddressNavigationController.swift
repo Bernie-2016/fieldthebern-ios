@@ -19,6 +19,10 @@ class AddAddressNavigationController: BlueNavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let navigationAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!]
+        self.navigationItem.backBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
     }
 
     // MARK: - TouchesEnded

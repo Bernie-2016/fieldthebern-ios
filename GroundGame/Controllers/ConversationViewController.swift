@@ -191,6 +191,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
             if !peopleAreHome { extraRows++ } // Show the extra row for saying someone's not home
             
             return people.count + extraRows
+        case 1:
+            return 2
         default:
             return 1
         }
@@ -257,18 +259,24 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
                 return cell
             }
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("ElectionCell") as! ElectionTableViewCell
-            
-            if let state = self.state {
-                cell.stateImage.image = state.icon
-                cell.stateName.text = state.name
-                cell.electionType.text = state.type
-                if let date = state.date {
-                    cell.electionDate.text = "on \(date)"
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("ElectionCell") as! ElectionTableViewCell
+                
+                if let state = self.state {
+                    cell.stateImage.image = state.icon
+                    cell.stateName.text = state.name
+                    cell.electionType.text = state.type
+                    if let date = state.date {
+                        cell.electionDate.text = "on \(date)"
+                    }
                 }
-            }
             
-            return cell
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("PoliciesCell")
+                
+                return cell!
+            }
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("AddPerson")!
             
@@ -300,6 +308,9 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         case 1:
             if indexPath.row == 0 {
                 performSegueWithIdentifier("ShowElectionDetails", sender: self)
+            }
+            if indexPath.row == 1 {
+                performSegueWithIdentifier("ShowPolicies", sender: self)
             }
         default:
             break

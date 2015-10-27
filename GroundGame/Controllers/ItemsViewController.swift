@@ -16,12 +16,13 @@ class ItemsViewController: UICollectionViewController, UICollectionViewDelegateF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         let navigationAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!]
         self.navigationItem.backBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(navigationAttributes, forState: .Normal)
+        
+        self.collectionView?.indicatorStyle = UIScrollViewIndicatorStyle.White
     }
     
     override func viewWillAppear(animated: Bool) {
