@@ -362,10 +362,24 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         delegate?.isSubmitting()
         if let address = self.address {
             VisitService().postVisit(secondsElapsed, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit) in
-                self.visit = visit
-                NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
-                self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
+                self.submitSuccess(visit)
             }
         }
+    }
+    
+    func submitSuccess(visit: Visit?) {
+        // Set the visit to send to the score controller
+        self.visit = visit
+        
+        // Cancel our timer
+        if let timer = self.asyncTimer {
+            dispatch_source_cancel(timer)
+        }
+        
+        // Reload the map to show our new visit result
+        NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
+        
+        // Segue to the score controller
+        self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
     }
 }

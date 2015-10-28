@@ -94,8 +94,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             if success {
                 let session = Session.sharedInstance
                 session.authorize(email!, password: password!, callback: { (success) -> Void in
-                    self.performSegueWithIdentifier("Login", sender: self)
                     self.spinner.stopAnimating()
+                    if success {
+                        self.performSegueWithIdentifier("Login", sender: self)
+                    } else {
+                        // Handle error
+                    }
                 })
             } else {
                 self.spinner.stopAnimating()
@@ -133,12 +137,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 if result.isCancelled {
                     NSLog("Cancelled")
                 } else {
-                    NSLog("Logged in")
-                    print(result.token.tokenString)
                     let session = Session.sharedInstance
-                    session.authorizeWithFacebook(result.token.tokenString, callback: { (success) -> Void in
-                        print(success)
-                        self.performSegueWithIdentifier("Login", sender: self)
+                    session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
+                        if success {
+                            self.performSegueWithIdentifier("Login", sender: self)
+                        }
                     })
                 }
             }
