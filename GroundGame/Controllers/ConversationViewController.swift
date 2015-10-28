@@ -97,8 +97,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     }
     
     var startTime = NSTimeInterval()
-    var cachedElapsedTime = NSTimeInterval()
     var elapsedTime = NSTimeInterval()
+    var secondsElapsed = 0
     
     var queue: dispatch_queue_t?
     var asyncTimer: dispatch_source_t?
@@ -107,21 +107,9 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         elapsedTime = currentTime - startTime
-        cachedElapsedTime = elapsedTime
-        
-        let minutes = UInt8(elapsedTime / 60.0)
-        
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        //calculate the seconds in elapsed time.
-        let seconds = UInt8(elapsedTime)
-        
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        dispatch_async(dispatch_get_main_queue()) {
-//            self.timerLabel.text = "\(strMinutes):\(strSeconds)"
-        }
-        
+
+        let elapsedTimeInteger = NSInteger(elapsedTime)
+        secondsElapsed = elapsedTimeInteger % 60
     }
     
     func startTimer() {
@@ -373,7 +361,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     func submitForm() {
         delegate?.isSubmitting()
         if let address = self.address {
-            VisitService().postVisit(1, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit) in
+            VisitService().postVisit(secondsElapsed, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit) in
                 self.visit = visit
                 NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
                 self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
