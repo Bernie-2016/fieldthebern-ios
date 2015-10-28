@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
+		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
 		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
 		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; };
 		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; };
@@ -152,7 +152,7 @@
 		A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */; };
 		A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */; };
 		A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */; };
-		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; };
 		DFE22E081BDBA417009565E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE22E071BDBA417009565E1 /* String.swift */; };
 /* End PBXBuildFile section */
 
@@ -219,7 +219,6 @@
 		A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A76ABA361BBB910E007FA40B /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
-		A76ABA381BBC44EE007FA40B /* FBSDKBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBSDKBridgingHeader.h; sourceTree = "<group>"; };
 		A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A76ABA3F1BBC913A007FA40B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Overlay.swift"; sourceTree = "<group>"; };
@@ -293,6 +292,7 @@
 		A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTableViewController.swift; sourceTree = "<group>"; };
 		A7CA34651BE029AA007A9495 /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		A7CA346B1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskedToLeaveSwitchDelegate.swift; sourceTree = "<group>"; };
+		A7CA346F1BE17D29007A9495 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOneHomeTableViewCell.swift; sourceTree = "<group>"; };
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -479,13 +479,13 @@
 			children = (
 				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
 				A76890331BC86AD0008F394C /* Assets.xcassets */,
-				A76ABA381BBC44EE007FA40B /* FBSDKBridgingHeader.h */,
 				A7A5795B1BB092E100D8885E /* Info.plist */,
 				A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */,
 				A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */,
 				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
 				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
 				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
+				A7CA346F1BE17D29007A9495 /* BridgingHeader.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1109,6 +1109,7 @@
 /* Begin XCBuildConfiguration section */
 		A7A579731BB092E100D8885E /* ReleaseProduction */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1144,7 +1145,7 @@
 				OTHER_SWIFT_FLAGS = "-DRelease -DProduction";
 				PROVISIONING_PROFILE = "fef49889-ae34-4b5d-a695-79529b5797a0";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = ReleaseProduction;
@@ -1160,7 +1161,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/FBSDKBridgingHeader.h";
 			};
 			name = ReleaseProduction;
 		};
@@ -1193,6 +1193,7 @@
 		};
 		A7A7BB971BDEC7E4004ED201 /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1233,7 +1234,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DStaging";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = DebugStaging;
@@ -1249,7 +1250,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/FBSDKBridgingHeader.h";
 			};
 			name = DebugStaging;
 		};
@@ -1282,6 +1282,7 @@
 		};
 		A7A7BB9B1BDEC877004ED201 /* DebugLocal */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1322,7 +1323,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DLocal";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = DebugLocal;
@@ -1338,7 +1339,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/FBSDKBridgingHeader.h";
 			};
 			name = DebugLocal;
 		};
@@ -1371,6 +1371,7 @@
 		};
 		A7A7BB9F1BDED28E004ED201 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1413,14 +1414,14 @@
 				OTHER_SWIFT_FLAGS = "-DRelease -DStaging";
 				PROVISIONING_PROFILE = "fef49889-ae34-4b5d-a695-79529b5797a0";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = GroundGame/FBSDKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = ReleaseStaging;
 		};
 		A7A7BBA01BDED28E004ED201 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
@@ -1429,13 +1430,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/FBSDKBridgingHeader.h";
 			};
 			name = ReleaseStaging;
 		};
 		A7A7BBA11BDED28E004ED201 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCD56034328EFAB3F616C8A5 /* Pods-GroundGameTests.debug.xcconfig */;
+			baseConfigurationReference = 217C2609B20D533862FCB48E /* Pods-GroundGameTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEFINES_MODULE = YES;
@@ -1449,7 +1449,7 @@
 		};
 		A7A7BBA21BDED28E004ED201 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */;
+			baseConfigurationReference = D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GroundGameUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

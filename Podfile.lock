@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.0.0-beta.3)
+  - Alamofire (3.0.1)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -7,6 +7,22 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.4.0)
   - Dollar (4.0.1)
+  - Facebook-iOS-SDK (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit (= 4.1.0)
+    - Facebook-iOS-SDK/LoginKit (= 4.1.0)
+    - Facebook-iOS-SDK/ShareKit (= 4.1.0)
+  - Facebook-iOS-SDK/CoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.1.0)
+  - Facebook-iOS-SDK/CoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+  - Facebook-iOS-SDK/LoginKit (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/ShareKit (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit
   - FBSDKCoreKit (4.1.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.1.0)
@@ -21,7 +37,8 @@ PODS:
   - FBSDKShareKit (4.1.0):
     - FBSDKCoreKit
   - FLAnimatedImage (1.0.8)
-  - KeychainAccess (2.0.0)
+  - Heap (2.2.0)
+  - KeychainAccess (2.2.1)
   - KFSwiftImageLoader (2.0.1)
   - Nimble (2.0.0)
   - p2.OAuth2 (2.0.1)
@@ -32,16 +49,18 @@ PODS:
   - RealmSwift (0.96.2):
     - Realm (= 0.96.2)
   - Spring (1.0.3)
-  - SwiftyJSON (2.3.0)
+  - SwiftyJSON (2.3.1)
   - XCGLogger (3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0.0-beta.3)
   - Dollar
-  - FBSDKCoreKit (= 4.1)
-  - FBSDKLoginKit (= 4.1)
-  - FBSDKShareKit (= 4.1)
+  - Facebook-iOS-SDK (= 4.1.0)
+  - FBSDKCoreKit (= 4.1.0)
+  - FBSDKLoginKit (= 4.1.0)
+  - FBSDKShareKit (= 4.1.0)
   - FLAnimatedImage (~> 1.0)
+  - Heap
   - KeychainAccess
   - KFSwiftImageLoader (~> 2.0)
   - Nimble (= 2.0.0)
@@ -64,18 +83,20 @@ CHECKOUT OPTIONS:
     :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
     :git: https://github.com/MengTo/Spring.git
   SwiftyJSON:
-    :commit: 3b5d0d4e0c19173b1bf0dc823bde25ad870f70c0
+    :commit: 5f5d00dbdcd256600a250765d9f674964080ceee
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: c89149e58431f6f94527e8c01f920456afe39bd0
+  Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   Dollar: a058e2659e0d3261307c12630dbc2fd8e32f80bf
+  Facebook-iOS-SDK: f42dfb27283bf5f05e3a9edc88459a75b9892d99
   FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
   FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
-  KeychainAccess: 1e705665a234b3af69d653aaa3c8f696e4a992f1
+  Heap: 1f2735d88b2f39b2ddabd4cbeb7aa491aa737902
+  KeychainAccess: 3b13c8264b5985dbaeaaf019a7941a912b5690c2
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   Nimble: 472e75466819eb8c06299233e87c694a9b51328a
   p2.OAuth2: 6d4183a4dcec05cc6df3bab1110551854a116b9c
@@ -83,7 +104,7 @@ SPEC CHECKSUMS:
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
-  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   XCGLogger: 5802533aff8bafc8b3b9776ab8972576f31d0a4e
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

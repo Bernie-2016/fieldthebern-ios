@@ -1,18 +1,10 @@
 # KeychainAccess
 [![CI Status](http://img.shields.io/travis/kishikawakatsumi/KeychainAccess.svg?style=flat)](https://travis-ci.org/kishikawakatsumi/KeychainAccess)
+[![Circle CI](https://circleci.com/gh/kishikawakatsumi/KeychainAccess.svg?style=shield)](https://circleci.com/gh/kishikawakatsumi/KeychainAccess)
+[![Coverage Status](https://coveralls.io/repos/kishikawakatsumi/KeychainAccess/badge.svg?branch=master&service=github)](https://coveralls.io/github/kishikawakatsumi/KeychainAccess?branch=master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/KeychainAccess.svg?style=flat)](http://cocoadocs.org/docsets/KeychainAccess)
-[![License](https://img.shields.io/cocoapods/l/KeychainAccess.svg?style=flat)](http://cocoadocs.org/docsets/KeychainAccess)
 [![Platform](https://img.shields.io/cocoapods/p/KeychainAccess.svg?style=flat)](http://cocoadocs.org/docsets/KeychainAccess)
-
-**A Swift 2.0 compatible version is in the works. Check out the [`swift-2.0` branch](https://github.com/kishikawakatsumi/KeychainAccess/tree/swift-2.0).**
-
-- **[Install via CocoaPods](#swift-2.0-cocoapods)**
-- **[Install using Carthage](#swift-2.0-carthage)**
-
-**A watchOS 2 support is also in the [`swift-2.0` branch](https://github.com/kishikawakatsumi/KeychainAccess/tree/swift-2.0).**
-
-- **[Install via CocoaPods](#watchos2-cocoapods)**
 
 KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and OS X. Makes using Keychain APIs exremely easy and much more palatable to use in Swift.
 
@@ -29,6 +21,7 @@ KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and OS X
 - **[Support TouchID and Keychain integration (iOS 8+)](#touch_id_integration)**
 - **[Support Shared Web Credentials (iOS 8+)](#shared_web_credentials)**
 - Works on both iOS & OS X
+- watchOS and tvOS are supported
 
 ## :book: Usage
 
@@ -103,8 +96,11 @@ keychain.set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi")
 #### error handling
 
 ```swift
-if let error = try? keychain.set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi") {
-    print("error: \(error)")
+do {
+    try keychain.set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi")
+}
+catch let error {
+    print(error)
 }
 ```
 
@@ -292,6 +288,7 @@ let keychain = Keychain(service: "com.example.github-token")
 
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
     do {
+        // Should be the secret invalidated when passcode is removed? If not then use `.WhenUnlocked`
         try keychain
             .accessibility(.WhenPasscodeSetThisDeviceOnly, authenticationPolicy: .UserPresence)
             .set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi")
@@ -316,6 +313,7 @@ let keychain = Keychain(service: "com.example.github-token")
 
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
     do {
+        // Should be the secret invalidated when passcode is removed? If not then use `.WhenUnlocked`
         try keychain
             .accessibility(.WhenPasscodeSetThisDeviceOnly, authenticationPolicy: .UserPresence)
             .authenticationPrompt("Authenticate to update your access token")
@@ -502,54 +500,12 @@ use_frameworks!
 pod 'KeychainAccess'
 ```
 
-##### <a name="swift-2.0-cocoapods"> For Swift 2
-
-You should install CocoaPods 0.38.0.beta2.
-
-```shell
-[sudo] gem install cocoapods --pre
-```
-
-Then, add the following lines to your Podfile:
-
-```ruby
-use_frameworks!
-pod 'KeychainAccess', :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git', :branch => 'swift-2.0'
-```
-
-##### <a name="watchos2-cocoapods"> For watchOS 2
-
-You should install CocoaPods 0.38.0.beta2.
-
-```shell
-[sudo] gem install cocoapods --pre
-```
-
-Then, add the following lines to your Podfile:
-
-```ruby
-use_frameworks!
-
-target 'EampleApp' do
-  pod 'KeychainAccess', :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git', :branch => 'swift-2.0'
-end
-
-target 'EampleApp WatchKit Extension' do
-  platform :watchos, '2.0'
-  pod 'KeychainAccess', :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git', :branch => 'swift-2.0'
-end
-```
-
 ### Carthage
 
 KeychainAccess is available through [Carthage](https://github.com/Carthage/Carthage). To install
 it, simply add the following line to your Cartfile:
 
 `github "kishikawakatsumi/KeychainAccess"`
-
-##### <a name="swift-2.0-carthage"> For Swift 2
-
-`github "kishikawakatsumi/KeychainAccess" "swift-2.0"`
 
 ### To manually add to your project
 
