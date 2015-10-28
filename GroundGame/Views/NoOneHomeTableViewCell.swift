@@ -9,6 +9,8 @@
 import UIKit
 
 class NoOneHomeTableViewCell: UITableViewCell {
+    
+    var delegate: AskedToLeaveSwitchDelegate?
 
     @IBOutlet weak var noOneHomeSwitch: UISwitch!
     @IBOutlet weak var goAwaySwitch: UISwitch!
@@ -29,5 +31,8 @@ class NoOneHomeTableViewCell: UITableViewCell {
     }
     @IBAction func tappedGoAwaySwitch(sender: UISwitch) {
         noOneHomeSwitch.setOn(!goAwaySwitch.on, animated: true)
+
+        // Notify the delegate
+        delegate?.askedToLeaveSwitched(goAwaySwitch.on)
     }
 }
