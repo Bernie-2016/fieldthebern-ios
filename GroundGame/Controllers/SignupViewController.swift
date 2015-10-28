@@ -133,10 +133,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 if result.isCancelled {
                     NSLog("Cancelled")
                 } else {
-                    NSLog("Logged in")
                     let session = Session.sharedInstance
                     session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
-                        self.performSegueWithIdentifier("Login", sender: self)
+                        if success {
+                            self.performSegueWithIdentifier("Login", sender: self)
+                        }
                     })
                 }
             }

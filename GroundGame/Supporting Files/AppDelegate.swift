@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         session.attemptAuthorizationFromKeychain { (success) -> Void in
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
+            
             if success {
                 
                 if let rootViewController = self.window!.rootViewController {
@@ -88,8 +88,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
             } else {
-                let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-                self.window!.rootViewController = onboardingViewController
+                if let rootViewController = self.window!.rootViewController {
+                    if !rootViewController.isKindOfClass(OnboardingViewController) {
+                        let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+                        self.window!.rootViewController = onboardingViewController
+                    }
+                }
             }
         }
     }
