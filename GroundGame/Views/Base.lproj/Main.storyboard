@@ -330,9 +330,6 @@
                                                     <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="114" y="15" width="174" height="18"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,598" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-fo-Ifb">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -370,8 +367,7 @@
                                                             <exclude reference="scQ-zh-OYS"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="296" y="15" width="86" height="18"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="scQ-zh-OYS"/>
                                                         </mask>
@@ -1556,9 +1552,6 @@
                                                     <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                     <animations/>
                                                     <color key="onTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="tappedNoOneHomeSwitch:" destination="GXe-d6-ldB" eventType="valueChanged" id="Uvk-BX-l0w"/>
                                                     </connections>
@@ -1574,9 +1567,6 @@
                                                     <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                     <animations/>
                                                     <color key="onTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="-25" y="-15" width="51" height="32"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="tappedGoAwaySwitch:" destination="GXe-d6-ldB" eventType="valueChanged" id="tb7-nf-xdq"/>
                                                     </connections>
@@ -3730,8 +3720,7 @@ useful talking points.</string>
                                         <exclude reference="YjG-n6-2sV"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="247" y="154" width="104" height="1"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="YjG-n6-2sV"/>
                                     </mask>

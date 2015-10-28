@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ConversationViewController: UIViewController, UIGestureRecognizerDelegate, SubmitButtonDelegate, UITableViewDelegate, UITableViewDataSource {
+class ConversationViewController: UIViewController, UIGestureRecognizerDelegate, SubmitButtonDelegate, UITableViewDelegate, UITableViewDataSource, AskedToLeaveSwitchDelegate {
     
     var savedGestureRecognizerDelegate: UIGestureRecognizerDelegate?
 
@@ -22,6 +22,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     var selectedPerson: Person?
     var selectedIndexPath: NSIndexPath?
     var peopleAreHome: Bool = false
+    var askedToLeave: Bool = false
     var visit: Visit?
     var delegate: SubmitButtonDelegate?
     
@@ -254,6 +255,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("NoOneHomeCell") as! NoOneHomeTableViewCell
                 
+                cell.delegate = self
                 cell.noOneHomeSwitch.setOn(!peopleAreHome, animated: false)
                 
                 return cell
@@ -362,10 +364,16 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         peopleAreHome = updatedStatus
     }
     
+    // MARK: - AskedToLeaveSwitchDelegate Methods
+    
+    func askedToLeaveSwitched(state: Bool) {
+        askedToLeave = state
+    }
+    
     func submitForm() {
         delegate?.isSubmitting()
         if let address = self.address {
-            VisitService().postVisit(1, address: address, people: peopleAtHome) { (visit) in
+            VisitService().postVisit(1, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit) in
                 self.visit = visit
                 NSNotificationCenter.defaultCenter().postNotificationName("shouldReloadMap", object: nil)
                 self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
