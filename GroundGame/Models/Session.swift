@@ -46,10 +46,17 @@ class Session {
         internalAuthorize(self.oauth2, callback: callback)
     }
     
-    func authorizeWithFacebook(token: String, callback: (Bool) -> Void) {
-        self.authorize("facebook", password: token, callback: callback)
+    func authorizeWithFacebook(token token: FBSDKAccessToken, callback: (Bool) -> Void) {
+        self.authorize("facebook", password: token.tokenString, callback: callback)
         
-        keychain["facebookAccessToken"] = token
+        keychain["facebookAccessToken"] = token.tokenString
+        keychain["lastAuthentication"] = "facebook"
+    }
+    
+    func authorizeWithFacebook(tokenString tokenString: String, callback: (Bool) -> Void) {
+        self.authorize("facebook", password: tokenString, callback: callback)
+        
+        keychain["facebookAccessToken"] = tokenString
         keychain["lastAuthentication"] = "facebook"
     }
     
@@ -64,7 +71,7 @@ class Session {
                 }
             } else if lastAuthentication == "facebook" {
                 if let accessToken = keychain["facebookAccessToken"] {
-                    self.authorizeWithFacebook(accessToken) { (success) -> Void in
+                    self.authorizeWithFacebook(tokenString: accessToken) { (success) -> Void in
                         callback(success)
                     }
                 }
