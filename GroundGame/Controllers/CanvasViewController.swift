@@ -46,9 +46,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func animateNearestAddressViewIfNeeded() {
         if let userCoordinate = self.mapView.userLocation.location?.coordinate {
             let userPoint = MKMapPointForCoordinate(userCoordinate)
+            let closestAddressPoint = MKMapPointForCoordinate((self.closestAddress! as Address).coordinate!)
             let mapRect = self.mapView.visibleMapRect
-            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint)
-
+            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint) && MKMapRectContainsPoint(mapRect, closestAddressPoint)
+            
+            self.mapView.annotations
+            
+            
             if userLocationInsideMapView {
                 if self.nearbyAddresses.count > 0 {
                     // We have addresses to show, show the address view
@@ -195,6 +199,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         // Track tap gestures
         let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didZoomMap:")
+        tapRecognizer.numberOfTapsRequired = 2;
         tapRecognizer.delegate = self
         self.mapView.addGestureRecognizer(tapRecognizer)
         
@@ -272,7 +277,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 timeThreshold = 4 // We need to really throttle this because of the compass
             }
 
-            if currentTime.secondsFrom(updatedTime) >= timeThreshold { fetchAddresses() }
+            if currentTime.secondsFrom(updatedTime) >= timeThreshold
+            {
+                fetchAddresses()
+            
+            }
         } else {
             // First address fetch
             fetchAddresses()
@@ -462,6 +471,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = 10.0
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
             
@@ -474,9 +484,20 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         updateClosestLocation()
         self.animateNearestAddressViewIfNeeded()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+
+        var region:MKCoordinateRegion = self.mapView.region
+        region.center = newLocation.coordinate
+        region.span.longitudeDelta = 0.15
+        region.span.latitudeDelta = 0.15
+        
+        self.mapView.setRegion(region, animated: true)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
