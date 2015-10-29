@@ -69,6 +69,10 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             // Select their canvas response
             let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
             self.didSelectCanvasResponseOption(personCanvasResponse)
+            
+            // asked to leave
+            askedToLeaveSwitch.on = person.askedToLeave
+            
         } else {
             // We have no person, but we need a new one to save changes to
             self.person = Person()
