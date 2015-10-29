@@ -14,10 +14,10 @@ struct AddressService {
 
     let api = API()
     
-    func getAddress(address: Address, callback: ((Address?, [Person]?, Bool, NSError?) -> Void)) {
+    func getAddress(address: Address, callback: ((Address?, [Person]?, Bool, APIError?) -> Void)) {
         let parameters = AddressJSON(address: address).attributes
         
-        api.get("addresses", parameters: parameters) { (data, success, error, response) in
+        api.get("addresses", parameters: parameters) { (data, success, error) in
             
             if success {
             
@@ -38,24 +38,14 @@ struct AddressService {
                     callback(address, people, success, nil)
                 }
             } else {
-                
-                if let response = response {
-                    switch response.statusCode {
-                    case 404:
-                        callback(nil, nil, true, error)
-                    default:
-                        callback(nil, nil, success, error)
-                    }
-                } else {
-                    callback(nil, nil, success, error)                
-                }
+                callback(nil, nil, success, error)
             }
         }
     }
     
     func getAddresses(latitude: CLLocationDegrees, longitude: CLLocationDegrees, radius: Double, callback: ([Address]? -> Void)) {
         
-        api.get("addresses", parameters: ["latitude": latitude, "longitude": longitude, "radius": radius]) { (data, success, error, response) in
+        api.get("addresses", parameters: ["latitude": latitude, "longitude": longitude, "radius": radius]) { (data, success, error) in
             
             if success {
                 // Extract our addresses into models

@@ -10,5 +10,5 @@ import Foundation
 
 protocol SubmitButtonDelegate {
     func isSubmitting()
-    func finishedSubmittingWithError(errorMessage: String)
+    func finishedSubmittingWithError(error: APIError)
 }
