@@ -42,7 +42,7 @@ struct UserService {
     }
     
     func editMe(me: Person, callback: (User?) -> Void) {
-        api.post("users/me", parameters: nil) { (data, success) -> Void in
+        api.post("users/me", parameters: nil) { (data, success, error) -> Void in
             
         }
     }
@@ -50,7 +50,7 @@ struct UserService {
     func editMePhoto(photoString: String, callback: (User?) -> Void) {
         let parameters = UserJSON(base64PhotoData: photoString).json
         
-        api.post("users/me", parameters: parameters.object as? [String : AnyObject]) { (data, success) -> Void in
+        api.post("users/me", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
             
         }
     }

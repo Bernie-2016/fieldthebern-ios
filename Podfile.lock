@@ -7,22 +7,6 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.4.0)
   - Dollar (4.0.1)
-  - Facebook-iOS-SDK (4.1.0):
-    - Bolts (~> 1.1)
-    - Facebook-iOS-SDK/CoreKit (= 4.1.0)
-    - Facebook-iOS-SDK/LoginKit (= 4.1.0)
-    - Facebook-iOS-SDK/ShareKit (= 4.1.0)
-  - Facebook-iOS-SDK/CoreKit (4.1.0):
-    - Bolts (~> 1.1)
-    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.1.0)
-  - Facebook-iOS-SDK/CoreKit/no-arc (4.1.0):
-    - Bolts (~> 1.1)
-  - Facebook-iOS-SDK/LoginKit (4.1.0):
-    - Bolts (~> 1.1)
-    - Facebook-iOS-SDK/CoreKit
-  - Facebook-iOS-SDK/ShareKit (4.1.0):
-    - Bolts (~> 1.1)
-    - Facebook-iOS-SDK/CoreKit
   - FBSDKCoreKit (4.1.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.1.0)
@@ -55,7 +39,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.0.0-beta.3)
   - Dollar
-  - Facebook-iOS-SDK (= 4.1.0)
   - FBSDKCoreKit (= 4.1.0)
   - FBSDKLoginKit (= 4.1.0)
   - FBSDKShareKit (= 4.1.0)
@@ -90,7 +73,6 @@ SPEC CHECKSUMS:
   Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   Dollar: a058e2659e0d3261307c12630dbc2fd8e32f80bf
-  Facebook-iOS-SDK: f42dfb27283bf5f05e3a9edc88459a75b9892d99
   FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
   FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef

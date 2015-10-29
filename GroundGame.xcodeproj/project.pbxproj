@@ -121,6 +121,7 @@
 		A7CA34641BDFFEE1007A9495 /* LearnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */; };
 		A7CA34661BE029AA007A9495 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34651BE029AA007A9495 /* ListModel.swift */; };
 		A7CA346C1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA346B1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift */; };
+		A7CA34711BE194EB007A9495 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34701BE194EB007A9495 /* APIError.swift */; };
 		A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */; };
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; };
@@ -293,6 +294,7 @@
 		A7CA34651BE029AA007A9495 /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		A7CA346B1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskedToLeaveSwitchDelegate.swift; sourceTree = "<group>"; };
 		A7CA346F1BE17D29007A9495 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		A7CA34701BE194EB007A9495 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOneHomeTableViewCell.swift; sourceTree = "<group>"; };
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+				A7CA34701BE194EB007A9495 /* APIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
+				A7CA34711BE194EB007A9495 /* APIError.swift in Sources */,
 				A7CA34421BDFE6D7007A9495 /* PageModel.swift in Sources */,
 				A7CA34221BDFE6B6007A9495 /* NSAttributedStringExtensions.swift in Sources */,
 				A7CA34541BDFE6FC007A9495 /* ItemsViewController.swift in Sources */,

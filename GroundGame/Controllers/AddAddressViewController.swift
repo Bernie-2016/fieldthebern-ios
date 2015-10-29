@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate {
+class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate, SubmitButtonDelegate {
 
     var previousLocation: CLLocation?
     var location: CLLocation?
@@ -149,8 +149,12 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         submitButton.enabled = false
     }
     
-    func finishedSubmittingWithError(errorMessage: String) {
-        let alert = UIAlertController(title: "Missing Address Information", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+    func finishedSubmittingWithError(error: APIError) {
+        
+        var errorTitle = error.errorTitle
+        var errorMessage = error.errorDescription
+        
+        let alert = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
         alert.addAction(alertAction)
         
@@ -238,7 +242,9 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                         }
                         self.performSegueWithIdentifier("SubmitAddress", sender: self)
                     } else {
-                        self.finishedSubmittingWithError("That address looks incomplete. Check for errors and try again.")
+                        if let error = error {
+                            self.finishedSubmittingWithError(error)
+                        }
                     }
                 })
             }

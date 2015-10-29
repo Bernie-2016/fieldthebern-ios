@@ -20,12 +20,12 @@ class API {
             case .Success:
                 callback(response.data, true, nil, response.response)
             case .Failure(let error):
-                callback(nil, false, error, response.response)
+                callback(response.data, false, error, response.response)
             }
         }
     }
     
-    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool) -> Void) {
+    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
 
         let url = baseURL + "/" + endpoint
                 
@@ -33,9 +33,10 @@ class API {
             http.authorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {
                 case .Success:
-                    callback(response.data, true)
+                    callback(response.data, true, nil)
                 case .Failure(let error):
-                    callback(nil, false)
+                    let apiError = APIError(error: error, data: response.data)
+                    callback(response.data, false, apiError)
                 }
             }
         }

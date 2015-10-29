@@ -14,7 +14,7 @@ struct AddressService {
 
     let api = API()
     
-    func getAddress(address: Address, callback: ((Address?, [Person]?, Bool, NSError?) -> Void)) {
+    func getAddress(address: Address, callback: ((Address?, [Person]?, Bool, APIError?) -> Void)) {
         let parameters = AddressJSON(address: address).attributes
         
         api.get("addresses", parameters: parameters) { (data, success, error, response) in
@@ -38,16 +38,17 @@ struct AddressService {
                     callback(address, people, success, nil)
                 }
             } else {
+                let apiError = APIError(error: error, data: data)
                 
                 if let response = response {
                     switch response.statusCode {
                     case 404:
-                        callback(nil, nil, true, error)
+                        callback(nil, nil, true, apiError)
                     default:
-                        callback(nil, nil, success, error)
+                        callback(nil, nil, success, apiError)
                     }
                 } else {
-                    callback(nil, nil, success, error)                
+                    callback(nil, nil, success, apiError)
                 }
             }
         }
