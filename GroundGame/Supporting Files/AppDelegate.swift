@@ -37,10 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
         
-//        Heap.setAppId("")
-//        #if Debug
-//            Heap.enableVisualizer()
-//        #endif
+        Heap.setAppId("12873725")
+        #if Debug
+            Heap.enableVisualizer()
+        #endif
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

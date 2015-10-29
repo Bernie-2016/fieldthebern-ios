@@ -418,6 +418,7 @@
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
 				A73D663E1BBEE87400127245 /* AddressService.swift */,
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
+				A7CA34701BE194EB007A9495 /* APIError.swift */,
 				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
 				A771C5911BD813C900179F04 /* CanvasResponseList.swift */,
@@ -447,7 +448,6 @@
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
-				A7CA34701BE194EB007A9495 /* APIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
