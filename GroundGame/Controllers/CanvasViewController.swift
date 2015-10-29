@@ -46,9 +46,13 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func animateNearestAddressViewIfNeeded() {
         if let userCoordinate = self.mapView.userLocation.location?.coordinate {
             let userPoint = MKMapPointForCoordinate(userCoordinate)
+            let closestAddressPoint = MKMapPointForCoordinate((self.closestAddress! as Address).coordinate!)
             let mapRect = self.mapView.visibleMapRect
-            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint)
-
+            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint) && MKMapRectContainsPoint(mapRect, closestAddressPoint)
+            
+            self.mapView.annotations
+            
+            
             if userLocationInsideMapView {
                 if self.nearbyAddresses.count > 0 {
                     // We have addresses to show, show the address view
