@@ -72,7 +72,6 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             
             // asked to leave
             askedToLeaveSwitch.on = person.askedToLeave
-            
         } else {
             // We have no person, but we need a new one to save changes to
             self.person = Person()
