@@ -36,6 +36,7 @@
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; };
 		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
 		A74842501BCD945500D62868 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
+		A74BE50D1BE3232E005C66A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74BE50C1BE3232E005C66A4 /* LaunchScreen.storyboard */; };
 		A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33D51BCAFE4400191E3C /* PersonSpec.swift */; };
 		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; };
 		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; };
@@ -75,7 +76,6 @@
 		A79ECACB1BDC2B0F00923C36 /* CellButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */; };
 		A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5794F1BB092E100D8885E /* AppDelegate.swift */; };
 		A7A579551BB092E100D8885E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579531BB092E100D8885E /* Main.storyboard */; };
-		A7A5795A1BB092E100D8885E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A579581BB092E100D8885E /* LaunchScreen.storyboard */; };
 		A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579641BB092E100D8885E /* GroundGameTests.swift */; };
 		A7A579701BB092E100D8885E /* GroundGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */; };
 		A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */; };
@@ -201,6 +201,7 @@
 		A742797D1BCED6030020EE29 /* PersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonJSON.swift; sourceTree = "<group>"; };
 		A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonDelegate.swift; sourceTree = "<group>"; };
 		A74279841BD016190020EE29 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		A74BE50C1BE3232E005C66A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A74F33D51BCAFE4400191E3C /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		A74FCE931BBB081C005C4D34 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -242,7 +243,6 @@
 		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A579541BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A7A579591BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A5795B1BB092E100D8885E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A579601BB092E100D8885E /* GroundGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroundGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A579641BB092E100D8885E /* GroundGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundGameTests.swift; sourceTree = "<group>"; };
@@ -464,7 +464,6 @@
 				A7CA34561BDFE709007A9495 /* ContentCells */,
 				A7CA345B1BDFE709007A9495 /* ItemCollectionCell.swift */,
 				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
-				A7A579581BB092E100D8885E /* LaunchScreen.storyboard */,
 				A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */,
 				A7A579531BB092E100D8885E /* Main.storyboard */,
 				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
@@ -473,6 +472,7 @@
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
+				A74BE50C1BE3232E005C66A4 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -767,8 +767,8 @@
 			files = (
 				A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */,
 				A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */,
-				A7A5795A1BB092E100D8885E /* LaunchScreen.storyboard in Resources */,
 				A7A579551BB092E100D8885E /* Main.storyboard in Resources */,
+				A74BE50D1BE3232E005C66A4 /* LaunchScreen.storyboard in Resources */,
 				A76890341BC86AD0008F394C /* Assets.xcassets in Resources */,
 				A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */,
 			);
@@ -1096,15 +1096,6 @@
 				A7A579541BB092E100D8885E /* Base */,
 			);
 			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		A7A579581BB092E100D8885E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7A579591BB092E100D8885E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="u2b-dG-p44">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="2DU-RV-B1f">
+            <objects>
+                <viewController id="u2b-dG-p44" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wx0-In-qHY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xOr-kt-XbK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zXr-ET-5hw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bernie-map" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-Pj-dCK">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0xJ-sy-26V"/>
+                                    <constraint firstAttribute="height" constant="150" id="XgE-TB-NkO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0xJ-sy-26V"/>
+                                        <exclude reference="XgE-TB-NkO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0xJ-sy-26V"/>
+                                        <include reference="XgE-TB-NkO"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yXu-Pj-dCK" firstAttribute="centerX" secondItem="zXr-ET-5hw" secondAttribute="centerX" id="VZw-Yo-aWn"/>
+                            <constraint firstItem="yXu-Pj-dCK" firstAttribute="centerY" secondItem="zXr-ET-5hw" secondAttribute="centerY" id="iYk-px-Is3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="yXu-Pj-dCK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="iYk-px-Is3"/>
+                                <exclude reference="VZw-Yo-aWn"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="yXu-Pj-dCK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="iYk-px-Is3"/>
+                                <include reference="VZw-Yo-aWn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VE-dc-ZfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="282"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bernie-map" width="150" height="150"/>
+    </resources>
+</document>

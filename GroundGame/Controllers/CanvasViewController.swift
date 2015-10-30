@@ -177,9 +177,48 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     // MARK: - Lifecycle Functions
-        
+    
+    var mask: CALayer?
+    var containerView: UIView?
+    var blueView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let size = UIScreen.mainScreen().bounds.size
+        
+        var cutoutImage: UIImage?
+        
+        switch size.height {
+        case 420:
+            cutoutImage = UIImage(named: "map-cutout-320x480")!
+        case 568:
+            cutoutImage = UIImage(named: "map-cutout-320x568")!
+        case 667:
+            cutoutImage = UIImage(named: "map-cutout-375x667")!
+        case 736:
+            cutoutImage = UIImage(named: "map-cutout-414x736")!
+        default:
+            cutoutImage = UIImage(named: "map-cutout-375x667")!
+        }
+        
+        if let tabBarViewController = self.tabBarController {
+            let containerFrame = tabBarViewController.view.frame
+            
+            blueView = UIImageView.init(frame: containerFrame)
+            blueView!.image = UIImage.imageFromColor(Color.Blue)
+            
+            self.mask = CALayer()
+            self.mask?.contents = cutoutImage!.CGImage
+            self.mask?.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            self.mask?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.mask?.position = CGPoint(x: containerFrame.size.width/2, y: containerFrame.size.height/2)
+            
+            //        self.view.addSubview(blueView)
+            
+            tabBarViewController.view.addSubview(blueView!)
+            blueView!.layer.mask = self.mask
+        }
         
         findMyLocation()
         
@@ -208,6 +247,33 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         // Subscribe to placemark updated notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldUpdatePlacemark:", name: "placemarkUpdated", object: nil)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        animateMask()
+    }
+    
+    func animateMask() {
+        let size = UIScreen.mainScreen().bounds.size
+
+        if let mask = self.mask {
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(1)
+
+            CATransaction.setCompletionBlock { () -> Void in
+                CATransaction.begin()
+                CATransaction.setAnimationDuration(1)
+                CATransaction.setCompletionBlock { () -> Void in
+                    self.blueView?.removeFromSuperview()
+                }
+                mask.bounds = CGRect(x: 0, y: 0, width: size.width*15, height: size.height*15)
+                CATransaction.commit()
+            }
+            mask.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            CATransaction.commit()
+        }
     }
     
     func shouldReloadMap(sender: AnyObject) {
