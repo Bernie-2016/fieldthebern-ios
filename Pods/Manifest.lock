@@ -26,6 +26,8 @@ PODS:
   - KFSwiftImageLoader (2.0.1)
   - Nimble (2.0.0)
   - p2.OAuth2 (2.0.1)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
   - Quick (0.6.0)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
@@ -48,6 +50,7 @@ DEPENDENCIES:
   - KFSwiftImageLoader (~> 2.0)
   - Nimble (= 2.0.0)
   - p2.OAuth2
+  - Parse
   - Quick
   - RealmSwift
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
@@ -82,6 +85,7 @@ SPEC CHECKSUMS:
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   Nimble: 472e75466819eb8c06299233e87c694a9b51328a
   p2.OAuth2: 6d4183a4dcec05cc6df3bab1110551854a116b9c
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873

@@ -224,6 +224,10 @@ SOFTWARE.
 
 
 
+## Parse
+
+See https://www.parse.com/about/terms
+
 ## Realm
 
 TABLE OF CONTENTS

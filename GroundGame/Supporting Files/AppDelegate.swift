@@ -9,6 +9,7 @@
 import UIKit
 import KeychainAccess
 import XCGLogger
+import Parse
 
 let log: XCGLogger = {
     let log = XCGLogger.defaultInstance()
@@ -42,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Heap.enableVisualizer()
         #endif
         
+        Parse.setApplicationId("Do1Z4inNlESdLB7JsW7DVUPGlQJCkkKRyKp8h1Fv", clientKey: "Hm3Slw0OZL3D8lShBTrGLOMjxHkvJpFTL9X40bz3")
+        
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -73,6 +80,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackground()
+        print(deviceToken)
+    }
+        
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print(error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("received notification")
+        PFPush.handlePush(userInfo)
     }
     
     func checkAuthorization(sender: AnyObject) {
