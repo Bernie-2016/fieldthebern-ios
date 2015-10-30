@@ -140,26 +140,20 @@
 		<string>Lato-Heavy.ttf</string>
 		<string>Lato-Medium.ttf</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>823950097719547</string>
-	<key>FacebookDisplayName</key>
-	<string>GroundGame</string>
-	<key>LSApplicationQueriesSchemes</key>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>fbapi</string>
-		<string>fbapi20130214</string>
-		<string>fbapi20130410</string>
-		<string>fbapi20130702</string>
-		<string>fbapi20131010</string>
-		<string>fbapi20131219</string>
-		<string>fbapi20140410</string>
-		<string>fbapi20140116</string>
-		<string>fbapi20150313</string>
-		<string>fbapi20150629</string>
-		<string>fbauth</string>
-		<string>fbauth2</string>
-		<string>fb-messenger-api20140430</string>
+		<string>armv7</string>
 	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 	<key>privacy - location usage description</key>
 	<string>Location services are required to help you canvas.</string>
 </dict>
