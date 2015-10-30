@@ -14,6 +14,7 @@ pod 'KFSwiftImageLoader', '~> 2.0'
 pod 'XCGLogger'
 pod 'RealmSwift'
 pod 'Heap'
+pod 'Parse'
 
 def testing_pods
     pod 'Quick'
