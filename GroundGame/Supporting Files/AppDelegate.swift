@@ -119,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(rootViewController)
                 if !rootViewController.isKindOfClass(OnboardingViewController) {
                     let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-                    print("setting onboarding view controller as root")
+
                     self.window!.rootViewController = onboardingViewController
                 }
             }

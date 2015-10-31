@@ -15,6 +15,7 @@ import Parse
 class Session {
     
     typealias SuccessResponse = (Bool) -> Void
+    typealias OAuth2Response = (wasFailure: Bool, error: NSError?) -> Void
     
     static let sharedInstance = Session()
     
@@ -48,16 +49,22 @@ class Session {
             keychain["lastAuthentication"] = "email"
         }
 
-        self.internalAuthorize(self.oauth2, callback: callback)
-        
-        // Update device token for push notifications
-        UserService().updateMyDevice(PFInstallation.currentInstallation().deviceToken, callback: { (success) -> Void in
-            print(success)
-        })
+        self.internalAuthorize(self.oauth2) { (wasFailure, error) -> Void in
+            if !wasFailure {
+                // Update device token for push notifications
+                UserService().updateMyDevice(PFInstallation.currentInstallation().deviceToken, callback: { (success) -> Void in
+                    
+                })
+            }
+            
+            callback(!wasFailure)
+        }
     }
     
     func reauthorize(callback: SuccessResponse) {
-        internalAuthorize(self.oauth2, callback: callback)
+        self.internalAuthorize(self.oauth2) { (wasFailure, error) -> Void in
+            callback(!wasFailure)
+        }
     }
     
     func authorizeWithFacebook(token token: FBSDKAccessToken, callback: SuccessResponse) {
@@ -85,19 +92,25 @@ class Session {
     
     func attemptAuthorizationFromKeychain(callback: SuccessResponse) {
         
-        if let lastAuthentication = keychain["lastAuthentication"] {
-            if lastAuthentication == "email" {
-                if let email = keychain["email"], let password = keychain["password"] {
-                    self.authorize(email, password: password, callback: { (success) -> Void in
-                        callback(success)
-                    })
+        let reachability = Reachability.reachabilityForInternetConnection()
+        
+        if reachability?.isReachable() == true {
+            if let lastAuthentication = keychain["lastAuthentication"] {
+                if lastAuthentication == "email" {
+                    if let email = keychain["email"], let password = keychain["password"] {
+                        self.authorize(email, password: password, callback: { (success) -> Void in
+                            callback(success)
+                        })
+                    }
+                } else if lastAuthentication == "facebook" {
+                    if let accessToken = keychain["facebookAccessToken"] {
+                        self.authorizeWithFacebook(tokenString: accessToken, callback: { (success) -> Void in
+                            callback(success)
+                        })
+                    }
                 }
-            } else if lastAuthentication == "facebook" {
-                if let accessToken = keychain["facebookAccessToken"] {
-                    self.authorizeWithFacebook(tokenString: accessToken, callback: { (success) -> Void in
-                        callback(success)
-                    })
-                }
+            } else {
+                callback(false)
             }
         } else {
             callback(false)
@@ -117,23 +130,15 @@ class Session {
         FBSDKLoginManager().logOut()
     }
     
-    private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: SuccessResponse) {
-        if let oauth2 = self.oauth2 {
+    private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: OAuth2Response) {
 
-            oauth2.onAuthorize = { parameters in
-                callback(true)
-            }
+        if let oauth2 = self.oauth2 {
             
-            oauth2.onFailure = { error in   // `error` is nil on cancel
-                if error != nil {
-                    log.error("Authorization went wrong: \(error!.localizedDescription)")
-                }
-                callback(false)
-            }
+            oauth2.afterAuthorizeOrFailure = callback
             
             oauth2.authorize(params: nil, autoDismiss: true)
         } else {
-            callback(false)
+            callback(wasFailure: true, error: nil)
         }
     }
 }

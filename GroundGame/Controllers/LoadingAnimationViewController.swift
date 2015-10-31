@@ -14,6 +14,7 @@ class LoadingAnimationViewController: UIViewController {
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
+    var canAnimate = false
     var finishedAnimating = false
     var finishedAuthenticating = false
     var authorizationSuccess = false
@@ -24,10 +25,8 @@ class LoadingAnimationViewController: UIViewController {
         // Do any additional setup after loading the view.
         let session = Session.sharedInstance
         
-        log.debug("attempting")
-        
         session.attemptAuthorizationFromKeychain { (success) -> Void in
-            log.debug("\(success)")
+            self.animate()
             self.authorizationSuccess = success
             self.finishedAuthenticating = true
             self.attemptTransition()
@@ -37,24 +36,28 @@ class LoadingAnimationViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        animate()
+        self.canAnimate = true
+        
+        if self.finishedAuthenticating { animate() }
     }
     
     func animate() {
-        let dimension = mapContainer.frame.width * 15
-        
-        self.heightConstraint.constant = dimension
-        self.widthConstraint.constant = dimension
-        
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        if canAnimate {
+            let dimension = mapContainer.frame.width * 10
             
-                self.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
-                self.view.layoutIfNeeded()
+            self.heightConstraint.constant = dimension
+            self.widthConstraint.constant = dimension
             
-            }) { (success) -> Void in
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
                 
-                self.finishedAnimating = true
-                self.attemptTransition()
+                    self.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
+                    self.view.layoutIfNeeded()
+                
+                }) { (success) -> Void in
+                    
+                    self.finishedAnimating = true
+                    self.attemptTransition()
+            }
         }
     }
     
