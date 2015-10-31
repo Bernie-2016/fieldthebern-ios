@@ -155,6 +155,7 @@
 		A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */; };
 		A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */; };
 		A7F4517D1BE52A2A004CECC2 /* CutoutMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */; };
+		A7F4517F1BE53368004CECC2 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; };
 		DFE22E081BDBA417009565E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE22E071BDBA417009565E1 /* String.swift */; };
 /* End PBXBuildFile section */
@@ -315,6 +316,7 @@
 		A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
 		A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailsViewController.swift; sourceTree = "<group>"; };
 		A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CutoutMap.swift; sourceTree = "<group>"; };
+		A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFE22E071BDBA417009565E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */,
+				A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
+				A7F4517F1BE53368004CECC2 /* LoadingAnimationViewController.swift in Sources */,
 				A7CA34711BE194EB007A9495 /* APIError.swift in Sources */,
 				A7CA34421BDFE6D7007A9495 /* PageModel.swift in Sources */,
 				A7CA34221BDFE6B6007A9495 /* NSAttributedStringExtensions.swift in Sources */,

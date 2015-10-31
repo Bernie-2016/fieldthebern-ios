@@ -47,8 +47,8 @@
                                 <exclude reference="yXu-Pj-dCK"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="iYk-px-Is3"/>
                                 <exclude reference="VZw-Yo-aWn"/>
+                                <exclude reference="iYk-px-Is3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -56,8 +56,8 @@
                                 <include reference="yXu-Pj-dCK"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="iYk-px-Is3"/>
                                 <include reference="VZw-Yo-aWn"/>
+                                <include reference="iYk-px-Is3"/>
                             </mask>
                         </variation>
                     </view>

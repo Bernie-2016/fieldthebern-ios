@@ -185,9 +185,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        prepareLoadingOverlay()
-        
+                
         findMyLocation()
         
         // Set the map view
@@ -218,72 +216,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        animateMask()
-    }
 
-    var mask: CALayer?
-    var blueView: UIImageView?
-
-    func prepareLoadingOverlay() {
-        let size = UIScreen.mainScreen().bounds.size
-        
-        var cutoutImage: UIImage?
-        
-        switch size.height {
-        case 420:
-            cutoutImage = CutoutMap.Image480
-        case 568:
-            cutoutImage = CutoutMap.Image568
-        case 667:
-            cutoutImage = CutoutMap.Image667
-        case 736:
-            cutoutImage = CutoutMap.Image736
-        default:
-            cutoutImage = CutoutMap.Image667
-        }
-        
-        if let tabBarViewController = self.tabBarController,
-            let cutout = cutoutImage {
-                let containerFrame = tabBarViewController.view.frame
-                
-                blueView = UIImageView.init(frame: containerFrame)
-                blueView!.image = UIImage.imageFromColor(Color.Blue)
-                
-                self.mask = CALayer()
-                self.mask?.contents = cutout.CGImage
-                self.mask?.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-                self.mask?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-                self.mask?.position = CGPoint(x: containerFrame.size.width/2, y: containerFrame.size.height/2)
-                
-                tabBarViewController.view.addSubview(blueView!)
-                blueView!.layer.mask = self.mask
-        }
-    }
-    
-    func animateMask() {
-        let size = UIScreen.mainScreen().bounds.size
-
-        if let mask = self.mask {
-            CATransaction.begin()
-            CATransaction.setAnimationDuration(1)
-
-            CATransaction.setCompletionBlock { () -> Void in
-                CATransaction.begin()
-                CATransaction.setAnimationDuration(1)
-                CATransaction.setCompletionBlock { () -> Void in
-                    self.blueView?.removeFromSuperview()
-                }
-                mask.bounds = CGRect(x: 0, y: 0, width: size.width*15, height: size.height*15)
-                CATransaction.commit()
-            }
-            mask.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-            CATransaction.commit()
-        }
-    }
-    
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()
     }

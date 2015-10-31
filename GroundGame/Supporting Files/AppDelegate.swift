@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidLoad", object: nil)
         
         Heap.setAppId("12873725")
         #if Debug
@@ -98,29 +98,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFPush.handlePush(userInfo)
     }
     
-    func checkAuthorization(sender: AnyObject) {
-
-        let session = Session.sharedInstance
-
-        session.attemptAuthorizationFromKeychain { (success) -> Void in
-
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            if success {
-                
-                if let rootViewController = self.window!.rootViewController {
-                    if rootViewController.isKindOfClass(OnboardingViewController) {
-                        let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+    func checkAuthorization(notification: NSNotification) {
         
-                        self.window!.rootViewController = rootController
-                    }
+        let success = notification.userInfo!["authorized"] as! Bool
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+        if success {
+            
+            if let rootViewController = self.window!.rootViewController {
+                if rootViewController.isKindOfClass(OnboardingViewController) || rootViewController.isKindOfClass(LoadingAnimationViewController) {
+                    let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+                    
+                    self.window!.rootViewController = rootController
                 }
-            } else {
-                if let rootViewController = self.window!.rootViewController {
-                    if !rootViewController.isKindOfClass(OnboardingViewController) {
-                        let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-                        self.window!.rootViewController = onboardingViewController
-                    }
+            }
+        } else {
+
+            if let rootViewController = self.window!.rootViewController {
+                print(rootViewController)
+                if !rootViewController.isKindOfClass(OnboardingViewController) {
+                    let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+                    print("setting onboarding view controller as root")
+                    self.window!.rootViewController = onboardingViewController
                 }
             }
         }
