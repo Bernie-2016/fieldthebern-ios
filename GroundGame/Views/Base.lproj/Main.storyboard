@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FCV-RV-Ixx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mms-dA-QyB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -89,6 +89,24 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="amG-d8-Fed">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Mms-dA-QyB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eXv-CR-dtB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="delegate" destination="2Zl-9s-8Ui" id="qft-LZ-qej"/>
+                        <segue destination="FCV-RV-Ixx" kind="relationship" relationship="rootViewController" id="iu6-n5-phu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFG-UO-5ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2Zl-9s-8Ui" customClass="AnimatedNavigationControllerDelegate" customModule="GroundGame" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-2112" y="1062"/>
+        </scene>
         <!--Loading Animation View Controller-->
         <scene sceneID="mgy-Kj-erg">
             <objects>
@@ -98,6 +116,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f5F-bh-Arg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Im-Ts-5xt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXw-c6-eD0">
@@ -144,8 +163,7 @@
                                         <exclude reference="qeO-uH-SZi"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="69" y="225" width="150" height="150"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="lcY-i1-e1z"/>
                                     </mask>
@@ -184,10 +202,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="sWj-mA-jjz"/>
                     <connections>
                         <outlet property="heightConstraint" destination="q3x-f2-I5h" id="o5Y-CE-Tft"/>
                         <outlet property="mapContainer" destination="vXw-c6-eD0" id="2sL-Hx-oI5"/>
                         <outlet property="widthConstraint" destination="xW3-2x-l7q" id="mDR-jQ-YN3"/>
+                        <segue destination="8di-8k-tZr" kind="show" identifier="ShowOnboardingSegue" id="VUw-pL-0Be"/>
+                        <segue destination="zI1-8A-tOm" kind="show" identifier="ShowMapSegue" id="sWn-JC-xS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ugl-S7-rCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,7 +432,8 @@
                                                             <exclude reference="54T-vg-41a"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="8" width="240" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="54T-vg-41a"/>
                                                         </mask>
@@ -447,6 +469,9 @@
                                                     <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="114" y="14" width="14" height="18"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,598" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-fo-Ifb">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -486,7 +511,8 @@
                                                             <exclude reference="scQ-zh-OYS"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="136" y="14" width="86" height="18"/>
                                                         <mask key="constraints">
                                                             <include reference="scQ-zh-OYS"/>
                                                         </mask>
@@ -650,6 +676,9 @@
                                                     <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="224" height="17"/>
+                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGO-UN-dxb">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -673,7 +702,8 @@
                                                             <exclude reference="HsP-K7-sIo"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="30" y="33" width="180" height="34"/>
                                                         <mask key="constraints">
                                                             <include reference="AVK-58-Dv7"/>
                                                             <exclude reference="HsP-K7-sIo"/>
@@ -1706,7 +1736,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="71" y="14" width="321" height="20"/>
+                                                        <rect key="frame" x="71" y="14" width="161" height="20"/>
                                                     </variation>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-AP-pVF">
@@ -5484,6 +5514,8 @@ useful talking points.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3nY-LF-DGD"/>
+        <segue reference="sWn-JC-xS9"/>
+        <segue reference="VUw-pL-0Be"/>
         <segue reference="Y1h-lb-cnM"/>
     </inferredMetricsTieBreakers>
 </document>

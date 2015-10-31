@@ -8,9 +8,14 @@
 
 import Foundation
 
-class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
+class AnimatedNavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
 
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+
+        if fromVC.isKindOfClass(LoadingAnimationViewController) {
+            return MapTransitionAnimator()
+        } else {
+            return nil
+        }
     }
 }

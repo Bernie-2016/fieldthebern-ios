@@ -157,6 +157,7 @@
 		A7F4517D1BE52A2A004CECC2 /* CutoutMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */; };
 		A7F4517F1BE53368004CECC2 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */; };
 		A7F451811BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F451801BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift */; };
+		A7F451841BE561BA004CECC2 /* MapTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F451831BE561BA004CECC2 /* MapTransitionAnimator.swift */; };
 		A9040382566C74E41AE064FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */; };
 		DFE22E081BDBA417009565E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE22E071BDBA417009565E1 /* String.swift */; };
 /* End PBXBuildFile section */
@@ -319,6 +320,7 @@
 		A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CutoutMap.swift; sourceTree = "<group>"; };
 		A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
 		A7F451801BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		A7F451831BE561BA004CECC2 /* MapTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTransitionAnimator.swift; sourceTree = "<group>"; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFE22E071BDBA417009565E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A7F451821BE561A1004CECC2 /* Animators */,
 				A72F88AF1BCC4979001B185B /* Delegates */,
 				A73D66441BBF3EF900127245 /* Extensions */,
 				A7CA34291BDFE6C2007A9495 /* Managers */,
@@ -661,6 +664,14 @@
 				A7D3F6F21BCB0C6E00232234 /* Person.json */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7F451821BE561A1004CECC2 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				A7F451831BE561BA004CECC2 /* MapTransitionAnimator.swift */,
+			);
+			name = Animators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -967,6 +978,7 @@
 				A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */,
 				A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */,
 				A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */,
+				A7F451841BE561BA004CECC2 /* MapTransitionAnimator.swift in Sources */,
 				A73D663D1BBEE44000127245 /* Address.swift in Sources */,
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A7CA34231BDFE6B6007A9495 /* NSDictionaryExtensions.swift in Sources */,

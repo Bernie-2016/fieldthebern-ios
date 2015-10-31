@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
     
         log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true)
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidLoad", object: nil)
         
         Heap.setAppId("12873725")
         #if Debug
@@ -96,34 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("received notification")
         PFPush.handlePush(userInfo)
-    }
-    
-    func checkAuthorization(notification: NSNotification) {
-        
-        let success = notification.userInfo!["authorized"] as! Bool
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-        if success {
-            
-            if let rootViewController = self.window!.rootViewController {
-                if rootViewController.isKindOfClass(OnboardingViewController) || rootViewController.isKindOfClass(LoadingAnimationViewController) {
-                    let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-                    
-                    self.window!.rootViewController = rootController
-                }
-            }
-        } else {
-
-            if let rootViewController = self.window!.rootViewController {
-                print(rootViewController)
-                if !rootViewController.isKindOfClass(OnboardingViewController) {
-                    let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-
-                    self.window!.rootViewController = onboardingViewController
-                }
-            }
-        }
     }
 }
 

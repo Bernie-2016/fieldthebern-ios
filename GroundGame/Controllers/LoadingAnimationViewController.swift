@@ -43,28 +43,18 @@ class LoadingAnimationViewController: UIViewController {
     
     func animate() {
         if canAnimate {
-            let dimension = mapContainer.frame.width * 10
-            
-            self.heightConstraint.constant = dimension
-            self.widthConstraint.constant = dimension
-            
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                
-                    self.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
-                    self.view.layoutIfNeeded()
-                
-                }) { (success) -> Void in
-                    
-                    self.finishedAnimating = true
-                    self.attemptTransition()
-            }
+            self.finishedAnimating = true
+            self.attemptTransition()
         }
     }
     
     func attemptTransition() {
-        log.debug("attempting transition")
         if finishedAnimating && finishedAuthenticating {
-            NSNotificationCenter.defaultCenter().postNotificationName("appDidLoad", object: self, userInfo: ["authorized": self.authorizationSuccess])
+            if self.authorizationSuccess {
+                self.navigationController?.topViewController?.performSegueWithIdentifier("ShowMapSegue", sender: self)
+            } else {
+                self.navigationController?.topViewController?.performSegueWithIdentifier("ShowOnboardingSegue", sender: self)
+            }
         }
     }
 }
