@@ -84,15 +84,19 @@ class Session {
     }
     
     func attemptAuthorizationFromKeychain(callback: SuccessResponse) {
-
+        
         if let lastAuthentication = keychain["lastAuthentication"] {
             if lastAuthentication == "email" {
                 if let email = keychain["email"], let password = keychain["password"] {
-                    self.authorize(email, password: password, callback: callback)
+                    self.authorize(email, password: password, callback: { (success) -> Void in
+                        callback(success)
+                    })
                 }
             } else if lastAuthentication == "facebook" {
                 if let accessToken = keychain["facebookAccessToken"] {
-                    self.authorizeWithFacebook(tokenString: accessToken, callback: callback)
+                    self.authorizeWithFacebook(tokenString: accessToken, callback: { (success) -> Void in
+                        callback(success)
+                    })
                 }
             }
         } else {
