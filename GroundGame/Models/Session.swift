@@ -10,6 +10,7 @@ import Foundation
 import p2_OAuth2
 import KeychainAccess
 import FBSDKLoginKit
+import Parse
 
 class Session {
     
@@ -46,6 +47,11 @@ class Session {
         }
         
         internalAuthorize(self.oauth2, callback: callback)
+        
+        // Update device token for push notifications
+        UserService().updateMyDevice(PFInstallation.currentInstallation().deviceToken, callback: { (success) -> Void in
+            print(success)
+        })
     }
     
     func reauthorize(callback: (Bool) -> Void) {

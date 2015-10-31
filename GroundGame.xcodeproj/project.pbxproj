@@ -84,6 +84,7 @@
 		A7A579841BB211F500D8885E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A579831BB211F500D8885E /* PageViewController.swift */; };
 		A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */; };
 		A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */; };
+		A7B1EE021BE4273300EA50C2 /* DeviceJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */; };
 		A7CA34201BDFE6B6007A9495 /* FTBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */; };
 		A7CA34211BDFE6B6007A9495 /* NSArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34181BDFE6B6007A9495 /* NSArrayExtensions.swift */; };
 		A7CA34221BDFE6B6007A9495 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA34191BDFE6B6007A9495 /* NSAttributedStringExtensions.swift */; };
@@ -256,6 +257,7 @@
 		A7A579831BB211F500D8885E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualScoreTableViewCell.swift; sourceTree = "<group>"; };
+		A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceJSON.swift; sourceTree = "<group>"; };
 		A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTBConfig.swift; path = ../Extensions/FTBConfig.swift; sourceTree = "<group>"; };
 		A7CA34181BDFE6B6007A9495 /* NSArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayExtensions.swift; sourceTree = "<group>"; };
 		A7CA34191BDFE6B6007A9495 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+				A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				A73D66411BBF36A900127245 /* AddressPinView.swift in Sources */,
 				A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */,
 				A7CA34391BDFE6D7007A9495 /* ContentModel.swift in Sources */,
+				A7B1EE021BE4273300EA50C2 /* DeviceJSON.swift in Sources */,
 				A7CA343E1BDFE6D7007A9495 /* VideoModel.swift in Sources */,
 				A7CA343D1BDFE6D7007A9495 /* TextModel.swift in Sources */,
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,

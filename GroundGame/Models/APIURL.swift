@@ -12,7 +12,7 @@ import Foundation
 struct APIURL {
     
     #if Local
-        static let url = "http://api.lvh.me:3000"
+        static let url = "http://www.coderly-forward.com"
     #endif
 
     #if Staging

@@ -87,7 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.channels = ["global"]
         currentInstallation.saveInBackground()
-        print(deviceToken)
     }
         
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

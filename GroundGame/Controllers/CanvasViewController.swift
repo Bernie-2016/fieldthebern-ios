@@ -46,24 +46,29 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func animateNearestAddressViewIfNeeded() {
         if let userCoordinate = self.mapView.userLocation.location?.coordinate {
             let userPoint = MKMapPointForCoordinate(userCoordinate)
-            let closestAddressPoint = MKMapPointForCoordinate((self.closestAddress! as Address).coordinate!)
-            let mapRect = self.mapView.visibleMapRect
-            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint) && MKMapRectContainsPoint(mapRect, closestAddressPoint)
-            
-            self.mapView.annotations
-            
-            
-            if userLocationInsideMapView {
-                if self.nearbyAddresses.count > 0 {
-                    // We have addresses to show, show the address view
-                    animateNearestAddressViewIn()
-                } else {
-                    // No addresses, hide the address view
-                    animateNearestAddressViewOut()
-                }
-
+            if let address = self.closestAddress,
+                let coordinate = address.coordinate {
+                    let closestAddressPoint = MKMapPointForCoordinate(coordinate)
+                    let mapRect = self.mapView.visibleMapRect
+                    let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint) && MKMapRectContainsPoint(mapRect, closestAddressPoint)
+                    
+                    self.mapView.annotations
+                    
+                    
+                    if userLocationInsideMapView {
+                        if self.nearbyAddresses.count > 0 {
+                            // We have addresses to show, show the address view
+                            animateNearestAddressViewIn()
+                        } else {
+                            // No addresses, hide the address view
+                            animateNearestAddressViewOut()
+                        }
+                        
+                    } else {
+                        // The user's location isn't visible, don't show nearest address view
+                        animateNearestAddressViewOut()
+                    }
             } else {
-                // The user's location isn't visible, don't show nearest address view
                 animateNearestAddressViewOut()
             }
         } else {

@@ -41,9 +41,17 @@ struct UserService {
         }
     }
     
-    func editMe(me: Person, callback: (User?) -> Void) {
+    func editMe(json: UserJSON, callback: (User?) -> Void) {
         api.post("users/me", parameters: nil) { (data, success, error) -> Void in
             
+        }
+    }
+    
+    func updateMyDevice(deviceToken: String?, callback: (Bool) -> Void) {
+        let parameters = DeviceJSON(deviceToken: deviceToken).json
+
+        api.post("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
+            callback(success)
         }
     }
     
