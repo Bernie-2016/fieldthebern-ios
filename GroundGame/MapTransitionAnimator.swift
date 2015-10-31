@@ -9,36 +9,63 @@
 import UIKit
 
 class MapTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-
+    
     weak var transitionContext: UIViewControllerContextTransitioning?
-
+    weak var fromViewController: LoadingAnimationViewController?
+    weak var toViewController: UIViewController?
+    weak var containerView: UIView?
+    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
+        return 0.6
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
         self.transitionContext = transitionContext
         
-        let containerView = transitionContext.containerView()
-        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! LoadingAnimationViewController
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+        containerView = transitionContext.containerView()
+        fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? LoadingAnimationViewController
+        toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+        
+        containerView!.addSubview(fromViewController!.view)
 
-        containerView!.addSubview(fromViewController.view)
+        shrinkMap()
+    }
+    
+    func shrinkMap() {
+        let dimension = fromViewController!.mapContainer.frame.width / 1.5
+        
+        fromViewController?.heightConstraint.constant = dimension
+        fromViewController?.widthConstraint.constant = dimension
+        
+        UIView.animateWithDuration(0.2,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: {
+                self.fromViewController!.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
+                self.fromViewController!.view.layoutIfNeeded()
+            },
+            completion: { finished in
+                self.explodeMap()
+        })
+    }
+    
+    func explodeMap() {
+        let dimension = UIScreen.mainScreen().bounds.size.height * 3
+        
+        fromViewController?.heightConstraint.constant = dimension
+        fromViewController?.widthConstraint.constant = dimension
 
-        let dimension = fromViewController.mapContainer.frame.width * 10
-
-        fromViewController.heightConstraint.constant = dimension
-        fromViewController.widthConstraint.constant = dimension
-
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            fromViewController.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
-            fromViewController.view.layoutIfNeeded()
-
-        }) { (success) -> Void in
-            containerView!.addSubview(toViewController!.view)
-            self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
-        }
-
+        UIView.animateWithDuration(0.4,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: {
+                self.fromViewController!.mapContainer.bounds = CGRect(x: 0, y: 0, width: dimension, height: dimension)
+                self.fromViewController!.view.layoutIfNeeded()
+            },
+            completion: { finished in
+                self.containerView!.addSubview(self.toViewController!.view)
+                self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
+        })
     }
 }
