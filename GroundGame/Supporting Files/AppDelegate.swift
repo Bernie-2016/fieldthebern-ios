@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
     
         log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true)
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
         
         Heap.setAppId("12873725")
         #if Debug
@@ -87,7 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.channels = ["global"]
         currentInstallation.saveInBackground()
-        print(deviceToken)
     }
         
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -97,34 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("received notification")
         PFPush.handlePush(userInfo)
-    }
-    
-    func checkAuthorization(sender: AnyObject) {
-
-        let session = Session.sharedInstance
-
-        session.attemptAuthorizationFromKeychain { (success) -> Void in
-
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            if success {
-                
-                if let rootViewController = self.window!.rootViewController {
-                    if rootViewController.isKindOfClass(OnboardingViewController) {
-                        let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-        
-                        self.window!.rootViewController = rootController
-                    }
-                }
-            } else {
-                if let rootViewController = self.window!.rootViewController {
-                    if !rootViewController.isKindOfClass(OnboardingViewController) {
-                        let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-                        self.window!.rootViewController = onboardingViewController
-                    }
-                }
-            }
-        }
     }
 }
 
