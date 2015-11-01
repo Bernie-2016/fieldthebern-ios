@@ -395,7 +395,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         var errorTitle = error.errorTitle
         var errorMessage = error.errorDescription
         
-        let alert = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
