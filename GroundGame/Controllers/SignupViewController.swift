@@ -81,9 +81,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
-        print(firstName, lastName, email, password)
-        
         spinner.startAnimating()
         submitButton.titleLabel?.layer.opacity = 0
         
