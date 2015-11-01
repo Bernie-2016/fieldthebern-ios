@@ -81,9 +81,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
-        print(firstName, lastName, email, password)
-        
         spinner.startAnimating()
         submitButton.titleLabel?.layer.opacity = 0
         
@@ -146,6 +143,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
+    }
+    
+    @IBAction func pressSignIn() {
+        performSegueWithIdentifier("SignInModalSegue", sender: self)
     }
     
     // MARK: - Text Field Delegate Methods

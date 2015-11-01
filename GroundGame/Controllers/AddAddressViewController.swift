@@ -67,11 +67,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         
         if (streetAddress.text!.isEmpty) {
             
-            let alert = UIAlertController(title: "Incomplete information", message: "Please enter a street address", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
-            alert.addAction(okAction)
-            
+            let alert = UIAlertController.errorAlertControllerWithTitle("Missing Address Info", message: "Please enter a street address.")            
             self.presentViewController(alert, animated: true, completion: nil)
             
             return
