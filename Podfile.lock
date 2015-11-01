@@ -22,6 +22,9 @@ PODS:
     - FBSDKCoreKit
   - FLAnimatedImage (1.0.8)
   - Heap (2.2.0)
+  - HockeySDK (3.8.4):
+    - HockeySDK/AllFeaturesLib (= 3.8.4)
+  - HockeySDK/AllFeaturesLib (3.8.4)
   - KeychainAccess (2.2.1)
   - KFSwiftImageLoader (2.0.1)
   - Nimble (2.0.0)
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - FBSDKShareKit (= 4.1.0)
   - FLAnimatedImage (~> 1.0)
   - Heap
+  - HockeySDK
   - KeychainAccess
   - KFSwiftImageLoader (~> 2.0)
   - Nimble (= 2.0.0)
@@ -81,6 +85,7 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   Heap: 1f2735d88b2f39b2ddabd4cbeb7aa491aa737902
+  HockeySDK: 464a9eb01c42718515629d8d1d406983e5f855dc
   KeychainAccess: 3b13c8264b5985dbaeaaf019a7941a912b5690c2
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   Nimble: 472e75466819eb8c06299233e87c694a9b51328a

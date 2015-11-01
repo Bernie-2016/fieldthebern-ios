@@ -14,5 +14,6 @@
 #import <Heap/Heap.h>
 #import <Parse/Parse.h>
 #import <Bolts/Bolts.h>
+#import <HockeySDK.h>
 
 #endif /* BridgingHeader_h */
