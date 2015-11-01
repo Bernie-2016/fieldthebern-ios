@@ -10,6 +10,7 @@ import UIKit
 import KeychainAccess
 import XCGLogger
 import Parse
+import HockeySDK
 
 let log: XCGLogger = {
     let log = XCGLogger.defaultInstance()
@@ -92,11 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print(error)
+        log.error("\(error)")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("received notification")
         PFPush.handlePush(userInfo)
     }
 }
