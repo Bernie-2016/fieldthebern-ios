@@ -9,6 +9,8 @@
 import UIKit
 import KeychainAccess
 import XCGLogger
+import Parse
+import HockeySDK
 
 let log: XCGLogger = {
     let log = XCGLogger.defaultInstance()
@@ -34,9 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
     
         log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true)
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAuthorization:", name: "appDidBecomeActive", object: nil)
-
+        
+        Heap.setAppId("12873725")
+        #if Debug
+            Heap.enableVisualizer()
+        #endif
+        
+        Parse.setApplicationId("Do1Z4inNlESdLB7JsW7DVUPGlQJCkkKRyKp8h1Fv", clientKey: "Hm3Slw0OZL3D8lShBTrGLOMjxHkvJpFTL9X40bz3")
+        
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("4c903ef8431a4cf5bd727a8d4077edec")
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+        
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -70,32 +85,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
-    func checkAuthorization(sender: AnyObject) {
-
-        let session = Session.sharedInstance
-
-        session.attemptAuthorizationFromKeychain { (success) -> Void in
-
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            if success {
-                
-                if let rootViewController = self.window!.rootViewController {
-                    if rootViewController.isKindOfClass(OnboardingViewController) {
-                        let rootController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackground()
+    }
         
-                        self.window!.rootViewController = rootController
-                    }
-                }
-            } else {
-                if let rootViewController = self.window!.rootViewController {
-                    if !rootViewController.isKindOfClass(OnboardingViewController) {
-                        let onboardingViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-                        self.window!.rootViewController = onboardingViewController
-                    }
-                }
-            }
-        }
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        log.error("\(error)")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
 }
 

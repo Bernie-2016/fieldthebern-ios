@@ -46,20 +46,29 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func animateNearestAddressViewIfNeeded() {
         if let userCoordinate = self.mapView.userLocation.location?.coordinate {
             let userPoint = MKMapPointForCoordinate(userCoordinate)
-            let mapRect = self.mapView.visibleMapRect
-            let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint)
-
-            if userLocationInsideMapView {
-                if self.nearbyAddresses.count > 0 {
-                    // We have addresses to show, show the address view
-                    animateNearestAddressViewIn()
-                } else {
-                    // No addresses, hide the address view
-                    animateNearestAddressViewOut()
-                }
-
+            if let address = self.closestAddress,
+                let coordinate = address.coordinate {
+                    let closestAddressPoint = MKMapPointForCoordinate(coordinate)
+                    let mapRect = self.mapView.visibleMapRect
+                    let userLocationInsideMapView = MKMapRectContainsPoint(mapRect, userPoint) && MKMapRectContainsPoint(mapRect, closestAddressPoint)
+                    
+                    self.mapView.annotations
+                    
+                    
+                    if userLocationInsideMapView {
+                        if self.nearbyAddresses.count > 0 {
+                            // We have addresses to show, show the address view
+                            animateNearestAddressViewIn()
+                        } else {
+                            // No addresses, hide the address view
+                            animateNearestAddressViewOut()
+                        }
+                        
+                    } else {
+                        // The user's location isn't visible, don't show nearest address view
+                        animateNearestAddressViewOut()
+                    }
             } else {
-                // The user's location isn't visible, don't show nearest address view
                 animateNearestAddressViewOut()
             }
         } else {
@@ -173,10 +182,10 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     // MARK: - Lifecycle Functions
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         findMyLocation()
         
         // Set the map view
@@ -195,6 +204,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         // Track tap gestures
         let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didZoomMap:")
+        tapRecognizer.numberOfTapsRequired = 2;
         tapRecognizer.delegate = self
         self.mapView.addGestureRecognizer(tapRecognizer)
         
@@ -203,8 +213,10 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         // Subscribe to placemark updated notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldUpdatePlacemark:", name: "placemarkUpdated", object: nil)
+        
     }
     
+
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()
     }
@@ -272,7 +284,11 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 timeThreshold = 4 // We need to really throttle this because of the compass
             }
 
-            if currentTime.secondsFrom(updatedTime) >= timeThreshold { fetchAddresses() }
+            if currentTime.secondsFrom(updatedTime) >= timeThreshold
+            {
+                fetchAddresses()
+            
+            }
         } else {
             // First address fetch
             fetchAddresses()
@@ -462,6 +478,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = 10.0
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
             
@@ -474,9 +491,20 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         updateClosestLocation()
         self.animateNearestAddressViewIfNeeded()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+
+        var region:MKCoordinateRegion = self.mapView.region
+        region.center = newLocation.coordinate
+        region.span.longitudeDelta = 0.15
+        region.span.latitudeDelta = 0.15
+        
+        self.mapView.setRegion(region, animated: true)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

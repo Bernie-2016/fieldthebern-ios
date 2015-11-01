@@ -144,8 +144,10 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         submitButton.enabled = false
     }
     
-    func finishedSubmittingWithError(errorMessage: String) {
+    func finishedSubmittingWithError(error: APIError) {
         submitButton.enabled = true
+        
+        self.handleError(error)
     }
     
     @IBAction func editPerson(sender: UIButton) {
@@ -361,8 +363,14 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     func submitForm() {
         delegate?.isSubmitting()
         if let address = self.address {
-            VisitService().postVisit(secondsElapsed, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit) in
-                self.submitSuccess(visit)
+            VisitService().postVisit(secondsElapsed, address: address, people: peopleAtHome, askedToLeave: askedToLeave) { (visit, success, error) in
+                if success {
+                    self.submitSuccess(visit)
+                } else  {
+                    if let error = error {
+                        self.finishedSubmittingWithError(error)                    
+                    }
+                }
             }
         }
     }
@@ -381,5 +389,14 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         
         // Segue to the score controller
         self.performSegueWithIdentifier("SubmitVisitDetails", sender: self)
+    }
+    
+    func handleError(error: APIError) {
+        var errorTitle = error.errorTitle
+        var errorMessage = error.errorDescription
+        
+        let alert = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

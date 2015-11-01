@@ -118,4 +118,31 @@ class HomeItemsViewController: ItemsViewController {
         actionController.addAction(UIAlertAction.cancelAction())
         presentViewController(actionController, animated: true, completion: nil)
     }
+    
+    // MARK: - CollectionView Methods
+    
+    override func collectionView(collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+
+            switch kind {
+            case UICollectionElementKindSectionHeader:
+                //3
+                let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                    withReuseIdentifier: "CollectionActivityHeader",
+                    forIndexPath: indexPath)
+                return headerView
+            default:
+                assert(false, "Unexpected element kind")
+            }
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if self.items.count > 0 {
+            return CGSize.zero
+        } else {
+            return CGSize(width: self.view.frame.size.width, height: 50.0)
+        }
+    }
 }

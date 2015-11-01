@@ -13,19 +13,20 @@ class API {
     private let http = HTTP()
     private let baseURL = APIURL.url
     
-    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, NSError?, NSHTTPURLResponse?) -> Void) {
+    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
         let url = baseURL + "/" + endpoint
         http.authorizedRequest(.GET, url, parameters: parameters) { response in
             switch response.result {
             case .Success:
-                callback(response.data, true, nil, response.response)
+                callback(response.data, true, nil)
             case .Failure(let error):
-                callback(nil, false, error, response.response)
+                let apiError = APIError(error: error, data: response.data)
+                callback(response.data, false, apiError)
             }
         }
     }
     
-    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool) -> Void) {
+    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
 
         let url = baseURL + "/" + endpoint
                 
@@ -33,15 +34,16 @@ class API {
             http.authorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {
                 case .Success:
-                    callback(response.data, true)
+                    callback(response.data, true, nil)
                 case .Failure(let error):
-                    callback(nil, false)
+                    let apiError = APIError(error: error, data: response.data)
+                    callback(response.data, false, apiError)
                 }
             }
         }
     }
     
-    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, NSError?, NSHTTPURLResponse?) -> Void) {
+    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
         
         let url = baseURL + "/" + endpoint
         
@@ -49,9 +51,10 @@ class API {
             http.unauthorizedRequest(.POST, url, parameters: ["data": ["attributes": parameters]]) { response in
                 switch response.result {
                 case .Success:
-                    callback(response.data, true, nil, response.response)
+                    callback(response.data, true, nil)
                 case .Failure(let error):
-                    callback(nil, false, error, response.response)
+                    let apiError = APIError(error: error, data: response.data)
+                    callback(nil, false, apiError)
                 }
             }
         }

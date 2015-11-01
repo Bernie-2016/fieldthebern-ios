@@ -10,8 +10,12 @@ import Foundation
 import p2_OAuth2
 import KeychainAccess
 import FBSDKLoginKit
+import Parse
 
 class Session {
+    
+    typealias SuccessResponse = (Bool) -> Void
+    typealias OAuth2Response = (wasFailure: Bool, error: NSError?) -> Void
     
     static let sharedInstance = Session()
     
@@ -21,7 +25,7 @@ class Session {
     
     let keychain = Keychain(service: "com.groundgameapp.api")
     
-    func authorize(email: String, password: String, callback: (Bool) -> Void) {
+    func authorize(email: String, password: String, callback: SuccessResponse) {
         
         let settings = [
             "client_id": OAuth.ClientId,
@@ -44,16 +48,26 @@ class Session {
             keychain["password"] = password
             keychain["lastAuthentication"] = "email"
         }
-        
-        internalAuthorize(self.oauth2, callback: callback)
+
+        self.internalAuthorize(self.oauth2) { (wasFailure, error) -> Void in
+            if !wasFailure {
+                // Update device token for push notifications
+                UserService().updateMyDevice(PFInstallation.currentInstallation().deviceToken, callback: { (success) -> Void in
+                    
+                })
+            }
+            
+            callback(!wasFailure)
+        }
     }
     
-    func reauthorize(callback: (Bool) -> Void) {
-        internalAuthorize(self.oauth2, callback: callback)
+    func reauthorize(callback: SuccessResponse) {
+        self.internalAuthorize(self.oauth2) { (wasFailure, error) -> Void in
+            callback(!wasFailure)
+        }
     }
     
-    func authorizeWithFacebook(token token: FBSDKAccessToken, callback: (Bool) -> Void) {
-        self.authorize("facebook", password: token.tokenString, callback: callback)
+    func authorizeWithFacebook(token token: FBSDKAccessToken, callback: SuccessResponse) {
         
         // Reset other login information if this is a different facebook user
         if let facebookId = keychain["facebookId"] {
@@ -66,30 +80,40 @@ class Session {
         keychain["facebookId"] = token.userID
         keychain["facebookAccessToken"] = token.tokenString
         keychain["lastAuthentication"] = "facebook"
-    }
-    
-    func authorizeWithFacebook(tokenString tokenString: String, callback: (Bool) -> Void) {
-        self.authorize("facebook", password: tokenString, callback: callback)
 
-        keychain["lastAuthentication"] = "facebook"
+        self.authorize("facebook", password: token.tokenString, callback: callback)
     }
     
-    func attemptAuthorizationFromKeychain(callback: (Bool) -> Void) {
+    private func authorizeWithFacebook(tokenString tokenString: String, callback: SuccessResponse) {
+        keychain["lastAuthentication"] = "facebook"
+
+        self.authorize("facebook", password: tokenString, callback: callback)
+    }
+    
+    func attemptAuthorizationFromKeychain(callback: SuccessResponse) {
         
-        if let lastAuthentication = keychain["lastAuthentication"] {
-            if lastAuthentication == "email" {
-                if let email = keychain["email"], let password = keychain["password"] {
-                    self.authorize(email, password: password) { (success) -> Void in
-                        callback(success)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        
+        if reachability?.isReachable() == true {
+            if let lastAuthentication = keychain["lastAuthentication"] {
+                if lastAuthentication == "email" {
+                    if let email = keychain["email"], let password = keychain["password"] {
+                        self.authorize(email, password: password, callback: { (success) -> Void in
+                            callback(success)
+                        })
+                    }
+                } else if lastAuthentication == "facebook" {
+                    if let accessToken = keychain["facebookAccessToken"] {
+                        self.authorizeWithFacebook(tokenString: accessToken, callback: { (success) -> Void in
+                            callback(success)
+                        })
                     }
                 }
-            } else if lastAuthentication == "facebook" {
-                if let accessToken = keychain["facebookAccessToken"] {
-                    self.authorizeWithFacebook(tokenString: accessToken) { (success) -> Void in
-                        callback(success)
-                    }
-                }
+            } else {
+                callback(false)
             }
+        } else {
+            callback(false)
         }
     }
     
@@ -106,23 +130,15 @@ class Session {
         FBSDKLoginManager().logOut()
     }
     
-    private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: (Bool) -> Void) {
+    private func internalAuthorize(oauth2: OAuth2PasswordGrant?, callback: OAuth2Response) {
 
-        if let oauth2 = oauth2 {
-            oauth2.onAuthorize = { parameters in
-                callback(true)
-            }
+        if let oauth2 = self.oauth2 {
             
-            oauth2.onFailure = { error in        // `error` is nil on cancel
-                if error != nil {
-                    log.error("Authorization went wrong: \(error!.localizedDescription)")
-                }
-                callback(false)
-            }
+            oauth2.afterAuthorizeOrFailure = callback
             
             oauth2.authorize(params: nil, autoDismiss: true)
         } else {
-            callback(false)
+            callback(wasFailure: true, error: nil)
         }
     }
 }
