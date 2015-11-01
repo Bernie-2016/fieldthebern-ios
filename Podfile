@@ -15,6 +15,7 @@ pod 'XCGLogger'
 pod 'RealmSwift'
 pod 'Heap'
 pod 'Parse'
+pod 'HockeySDK'
 
 def testing_pods
     pod 'Quick'

@@ -57,6 +57,18 @@ install_resource()
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "DebugStaging" ]]; then
+  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "DebugLocal" ]]; then
+  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "ReleaseStaging" ]]; then
+  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
+  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
+fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

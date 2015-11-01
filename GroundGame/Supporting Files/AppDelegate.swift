@@ -10,6 +10,7 @@ import UIKit
 import KeychainAccess
 import XCGLogger
 import Parse
+import HockeySDK
 
 let log: XCGLogger = {
     let log = XCGLogger.defaultInstance()
@@ -42,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         Parse.setApplicationId("Do1Z4inNlESdLB7JsW7DVUPGlQJCkkKRyKp8h1Fv", clientKey: "Hm3Slw0OZL3D8lShBTrGLOMjxHkvJpFTL9X40bz3")
+        
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("4c903ef8431a4cf5bd727a8d4077edec")
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
         
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         application.registerUserNotificationSettings(settings)
@@ -88,11 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print(error)
+        log.error("\(error)")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("received notification")
         PFPush.handlePush(userInfo)
     }
 }
