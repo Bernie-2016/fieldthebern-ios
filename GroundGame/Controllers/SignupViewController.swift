@@ -86,7 +86,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         let userService = UserService()
     
-        userService.createUser(email: email!, password: password!, firstName: firstName!, lastName: lastName!) { success in
+        userService.createUser(email: email!, password: password!, firstName: firstName!, lastName: lastName!) { (user,success, error) in
             self.submitButton.titleLabel?.layer.opacity = 1
             if success {
                 let session = Session.sharedInstance
@@ -100,6 +100,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 })
             } else {
                 self.spinner.stopAnimating()
+                if let error = error {
+                    self.handleError(error)
+                }
             }
         }
     }
@@ -182,6 +185,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 self.bottomConstraint.constant = value
             }
         })
+    }
+    
+    // MARK: - Error Handling
+    
+    func handleError(error: APIError) {
+        let errorTitle = error.errorTitle
+        let errorMessage = error.errorDescription
+        
+        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
 }

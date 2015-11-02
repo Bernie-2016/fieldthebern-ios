@@ -428,43 +428,29 @@
 		A74FCE971BBB376A005C4D34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A765599C1BE7DE0D005CEA0F /* API */,
 				A73D663C1BBEE44000127245 /* Address.swift */,
-				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
-				A73D663E1BBEE87400127245 /* AddressService.swift */,
-				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
-				A7CA34701BE194EB007A9495 /* APIError.swift */,
-				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
 				A771C5911BD813C900179F04 /* CanvasResponseList.swift */,
 				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
 				A7CA342C1BDFE6D7007A9495 /* Content */,
+				A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */,
 				A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */,
 				A7CA34331BDFE6D7007A9495 /* FTBModel.swift */,
-				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
 				A7CA34341BDFE6D7007A9495 /* Items */,
 				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
-				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
 				A7CA34381BDFE6D7007A9495 /* ModelTypeMap.swift */,
-				A771C5971BD8141E00179F04 /* OAuth.swift */,
 				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
 				A76890371BC8732D008F394C /* Person.swift */,
-				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
 				A771C58F1BD8139400179F04 /* PinImage.swift */,
 				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
-				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A771C58B1BD812B200179F04 /* States.swift */,
 				A73A0B261BDA9E7D008ECC2E /* User.swift */,
-				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
-				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
-				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
-				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
-				A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */,
-				A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -519,11 +505,15 @@
 				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
 				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
 				A775B9F71BC2F8A600510924 /* ConversationViewController.swift */,
-				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
+				A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */,
+				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
 				A7CA34501BDFE6FC007A9495 /* HomeItemsViewController.swift */,
 				A7CA34511BDFE6FC007A9495 /* ItemsViewController.swift */,
-				A7CA34521BDFE6FC007A9495 /* PageDetailViewController.swift */,
+				A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */,
+				A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */,
+				A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */,
 				A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */,
+				A7CA34521BDFE6FC007A9495 /* PageDetailViewController.swift */,
 				A7A579831BB211F500D8885E /* PageViewController.swift */,
 				A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */,
 				A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */,
@@ -532,15 +522,49 @@
 				A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */,
 				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
+				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
-				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
-				A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */,
-				A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */,
-				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
-				A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A765599A1BE7DDAC005CEA0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A73D663E1BBEE87400127245 /* AddressService.swift */,
+				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
+				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
+				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A765599B1BE7DDDE005CEA0F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A74279791BCED5BB0020EE29 /* AddressJSON.swift */,
+				A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */,
+				A742797D1BCED6030020EE29 /* PersonJSON.swift */,
+				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
+				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		A765599C1BE7DE0D005CEA0F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
+				A7CA34701BE194EB007A9495 /* APIError.swift */,
+				A775B9ED1BC077E400510924 /* APIURL.swift */,
+				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
+				A765599B1BE7DDDE005CEA0F /* JSON */,
+				A771C5971BD8141E00179F04 /* OAuth.swift */,
+				A765599A1BE7DDAC005CEA0F /* Services */,
+				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		A7A579431BB092E100D8885E = {

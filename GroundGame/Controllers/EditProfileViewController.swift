@@ -62,19 +62,23 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     func loadUser() {
         showActivityIndicator()
         
-        UserService().me { (user) -> Void in
-            if let user = user {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.loadingView.hidden = true
-                    self.firstNameField.text = user.firstName
-                    self.lastNameField.text = user.lastName
-                    self.emailField.text = user.email
-                    self.showCancelButton()
-                })
+        UserService().me { (user, success, error) -> Void in
+            if success {
+                if let user = user {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.loadingView.hidden = true
+                        self.firstNameField.text = user.firstName
+                        self.lastNameField.text = user.lastName
+                        self.emailField.text = user.email
+                        self.showCancelButton()
+                    })
+                }
             } else {
-                let alert = UIAlertController.errorAlertControllerWithTitle("Error", message: "We encountered an error loading your profile. Please go back and try again.")
-                self.presentViewController(alert, animated: true, completion: nil)
+                if let error = error {
+                    self.handleError(error)
+                }
             }
+                
         }
     }
 
@@ -95,13 +99,16 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         let json = UserJSON(firstName: firstName, lastName: lastName, email: email)
-        UserService().editMe(json) { (user, success, error) -> Void in
-            if success {
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            if let apiError = error {
-                self.handleError(apiError)
+
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            UserService().editMe(json) { (user, success, error) -> Void in
+                if success {
+                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                if let apiError = error {
+                    self.handleError(apiError)
+                }
             }
         }
     }
