@@ -28,7 +28,7 @@ struct UserService {
     func me(callback: (User?) -> Void) {
         api.get("users/me", parameters: nil) { (data, success, error) -> Void in
             if success {
-                // Extract our visit into a model
+                // Extract our user into a model
                 if let data = data {
                     
                     let json = JSON(data: data)
@@ -41,9 +41,21 @@ struct UserService {
         }
     }
     
-    func editMe(json: UserJSON, callback: (User?) -> Void) {
-        api.post("users/me", parameters: nil) { (data, success, error) -> Void in
-            
+    func editMe(json: UserJSON, callback: (User?, Bool, APIError?) -> Void) {
+        api.post("users/me", parameters: json.json.object as? [String : AnyObject]) { (data, success, error) -> Void in
+            if success {
+                // Extract our user into a model
+                if let data = data {
+                    
+                    let json = JSON(data: data)
+                    
+                    let user = User(json: json)
+                    
+                    callback(user, success, nil)
+                }
+            } else {
+                callback(nil, success, error)
+            }
         }
     }
     

@@ -16,6 +16,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var rankings: [Ranking] = []
     var loadingRankings = false
     var imagePicker = UIImagePickerController()
+    var user: User? {
+        didSet {
+            if let user = user {
+                updateProfileUI(user)
+            }
+        }
+    }
 
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -60,6 +67,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidAppear(animated)
         
         getLeaderboardWithSegmentedControl(segmentedControl)
+        getUser()
+    }
+    
+    func getUser() {
         UserService().me { (user) -> Void in
             if let user = user {
                 self.updateProfileUI(user)

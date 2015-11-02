@@ -15,26 +15,21 @@ struct UserJSON {
 
     let base64PhotoData: String?
     
-//    init(user: User) {
-//        id = person.id
-//        firstName = person.firstName
-//        lastName = person.lastName
-//        partyAffiliationString = person.partyAffiliationString
-//        canvasResponseJSONString = person.canvasResponse.JSONString()
-//        
-//        attributes = [
-//            "first_name": firstName ?? NSNull(),
-//            "last_name": lastName ?? NSNull(),
-//            "party_affiliation": partyAffiliationString,
-//            "canvas_response": canvasResponseJSONString
-//        ]
-//        
-//        include = [
-//            "type": "people",
-//            "id": id ?? NSNull(),
-//            "attributes": self.attributes
-//        ]
-//    }
+    init(firstName: String?, lastName: String?, email: String?) {
+        base64PhotoData = nil
+        
+        let parameters: JSON = [
+            "data": [
+                "attributes": [
+                    "first_name": firstName ?? NSNull(),
+                    "last_name": lastName ?? NSNull(),
+                    "email": email ?? NSNull(),
+                ]
+            ]
+        ]
+        
+        self.json = parameters
+    }
     
     init(base64PhotoData: String?) {
         self.base64PhotoData = base64PhotoData

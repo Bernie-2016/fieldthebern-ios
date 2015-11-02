@@ -10,6 +10,7 @@
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
 		A72999BB1BE6AE300053CE23 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BA1BE6AE300053CE23 /* SignInViewController.swift */; };
+		A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */; };
 		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
 		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; };
 		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; };
@@ -188,6 +189,7 @@
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A72999BA1BE6AE300053CE23 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSONSpec.swift; sourceTree = "<group>"; };
 		A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelectionDelegate.swift; sourceTree = "<group>"; };
 		A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOptionSelectionDelegate.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 				A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */,
 				A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */,
 				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
+				A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
 				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
+				A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
 				A7CA345F1BDFE709007A9495 /* TextViewContentCell.swift in Sources */,
 				A73A0B251BDA9997008ECC2E /* SettingsTableViewController.swift in Sources */,
