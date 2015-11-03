@@ -13,11 +13,12 @@ struct APIError {
     
     var errorTitle: String = "Error"
     var errorDescription: String = "An unexpected error occurred."
+    var statusCode: Int
     
     private let error: NSError?
     private let errorJSON: JSON?
     
-    init(error: NSError?, data: NSData?) {
+    init(error: NSError?, data: NSData?, statusCode: Int) {
         self.error = error
         
         if let data = data {
@@ -39,5 +40,7 @@ struct APIError {
                 }
             }
         }
+        
+        self.statusCode = statusCode
     }
 }

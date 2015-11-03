@@ -20,8 +20,10 @@ class API {
             case .Success:
                 callback(response.data, true, nil)
             case .Failure(let error):
-                let apiError = APIError(error: error, data: response.data)
-                callback(response.data, false, apiError)
+                if let httpResponse = response.response {
+                    let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+                    callback(response.data, false, apiError)
+                }
             }
         }
     }
@@ -36,8 +38,10 @@ class API {
                 case .Success:
                     callback(response.data, true, nil)
                 case .Failure(let error):
-                    let apiError = APIError(error: error, data: response.data)
-                    callback(response.data, false, apiError)
+                    if let httpResponse = response.response {
+                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+                        callback(response.data, false, apiError)
+                    }
                 }
             }
         }
@@ -53,8 +57,10 @@ class API {
                 case .Success:
                     callback(response.data, true, nil)
                 case .Failure(let error):
-                    let apiError = APIError(error: error, data: response.data)
-                    callback(nil, false, apiError)
+                    if let httpResponse = response.response {
+                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+                        callback(nil, false, apiError)
+                    }
                 }
             }
         }

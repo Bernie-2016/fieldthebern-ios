@@ -38,7 +38,11 @@ struct AddressService {
                     callback(address, people, success, nil)
                 }
             } else {
-                callback(nil, nil, success, error)
+                if error?.statusCode == 404 {
+                    callback(nil, nil, true, error)
+                } else {
+                    callback(nil, nil, success, error)
+                }
             }
         }
     }
