@@ -38,12 +38,16 @@ struct AddressService {
                     callback(address, people, success, nil)
                 }
             } else {
-                callback(nil, nil, success, error)
+                if error?.statusCode == 404 {
+                    callback(nil, nil, true, error)
+                } else {
+                    callback(nil, nil, success, error)
+                }
             }
         }
     }
     
-    func getAddresses(latitude: CLLocationDegrees, longitude: CLLocationDegrees, radius: Double, callback: ([Address]? -> Void)) {
+    func getAddresses(latitude: CLLocationDegrees, longitude: CLLocationDegrees, radius: Double, callback: (([Address]?, Bool, APIError?) -> Void)) {
         
         api.get("addresses", parameters: ["latitude": latitude, "longitude": longitude, "radius": radius]) { (data, success, error) in
             
@@ -62,12 +66,12 @@ struct AddressService {
                         }
                     }
                     
-                    callback(addressesArray)
+                    callback(addressesArray, success, nil)
                 }
                 
             } else {
                 // API call failed with no addresses
-                callback(nil)
+                callback(nil, success, error)
             }
         }
     }

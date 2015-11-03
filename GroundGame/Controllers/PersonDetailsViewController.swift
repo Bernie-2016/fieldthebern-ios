@@ -69,7 +69,7 @@ class PersonDetailsViewController: UIViewController {
             
             if identifier == "UnwindToConversationTableSegue" {
                 if let conversationViewController = segue.destinationViewController as? ConversationViewController {
-                    print(self.editingPerson, self.returnedPerson, self.personIndexPath)
+
                     if self.editingPerson {
                         if let person = self.returnedPerson,
                             let indexPath = self.personIndexPath {

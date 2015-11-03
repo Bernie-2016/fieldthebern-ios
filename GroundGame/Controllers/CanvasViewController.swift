@@ -303,36 +303,43 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let addressService = AddressService()
         
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
-            addressService.getAddresses(self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude, radius: distance) { (addressResults) in
+            addressService.getAddresses(self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude, radius: distance) { (addressResults, success, error) in
                 
-                if let addresses = addressResults {
-                    
-                    var annotationsToAdd: [MKAnnotation] = []
-                    var annotationsToRemove: [MKAnnotation] = []
-                    var annotationsToKeep: [MKAnnotation] = []
-                    
-                    self.nearbyAddresses = addresses
-                    
-                    for address in addresses {
-                        let result = self.annotationsContainAddress(address)
-                        if result.success {
-                            annotationsToKeep.append(result.annotation!)
-                        } else {
-                            let annotation = self.addressToPin(address)
-                            annotationsToKeep.append(annotation)
-                            annotationsToAdd.append(annotation)
+                if success {
+                    if let addresses = addressResults {
+                        
+                        var annotationsToAdd: [MKAnnotation] = []
+                        var annotationsToRemove: [MKAnnotation] = []
+                        var annotationsToKeep: [MKAnnotation] = []
+                        
+                        self.nearbyAddresses = addresses
+                        
+                        for address in addresses {
+                            let result = self.annotationsContainAddress(address)
+                            if result.success {
+                                annotationsToKeep.append(result.annotation!)
+                            } else {
+                                let annotation = self.addressToPin(address)
+                                annotationsToKeep.append(annotation)
+                                annotationsToAdd.append(annotation)
+                            }
+                        }
+                        
+                        self.updateClosestLocation()
+                        self.animateNearestAddressViewIfNeeded()
+                        
+                        annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
+                        
+                        // Update UI
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.mapView.removeAnnotations(annotationsToRemove)
+                            self.mapView.addAnnotations(annotationsToAdd)
                         }
                     }
-                    
-                    self.updateClosestLocation()
-                    self.animateNearestAddressViewIfNeeded()
-                    
-                    annotationsToRemove = self.differenceBetweenAnnotations(self.mapView.annotations, secondArray: annotationsToKeep)
-                    
-                    // Update UI
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.mapView.removeAnnotations(annotationsToRemove)
-                        self.mapView.addAnnotations(annotationsToAdd)
+                } else {
+                    // API error
+                    if let apiError = error {
+                        self.handleError(apiError)
                     }
                 }
             }
@@ -514,5 +521,16 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             
             displayLocationServicesAlert()
         }
+    }
+    
+    // MARK: - Error Handling
+    
+    func handleError(error: APIError) {
+        let errorTitle = error.errorTitle
+        let errorMessage = error.errorDescription
+        
+        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

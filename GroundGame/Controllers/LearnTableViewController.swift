@@ -28,4 +28,10 @@ class LearnTableViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 1 {
+            self.performSegueWithIdentifier("HowToCanvass", sender: self)
+        }
+    }
 }

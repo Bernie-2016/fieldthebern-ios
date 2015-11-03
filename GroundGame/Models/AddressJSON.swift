@@ -21,6 +21,7 @@ struct AddressJSON {
     let city: AnyObject
     let stateCode: AnyObject
     let zipCode: AnyObject
+    let bestCanvasResponse: AnyObject
     
     init(address: Address) {
         id = address.id ?? NSNull()
@@ -31,6 +32,7 @@ struct AddressJSON {
         city = address.city ?? NSNull()
         stateCode = address.stateCode ?? NSNull()
         zipCode = address.zipCode ?? NSNull()
+        bestCanvasResponse = address.bestCanvasResponse ?? NSNull()
         
         attributes = [
             "latitude": latitude,
@@ -39,7 +41,8 @@ struct AddressJSON {
             "street_2": street2,
             "city": city,
             "state_code": stateCode,
-            "zip_code": zipCode
+            "zip_code": zipCode,
+            "best_canvas_response": bestCanvasResponse
         ]
 
         include = [

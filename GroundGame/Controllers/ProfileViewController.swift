@@ -16,6 +16,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var rankings: [Ranking] = []
     var loadingRankings = false
     var imagePicker = UIImagePickerController()
+    var user: User? {
+        didSet {
+            if let user = user {
+                updateProfileUI(user)
+            }
+        }
+    }
 
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -60,9 +67,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidAppear(animated)
         
         getLeaderboardWithSegmentedControl(segmentedControl)
-        UserService().me { (user) -> Void in
-            if let user = user {
-                self.updateProfileUI(user)
+        getUser()
+    }
+    
+    func getUser() {
+        UserService().me { (user, success, error) -> Void in
+            if success {
+                if let user = user {
+                    self.updateProfileUI(user)
+                }
+            } else {
+                if let apiError = error {
+                    self.handleError(apiError)
+                }
             }
         }
     }
@@ -162,11 +179,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let imageData = UIImagePNGRepresentation(image)
         if let base64String = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) {
-            UserService().editMePhoto(base64String) { (user) -> Void in
-                print("uploaded")
+            UserService().editMePhoto(base64String) { (user, success, error) -> Void in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.profileImageView.image = image
+                    })
+                } else {
+                    if let apiError = error {
+                        self.handleError(apiError)
+                    }
+                }
             }
-
-            self.profileImageView.image = image
         }
     }
     
@@ -344,5 +367,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
         print("Error in invite \(error)")
+    }
+
+    // MARK: - Error Handling
+    
+    func handleError(error: APIError) {
+        let errorTitle = error.errorTitle
+        let errorMessage = error.errorDescription
+        
+        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

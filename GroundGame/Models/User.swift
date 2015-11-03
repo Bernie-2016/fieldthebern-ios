@@ -13,6 +13,7 @@ struct User {
     let id: String?
     let firstName: String?
     let lastName: String?
+    let email: String?
     let totalPoints: Int
     let visitsCount: Int
     let photoThumbURL: String?
@@ -53,6 +54,7 @@ struct User {
         
         self.firstName = attributes["first_name"].string
         self.lastName = attributes["last_name"].string
+        self.email = attributes["email"].string
         
         if let points = attributes["total_points"].number {
             self.totalPoints = Int(points)
