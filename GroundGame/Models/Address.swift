@@ -23,6 +23,7 @@ struct Address {
     let coordinate: CLLocationCoordinate2D?
 
     var result: VisitResult = .NotVisited
+    var bestCanvasResponse: String?
 
     var title: String {
         get {

@@ -14,32 +14,30 @@ struct VisitJSON {
     let json: JSON
 
     private let duration: Int
-    private let address: Address
+    private var address: Address
     private let people: [Person]?
     
     init(duration: Int, address: Address, people: [Person]?, askedToLeave: Bool) {
         self.duration = duration
         self.address = address
         self.people = people
-        
-        let bestCanvasResponse: String?
-        
+                
         let peopleAreHome: Bool = self.people?.count > 0
         
         if askedToLeave && !peopleAreHome {
             // This must come first, since you could have no people and still be asked to leave
-            bestCanvasResponse = "asked_to_leave"
+            self.address.bestCanvasResponse = "asked_to_leave"
         } else if !peopleAreHome {
-            bestCanvasResponse = "not_home"
+            self.address.bestCanvasResponse = "not_home"
         } else {
-            bestCanvasResponse = nil
+            self.address.bestCanvasResponse = nil
         }
         
-        let addressDictionary: [String: AnyObject] = AddressJSON(address: address).include
+        let addressDictionary: [String: AnyObject] = AddressJSON(address: self.address).include
         let addressDictionaries: [[String: AnyObject]] = [addressDictionary]
-        
+                
         var peopleDictionaries: [[String: AnyObject]] = []
-        if let people = people {
+        if let people = self.people {
             for person in people {
                 let personDictionary = PersonJSON(person: person).include
                 peopleDictionaries.append(personDictionary)
@@ -49,8 +47,7 @@ struct VisitJSON {
         let parameters: JSON = [
             "data": [
                 "attributes": [
-                    "duration_sec": duration,
-                    "best_canvas_response": bestCanvasResponse ?? NSNull()
+                    "duration_sec": duration
                 ]
             ],
             "included": peopleDictionaries + addressDictionaries
