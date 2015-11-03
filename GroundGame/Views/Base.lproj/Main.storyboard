@@ -98,6 +98,8 @@
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -4987,7 +4989,7 @@ useful talking points.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajz-37-Hj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524.5" y="3172"/>
+            <point key="canvasLocation" x="-283.5" y="2972"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="ZqA-Nw-RdL">
@@ -5859,6 +5861,200 @@ useful talking points.</string>
             </objects>
             <point key="canvasLocation" x="2524.5" y="1762"/>
         </scene>
+        <!--How To Canvass Item Detail Table View Controller-->
+        <scene sceneID="qFZ-An-XRM">
+            <objects>
+                <tableViewController id="hY7-TU-cJ1" customClass="HowToCanvassItemDetailTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="m7C-CT-RWl">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParagraphCell" id="t3g-LO-SxZ" customClass="ParagraphTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t3g-LO-SxZ" id="ruE-CW-44M">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paragraph" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIo-tJ-0yv">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fIo-tJ-0yv" secondAttribute="trailing" id="3Yp-gP-peL"/>
+                                        <constraint firstItem="fIo-tJ-0yv" firstAttribute="top" secondItem="ruE-CW-44M" secondAttribute="topMargin" constant="5" id="Bql-Mj-cxH">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstAttribute="leadingMargin" secondItem="fIo-tJ-0yv" secondAttribute="leading" id="hwG-0K-LLK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fIo-tJ-0yv" secondAttribute="bottom" constant="6" id="tNg-5l-mRd">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="fIo-tJ-0yv"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="3Yp-gP-peL"/>
+                                            <exclude reference="Bql-Mj-cxH"/>
+                                            <exclude reference="hwG-0K-LLK"/>
+                                            <exclude reference="tNg-5l-mRd"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="fIo-tJ-0yv"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="3Yp-gP-peL"/>
+                                            <include reference="Bql-Mj-cxH"/>
+                                            <include reference="hwG-0K-LLK"/>
+                                            <include reference="tNg-5l-mRd"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="paragraphLabel" destination="fIo-tJ-0yv" id="EMF-dh-eDB"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItemCell" id="goJ-Ec-n0O" customClass="ParagraphTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="goJ-Ec-n0O" id="eb9-3z-oL4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paragraph" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDd-Tu-hCJ">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="yDd-Tu-hCJ" secondAttribute="leading" id="IeB-2K-DzF"/>
+                                        <constraint firstItem="yDd-Tu-hCJ" firstAttribute="top" secondItem="eb9-3z-oL4" secondAttribute="topMargin" constant="5" id="elz-dl-QBe">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yDd-Tu-hCJ" secondAttribute="trailing" id="sxG-cO-mas"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yDd-Tu-hCJ" secondAttribute="bottom" constant="6" id="x61-9J-GBR">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="yDd-Tu-hCJ"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="sxG-cO-mas"/>
+                                            <exclude reference="elz-dl-QBe"/>
+                                            <exclude reference="IeB-2K-DzF"/>
+                                            <exclude reference="x61-9J-GBR"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="yDd-Tu-hCJ"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="sxG-cO-mas"/>
+                                            <include reference="elz-dl-QBe"/>
+                                            <include reference="IeB-2K-DzF"/>
+                                            <include reference="x61-9J-GBR"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="paragraphLabel" destination="yDd-Tu-hCJ" id="TYv-UA-Swa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hY7-TU-cJ1" id="ivx-NH-scw"/>
+                            <outlet property="delegate" destination="hY7-TU-cJ1" id="lUK-Xh-hn1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcb-JP-0Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190.5" y="433"/>
+        </scene>
+        <!--How to Canvas-->
+        <scene sceneID="mSU-Vi-6U2">
+            <objects>
+                <tableViewController title="How to Canvas" id="ajY-tp-dhQ" customClass="HowToCanvassTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bbq-61-Rfy">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HowToCanvassCell" id="ZeB-yH-pWI" customClass="HowToCanvassTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZeB-yH-pWI" id="oc2-lK-hhK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfG-ea-zQO">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="ZxT-Bb-uh7">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZxT-Bb-uh7" firstAttribute="centerY" secondItem="oc2-lK-hhK" secondAttribute="centerY" id="8dC-XL-RRq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZxT-Bb-uh7" secondAttribute="trailing" id="JTK-Sb-q2a"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="TfG-ea-zQO" secondAttribute="leading" id="bfo-bu-YJN"/>
+                                        <constraint firstItem="TfG-ea-zQO" firstAttribute="centerY" secondItem="oc2-lK-hhK" secondAttribute="centerY" id="cKe-Bu-lpd"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="TfG-ea-zQO"/>
+                                            <exclude reference="ZxT-Bb-uh7"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="bfo-bu-YJN"/>
+                                            <exclude reference="cKe-Bu-lpd"/>
+                                            <exclude reference="8dC-XL-RRq"/>
+                                            <exclude reference="JTK-Sb-q2a"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="TfG-ea-zQO"/>
+                                            <include reference="ZxT-Bb-uh7"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="bfo-bu-YJN"/>
+                                            <include reference="cKe-Bu-lpd"/>
+                                            <include reference="8dC-XL-RRq"/>
+                                            <include reference="JTK-Sb-q2a"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="titleLabel" destination="TfG-ea-zQO" id="1Vo-MK-TKH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ajY-tp-dhQ" id="xk9-jK-pIR"/>
+                            <outlet property="delegate" destination="ajY-tp-dhQ" id="Pgz-8H-yhx"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="hY7-TU-cJ1" kind="show" identifier="CanvasItemDetail" id="WNe-YZ-sZG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsU-pk-VdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190.5" y="1083"/>
+        </scene>
         <!--Learn-->
         <scene sceneID="Ii7-O1-Jlm">
             <objects>
@@ -6189,6 +6385,9 @@ useful talking points.</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="DlJ-NB-nQu"/>
+                    <connections>
+                        <segue destination="ajY-tp-dhQ" kind="show" identifier="HowToCanvass" id="sUi-2U-hNS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpv-h3-zKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6231,9 +6430,9 @@ useful talking points.</string>
         <image name="us-map" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3fP-mJ-fMY"/>
+        <segue reference="ngV-wa-HIN"/>
+        <segue reference="Rbd-US-3DY"/>
         <segue reference="ovj-FK-nQJ"/>
-        <segue reference="Y1h-lb-cnM"/>
         <segue reference="3nY-LF-DGD"/>
     </inferredMetricsTieBreakers>
 </document>

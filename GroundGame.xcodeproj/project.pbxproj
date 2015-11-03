@@ -46,6 +46,11 @@
 		A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; };
 		A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */; };
 		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; };
+		A76559A01BE80E6E005CEA0F /* Canvassing.plist in Resources */ = {isa = PBXBuildFile; fileRef = A765599F1BE80E6E005CEA0F /* Canvassing.plist */; };
+		A76559A21BE81566005CEA0F /* HowToCanvassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */; };
+		A76559A41BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */; };
+		A76559A61BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */; };
+		A76559A91BE830F0005CEA0F /* ParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */; };
 		A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890311BC8680E008F394C /* PersonTableViewCell.swift */; };
 		A76890341BC86AD0008F394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76890331BC86AD0008F394C /* Assets.xcassets */; };
 		A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */; };
@@ -218,6 +223,11 @@
 		A74FCE9D1BBB3BFB005C4D34 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A765599F1BE80E6E005CEA0F /* Canvassing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Canvassing.plist; sourceTree = "<group>"; };
+		A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassTableViewController.swift; sourceTree = "<group>"; };
+		A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassTableViewCell.swift; sourceTree = "<group>"; };
+		A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassItemDetailTableViewController.swift; sourceTree = "<group>"; };
+		A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphTableViewCell.swift; sourceTree = "<group>"; };
 		A76890311BC8680E008F394C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		A76890331BC86AD0008F394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableHeaderView.swift; sourceTree = "<group>"; };
@@ -458,6 +468,7 @@
 		A74FCE981BBB377E005C4D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A76559A71BE830DB005CEA0F /* CanvasCells */,
 				A73D66401BBF36A900127245 /* AddressPinView.swift */,
 				A780A4D31BC863440090B979 /* BlueTableViewCell.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
@@ -476,6 +487,7 @@
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
 				A74BE50C1BE3232E005C66A4 /* LaunchScreen.storyboard */,
+				A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,6 +504,7 @@
 				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
 				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
 				A7CA346F1BE17D29007A9495 /* BridgingHeader.h */,
+				A765599F1BE80E6E005CEA0F /* Canvassing.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -525,6 +538,8 @@
 				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
 				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
+				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
+				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -565,6 +580,14 @@
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A76559A71BE830DB005CEA0F /* CanvasCells */ = {
+			isa = PBXGroup;
+			children = (
+				A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */,
+			);
+			name = CanvasCells;
 			sourceTree = "<group>";
 		};
 		A7A579431BB092E100D8885E = {
@@ -820,6 +843,7 @@
 			files = (
 				A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */,
 				A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */,
+				A76559A01BE80E6E005CEA0F /* Canvassing.plist in Resources */,
 				A7A579551BB092E100D8885E /* Main.storyboard in Resources */,
 				A74BE50D1BE3232E005C66A4 /* LaunchScreen.storyboard in Resources */,
 				A76890341BC86AD0008F394C /* Assets.xcassets in Resources */,
@@ -980,6 +1004,7 @@
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A7CA34531BDFE6FC007A9495 /* HomeItemsViewController.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
+				A76559A41BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift in Sources */,
 				A7CA345E1BDFE709007A9495 /* LabelContentCell.swift in Sources */,
 				A7CA34661BE029AA007A9495 /* ListModel.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
@@ -987,6 +1012,7 @@
 				A775B9EE1BC077E400510924 /* APIURL.swift in Sources */,
 				A7F4517F1BE53368004CECC2 /* LoadingAnimationViewController.swift in Sources */,
 				A7CA34711BE194EB007A9495 /* APIError.swift in Sources */,
+				A76559A21BE81566005CEA0F /* HowToCanvassTableViewController.swift in Sources */,
 				A7CA34421BDFE6D7007A9495 /* PageModel.swift in Sources */,
 				A7CA34221BDFE6B6007A9495 /* NSAttributedStringExtensions.swift in Sources */,
 				A7CA34541BDFE6FC007A9495 /* ItemsViewController.swift in Sources */,
@@ -1030,6 +1056,7 @@
 				A7CA34551BDFE6FC007A9495 /* PageDetailViewController.swift in Sources */,
 				A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */,
 				A7F451811BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift in Sources */,
+				A76559A91BE830F0005CEA0F /* ParagraphTableViewCell.swift in Sources */,
 				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
@@ -1073,6 +1100,7 @@
 				A73A0B211BD9F19E008ECC2E /* Ranking.swift in Sources */,
 				A7CA34281BDFE6B6007A9495 /* UIStoryboardExtensions.swift in Sources */,
 				A771C5901BD8139400179F04 /* PinImage.swift in Sources */,
+				A76559A61BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift in Sources */,
 				A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */,
 				A74279831BCF0B770020EE29 /* SubmitButtonDelegate.swift in Sources */,
 				A7CA344E1BDFE6E9007A9495 /* TopicsImageCacheOperation.swift in Sources */,
