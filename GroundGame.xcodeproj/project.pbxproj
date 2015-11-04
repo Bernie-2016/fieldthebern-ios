@@ -1231,7 +1231,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DRelease -DProduction";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "5b7567b0-054a-4fce-8de7-a7489e3ca47d";
+				PROVISIONING_PROFILE = "7253212e-8b06-4f6f-b853-5a16d781c227";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				VALIDATE_PRODUCT = YES;
@@ -1324,7 +1324,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DStaging";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "1ee74e18-89fc-42c8-9e35-d0b05a6a68dc";
+				PROVISIONING_PROFILE = "0d74c912-6d7c-490e-aa8a-6d79caa78be4";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1417,7 +1417,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DLocal";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "5b7567b0-054a-4fce-8de7-a7489e3ca47d";
+				PROVISIONING_PROFILE = "0d74c912-6d7c-490e-aa8a-6d79caa78be4";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
