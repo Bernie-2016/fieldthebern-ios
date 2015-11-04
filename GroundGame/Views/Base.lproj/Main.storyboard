@@ -102,6 +102,22 @@
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
             <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
+            <string>Lato-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -5997,14 +6013,17 @@ useful talking points.</string>
             <objects>
                 <tableViewController title="Knocking on a Door" id="odg-SL-B6h" customClass="HowToTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4tj-tr-quV">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="8000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="F8n-iS-Bhl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="oCm-Q9-Twz">
+                                        <rect key="frame" x="0.0" y="64" width="400" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCm-Q9-Twz" id="Dlh-Mq-l2W">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70C-Wp-g07">
@@ -6013,6 +6032,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="21" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6044,8 +6066,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="FbC-00-T8D">
+                                        <rect key="frame" x="0.0" y="161" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FbC-00-T8D" id="NWt-22-GUh">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-1" translatesAutoresizingMaskIntoConstraints="NO" id="W9M-v4-vGp">
@@ -6098,8 +6122,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="mGS-Ye-DaQ">
+                                        <rect key="frame" x="0.0" y="681" width="400" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mGS-Ye-DaQ" id="J2q-g7-Uus">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you’ve found the house or apartment number, click the “add house” button at the bottom of the map." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyh-YP-ugH">
@@ -6107,6 +6133,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6138,8 +6167,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="vLF-Ta-i7t">
+                                        <rect key="frame" x="0.0" y="763" width="400" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vLF-Ta-i7t" id="Lz3-7C-rUl">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4f-d8-Krr">
@@ -6148,6 +6179,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="29" width="384" height="94"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6160,9 +6194,9 @@ useful talking points.</string>
                                                     <exclude reference="O4f-d8-Krr"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="wSR-bD-hzX"/>
                                                     <exclude reference="QQK-aC-BpW"/>
                                                     <exclude reference="j8F-Lz-obc"/>
+                                                    <exclude reference="wSR-bD-hzX"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6170,17 +6204,19 @@ useful talking points.</string>
                                                     <include reference="O4f-d8-Krr"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="wSR-bD-hzX"/>
                                                     <include reference="QQK-aC-BpW"/>
                                                     <include reference="j8F-Lz-obc"/>
+                                                    <include reference="wSR-bD-hzX"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="4Gu-4p-dQi">
+                                        <rect key="frame" x="0.0" y="914" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Gu-4p-dQi" id="K2P-QX-hmM">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-2" translatesAutoresizingMaskIntoConstraints="NO" id="KFJ-EC-CKf">
@@ -6216,8 +6252,8 @@ useful talking points.</string>
                                                     <exclude reference="KFJ-EC-CKf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="bzV-wi-MRl"/>
                                                     <exclude reference="B0u-6B-fsr"/>
+                                                    <exclude reference="bzV-wi-MRl"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6225,16 +6261,18 @@ useful talking points.</string>
                                                     <include reference="KFJ-EC-CKf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="bzV-wi-MRl"/>
                                                     <include reference="B0u-6B-fsr"/>
+                                                    <include reference="bzV-wi-MRl"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="p7b-jc-L3M">
+                                        <rect key="frame" x="0.0" y="1434" width="400" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p7b-jc-L3M" id="HOn-s1-WXa">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPm-aF-G2u">
@@ -6243,6 +6281,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="384" height="94"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6256,8 +6297,8 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="I5d-i2-Wog"/>
-                                                    <exclude reference="JPW-x1-A5D"/>
                                                     <exclude reference="JIK-NH-t2X"/>
+                                                    <exclude reference="JPW-x1-A5D"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6266,16 +6307,18 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="I5d-i2-Wog"/>
-                                                    <include reference="JPW-x1-A5D"/>
                                                     <include reference="JIK-NH-t2X"/>
+                                                    <include reference="JPW-x1-A5D"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="544" id="5CZ-7U-ISZ">
+                                        <rect key="frame" x="0.0" y="1561" width="400" height="544"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5CZ-7U-ISZ" id="TRN-Rn-30N">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="544"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-3" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-9b-7ez">
@@ -6294,8 +6337,7 @@ useful talking points.</string>
                                                             <exclude reference="k1N-YG-iK1"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="60" y="12" width="280" height="497"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="G3I-o2-bqc"/>
                                                             <include reference="k1N-YG-iK1"/>
@@ -6312,8 +6354,8 @@ useful talking points.</string>
                                                     <exclude reference="FT5-9b-7ez"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="wcq-x2-Tdm"/>
                                                     <exclude reference="KYl-lj-Hpl"/>
+                                                    <exclude reference="wcq-x2-Tdm"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6321,16 +6363,18 @@ useful talking points.</string>
                                                     <include reference="FT5-9b-7ez"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="wcq-x2-Tdm"/>
                                                     <include reference="KYl-lj-Hpl"/>
+                                                    <include reference="wcq-x2-Tdm"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="133" id="SFC-8o-UnN">
+                                        <rect key="frame" x="0.0" y="2105" width="400" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SFC-8o-UnN" id="w2W-Ab-IyB">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PC4-uU-gLL">
@@ -6339,6 +6383,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="29" width="384" height="75"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6351,9 +6398,9 @@ useful talking points.</string>
                                                     <exclude reference="PC4-uU-gLL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="ecJ-qS-ZB1"/>
                                                     <exclude reference="9OI-3w-m3M"/>
                                                     <exclude reference="cYM-6s-fS1"/>
+                                                    <exclude reference="ecJ-qS-ZB1"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6361,17 +6408,19 @@ useful talking points.</string>
                                                     <include reference="PC4-uU-gLL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="ecJ-qS-ZB1"/>
                                                     <include reference="9OI-3w-m3M"/>
                                                     <include reference="cYM-6s-fS1"/>
+                                                    <include reference="ecJ-qS-ZB1"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="EBI-28-P3Z">
+                                        <rect key="frame" x="0.0" y="2238" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EBI-28-P3Z" id="M00-t8-gKW">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-4" translatesAutoresizingMaskIntoConstraints="NO" id="rgT-He-b6S">
@@ -6407,8 +6456,8 @@ useful talking points.</string>
                                                     <exclude reference="rgT-He-b6S"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="fCc-wW-aQx"/>
                                                     <exclude reference="UmW-xJ-gaU"/>
+                                                    <exclude reference="fCc-wW-aQx"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6416,16 +6465,18 @@ useful talking points.</string>
                                                     <include reference="rgT-He-b6S"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="fCc-wW-aQx"/>
                                                     <include reference="UmW-xJ-gaU"/>
+                                                    <include reference="fCc-wW-aQx"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="l5U-m0-sn2">
+                                        <rect key="frame" x="0.0" y="2758" width="400" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5U-m0-sn2" id="M4H-Dc-APW">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-hv-dVh">
@@ -6434,6 +6485,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="384" height="75"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6446,8 +6500,8 @@ useful talking points.</string>
                                                     <exclude reference="xhj-hv-dVh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="BIk-aw-uDH"/>
                                                     <exclude reference="6jV-0t-p0N"/>
+                                                    <exclude reference="BIk-aw-uDH"/>
                                                     <exclude reference="wM7-eF-8Sq"/>
                                                 </mask>
                                             </variation>
@@ -6456,8 +6510,8 @@ useful talking points.</string>
                                                     <include reference="xhj-hv-dVh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="BIk-aw-uDH"/>
                                                     <include reference="6jV-0t-p0N"/>
+                                                    <include reference="BIk-aw-uDH"/>
                                                     <include reference="wM7-eF-8Sq"/>
                                                 </mask>
                                             </variation>
@@ -6465,8 +6519,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="op5-nj-jPF">
+                                        <rect key="frame" x="0.0" y="2866" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="op5-nj-jPF" id="f15-54-hzu">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-5" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-ke-Equ">
@@ -6481,14 +6537,14 @@ useful talking points.</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="cEz-tc-UmQ"/>
                                                             <exclude reference="DH7-Gy-beo"/>
+                                                            <exclude reference="cEz-tc-UmQ"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="cEz-tc-UmQ"/>
                                                             <include reference="DH7-Gy-beo"/>
+                                                            <include reference="cEz-tc-UmQ"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -6519,8 +6575,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="BfK-Ij-l82">
+                                        <rect key="frame" x="0.0" y="3386" width="400" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfK-Ij-l82" id="UBY-vd-EGz">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can enter their party affiliation by quickly checking a box" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-gz-G1L">
@@ -6528,6 +6586,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="38"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6540,8 +6601,8 @@ useful talking points.</string>
                                                     <exclude reference="AJe-gz-G1L"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="YqP-SL-lnt"/>
                                                     <exclude reference="I9Y-ga-Gup"/>
+                                                    <exclude reference="YqP-SL-lnt"/>
                                                     <exclude reference="aLF-h7-tsc"/>
                                                 </mask>
                                             </variation>
@@ -6550,8 +6611,8 @@ useful talking points.</string>
                                                     <include reference="AJe-gz-G1L"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="YqP-SL-lnt"/>
                                                     <include reference="I9Y-ga-Gup"/>
+                                                    <include reference="YqP-SL-lnt"/>
                                                     <include reference="aLF-h7-tsc"/>
                                                 </mask>
                                             </variation>
@@ -6559,8 +6620,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="oji-mZ-akh">
+                                        <rect key="frame" x="0.0" y="3449" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oji-mZ-akh" id="3Yw-9F-Zjo">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-6" translatesAutoresizingMaskIntoConstraints="NO" id="rZ4-iR-yW1">
@@ -6575,14 +6638,14 @@ useful talking points.</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="PKW-md-DQz"/>
                                                             <exclude reference="PGi-ok-Mt5"/>
+                                                            <exclude reference="PKW-md-DQz"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="PKW-md-DQz"/>
                                                             <include reference="PGi-ok-Mt5"/>
+                                                            <include reference="PKW-md-DQz"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -6596,8 +6659,8 @@ useful talking points.</string>
                                                     <exclude reference="rZ4-iR-yW1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="vWB-5S-xih"/>
                                                     <exclude reference="WdP-96-pEH"/>
+                                                    <exclude reference="vWB-5S-xih"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6605,16 +6668,18 @@ useful talking points.</string>
                                                     <include reference="rZ4-iR-yW1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="vWB-5S-xih"/>
                                                     <include reference="WdP-96-pEH"/>
+                                                    <include reference="vWB-5S-xih"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="sTx-uQ-RJa">
+                                        <rect key="frame" x="0.0" y="3969" width="400" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sTx-uQ-RJa" id="Jlh-gy-kpc">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And do the same with how interested they are in Bernie." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V5-Mx-ecw">
@@ -6622,6 +6687,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="38"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6634,8 +6702,8 @@ useful talking points.</string>
                                                     <exclude reference="7V5-Mx-ecw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Qcv-Rr-mNI"/>
                                                     <exclude reference="PdY-lD-wH2"/>
+                                                    <exclude reference="Qcv-Rr-mNI"/>
                                                     <exclude reference="Tdw-6B-Mx2"/>
                                                 </mask>
                                             </variation>
@@ -6644,8 +6712,8 @@ useful talking points.</string>
                                                     <include reference="7V5-Mx-ecw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Qcv-Rr-mNI"/>
                                                     <include reference="PdY-lD-wH2"/>
+                                                    <include reference="Qcv-Rr-mNI"/>
                                                     <include reference="Tdw-6B-Mx2"/>
                                                 </mask>
                                             </variation>
@@ -6653,8 +6721,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="dv3-op-Rmk">
+                                        <rect key="frame" x="0.0" y="4032" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dv3-op-Rmk" id="nno-OT-TOD">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-7" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-mu-O39">
@@ -6669,14 +6739,14 @@ useful talking points.</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="Tl1-wW-PNy"/>
                                                             <exclude reference="SJ8-kP-hdw"/>
+                                                            <exclude reference="Tl1-wW-PNy"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="Tl1-wW-PNy"/>
                                                             <include reference="SJ8-kP-hdw"/>
+                                                            <include reference="Tl1-wW-PNy"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -6707,8 +6777,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="5Sg-Ux-PhN">
+                                        <rect key="frame" x="0.0" y="4552" width="400" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Sg-Ux-PhN" id="iCB-Eh-quW">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With all the details filled out, you can hit “Add Person” and be taken back to the New Visit screen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG6-Aj-aeT">
@@ -6716,6 +6788,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="384" height="38"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6728,9 +6803,9 @@ useful talking points.</string>
                                                     <exclude reference="cG6-Aj-aeT"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="12D-yp-8h4"/>
                                                     <exclude reference="Amw-ag-KRt"/>
                                                     <exclude reference="NUG-0g-5bE"/>
-                                                    <exclude reference="12D-yp-8h4"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6738,17 +6813,19 @@ useful talking points.</string>
                                                     <include reference="cG6-Aj-aeT"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="12D-yp-8h4"/>
                                                     <include reference="Amw-ag-KRt"/>
                                                     <include reference="NUG-0g-5bE"/>
-                                                    <include reference="12D-yp-8h4"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="dgo-ys-Bfe">
+                                        <rect key="frame" x="0.0" y="4624" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgo-ys-Bfe" id="cg8-7g-N85">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-8" translatesAutoresizingMaskIntoConstraints="NO" id="TbB-W9-LG1">
@@ -6784,8 +6861,8 @@ useful talking points.</string>
                                                     <exclude reference="TbB-W9-LG1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="ZGW-h5-bTW"/>
                                                     <exclude reference="0DA-lR-QMy"/>
+                                                    <exclude reference="ZGW-h5-bTW"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6793,16 +6870,18 @@ useful talking points.</string>
                                                     <include reference="TbB-W9-LG1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="ZGW-h5-bTW"/>
                                                     <include reference="0DA-lR-QMy"/>
+                                                    <include reference="ZGW-h5-bTW"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="QTF-5O-yWU">
+                                        <rect key="frame" x="0.0" y="5144" width="400" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QTF-5O-yWU" id="eQY-ob-LT5">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The person you just talked to will show up with a checkmark next to their name, signifying you talked to them." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-N1-38X">
@@ -6810,6 +6889,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6823,8 +6905,8 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="76m-xr-fuo"/>
-                                                    <exclude reference="jTp-zs-pDh"/>
                                                     <exclude reference="gMd-CA-LQy"/>
+                                                    <exclude reference="jTp-zs-pDh"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6833,16 +6915,18 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="76m-xr-fuo"/>
-                                                    <include reference="jTp-zs-pDh"/>
                                                     <include reference="gMd-CA-LQy"/>
+                                                    <include reference="jTp-zs-pDh"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="5RL-mV-yyX">
+                                        <rect key="frame" x="0.0" y="5216" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5RL-mV-yyX" id="XrR-7J-NIH">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-9" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-k3-WnX">
@@ -6878,8 +6962,8 @@ useful talking points.</string>
                                                     <exclude reference="Jam-k3-WnX"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="zEW-YD-59B"/>
                                                     <exclude reference="p9S-Rj-1XP"/>
+                                                    <exclude reference="zEW-YD-59B"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6887,16 +6971,18 @@ useful talking points.</string>
                                                     <include reference="Jam-k3-WnX"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="zEW-YD-59B"/>
                                                     <include reference="p9S-Rj-1XP"/>
+                                                    <include reference="zEW-YD-59B"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="hfz-1E-3Nk">
+                                        <rect key="frame" x="0.0" y="5736" width="400" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfz-1E-3Nk" id="tS6-sz-521">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you come to an address that already has information for people, tapping this box will signify you talked to them." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubs-P0-QZC">
@@ -6904,6 +6990,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6916,8 +7005,8 @@ useful talking points.</string>
                                                     <exclude reference="ubs-P0-QZC"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="m9Y-UP-Fce"/>
                                                     <exclude reference="JSa-Wo-7w5"/>
+                                                    <exclude reference="m9Y-UP-Fce"/>
                                                     <exclude reference="o9j-Jd-PdK"/>
                                                 </mask>
                                             </variation>
@@ -6926,8 +7015,8 @@ useful talking points.</string>
                                                     <include reference="ubs-P0-QZC"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="m9Y-UP-Fce"/>
                                                     <include reference="JSa-Wo-7w5"/>
+                                                    <include reference="m9Y-UP-Fce"/>
                                                     <include reference="o9j-Jd-PdK"/>
                                                 </mask>
                                             </variation>
@@ -6935,8 +7024,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="tlc-6S-IfQ">
+                                        <rect key="frame" x="0.0" y="5808" width="400" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tlc-6S-IfQ" id="ebc-ri-5AS">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure to update their information by hitting “Edit” so the campaign has the most up-to-date info." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVj-tp-tvt">
@@ -6944,6 +7035,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="384" height="38"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6956,8 +7050,8 @@ useful talking points.</string>
                                                     <exclude reference="sVj-tp-tvt"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="AtJ-e8-zYe"/>
                                                     <exclude reference="5qu-aV-eyo"/>
+                                                    <exclude reference="AtJ-e8-zYe"/>
                                                     <exclude reference="XT4-wD-9YU"/>
                                                 </mask>
                                             </variation>
@@ -6966,8 +7060,8 @@ useful talking points.</string>
                                                     <include reference="sVj-tp-tvt"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="AtJ-e8-zYe"/>
                                                     <include reference="5qu-aV-eyo"/>
+                                                    <include reference="AtJ-e8-zYe"/>
                                                     <include reference="XT4-wD-9YU"/>
                                                 </mask>
                                             </variation>
@@ -6975,8 +7069,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="gtG-r3-uIA">
+                                        <rect key="frame" x="0.0" y="5880" width="400" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gtG-r3-uIA" id="EMO-B7-iGd">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-sk-Okc">
@@ -6985,6 +7081,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6997,9 +7096,9 @@ useful talking points.</string>
                                                     <exclude reference="jWq-sk-Okc"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="aGy-zF-Mk2"/>
                                                     <exclude reference="fNQ-H2-pZ5"/>
                                                     <exclude reference="uWy-WD-7gu"/>
-                                                    <exclude reference="aGy-zF-Mk2"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7007,17 +7106,19 @@ useful talking points.</string>
                                                     <include reference="jWq-sk-Okc"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="aGy-zF-Mk2"/>
                                                     <include reference="fNQ-H2-pZ5"/>
                                                     <include reference="uWy-WD-7gu"/>
-                                                    <include reference="aGy-zF-Mk2"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="PKI-mS-AVh">
+                                        <rect key="frame" x="0.0" y="5969" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKI-mS-AVh" id="OJd-0V-8VV">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-10" translatesAutoresizingMaskIntoConstraints="NO" id="pr6-MY-nnl">
@@ -7032,14 +7133,14 @@ useful talking points.</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="RgO-11-OGg"/>
                                                             <exclude reference="H37-3p-dHA"/>
+                                                            <exclude reference="RgO-11-OGg"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="RgO-11-OGg"/>
                                                             <include reference="H37-3p-dHA"/>
+                                                            <include reference="RgO-11-OGg"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -7053,8 +7154,8 @@ useful talking points.</string>
                                                     <exclude reference="pr6-MY-nnl"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="WbN-0k-B2y"/>
                                                     <exclude reference="LaJ-u7-QxP"/>
+                                                    <exclude reference="WbN-0k-B2y"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7062,16 +7163,18 @@ useful talking points.</string>
                                                     <include reference="pr6-MY-nnl"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="WbN-0k-B2y"/>
                                                     <include reference="LaJ-u7-QxP"/>
+                                                    <include reference="WbN-0k-B2y"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="oF8-2Y-gqP">
+                                        <rect key="frame" x="0.0" y="6489" width="400" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oF8-2Y-gqP" id="lbo-Li-Nmd">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQP-B5-reK">
@@ -7080,6 +7183,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="10" width="384" height="75"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -7092,8 +7198,8 @@ useful talking points.</string>
                                                     <exclude reference="NQP-B5-reK"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="QtX-9p-WLA"/>
                                                     <exclude reference="OQp-jQ-6Mf"/>
+                                                    <exclude reference="QtX-9p-WLA"/>
                                                     <exclude reference="jg3-mB-Iqr"/>
                                                 </mask>
                                             </variation>
@@ -7102,8 +7208,8 @@ useful talking points.</string>
                                                     <include reference="NQP-B5-reK"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="QtX-9p-WLA"/>
                                                     <include reference="OQp-jQ-6Mf"/>
+                                                    <include reference="QtX-9p-WLA"/>
                                                     <include reference="jg3-mB-Iqr"/>
                                                 </mask>
                                             </variation>
@@ -7111,8 +7217,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="pID-X8-PmI">
+                                        <rect key="frame" x="0.0" y="6584" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pID-X8-PmI" id="5w5-m8-4uQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-11" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-Nk-t3W">
@@ -7148,8 +7256,8 @@ useful talking points.</string>
                                                     <exclude reference="lgo-Nk-t3W"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="o6E-cd-C4H"/>
                                                     <exclude reference="Kc8-aE-HM4"/>
+                                                    <exclude reference="o6E-cd-C4H"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7157,16 +7265,18 @@ useful talking points.</string>
                                                     <include reference="lgo-Nk-t3W"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="o6E-cd-C4H"/>
                                                     <include reference="Kc8-aE-HM4"/>
+                                                    <include reference="o6E-cd-C4H"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="cT7-cF-Mii">
+                                        <rect key="frame" x="0.0" y="7104" width="400" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cT7-cF-Mii" id="7cX-iD-wDp">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6G-bJ-DJK">
@@ -7175,6 +7285,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="10" width="384" height="75"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -7187,9 +7300,9 @@ useful talking points.</string>
                                                     <exclude reference="a6G-bJ-DJK"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="wcM-yR-84E"/>
                                                     <exclude reference="8f8-tD-pXM"/>
                                                     <exclude reference="h7R-qN-MLI"/>
+                                                    <exclude reference="wcM-yR-84E"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7197,17 +7310,19 @@ useful talking points.</string>
                                                     <include reference="a6G-bJ-DJK"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="wcM-yR-84E"/>
                                                     <include reference="8f8-tD-pXM"/>
                                                     <include reference="h7R-qN-MLI"/>
+                                                    <include reference="wcM-yR-84E"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="520" id="NiD-mq-2MJ">
+                                        <rect key="frame" x="0.0" y="7199" width="400" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NiD-mq-2MJ" id="dDj-oH-Dfw">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-12" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-RY-Nbg">
@@ -7260,8 +7375,10 @@ useful talking points.</string>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="157" id="bXk-n0-EgC">
+                                        <rect key="frame" x="0.0" y="7719" width="400" height="157"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXk-n0-EgC" id="qoa-Uq-EwN">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iz-Mi-47n">
@@ -7270,6 +7387,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="131"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -7282,9 +7402,9 @@ useful talking points.</string>
                                                     <exclude reference="6iz-Mi-47n"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="s6E-XR-g7J"/>
                                                     <exclude reference="7bk-Hl-6Uu"/>
                                                     <exclude reference="ch6-aD-WV4"/>
+                                                    <exclude reference="s6E-XR-g7J"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7292,17 +7412,19 @@ useful talking points.</string>
                                                     <include reference="6iz-Mi-47n"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="s6E-XR-g7J"/>
                                                     <include reference="7bk-Hl-6Uu"/>
                                                     <include reference="ch6-aD-WV4"/>
+                                                    <include reference="s6E-XR-g7J"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="wAo-SD-Y5r">
+                                        <rect key="frame" x="0.0" y="7876" width="400" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wAo-SD-Y5r" id="swI-oH-Z7D">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That’s it! If you have any issues, just email support@groundgameapp.com and we’ll help you out." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCW-mY-Idg">
@@ -7310,6 +7432,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="9" width="384" height="56"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -7323,8 +7448,8 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="3ZW-s0-2cn"/>
-                                                    <exclude reference="ZEH-Xd-AHF"/>
                                                     <exclude reference="QEc-tu-oZr"/>
+                                                    <exclude reference="ZEH-Xd-AHF"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -7333,8 +7458,8 @@ useful talking points.</string>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="3ZW-s0-2cn"/>
-                                                    <include reference="ZEH-Xd-AHF"/>
                                                     <include reference="QEc-tu-oZr"/>
+                                                    <include reference="ZEH-Xd-AHF"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
