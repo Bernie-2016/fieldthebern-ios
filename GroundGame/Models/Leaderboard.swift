@@ -15,7 +15,7 @@ struct Leaderboard {
     
     init(json: JSON) {
         var rankingsTemp: [Ranking] = []
-        
+
         for(_, ranking) in json {
             let newRanking = Ranking(json: ranking)
             rankingsTemp.append(newRanking)
