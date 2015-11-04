@@ -14,13 +14,27 @@ struct Leaderboard {
     let rankings: [Ranking]
     
     init(json: JSON) {
+        let rankings = json["data"]
+        let users = json["included"]
+        
         var rankingsTemp: [Ranking] = []
 
-        for(_, ranking) in json {
-            let newRanking = Ranking(json: ranking)
-            rankingsTemp.append(newRanking)
+        for(_, ranking) in rankings {
+            var newRanking = Ranking(json: ranking)
+
+            for(_, user) in users {
+                if let rankingUserId = newRanking.userId {
+                    if let userId = user["id"].string {
+                        if rankingUserId == userId {
+                            let newUser = User(userJSON: user)
+                            newRanking.user = newUser
+                            rankingsTemp.append(newRanking)
+                        }
+                    }
+                }
+            }
         }
         
-        rankings = rankingsTemp
+        self.rankings = rankingsTemp
     }
 }

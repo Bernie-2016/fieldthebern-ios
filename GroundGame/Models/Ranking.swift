@@ -15,8 +15,7 @@ struct Ranking {
     let rank: Int?
     let score: Int?
 
-    var name: String? = nil
-    var photoThumbURL: String? = nil
+    var user: User?
     
     var scoreString: String? {
         get {
@@ -31,27 +30,18 @@ struct Ranking {
     }
     
     init(json: JSON) {
-        self.userId = json["member"].string
+        self.userId = json["relationships"]["user"]["data"]["id"].string
 
-        if let rankNumber = json["rank"].number {
+        if let rankNumber = json["attributes"]["rank"].number {
             self.rank = Int(rankNumber)
         } else {
             self.rank = nil
         }
 
-        if let scoreNumber = json["score"].number {
+        if let scoreNumber = json["attribtues"]["score"].number {
             self.score = Int(scoreNumber)
         } else {
             self.score = 0
-        }
-        
-        if let memberData = json["member_data"].string {
-            if let dataFromString = memberData.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-                let json = JSON(data: dataFromString)
-
-                self.name = json["name"].string
-                self.photoThumbURL = json["photo_thumb_url"].string
-            }
         }
     }
 }

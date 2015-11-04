@@ -25,8 +25,8 @@ struct LeaderboardService {
                 if let data = data {
                     
                     let json = JSON(data: data)
-                    
-                    let leaderboard = Leaderboard(json: json["data"])
+
+                    let leaderboard = Leaderboard(json: json)
                     
                     callback(leaderboard)
                 }
