@@ -51,6 +51,7 @@
 		A76559A41BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */; };
 		A76559A61BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */; };
 		A76559A91BE830F0005CEA0F /* ParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */; };
+		A76559AB1BE96B77005CEA0F /* HowToTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */; };
 		A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890311BC8680E008F394C /* PersonTableViewCell.swift */; };
 		A76890341BC86AD0008F394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76890331BC86AD0008F394C /* Assets.xcassets */; };
 		A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */; };
@@ -228,6 +229,7 @@
 		A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassTableViewCell.swift; sourceTree = "<group>"; };
 		A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassItemDetailTableViewController.swift; sourceTree = "<group>"; };
 		A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphTableViewCell.swift; sourceTree = "<group>"; };
+		A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToTableViewController.swift; sourceTree = "<group>"; };
 		A76890311BC8680E008F394C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		A76890331BC86AD0008F394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableHeaderView.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
 				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
+				A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1041,6 +1044,7 @@
 				A7CA34231BDFE6B6007A9495 /* NSDictionaryExtensions.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
 				A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */,
+				A76559AB1BE96B77005CEA0F /* HowToTableViewController.swift in Sources */,
 				A73A0B191BD99141008ECC2E /* BlueNavigationController.swift in Sources */,
 				A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */,
 				A7CA344C1BDFE6E9007A9495 /* ImageDownloadOperation.swift in Sources */,
@@ -1212,6 +1216,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1297,6 +1302,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1318,7 +1324,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DStaging";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "5b7567b0-054a-4fce-8de7-a7489e3ca47d";
+				PROVISIONING_PROFILE = "1ee74e18-89fc-42c8-9e35-d0b05a6a68dc";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1389,6 +1395,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1481,6 +1488,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1502,7 +1510,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DRelease -DStaging";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "5b7567b0-054a-4fce-8de7-a7489e3ca47d";
+				PROVISIONING_PROFILE = "7253212e-8b06-4f6f-b853-5a16d781c227";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

@@ -33,5 +33,8 @@ class LearnTableViewController: UITableViewController {
         if indexPath.row == 1 {
             self.performSegueWithIdentifier("HowToCanvass", sender: self)
         }
+        if indexPath.row == 2 {
+            self.performSegueWithIdentifier("ShowHowTo", sender: self)
+        }
     }
 }

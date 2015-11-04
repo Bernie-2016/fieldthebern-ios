@@ -236,21 +236,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let scoreString = ranking.scoreString {
                 cell.pointsLabel.text = scoreString
             }
-            if let name = ranking.name {
-                cell.nameLabel.text = "\(name)"
-            }
-            if let url = ranking.photoThumbURL {
-                
-                let imageView: UIImageView = UIImageView.init()
-                imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-                imageView.loadImageFromURLString(url)
-                
-                imageView.layer.borderWidth = 1
-                imageView.layer.masksToBounds = true
-                imageView.layer.borderColor = UIColor.whiteColor().CGColor
-                imageView.layer.cornerRadius = imageView.frame.height/2
-                
-                cell.imageContainer.addSubview(imageView)
+            if let rankingUser = ranking.user {
+                if let name = rankingUser.name {
+                    cell.nameLabel.text = "\(name)"
+                }
+
+                if let url = rankingUser.photoThumbURL {
+                    
+                    let imageView: UIImageView = UIImageView.init()
+                    imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+                    imageView.loadImageFromURLString(url)
+                    
+                    imageView.layer.borderWidth = 1
+                    imageView.layer.masksToBounds = true
+                    imageView.layer.borderColor = UIColor.whiteColor().CGColor
+                    imageView.layer.cornerRadius = imageView.frame.height/2
+                    
+                    cell.imageContainer.addSubview(imageView)
+                }
             }
             
             return cell
