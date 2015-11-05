@@ -240,20 +240,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if let name = rankingUser.name {
                     cell.nameLabel.text = "\(name)"
                 }
+                
+                cell.imageContainer.subviews.forEach({ $0.removeFromSuperview() }) // cells that are reused preserve images from previous cells that were drawn. This is needed if we are going to add views here. - Nick D.
 
                 if let url = rankingUser.photoThumbURL {
                     
-                    let imageView: UIImageView = UIImageView.init()
-                    imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-                    imageView.loadImageFromURLString(url)
-                    
+                    let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
                     imageView.layer.borderWidth = 1
                     imageView.layer.masksToBounds = true
                     imageView.layer.borderColor = UIColor.whiteColor().CGColor
                     imageView.layer.cornerRadius = imageView.frame.height/2
                     
                     cell.imageContainer.addSubview(imageView)
-                }
+                    
+                    imageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder"), completion: { (finished, error) -> Void in
+
+                    })
+                    
+                    }
             }
             
             return cell
