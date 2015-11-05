@@ -173,6 +173,7 @@ class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     rootController.location = currentLocation
                     rootController.previousLocation = previousLocation
                     rootController.previousPlacemark = previousPlacemark
+                    rootController.userLocation = locationManager.location
                     
                     // Reset the previous location
                     self.previousLocation = currentLocation
