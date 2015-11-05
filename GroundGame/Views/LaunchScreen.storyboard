@@ -20,8 +20,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bernie-map" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-VT-19n">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="oxf-be-pu9"/>
-                                    <constraint firstAttribute="height" constant="150" id="tAU-ox-4ls"/>
+                                    <constraint firstAttribute="width" constant="150" id="oxf-be-pu9">
+                                        <variation key="widthClass=compact" constant="190"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="150" id="tAU-ox-4ls">
+                                        <variation key="widthClass=compact" constant="190"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -95,7 +99,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bernie-map" width="150" height="150"/>
+        <image name="bernie-map" width="190" height="190"/>
         <image name="paid-for-by" width="320" height="120"/>
     </resources>
 </document>

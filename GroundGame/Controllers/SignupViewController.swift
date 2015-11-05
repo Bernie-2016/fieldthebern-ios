@@ -124,23 +124,40 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBAction func pressFacebookButton() {
         facebookSpinner.startAnimating()
         facebookButton.titleLabel?.layer.opacity = 0
-
+        
+        log.error("pressed")
+        
         let login: FBSDKLoginManager = FBSDKLoginManager()
         login.loginBehavior = FBSDKLoginBehavior.Native
         login.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
             self.facebookButton.titleLabel?.layer.opacity = 1
             self.facebookSpinner.stopAnimating()
-
+            
             if error != nil {
-                NSLog("Process error")
+                log.error("Process error")
             } else {
                 if result.isCancelled {
-                    NSLog("Cancelled")
+                    log.error("Cancelled")
                 } else {
                     let session = Session.sharedInstance
-                    session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
-                        if success {
-                            self.performSegueWithIdentifier("Login", sender: self)
+                    print(result.token.permissions)
+                    print(result.token.declinedPermissions)
+                    let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name"])
+                    request.startWithCompletionHandler({ (connection, graphResult, error) -> Void in
+                        log.error("\(graphResult)")
+                        if error == nil {
+                            if let email = graphResult.valueForKey("email") as? String {
+                                // They have an email, okay to proceed
+                                session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
+                                    if success {
+                                        self.performSegueWithIdentifier("Login", sender: self)
+                                    }
+                                })
+                            } else {
+                                // no email
+                            }
+                        } else {
+                            // Facebook error
                         }
                     })
                 }
