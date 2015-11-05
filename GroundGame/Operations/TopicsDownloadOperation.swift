@@ -50,6 +50,7 @@ class TopicsDownloadOperation: FTBOperation {
                 } catch let error {
                     // Handling write error,
                     // e.g. Delete the Realm file, etc.
+                    log.error("\(error)")
                 }
 
             }

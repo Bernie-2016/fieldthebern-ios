@@ -13,6 +13,7 @@ struct User {
     let id: String?
     let firstName: String?
     let lastName: String?
+    let email: String?
     let totalPoints: Int
     let visitsCount: Int
     let photoThumbURL: String?
@@ -45,21 +46,26 @@ struct User {
     }
 
     init(json: JSON) {
-        let data = json["data"]
+        let userJSON = json["data"]
         
-        self.id = data["id"].string
+        self.init(userJSON: userJSON)
+    }
+    
+    init(userJSON: JSON) {
+        self.id = userJSON["id"].string
         
-        let attributes = data["attributes"]
+        let attributes = userJSON["attributes"]
         
         self.firstName = attributes["first_name"].string
         self.lastName = attributes["last_name"].string
+        self.email = attributes["email"].string
         
         if let points = attributes["total_points"].number {
             self.totalPoints = Int(points)
         } else {
             self.totalPoints = 0
         }
-
+        
         if let count = attributes["visits_count"].number {
             self.visitsCount = Int(count)
         } else {

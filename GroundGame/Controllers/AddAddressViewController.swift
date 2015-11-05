@@ -67,11 +67,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         
         if (streetAddress.text!.isEmpty) {
             
-            let alert = UIAlertController(title: "Incomplete information", message: "Please enter a street address", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
-            alert.addAction(okAction)
-            
+            let alert = UIAlertController.errorAlertControllerWithTitle("Missing Address Info", message: "Please enter a street address.")            
             self.presentViewController(alert, animated: true, completion: nil)
             
             return
@@ -151,14 +147,12 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     
     func finishedSubmittingWithError(error: APIError) {
         
-        var errorTitle = error.errorTitle
-        var errorMessage = error.errorDescription
+        let errorTitle = error.errorTitle
+        let errorMessage = error.errorDescription
         
-        let alert = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
-        alert.addAction(alertAction)
+        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
         
-        presentViewController(alert, animated: true) { () -> Void in }
+        presentViewController(alert, animated: true, completion: nil)
 
         submitButton.enabled = true
     }
@@ -248,23 +242,6 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                     }
                 })
             }
-            
-            //            let addressString = "\(streetAddress.text) \(apartmentNumber.text) \(self.placemark?.locality) \(self.placemark?.administrativeArea) \(self.placemark?.postalCode)"
-            //            geocoder.geocodeAddressString(addressString) { (placemarks, error) in
-            //                if let placemarksArray = placemarks {
-            //
-            //                    if placemarksArray.count > 0 {
-            //                        let pm = placemarks![0] as CLPlacemark
-            //
-            //                        if let streetName = pm.thoroughfare {
-            //                            if streetName != "" {
-            //                                self.placemark = pm
-            //                                self.performSegueWithIdentifier("SubmitAddress", sender: self)
-            //                            }
-            //                        }
-            //                    }
-            //                }
-            //            }
         }
     }
 
