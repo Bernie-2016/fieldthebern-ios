@@ -43,7 +43,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     var index: Int = 0
     
-    var pageViewController: UIPageViewController!
+    var pageViewController: PageViewController!
     
     var viewControllers: [UIViewController] = []
 
@@ -58,7 +58,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.view.backgroundColor = Color.Blue
         
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
 
         
