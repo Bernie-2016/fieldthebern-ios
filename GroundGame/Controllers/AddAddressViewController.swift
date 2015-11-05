@@ -175,7 +175,43 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         }
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField {
+        case streetAddress:
+            forwardGeocodeBasedOnTextField()
+            break
+        default:
+            break
+        }
+    }
+    
     // MARK: - Location updating methods
+    
+    func forwardGeocodeBasedOnTextField()
+    {
+        if(self.streetAddress.text?.length > 6) // 6 is arbitrary, but at least it gives us a good length for a street address.
+        {
+        
+        if let city = self.placemark!.locality, let state = self.placemark!.administrativeArea
+        {
+            
+            let address = self.streetAddress.text! + " " + city + " " + state
+            let geocoder:CLGeocoder = CLGeocoder();
+            geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+                
+                if(error == nil && placemarks!.count > 0)
+                {
+                    let tempPlacemark = placemarks![0]
+                    let tempLocation = tempPlacemark.location!;
+                    
+                    self.previousLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+                    self.location = tempLocation;
+                }
+                
+            })
+        }
+        }
+    }
     
     func didLocationChange() -> Bool {
         
