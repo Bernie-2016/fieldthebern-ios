@@ -138,9 +138,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     NSLog("Cancelled")
                 } else {
                     let session = Session.sharedInstance
-                    session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
-                        if success {
-                            self.performSegueWithIdentifier("Login", sender: self)
+                    print(result.token.permissions)
+                    print(result.token.declinedPermissions)
+                    let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email"])
+                    request.startWithCompletionHandler({ (connection, graphResult, error) -> Void in
+                        if error == nil {
+                            if let email = graphResult.valueForKey("email") as? String {
+                                // They have an email, okay to proceed
+                                session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
+                                    if success {
+                                        self.performSegueWithIdentifier("Login", sender: self)
+                                    }
+                                })
+                            } else {
+                                // no email
+                            }
+                        } else {
+                             // Facebook error
                         }
                     })
                 }
