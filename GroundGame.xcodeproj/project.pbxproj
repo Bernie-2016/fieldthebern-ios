@@ -43,7 +43,7 @@
 		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; };
 		A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9B1BBB3933005C4D34 /* UserService.swift */; };
 		A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; };
-		A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */; };
+		A750EA6D1BB9E73000D090F5 /* OldSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */; };
 		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; };
 		A76559A01BE80E6E005CEA0F /* Canvassing.plist in Resources */ = {isa = PBXBuildFile; fileRef = A765599F1BE80E6E005CEA0F /* Canvassing.plist */; };
 		A76559A21BE81566005CEA0F /* HowToCanvassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */; };
@@ -159,6 +159,7 @@
 		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
 		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
 		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
+		A7E6E4091BF3A8CE00AD23F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */; };
 		A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */; };
 		A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */; };
 		A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */; };
@@ -221,7 +222,7 @@
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A74FCE9B1BBB3933005C4D34 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A74FCE9D1BBB3BFB005C4D34 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldSignupViewController.swift; sourceTree = "<group>"; };
 		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A765599F1BE80E6E005CEA0F /* Canvassing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Canvassing.plist; sourceTree = "<group>"; };
 		A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassTableViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +331,7 @@
 		A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOption.swift; sourceTree = "<group>"; };
 		A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitService.swift; sourceTree = "<group>"; };
 		A7DAACC21BCD6FC200F0BDBC /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
 		A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -538,11 +540,12 @@
 				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
-				A750EA6C1BB9E73000D090F5 /* SignupViewController.swift */,
+				A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
 				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
 				A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */,
+				A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 				A7CC4E411BC364FE0086831C /* State.swift in Sources */,
 				A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */,
 				A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */,
+				A7E6E4091BF3A8CE00AD23F8 /* SignUpViewController.swift in Sources */,
 				A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */,
 				A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */,
 				A7CA345F1BDFE709007A9495 /* TextViewContentCell.swift in Sources */,
@@ -1067,7 +1071,7 @@
 				A7CA34431BDFE6D7007A9495 /* ModelTypeMap.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */,
-				A750EA6D1BB9E73000D090F5 /* SignupViewController.swift in Sources */,
+				A750EA6D1BB9E73000D090F5 /* OldSignupViewController.swift in Sources */,
 				A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A7CA34251BDFE6B6007A9495 /* UIAlertActionExtensions.swift in Sources */,

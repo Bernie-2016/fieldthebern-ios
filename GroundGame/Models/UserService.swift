@@ -55,6 +55,35 @@ struct UserService {
         }
     }
     
+    func checkUserWithFacebookIdExists(facebookId: String, callback: (userExists: Bool, apiSuccess: Bool, APIError?) -> Void) {
+        let parameters: JSON = [
+            "data": [
+                "attributes": [
+                    "facebook_id": facebookId
+                ]
+            ]
+        ]
+        
+        api.unauthorizedGet("users/lookup", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
+            if success {
+                if let data = data {
+                    let json = JSON(data: data)
+                    
+                    if json["data"].count > 0 {
+                        callback(userExists: true, apiSuccess: success, error)
+                    } else {
+                        callback(userExists: false, apiSuccess: success, error)
+                    }
+
+                } else {
+                    callback(userExists: false, apiSuccess: success, error)
+                }
+            } else {
+                callback(userExists: false, apiSuccess: success, error)
+            }
+        }
+    }
+    
     func handleUserResponse(data: NSData?, _ success: Bool, _ error: APIError?, callback: UserResponse) {
         if success {
             // Extract our user into a model

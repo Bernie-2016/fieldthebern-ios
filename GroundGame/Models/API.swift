@@ -47,6 +47,21 @@ class API {
         }
     }
     
+    func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
+        let url = baseURL + "/" + endpoint
+        http.unauthorizedRequest(.GET, url, parameters: parameters) { response in
+            switch response.result {
+            case .Success:
+                callback(response.data, true, nil)
+            case .Failure(let error):
+                if let httpResponse = response.response {
+                    let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+                    callback(response.data, false, apiError)
+                }
+            }
+        }
+    }
+
     func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
         
         let url = baseURL + "/" + endpoint

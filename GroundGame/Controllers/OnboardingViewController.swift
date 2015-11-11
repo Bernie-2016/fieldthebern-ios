@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class OnboardingViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    @IBOutlet weak var topButton: UIButton!
+    
     let pages = [
         [
             "title": "Learn",
@@ -32,13 +34,16 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     var pagesRange: Range<Int> {
         get {
-            let maxPages = pagesCount - 1
-            return 0...maxPages
+            return 0...lastPageIndex
         }
     }
     
     var pagesCount: Int {
         return viewControllers.count
+    }
+    
+    var lastPageIndex: Int {
+        return pagesCount - 1
     }
     
     var index: Int = 0
@@ -50,7 +55,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     struct ViewControllers {
         static let OnboardingPageViewController = "OnboardingPageViewController"
         static let PageContentViewController = "PageContentViewController"
-        static let SignupViewController = "SignupViewController"
+        static let SignUpViewController = "SignUpViewController"
     }
 
     override func viewDidLoad() {
@@ -60,7 +65,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
-
+        self.pageViewController.delegate = self
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -74,8 +79,8 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
             viewController.descriptionText = pages[index]["description"]
         }
         
-        let signupViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.SignupViewController)
-        self.viewControllers.append(signupViewController!)
+        let signUpViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.SignUpViewController)
+        self.viewControllers.append(signUpViewController!)
         
         pageViewController.setViewControllers([viewControllers[0]], direction: .Forward, animated: true, completion: nil)
         
@@ -89,7 +94,11 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
+        setTopButtonForIndex(index)
+
         index++
+        
+        print(index)
         
         if pagesRange ~= index {
             return self.viewControllers[index]
@@ -101,12 +110,24 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
+        setTopButtonForIndex(index)
+
         index--
+        
+        print(index)
         
         if pagesRange ~= index {
             return self.viewControllers[index]
         } else {
             return nil
+        }
+    }
+    
+    func setTopButtonForIndex(index: Int) {
+        if index == lastPageIndex {
+            topButton.setTitle("Login", forState: .Normal)
+        } else {
+            topButton.setTitle("Skip", forState: .Normal)
         }
     }
     

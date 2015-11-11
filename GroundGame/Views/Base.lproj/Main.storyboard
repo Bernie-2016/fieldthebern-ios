@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mms-dA-QyB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mms-dA-QyB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -264,9 +264,43 @@
                     <view key="view" contentMode="scaleToFill" id="RWz-yZ-dWX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eW-2K-ODR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2eW-2K-ODR" secondAttribute="trailing" id="VdX-H5-tCk"/>
+                            <constraint firstItem="2eW-2K-ODR" firstAttribute="top" secondItem="TMg-b2-1TI" secondAttribute="bottom" id="fDb-ei-fmo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2eW-2K-ODR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="VdX-H5-tCk"/>
+                                <exclude reference="fDb-ei-fmo"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2eW-2K-ODR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="VdX-H5-tCk"/>
+                                <include reference="fDb-ei-fmo"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="topButton" destination="2eW-2K-ODR" id="cx7-IG-hgE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72e-Uc-Zrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1130,7 +1164,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="10" y="6" width="51" height="43"/>
+                                            <rect key="frame" x="10" y="7.5" width="51" height="43"/>
                                             <mask key="constraints">
                                                 <exclude reference="74A-RW-zGU"/>
                                                 <exclude reference="EEK-vD-oP4"/>
@@ -1203,7 +1237,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="25" width="360" height="59"/>
+                                    <rect key="frame" x="20" y="25" width="360" height="59.5"/>
                                     <mask key="subviews">
                                         <include reference="cHh-rN-2NF"/>
                                         <include reference="J2Q-RY-buN"/>
@@ -1758,6 +1792,9 @@
                                                     <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                     <animations/>
                                                     <color key="onTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="-25" y="-15" width="51" height="31.5"/>
+                                                    </variation>
                                                     <connections>
                                                         <action selector="tappedNoOneHomeSwitch:" destination="GXe-d6-ldB" eventType="valueChanged" id="Uvk-BX-l0w"/>
                                                     </connections>
@@ -1777,7 +1814,7 @@
                                                     <animations/>
                                                     <color key="onTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                     <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="-25" y="-15" width="51" height="31.5"/>
+                                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="tappedGoAwaySwitch:" destination="GXe-d6-ldB" eventType="valueChanged" id="tb7-nf-xdq"/>
@@ -3925,9 +3962,6 @@
                                         <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="226" width="360" height="42"/>
-                                        </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-map" translatesAutoresizingMaskIntoConstraints="NO" id="64W-yy-bFO">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -3961,9 +3995,6 @@ useful talking points.</string>
                                         <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="276" width="360" height="77"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -3998,8 +4029,7 @@ useful talking points.</string>
                                         <exclude reference="kw2-5z-i5C"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="124" width="360" height="353"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="DPy-er-LMD"/>
                                         <include reference="64W-yy-bFO"/>
@@ -4061,10 +4091,10 @@ useful talking points.</string>
             </objects>
             <point key="canvasLocation" x="1050" y="1037"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="M9B-Kz-KJc">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" id="2sW-bj-8I2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="2sW-bj-8I2" customClass="SignUpViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AyS-fX-h6P"/>
                         <viewControllerLayoutGuide type="bottom" id="4tt-hF-qre"/>
@@ -4122,6 +4152,7 @@ useful talking points.</string>
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="pressFacebook" destination="2sW-bj-8I2" eventType="touchUpInside" id="u6R-aR-d7K"/>
                                     <action selector="pressFacebookButton" destination="Oar-fh-wvi" eventType="touchUpInside" id="EnF-VW-obp"/>
                                 </connections>
                             </button>
@@ -4149,6 +4180,9 @@ useful talking points.</string>
                                     </mask>
                                 </variation>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="5nI-2S-9B5">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4156,17 +4190,19 @@ useful talking points.</string>
                             <constraint firstAttribute="trailingMargin" secondItem="Q5e-jK-aUb" secondAttribute="trailing" constant="-20" id="KEI-j3-o8A"/>
                             <constraint firstItem="w43-wt-w1w" firstAttribute="top" secondItem="AyS-fX-h6P" secondAttribute="bottom" constant="80" id="KOQ-Xi-nzb"/>
                             <constraint firstItem="tTy-sy-IaE" firstAttribute="top" secondItem="Q5e-jK-aUb" secondAttribute="bottom" constant="8" id="Lnk-A1-gk1"/>
-                            <constraint firstItem="4tt-hF-qre" firstAttribute="top" secondItem="tTy-sy-IaE" secondAttribute="bottom" constant="20" id="MVi-70-Xd0">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                            <constraint firstItem="4tt-hF-qre" firstAttribute="top" secondItem="tTy-sy-IaE" secondAttribute="bottom" constant="40" id="MVi-70-Xd0">
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="tTy-sy-IaE" firstAttribute="leading" secondItem="dlH-j3-XVl" secondAttribute="leadingMargin" constant="-20" id="PjY-kJ-gDi"/>
                             <constraint firstItem="Q5e-jK-aUb" firstAttribute="leading" secondItem="dlH-j3-XVl" secondAttribute="leadingMargin" constant="-20" id="SsO-9x-MXT"/>
                             <constraint firstItem="fIh-Lz-uv5" firstAttribute="leading" secondItem="dlH-j3-XVl" secondAttribute="leading" id="UQJ-TK-NPc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fIh-Lz-uv5" secondAttribute="trailing" id="Vxw-Ib-Yd8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tTy-sy-IaE" secondAttribute="trailing" constant="-20" id="Xec-CR-K3P"/>
+                            <constraint firstItem="5nI-2S-9B5" firstAttribute="centerX" secondItem="Q5e-jK-aUb" secondAttribute="centerX" id="d4q-yb-HiQ"/>
                             <constraint firstItem="fIh-Lz-uv5" firstAttribute="top" secondItem="dlH-j3-XVl" secondAttribute="top" id="eyd-Zm-2M0"/>
                             <constraint firstAttribute="trailing" secondItem="fIh-Lz-uv5" secondAttribute="trailing" id="gjW-fr-PvF"/>
                             <constraint firstItem="w43-wt-w1w" firstAttribute="centerX" secondItem="dlH-j3-XVl" secondAttribute="centerX" id="hOz-0f-jDj"/>
+                            <constraint firstItem="5nI-2S-9B5" firstAttribute="centerY" secondItem="Q5e-jK-aUb" secondAttribute="centerY" id="jQR-1S-YgG"/>
                             <constraint firstItem="4tt-hF-qre" firstAttribute="top" secondItem="fIh-Lz-uv5" secondAttribute="bottom" id="rXG-i2-dNn"/>
                         </constraints>
                         <variation key="default">
@@ -4174,16 +4210,19 @@ useful talking points.</string>
                                 <exclude reference="tTy-sy-IaE"/>
                                 <exclude reference="Q5e-jK-aUb"/>
                                 <exclude reference="w43-wt-w1w"/>
+                                <exclude reference="5nI-2S-9B5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Vxw-Ib-Yd8"/>
+                                <exclude reference="KOQ-Xi-nzb"/>
+                                <exclude reference="hOz-0f-jDj"/>
                                 <exclude reference="KEI-j3-o8A"/>
                                 <exclude reference="SsO-9x-MXT"/>
+                                <exclude reference="d4q-yb-HiQ"/>
+                                <exclude reference="jQR-1S-YgG"/>
                                 <exclude reference="Lnk-A1-gk1"/>
                                 <exclude reference="PjY-kJ-gDi"/>
                                 <exclude reference="Xec-CR-K3P"/>
-                                <exclude reference="KOQ-Xi-nzb"/>
-                                <exclude reference="hOz-0f-jDj"/>
-                                <exclude reference="Vxw-Ib-Yd8"/>
                                 <exclude reference="MVi-70-Xd0"/>
                             </mask>
                         </variation>
@@ -4193,29 +4232,37 @@ useful talking points.</string>
                                 <include reference="tTy-sy-IaE"/>
                                 <include reference="Q5e-jK-aUb"/>
                                 <include reference="w43-wt-w1w"/>
+                                <include reference="5nI-2S-9B5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Vxw-Ib-Yd8"/>
+                                <include reference="KOQ-Xi-nzb"/>
+                                <include reference="hOz-0f-jDj"/>
                                 <include reference="KEI-j3-o8A"/>
                                 <include reference="SsO-9x-MXT"/>
+                                <include reference="d4q-yb-HiQ"/>
+                                <include reference="jQR-1S-YgG"/>
                                 <include reference="Lnk-A1-gk1"/>
                                 <include reference="PjY-kJ-gDi"/>
                                 <include reference="Xec-CR-K3P"/>
-                                <include reference="KOQ-Xi-nzb"/>
-                                <include reference="hOz-0f-jDj"/>
-                                <include reference="Vxw-Ib-Yd8"/>
                                 <include reference="MVi-70-Xd0"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="facebookButton" destination="Q5e-jK-aUb" id="Wcj-cK-5xZ"/>
+                        <outlet property="facebookSpinner" destination="5nI-2S-9B5" id="WlK-vN-T4W"/>
+                        <segue destination="zI1-8A-tOm" kind="show" identifier="Login" id="5Oa-DT-4CZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64W-dP-CLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1923" y="239"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--View Controller-->
         <scene sceneID="NDE-tk-T3e">
             <objects>
-                <viewController id="Oar-fh-wvi" customClass="SignupViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Oar-fh-wvi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xp-Hu-ihK"/>
                         <viewControllerLayoutGuide type="bottom" id="rpE-N9-jZ3"/>
@@ -6783,6 +6830,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="37.5"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -6887,6 +6937,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="13" width="384" height="37.5"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -6991,6 +7044,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17.5" width="384" height="37.5"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -7250,6 +7306,9 @@ useful talking points.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17.5" width="384" height="37.5"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -8192,8 +8251,8 @@ useful talking points.</string>
         <image name="us-map" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3fP-mJ-fMY"/>
         <segue reference="Rbd-US-3DY"/>
+        <segue reference="5Oa-DT-4CZ"/>
         <segue reference="3nY-LF-DGD"/>
         <segue reference="VUw-pL-0Be"/>
     </inferredMetricsTieBreakers>
