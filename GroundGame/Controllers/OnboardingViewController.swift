@@ -65,7 +65,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
-        self.pageViewController.delegate = self
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -94,12 +93,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
+        index++
         setTopButtonForIndex(index)
 
-        index++
-        
-        print(index)
-        
         if pagesRange ~= index {
             return self.viewControllers[index]
         } else {
@@ -109,13 +105,10 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
-
+        
+        index--
         setTopButtonForIndex(index)
 
-        index--
-        
-        print(index)
-        
         if pagesRange ~= index {
             return self.viewControllers[index]
         } else {
@@ -125,9 +118,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     func setTopButtonForIndex(index: Int) {
         if index == lastPageIndex {
-            topButton.setTitle("Login", forState: .Normal)
+            topButton.setTitleWithoutAnimation("Login")
         } else {
-            topButton.setTitle("Skip", forState: .Normal)
+            topButton.setTitleWithoutAnimation("Skip")
         }
     }
     

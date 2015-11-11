@@ -160,6 +160,7 @@
 		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
 		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
 		A7E6E4091BF3A8CE00AD23F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */; };
+		A7E6E40B1BF3C9E800AD23F8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */; };
 		A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */; };
 		A7F014881BDEF2AC009282F6 /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */; };
 		A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */; };
@@ -332,6 +333,7 @@
 		A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitService.swift; sourceTree = "<group>"; };
 		A7DAACC21BCD6FC200F0BDBC /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
 		A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				DFE22E071BDBA417009565E1 /* String.swift */,
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
+				A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1055,6 +1058,7 @@
 				A73A0B231BD9F457008ECC2E /* Leaderboard.swift in Sources */,
 				A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */,
 				A7CA34261BDFE6B6007A9495 /* UIAlertControllerExtensions.swift in Sources */,
+				A7E6E40B1BF3C9E800AD23F8 /* UIButton.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
 				A7CA343F1BDFE6D7007A9495 /* FTBModel.swift in Sources */,
 				A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */,
