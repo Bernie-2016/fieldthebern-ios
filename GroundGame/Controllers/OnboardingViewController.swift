@@ -60,7 +60,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
-
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -115,9 +114,11 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        
+        let index = pageViewController.viewControllers?.count == 0 ? 0 :  viewControllers.indexOf((pageViewController.viewControllers?.first)!)!
+
+        return index
     }
-    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
