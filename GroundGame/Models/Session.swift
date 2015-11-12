@@ -83,7 +83,7 @@ class Session {
 
         self.authorize("facebook", password: token.tokenString, callback: callback)
     }
-    
+        
     private func authorizeWithFacebook(tokenString tokenString: String, callback: SuccessResponse) {
         keychain["lastAuthentication"] = "facebook"
 

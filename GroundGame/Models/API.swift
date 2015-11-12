@@ -47,9 +47,9 @@ class API {
         }
     }
     
-    func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
+    func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
         let url = baseURL + "/" + endpoint
-        http.unauthorizedRequest(.GET, url, parameters: parameters) { response in
+        http.unauthorizedRequest(.GET, url, parameters: parameters, encoding: encoding) { response in
             switch response.result {
             case .Success:
                 callback(response.data, true, nil)
@@ -62,12 +62,12 @@ class API {
         }
     }
 
-    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
+    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .JSON, callback: (NSData?, Bool, APIError?) -> Void) {
         
         let url = baseURL + "/" + endpoint
         
         if let parameters = parameters {
-            http.unauthorizedRequest(.POST, url, parameters: ["data": ["attributes": parameters]]) { response in
+            http.unauthorizedRequest(.POST, url, parameters: parameters, encoding: encoding) { response in
                 switch response.result {
                 case .Success:
                     callback(response.data, true, nil)

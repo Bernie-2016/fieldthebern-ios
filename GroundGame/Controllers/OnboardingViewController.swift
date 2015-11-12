@@ -46,8 +46,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         return pagesCount - 1
     }
     
-    var index: Int = 0
-    
     var pageViewController: PageViewController!
     
     var viewControllers: [UIViewController] = []
@@ -65,6 +63,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
+        self.pageViewController.delegate = self
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -93,10 +92,12 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
+        print("Forward from \(index)")
         index++
-        setTopButtonForIndex(index)
-
+        print(index)
+        
         if pagesRange ~= index {
+            setTopButtonForIndex(index)
             return self.viewControllers[index]
         } else {
             return nil
@@ -106,21 +107,29 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
         
+        print("Back from \(index)")
         index--
-        setTopButtonForIndex(index)
+        print(index)
 
         if pagesRange ~= index {
+            setTopButtonForIndex(index)
             return self.viewControllers[index]
         } else {
             return nil
         }
     }
     
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        print(pendingViewControllers)
+    }
+    
     func setTopButtonForIndex(index: Int) {
-        if index == lastPageIndex {
-            topButton.setTitleWithoutAnimation("Login")
-        } else {
-            topButton.setTitleWithoutAnimation("Skip")
+        if pagesRange ~= index {
+            if index == lastPageIndex {
+                topButton.setTitleWithoutAnimation("Login")
+            } else {
+                topButton.setTitleWithoutAnimation("Skip")
+            }
         }
     }
     
@@ -130,7 +139,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         
-        let index = pageViewController.viewControllers?.count == 0 ? 0 :  viewControllers.indexOf((pageViewController.viewControllers?.first)!)!
+        let index = pageViewController.viewControllers?.count == 0 ? 0 : viewControllers.indexOf((pageViewController.viewControllers?.first)!)!
 
         return index
     }
@@ -138,5 +147,4 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
-
 }

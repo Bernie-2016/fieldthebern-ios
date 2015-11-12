@@ -11,6 +11,12 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class SignUpViewController: UIViewController {
+    
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var isFacebookSignup: Bool = false
+    var facebookToken: FBSDKAccessToken?
 
     @IBOutlet weak var facebookButton: UIButton!
     
@@ -22,15 +28,20 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func pressEmail() {
+        self.performSegueWithIdentifier("SignUpFormSegue", sender: self)
+    }
+    
     @IBAction func pressFacebook() {
+        self.isFacebookSignup = true
+        
         facebookSpinner.startAnimating()
         facebookButton.titleLabel?.layer.opacity = 0
         
         let login = FBSDKLoginManager()
         login.loginBehavior = FBSDKLoginBehavior.Native
         login.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
-            self.facebookButton.titleLabel?.layer.opacity = 1
-            self.facebookSpinner.stopAnimating()
+            self.animateFacebookButton()
             
             let token = result.token
             
@@ -56,13 +67,15 @@ class SignUpViewController: UIViewController {
                             if apiSuccess {
                                 let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name"])
                                 request.startWithCompletionHandler({ (connection, graphResult, error) -> Void in
+
                                     log.error("\(graphResult)")
                                     if error == nil {
-                                        if let email = graphResult.valueForKey("email") as? String {
-                                            // They have an email, okay to proceed
-                                        } else {
-                                            // no email
-                                        }
+                                        self.email = graphResult.valueForKey("email") as? String
+                                        self.firstName = graphResult.valueForKey("first_name") as? String
+                                        self.lastName = graphResult.valueForKey("last_name") as? String
+                                        self.facebookToken = token
+                                        
+                                        self.performSegueWithIdentifier("SignUpFormSegue", sender: self)
                                     } else {
                                         // Facebook error
                                     }
@@ -78,4 +91,35 @@ class SignUpViewController: UIViewController {
 
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SignUpFormSegue" {
+            if let destinationVC = segue.destinationViewController as? SignUpFormViewController {
+                if self.isFacebookSignup {
+                    destinationVC.email = self.email
+                    destinationVC.firstName = self.firstName
+                    destinationVC.lastName = self.lastName
+                    destinationVC.facebookToken = self.facebookToken
+                }
+                destinationVC.isFacebookSignup = self.isFacebookSignup
+                
+                // Reset our values
+                self.email = nil
+                self.firstName = nil
+                self.lastName = nil
+                self.facebookToken = nil
+                self.isFacebookSignup = false
+            }
+        }
+    }
+    
+    private func animateFacebookButton() {
+        self.facebookButton.titleLabel?.layer.opacity = 1
+        self.facebookSpinner.stopAnimating()
+    }
+    
+    // MARK: - Status Bar
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }

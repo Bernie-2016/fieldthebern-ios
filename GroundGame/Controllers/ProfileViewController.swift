@@ -177,12 +177,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         })
         
-        let imageData = UIImagePNGRepresentation(image)
+        let resizedImage = Toucan(image: image).resize(CGSize(width: 500, height: 500), fitMode: Toucan.Resize.FitMode.Crop).image
+        
+        let imageData = UIImageJPEGRepresentation(resizedImage, 0.7)
+        
         if let base64String = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) {
             UserService().editMePhoto(base64String) { (user, success, error) -> Void in
                 if success {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.profileImageView.image = image
+                        self.profileImageView.image = resizedImage
                     })
                 } else {
                     if let apiError = error {

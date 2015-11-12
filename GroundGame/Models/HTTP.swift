@@ -34,8 +34,8 @@ class HTTP {
         }
     }
     
-    func unauthorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, callback: HTTPCallback) {
-        Alamofire.request(method, url, parameters: parameters)
+    func unauthorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
+        Alamofire.request(method, url, parameters: parameters, encoding: encoding)
             .validate()
             .responseJSON { response in
                 callback(response)

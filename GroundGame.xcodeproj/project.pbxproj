@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
+		A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */; };
+		A72479001BF513980002481A /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72478FF1BF513980002481A /* Toucan.swift */; };
 		A72999BB1BE6AE300053CE23 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BA1BE6AE300053CE23 /* SignInViewController.swift */; };
 		A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */; };
 		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
@@ -43,7 +45,6 @@
 		A74FCE961BBB0A7C005C4D34 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE951BBB0A7C005C4D34 /* Session.swift */; };
 		A74FCE9C1BBB3933005C4D34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9B1BBB3933005C4D34 /* UserService.swift */; };
 		A74FCE9E1BBB3BFB005C4D34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE9D1BBB3BFB005C4D34 /* API.swift */; };
-		A750EA6D1BB9E73000D090F5 /* OldSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */; };
 		A750EA6F1BB9FC1400D090F5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */; };
 		A76559A01BE80E6E005CEA0F /* Canvassing.plist in Resources */ = {isa = PBXBuildFile; fileRef = A765599F1BE80E6E005CEA0F /* Canvassing.plist */; };
 		A76559A21BE81566005CEA0F /* HowToCanvassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */; };
@@ -196,6 +197,8 @@
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
+		A72478FF1BF513980002481A /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		A72999BA1BE6AE300053CE23 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSONSpec.swift; sourceTree = "<group>"; };
@@ -223,7 +226,6 @@
 		A74FCE951BBB0A7C005C4D34 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A74FCE9B1BBB3933005C4D34 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A74FCE9D1BBB3BFB005C4D34 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldSignupViewController.swift; sourceTree = "<group>"; };
 		A750EA6E1BB9FC1400D090F5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A765599F1BE80E6E005CEA0F /* Canvassing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Canvassing.plist; sourceTree = "<group>"; };
 		A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToCanvassTableViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +400,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A72478FC1BF513320002481A /* Toucan */ = {
+			isa = PBXGroup;
+			children = (
+				A72478FF1BF513980002481A /* Toucan.swift */,
+			);
+			name = Toucan;
+			sourceTree = "<group>";
+		};
 		A72F88AF1BCC4979001B185B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,12 +553,12 @@
 				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
-				A750EA6C1BB9E73000D090F5 /* OldSignupViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
 				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
 				A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */,
 				A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */,
+				A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -624,6 +634,7 @@
 		A7A5794E1BB092E100D8885E /* GroundGame */ = {
 			isa = PBXGroup;
 			children = (
+				A72478FC1BF513320002481A /* Toucan */,
 				A7F451821BE561A1004CECC2 /* Animators */,
 				A72F88AF1BCC4979001B185B /* Delegates */,
 				A73D66441BBF3EF900127245 /* Extensions */,
@@ -1060,6 +1071,7 @@
 				A7CA34261BDFE6B6007A9495 /* UIAlertControllerExtensions.swift in Sources */,
 				A7E6E40B1BF3C9E800AD23F8 /* UIButton.swift in Sources */,
 				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
+				A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */,
 				A7CA343F1BDFE6D7007A9495 /* FTBModel.swift in Sources */,
 				A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */,
 				A73A0B1D1BD995AD008ECC2E /* UserScoreTableViewCell.swift in Sources */,
@@ -1075,7 +1087,6 @@
 				A7CA34431BDFE6D7007A9495 /* ModelTypeMap.swift in Sources */,
 				A76ABA441BBC9B7F007FA40B /* UIImage+Color.swift in Sources */,
 				A7F0148A1BDEFB82009282F6 /* ElectionDetailsViewController.swift in Sources */,
-				A750EA6D1BB9E73000D090F5 /* OldSignupViewController.swift in Sources */,
 				A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A7CA34251BDFE6B6007A9495 /* UIAlertActionExtensions.swift in Sources */,
@@ -1085,6 +1096,7 @@
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
 				A7CA34211BDFE6B6007A9495 /* NSArrayExtensions.swift in Sources */,
 				A7CA344B1BDFE6E9007A9495 /* FTBOperation.swift in Sources */,
+				A72479001BF513980002481A /* Toucan.swift in Sources */,
 				A7CA34271BDFE6B6007A9495 /* UIImageExtensions.swift in Sources */,
 				A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */,
 				A7CA343B1BDFE6D7007A9495 /* LinkModel.swift in Sources */,

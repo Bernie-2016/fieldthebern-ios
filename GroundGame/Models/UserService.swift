@@ -15,8 +15,20 @@ struct UserService {
     
     let api = API()
 
-    func createUser(email email: String, password: String, firstName: String, lastName: String, callback: UserResponse) {
-        api.unauthorizedPost("users", parameters: ["email": email, "password": password, "first_name": firstName, "last_name": lastName]) { (data, success, error) in
+    func createUser(email email: String, password: String, firstName: String, lastName: String, photoString: String?, callback: UserResponse) {
+        
+        let json = UserJSON(firstName: firstName, lastName: lastName, email: email, password: password, facebookId: nil, facebookAccessToken: nil, base64PhotoData: photoString).json
+
+        api.unauthorizedPost("users", parameters: json.object as? [String : AnyObject]) { (data, success, error) in
+            self.handleUserResponse(data, success, error, callback: callback)
+        }
+    }
+    
+    func createUser(email email: String, password: String, firstName: String, lastName: String, facebookAccessToken: String?, facebookId: String?, photoString: String?, callback: UserResponse) {
+
+        let json = UserJSON(firstName: firstName, lastName: lastName, email: email, password: password, facebookId: facebookId, facebookAccessToken: facebookAccessToken, base64PhotoData: photoString).json
+        
+        api.unauthorizedPost("users", parameters: json.object as? [String : AnyObject]) { (data, success, error) in
             self.handleUserResponse(data, success, error, callback: callback)
         }
     }
