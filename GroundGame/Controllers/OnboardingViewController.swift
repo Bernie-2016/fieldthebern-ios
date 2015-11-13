@@ -59,8 +59,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Color.Blue
-        
         topButton = UIBarButtonItem.init(title: "Skip", style: UIBarButtonItemStyle.Plain, target: self, action: "skipOrLogin:")
         self.navigationItem.rightBarButtonItem = topButton
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
@@ -85,11 +83,23 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         pageViewController.setViewControllers([viewControllers[0]], direction: .Forward, animated: false, completion: nil)
         
-        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        let fullFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        
+        let backgroundImageView = UIImageView(image: UIImage(named: "bernie-background"))
+        backgroundImageView.frame = fullFrame
+        self.view.addSubview(backgroundImageView)
+        self.view.sendSubviewToBack(backgroundImageView)
 
+        self.pageViewController.view.frame = fullFrame
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.pageViewController.scrollView?.frame = view.bounds
     }
     
     func skipOrLogin(sender: AnyObject) {

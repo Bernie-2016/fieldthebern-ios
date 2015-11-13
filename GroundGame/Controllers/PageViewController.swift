@@ -24,24 +24,4 @@ class PageViewController: UIPageViewController {
         
         self.view.backgroundColor = UIColor.clearColor()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let subViews: NSArray = view.subviews
-        
-        for view in subViews {
-            if view.isKindOfClass(UIScrollView) {
-                scrollView = view as? UIScrollView
-            }
-            else if view.isKindOfClass(UIPageControl) {
-                pageControl = view as? UIPageControl
-            }
-        }
-        
-        if (scrollView != nil && pageControl != nil) {
-            scrollView?.frame = view.bounds
-            view.bringSubviewToFront(pageControl!)
-        }
-    }
 }
