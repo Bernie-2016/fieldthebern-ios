@@ -167,5 +167,7 @@
 	<true/>
 	<key>privacy - location usage description</key>
 	<string>Location services are required to help you canvas.</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

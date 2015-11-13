@@ -61,8 +61,15 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // Do any additional setup after loading the view.
+        
+        // Change navigation bar buttons
+        let backButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
+        
+        // Keyboard notification listeners
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
         center.addObserver(self, selector: "keyboardWasHidden:", name: UIKeyboardWillHideNotification, object: nil)
@@ -94,10 +101,20 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
 
     }
     
-    @IBAction func pressCancel() {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    func cancel(sender: UINavigationItem) {
+        let alert = UIAlertController(title: "Cancel", message: "You'll lose any changes you've made.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancelAction = UIAlertAction(title: "Undo", style: .Cancel) { (_) in }
+        let OKAction = UIAlertAction(title: "OK", style: .Destructive) { (action) in
+            // Return to map
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(OKAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
     func submitForm() {
         animateButton()
 
@@ -262,13 +279,13 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = keyboardFrame.size.height + 10
+            self.bottomConstraint.constant = keyboardFrame.size.height - self.submitButton.frame.size.height
         })
     }
     
     func keyboardWasHidden(notification: NSNotification) {
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = 20
+            self.bottomConstraint.constant = 0
         })
     }
     

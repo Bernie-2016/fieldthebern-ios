@@ -11,6 +11,8 @@
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
 		A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */; };
 		A72479001BF513980002481A /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72478FF1BF513980002481A /* Toucan.swift */; };
+		A72479021BF542920002481A /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72479011BF542920002481A /* Text.swift */; };
+		A72479041BF559BA0002481A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72479031BF559BA0002481A /* UIBarButtonItem.swift */; };
 		A72999BB1BE6AE300053CE23 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BA1BE6AE300053CE23 /* SignInViewController.swift */; };
 		A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */; };
 		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
@@ -199,6 +201,8 @@
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		A72478FF1BF513980002481A /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
+		A72479011BF542920002481A /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		A72479031BF559BA0002481A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		A72999BA1BE6AE300053CE23 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSONSpec.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
 				A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */,
+				A72479031BF559BA0002481A /* UIBarButtonItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				A73A0B261BDA9E7D008ECC2E /* User.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
+				A72479011BF542920002481A /* Text.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1023,9 +1029,11 @@
 				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
 				A7CA34531BDFE6FC007A9495 /* HomeItemsViewController.swift in Sources */,
+				A72479041BF559BA0002481A /* UIBarButtonItem.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
 				A76559A41BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift in Sources */,
 				A7CA345E1BDFE709007A9495 /* LabelContentCell.swift in Sources */,
+				A72479021BF542920002481A /* Text.swift in Sources */,
 				A7CA34661BE029AA007A9495 /* ListModel.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,

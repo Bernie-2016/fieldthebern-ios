@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class OnboardingViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
-    @IBOutlet weak var topButton: UIButton!
+    var topButton: UIBarButtonItem?
     
     let pages = [
         [
@@ -61,6 +61,10 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.view.backgroundColor = Color.Blue
         
+        topButton = UIBarButtonItem.init(title: "Skip", style: UIBarButtonItemStyle.Plain, target: self, action: "skipOrLogin:")
+        self.navigationItem.rightBarButtonItem = topButton
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
+        
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
         self.pageViewController.delegate = self
@@ -89,6 +93,29 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         self.pageViewController.didMoveToParentViewController(self)
     }
     
+    func skipOrLogin(sender: AnyObject) {
+        let vc = pageViewController.viewControllers?.last
+        let index = self.viewControllers.indexOf(vc!)!
+        
+        if index == lastPageIndex {
+            // We're on the last page; show login
+            self.performSegueWithIdentifier("SignInModalSegue", sender: self)
+        } else {
+            // Skip to the last page
+            self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: nil)
+            setTopButtonForIndex(lastPageIndex)
+        }
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        let vc = pageViewController.viewControllers?.last
+        let index = self.viewControllers.indexOf(vc!)!
+
+        if pagesRange ~= index {
+            setTopButtonForIndex(index)
+        }
+    }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
@@ -97,7 +124,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         print(index)
         
         if pagesRange ~= index {
-            setTopButtonForIndex(index)
             return self.viewControllers[index]
         } else {
             return nil
@@ -112,7 +138,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         print(index)
 
         if pagesRange ~= index {
-            setTopButtonForIndex(index)
             return self.viewControllers[index]
         } else {
             return nil
@@ -126,9 +151,10 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func setTopButtonForIndex(index: Int) {
         if pagesRange ~= index {
             if index == lastPageIndex {
-                topButton.setTitleWithoutAnimation("Login")
+                print(index, lastPageIndex)
+                topButton?.setTitleWithoutAnimation("Login")
             } else {
-                topButton.setTitleWithoutAnimation("Skip")
+                topButton?.setTitleWithoutAnimation("Skip")
             }
         }
     }

@@ -12,6 +12,9 @@ import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var emailField: PaddedTextField! {
         didSet {
             emailField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: Text.PlaceholderAttributes)
@@ -38,8 +41,37 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+
+        // Change navigation bar buttons
+        let backButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.startKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.stopKeyboardObserver()
+    }
+    
+    private func startKeyboardObserver(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    private func stopKeyboardObserver() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func cancel(sender: UINavigationItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
     func submitForm() {
         let email = emailField.text
         let password = passwordField.text
@@ -72,6 +104,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func pressCancel() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     @IBAction func pressSubmitButton(sender: UIButton) {
         submitForm()
     }
@@ -103,10 +139,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    @IBAction func pressSignUp() {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // MARK: - Text Field Delegate Methods
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -120,21 +152,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-//    func keyboardWasShown(notification: NSNotification) {
-//        var info = notification.userInfo!
-//        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-//        
-//        UIView.animateWithDuration(0.1, animations: { () -> Void in
-//            self.bottomConstraintValue = self.bottomConstraint.constant
-//            self.bottomConstraint.constant = keyboardFrame.size.height - 106
-//        })
-//    }
-//    
-//    func keyboardWasHidden(notification: NSNotification) {
-//        UIView.animateWithDuration(0.1, animations: { () -> Void in
-//            if let value = self.bottomConstraintValue {
-//                self.bottomConstraint.constant = value
-//            }
-//        })
-//    }
+    // MARK: - Keyboard Delegate Methods
+    
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomConstraint.constant = keyboardFrame.size.height + 10
+        })
+    }
+    
+    func keyboardWasHidden(notification: NSNotification) {
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomConstraint.constant = 20
+        })
+    }
 }
