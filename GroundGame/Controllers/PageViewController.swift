@@ -10,6 +10,9 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
+    var scrollView: UIScrollView? = nil
+    var pageControl: UIPageControl? = nil
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -26,8 +29,6 @@ class PageViewController: UIPageViewController {
         super.viewDidLayoutSubviews()
         
         let subViews: NSArray = view.subviews
-        var scrollView: UIScrollView? = nil
-        var pageControl: UIPageControl? = nil
         
         for view in subViews {
             if view.isKindOfClass(UIScrollView) {

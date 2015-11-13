@@ -158,6 +158,11 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
                         }
                     })
                 }
+            } else {
+                self.stopAnimatingButton()
+                if let error = error {
+                    self.handleError(error)
+                }
             }
         }
     }

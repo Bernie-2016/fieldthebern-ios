@@ -67,7 +67,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
-        self.pageViewController.delegate = self
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -84,7 +83,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         let signUpViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.SignUpViewController)
         self.viewControllers.append(signUpViewController!)
         
-        pageViewController.setViewControllers([viewControllers[0]], direction: .Forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([viewControllers[0]], direction: .Forward, animated: false, completion: nil)
         
         self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
 
@@ -108,6 +107,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        self.pageViewController.pageControl?.userInteractionEnabled = true
+        
         let vc = pageViewController.viewControllers?.last
         let index = self.viewControllers.indexOf(vc!)!
 
@@ -119,9 +121,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
 
-        print("Forward from \(index)")
         index++
-        print(index)
         
         if pagesRange ~= index {
             return self.viewControllers[index]
@@ -132,10 +132,8 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = viewControllers.indexOf(viewController)!
-        
-        print("Back from \(index)")
+
         index--
-        print(index)
 
         if pagesRange ~= index {
             return self.viewControllers[index]
@@ -151,7 +149,6 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     func setTopButtonForIndex(index: Int) {
         if pagesRange ~= index {
             if index == lastPageIndex {
-                print(index, lastPageIndex)
                 topButton?.setTitleWithoutAnimation("Login")
             } else {
                 topButton?.setTitleWithoutAnimation("Skip")
@@ -164,10 +161,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        
-        let index = pageViewController.viewControllers?.count == 0 ? 0 : viewControllers.indexOf((pageViewController.viewControllers?.first)!)!
-
-        return index
+        return 0
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
