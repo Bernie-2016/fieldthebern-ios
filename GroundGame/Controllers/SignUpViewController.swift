@@ -52,13 +52,11 @@ class SignUpViewController: UIViewController {
                     log.error("Cancelled")
                 } else {
                     let session = Session.sharedInstance
-                    print(token.permissions)
-                    print(token.declinedPermissions)
+
                     UserService().checkUserWithFacebookIdExists(token.userID, callback: { (userExists, apiSuccess, error) -> Void in
-                        print(userExists)
+
                         if userExists {
                             session.authorizeWithFacebook(token: token, callback: { (success) -> Void in
-                                print(success)
                                 if success {
                                     self.performSegueWithIdentifier("Login", sender: self)
                                 }
@@ -68,7 +66,6 @@ class SignUpViewController: UIViewController {
                                 let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name"])
                                 request.startWithCompletionHandler({ (connection, graphResult, error) -> Void in
 
-                                    log.error("\(graphResult)")
                                     if error == nil {
                                         self.email = graphResult.valueForKey("email") as? String
                                         self.firstName = graphResult.valueForKey("first_name") as? String

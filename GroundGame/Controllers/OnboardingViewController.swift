@@ -151,11 +151,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
     }
-    
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
-        print(pendingViewControllers)
-    }
-    
+
     func setTopButtonForIndex(index: Int) {
         if pagesRange ~= index {
             if index == lastPageIndex {
