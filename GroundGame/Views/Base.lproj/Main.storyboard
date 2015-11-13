@@ -4695,9 +4695,11 @@ useful talking points.</string>
                         <animations/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Ju-Cg-mK0" secondAttribute="trailing" constant="-21" id="GX3-hu-6ro"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Ju-Cg-mK0" secondAttribute="trailing" constant="-21" id="GX3-hu-6ro">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="1Ju-Cg-mK0" firstAttribute="leading" secondItem="c2P-FJ-oC7" secondAttribute="leadingMargin" constant="-20" id="HvO-IJ-3Q8"/>
-                            <constraint firstItem="1Ju-Cg-mK0" firstAttribute="centerY" secondItem="c2P-FJ-oC7" secondAttribute="centerY" id="kOk-4V-g8r"/>
+                            <constraint firstItem="1Ju-Cg-mK0" firstAttribute="centerY" secondItem="c2P-FJ-oC7" secondAttribute="centerY" priority="750" id="kOk-4V-g8r"/>
                             <constraint firstItem="rpE-N9-jZ3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Ju-Cg-mK0" secondAttribute="bottom" constant="96" id="twi-ne-U2c">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
