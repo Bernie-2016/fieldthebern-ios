@@ -46,7 +46,7 @@ struct UserService {
     }
     
     func editMe(json: UserJSON, callback: UserResponse) {
-        api.post("users/me", parameters: json.json.object as? [String : AnyObject]) { (data, success, error) -> Void in
+        api.patch("users/me", parameters: json.json.object as? [String : AnyObject]) { (data, success, error) -> Void in
             self.handleUserResponse(data, success, error, callback: callback)
         }
     }
@@ -54,7 +54,7 @@ struct UserService {
     func updateMyDevice(deviceToken: String?, callback: UserResponse) {
         let parameters = DeviceJSON(deviceToken: deviceToken).json
 
-        api.post("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
+        api.patch("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
             self.handleUserResponse(data, success, error, callback: callback)
         }
     }
@@ -62,7 +62,7 @@ struct UserService {
     func editMePhoto(photoString: String, callback: UserResponse) {
         let parameters = UserJSON(base64PhotoData: photoString).json
         
-        api.post("users/me", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
+        api.patch("users/me", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
             self.handleUserResponse(data, success, error, callback: callback)
         }
     }

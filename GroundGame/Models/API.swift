@@ -46,7 +46,26 @@ class API {
             }
         }
     }
-    
+
+    func patch(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
+        
+        let url = baseURL + "/" + endpoint
+        
+        if let parameters = parameters {
+            http.authorizedRequest(.PATCH, url, parameters: parameters, encoding: encoding) { response in
+                switch response.result {
+                case .Success:
+                    callback(response.data, true, nil)
+                case .Failure(let error):
+                    if let httpResponse = response.response {
+                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+                        callback(response.data, false, apiError)
+                    }
+                }
+            }
+        }
+    }
+
     func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
         let url = baseURL + "/" + endpoint
         http.unauthorizedRequest(.GET, url, parameters: parameters, encoding: encoding) { response in
