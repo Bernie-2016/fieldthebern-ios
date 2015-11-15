@@ -20,6 +20,12 @@ public struct Person {
     var atHomeStatus: Bool = false
     var askedToLeave: Bool = true
     
+    // Only set; never displayed in app
+    var phone: String?
+    var email: String?
+    var preferredContactMethod: String?
+    var previouslyParticipatedInCaucusOrPrimary: Bool?
+    
     var name: String? {
         get {
             if let first = firstName, last = lastName {

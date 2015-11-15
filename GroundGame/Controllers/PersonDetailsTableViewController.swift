@@ -30,6 +30,22 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         }
     }
     
+    @IBOutlet weak var emailField: PaddedTextField! {
+        didSet {
+            emailField.attributedPlaceholder = NSAttributedString(string: "Email (optional)", attributes: Text.PlaceholderAttributes)
+            emailField.font = Text.Font
+            emailField.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var phoneField: PaddedTextField! {
+        didSet {
+            phoneField.attributedPlaceholder = NSAttributedString(string: "Phone (optional)", attributes: Text.PlaceholderAttributes)
+            phoneField.font = Text.Font
+            phoneField.delegate = self
+        }
+    }
+    
     @IBOutlet weak var askedToLeaveSwitch: UISwitch!
     
     func backToNameField(sender: UIBarButtonItem) {
@@ -69,9 +85,6 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             // Select their canvas response
             let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
             self.didSelectCanvasResponseOption(personCanvasResponse)
-            
-            // asked to leave
-            askedToLeaveSwitch.on = person.askedToLeave
         } else {
             // We have no person, but we need a new one to save changes to
             self.person = Person()
@@ -83,17 +96,22 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     func textFieldDidBeginEditing(textField: UITextField) {
         switch textField {
         case firstNameField:
-            if let cell = firstNameField.superview?.superview?.superview as? UITableViewCell,
-                let indexPath = tableView.indexPathForCell(cell) {
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-            }
+            scrollToField(firstNameField)
         case lastNameField:
-            if let cell = lastNameField.superview?.superview?.superview as? UITableViewCell,
-                let indexPath = tableView.indexPathForCell(cell) {
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-            }
+            scrollToField(lastNameField)
+        case emailField:
+            scrollToField(emailField)
+        case phoneField:
+            scrollToField(phoneField)
         default:
             break
+        }
+    }
+    
+    func scrollToField(textField: UITextField) {
+        if let cell = textField.superview?.superview?.superview as? UITableViewCell,
+            let indexPath = tableView.indexPathForCell(cell) {
+                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
         }
     }
     
@@ -114,11 +132,69 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         case firstNameField:
             return lastNameField.becomeFirstResponder()
         case lastNameField:
-            return lastNameField.resignFirstResponder()
+            return emailField.becomeFirstResponder()
+        case emailField:
+            return phoneField.becomeFirstResponder()
+        case phoneField:
+            return phoneField.resignFirstResponder()
         default:
             return false
         }
     }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField == phoneField
+        {
+            if let text = textField.text {
+                let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+                let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+                
+                let decimalString = components.joinWithSeparator("") as NSString
+                let length = decimalString.length
+                
+                let hasLeadingOne = length > 0 && newString[newString.startIndex] == "1"
+                
+                if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+                {
+                    let newLength = (text as NSString).length + (string as NSString).length - range.length as Int
+                    
+                    return (newLength > 10) ? false : true
+                }
+                var index = 0 as Int
+                let formattedString = NSMutableString()
+                
+                if hasLeadingOne && !(range.location == 1 && range.length == 1)
+                {
+                    let leadingOne = decimalString.substringWithRange(NSMakeRange(index, 1))
+                    formattedString.appendFormat("%@ ", leadingOne)
+                    index += 1
+                }
+                
+                if (length - index) > 3
+                {
+                    let areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
+                    formattedString.appendFormat("(%@) ", areaCode)
+                    index += 3
+                }
+                if length - index > 3
+                {
+                    let prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
+                    formattedString.appendFormat("%@-", prefix)
+                    index += 3
+                }
+                
+                let remainder = decimalString.substringFromIndex(index)
+                formattedString.appendString(remainder)
+                textField.text = formattedString as String
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return true
+        }
+    }
+
     
     func dismissKeyboard(gesture: UITapGestureRecognizer) {
         hideKeyboard()
@@ -183,6 +259,8 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     func willSubmit() -> Person? {
         self.person?.firstName = firstNameField.text
         self.person?.lastName = lastNameField.text
+        self.person?.phone = phoneField.text
+        self.person?.email = emailField.text
         self.person?.atHomeStatus = true
         self.person?.askedToLeave = askedToLeaveSwitch.on
 

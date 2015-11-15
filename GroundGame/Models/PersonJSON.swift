@@ -16,6 +16,8 @@ struct PersonJSON {
     let id: String?
     let firstName: String?
     let lastName: String?
+    let email: String?
+    let phone: String?
     let partyAffiliationString: String
     let canvasResponseJSONString: String
     
@@ -23,12 +25,16 @@ struct PersonJSON {
         id = person.id
         firstName = person.firstName
         lastName = person.lastName
+        email = person.email
+        phone = person.phone
         partyAffiliationString = person.partyAffiliationString        
         canvasResponseJSONString = person.canvasResponse.JSONString()
         
         attributes = [
             "first_name": firstName ?? NSNull(),
             "last_name": lastName ?? NSNull(),
+            "email": email ?? NSNull(),
+            "phone": phone ?? NSNull(),
             "party_affiliation": partyAffiliationString,
             "canvas_response": canvasResponseJSONString
         ]
