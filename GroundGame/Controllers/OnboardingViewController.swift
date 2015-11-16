@@ -17,11 +17,11 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     let pages = [
         [
             "title": "Learn",
-            "description": "We’ll teach you to canvas your neighborhood and learn useful talking points.",
+            "description": "We’ll teach you to canvass your neighborhood and learn useful talking points.",
             "image": "intro-learn"
         ],
         [
-            "title": "Canvas",
+            "title": "Canvass",
             "description": "Find new doors to knock on and earn points for all your hard work.",
             "image": "intro-map"
         ],
