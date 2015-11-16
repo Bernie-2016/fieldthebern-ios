@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CanvassResponseOptionSelectionDelegate {
-    func didSelectCanvassResponseOption(canvasResponseOption: CanvassResponseOption)
+    func didSelectCanvassResponseOption(canvassResponseOption: CanvassResponseOption)
 }

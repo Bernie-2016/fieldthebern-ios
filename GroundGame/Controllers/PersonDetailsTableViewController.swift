@@ -12,7 +12,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     
     var person: Person?
     var partySelection: PartyAffiliation?
-    var canvasResponseOption: CanvassResponseOption?
+    var canvassResponseOption: CanvassResponseOption?
 
     @IBOutlet weak var firstNameField: PaddedTextField! {
         didSet {
@@ -56,9 +56,9 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     }
 
     @IBOutlet weak var partyLabel: UILabel!
-    @IBOutlet weak var canvasResponseLabel: UILabel!
-    @IBOutlet weak var canvasResponseCell: UITableViewCell!
-    @IBOutlet weak var canvasResponseDisclosure: UIImageView!
+    @IBOutlet weak var canvassResponseLabel: UILabel!
+    @IBOutlet weak var canvassResponseCell: UITableViewCell!
+    @IBOutlet weak var canvassResponseDisclosure: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             self.didSelectParty(person.partyAffiliation)
 
             // Select their canvas response
-            let personCanvassResponse = CanvassResponseOption(canvasResponse: person.canvasResponse)
+            let personCanvassResponse = CanvassResponseOption(canvassResponse: person.canvassResponse)
             self.didSelectCanvassResponseOption(personCanvassResponse)
             
             // Set their phone
@@ -265,9 +265,9 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             }
         }
         if segue.identifier == "CanvassResponseSegue" {
-            if let canvasResponseViewController = segue.destinationViewController as? CanvassResponseTableViewController {
-                canvasResponseViewController.delegate = self
-                canvasResponseViewController.canvasResponseOption = canvasResponseOption
+            if let canvassResponseViewController = segue.destinationViewController as? CanvassResponseTableViewController {
+                canvassResponseViewController.delegate = self
+                canvassResponseViewController.canvassResponseOption = canvassResponseOption
             }
         }
     }
@@ -280,15 +280,15 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         partyLabel.text = partySelection.title()
     }
     
-    func didSelectCanvassResponseOption(canvasResponseOption: CanvassResponseOption) {
+    func didSelectCanvassResponseOption(canvassResponseOption: CanvassResponseOption) {
         // Update the person we're returning
-        self.person?.canvasResponse = canvasResponseOption.canvasResponse
+        self.person?.canvassResponse = canvassResponseOption.canvassResponse
         
-        self.canvasResponseOption = canvasResponseOption
-        self.canvasResponseLabel.text = canvasResponseOption.title
-        self.canvasResponseLabel.textColor = canvasResponseOption.textColor
-        self.canvasResponseCell.backgroundColor = canvasResponseOption.backgroundColor
-        self.canvasResponseDisclosure.image = canvasResponseOption.disclosureImage
+        self.canvassResponseOption = canvassResponseOption
+        self.canvassResponseLabel.text = canvassResponseOption.title
+        self.canvassResponseLabel.textColor = canvassResponseOption.textColor
+        self.canvassResponseCell.backgroundColor = canvassResponseOption.backgroundColor
+        self.canvassResponseDisclosure.image = canvassResponseOption.disclosureImage
     }
     
     

@@ -14,11 +14,11 @@ struct CanvassResponseList {
     
     init() {
         options = [
-            CanvassResponseOption(canvasResponse: .StronglyFor),
-            CanvassResponseOption(canvasResponse: .LeaningFor),
-            CanvassResponseOption(canvasResponse: .Undecided),
-            CanvassResponseOption(canvasResponse: .LeaningAgainst),
-            CanvassResponseOption(canvasResponse: .StronglyAgainst)
+            CanvassResponseOption(canvassResponse: .StronglyFor),
+            CanvassResponseOption(canvassResponse: .LeaningFor),
+            CanvassResponseOption(canvassResponse: .Undecided),
+            CanvassResponseOption(canvassResponse: .LeaningAgainst),
+            CanvassResponseOption(canvassResponse: .StronglyAgainst)
         ]
     }
 }

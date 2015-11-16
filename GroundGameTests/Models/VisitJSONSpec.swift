@@ -25,7 +25,7 @@ class VistJSONSpec: QuickSpec {
             describe("with just one person") {
                 
                 beforeEach {
-                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvassResponse.LeaningFor)
+                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvassResponse: CanvassResponse.LeaningFor)
                     address = Address(latitude: 32.752768, longitude: -117.116992, street1: "4166 Wilson Ave", street2: "1", city: "San Diego", stateCode: "CA", zipCode: "92104", result: .NotHome)
                     json = VisitJSON(duration: 1, address: address, people: [person1]).json
                 }
@@ -60,8 +60,8 @@ class VistJSONSpec: QuickSpec {
             describe("with more than one person") {
                 
                 beforeEach {
-                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvassResponse.LeaningFor)
-                    person2 = Person(firstName: "Molly", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvassResponse.LeaningFor)
+                    person1 = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvassResponse: CanvassResponse.LeaningFor)
+                    person2 = Person(firstName: "Molly", lastName: "Smith", partyAffiliation: "Democrat", canvassResponse: CanvassResponse.LeaningFor)
                     address = Address(latitude: 32.752768, longitude: -117.116992, street1: "4166 Wilson Ave", street2: "1", city: "San Diego", stateCode: "CA", zipCode: "92104", result: .NotHome)
                     json = VisitJSON(duration: 1, address: address, people: [person1, person2]).json
                 }

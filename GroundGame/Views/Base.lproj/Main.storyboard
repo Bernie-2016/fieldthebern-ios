@@ -3340,9 +3340,9 @@
                     <size key="freeformSize" width="400" height="550"/>
                     <connections>
                         <outlet property="askedToLeaveSwitch" destination="4No-xf-Svz" id="iVp-BL-2wZ"/>
-                        <outlet property="canvasResponseCell" destination="qQu-cQ-3ij" id="JhC-AD-vgd"/>
-                        <outlet property="canvasResponseDisclosure" destination="aB5-Rj-Dja" id="ZeT-BZ-APj"/>
-                        <outlet property="canvasResponseLabel" destination="g1L-Wh-11c" id="b76-Ei-f6m"/>
+                        <outlet property="canvassResponseCell" destination="qQu-cQ-3ij" id="JhC-AD-vgd"/>
+                        <outlet property="canvassResponseDisclosure" destination="aB5-Rj-Dja" id="ZeT-BZ-APj"/>
+                        <outlet property="canvassResponseLabel" destination="g1L-Wh-11c" id="b76-Ei-f6m"/>
                         <outlet property="emailField" destination="mzf-xH-lkc" id="jzR-ch-ti9"/>
                         <outlet property="emailSwitch" destination="F70-Td-ADe" id="GFC-MF-NWR"/>
                         <outlet property="firstNameField" destination="EcX-VK-jwu" id="deH-8q-NBb"/>
