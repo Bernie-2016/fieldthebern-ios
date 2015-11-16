@@ -15,17 +15,6 @@ class NoOneHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var noOneHomeSwitch: UISwitch!
     @IBOutlet weak var goAwaySwitch: UISwitch!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     @IBAction func tappedNoOneHomeSwitch(sender: UISwitch) {
         goAwaySwitch.setOn(!noOneHomeSwitch.on, animated: true)
     }

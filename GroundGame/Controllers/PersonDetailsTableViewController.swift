@@ -46,6 +46,9 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         }
     }
     
+    @IBOutlet weak var phoneSwitch: UISwitch!
+    @IBOutlet weak var emailSwitch: UISwitch!
+    @IBOutlet weak var previouslyParticipatedSwitch: UISwitch!
     @IBOutlet weak var askedToLeaveSwitch: UISwitch!
     
     func backToNameField(sender: UIBarButtonItem) {
@@ -256,11 +259,31 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         self.canvasResponseDisclosure.image = canvasResponseOption.disclosureImage
     }
     
+    
+    @IBAction func tappedPhoneSwitch() {
+        emailSwitch.setOn(!phoneSwitch.on, animated: true)
+    }
+    
+    @IBAction func tappedEmailSwitch() {
+        phoneSwitch.setOn(!emailSwitch.on, animated: true)
+    }
+    
     func willSubmit() -> Person? {
-        self.person?.firstName = firstNameField.text
-        self.person?.lastName = lastNameField.text
-        self.person?.phone = phoneField.text
-        self.person?.email = emailField.text
+        if !firstNameField.text!.isEmpty { self.person?.firstName = firstNameField.text }
+        if !lastNameField.text!.isEmpty { self.person?.lastName = lastNameField.text }
+        if !phoneField.text!.isEmpty { self.person?.phone = phoneField.text }
+        if !emailField.text!.isEmpty { self.person?.email = emailField.text }
+        
+        if emailSwitch.on && !emailField.text!.isEmpty {
+            self.person?.preferredContactMethod = "email"
+        }
+        
+        if phoneSwitch.on && !phoneField.text!.isEmpty {
+            self.person?.preferredContactMethod = "phone"
+        }
+        
+        self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
+        
         self.person?.atHomeStatus = true
         self.person?.askedToLeave = askedToLeaveSwitch.on
 

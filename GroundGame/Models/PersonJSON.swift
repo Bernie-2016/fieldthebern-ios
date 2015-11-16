@@ -18,8 +18,10 @@ struct PersonJSON {
     let lastName: String?
     let email: String?
     let phone: String?
+    let preferredContactMethod: String?
     let partyAffiliationString: String
     let canvasResponseJSONString: String
+    let previouslyParticipatedInCaucusOrPrimary: Bool?
     
     init(person: Person) {
         id = person.id
@@ -27,6 +29,8 @@ struct PersonJSON {
         lastName = person.lastName
         email = person.email
         phone = person.phone
+        preferredContactMethod = person.preferredContactMethod
+        previouslyParticipatedInCaucusOrPrimary = person.previouslyParticipatedInCaucusOrPrimary
         partyAffiliationString = person.partyAffiliationString        
         canvasResponseJSONString = person.canvasResponse.JSONString()
         
@@ -35,6 +39,8 @@ struct PersonJSON {
             "last_name": lastName ?? NSNull(),
             "email": email ?? NSNull(),
             "phone": phone ?? NSNull(),
+            "preferred_contact_method": preferredContactMethod ?? NSNull(),
+            "previously_participated_in_caucus_or_primary": previouslyParticipatedInCaucusOrPrimary ?? NSNull(),
             "party_affiliation": partyAffiliationString,
             "canvas_response": canvasResponseJSONString
         ]
