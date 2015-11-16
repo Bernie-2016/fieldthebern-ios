@@ -75,7 +75,7 @@ public struct Person {
             partyAffiliation = PartyAffiliation.fromJSONString(partyAffiliationString)
         }
         
-        if let response = attributes["canvas_response"].string {
+        if let response = attributes["canvass_response"].string {
             canvass_ = CanvassResponse.fromJSONString(response)
         }
 

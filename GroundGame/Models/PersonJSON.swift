@@ -42,7 +42,7 @@ struct PersonJSON {
             "preferred_contact_method": preferredContactMethod ?? NSNull(),
             "previously_participated_in_caucus_or_primary": previouslyParticipatedInCaucusOrPrimary ?? NSNull(),
             "party_affiliation": partyAffiliationString,
-            "canvas_response": canvass_JSONString
+            "canvass_response": canvass_JSONString
         ]
         
         include = [

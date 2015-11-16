@@ -112,7 +112,7 @@ struct Address {
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
         
-        if let resultString = addressJSON["best_canvas_response"].string {
+        if let resultString = addressJSON["best_canvass_response"].string {
             switch resultString {
             case "not_visited":
                 result = .NotVisited
