@@ -52,7 +52,7 @@ class VistJSONSpec: QuickSpec {
                     expect(personAttributes["first_name"]).to(equal("Josh"))
                     expect(personAttributes["last_name"]).to(equal("Smith"))
                     expect(personAttributes["party_affiliation"]).to(equal("Democrat"))
-                    expect(personAttributes["canvass_response"]).to(equal("Leaning for"))
+                    expect(personAttributes["canvas_response"]).to(equal("Leaning for"))
                 }
             }
             

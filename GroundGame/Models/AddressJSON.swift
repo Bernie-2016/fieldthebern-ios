@@ -42,7 +42,7 @@ struct AddressJSON {
             "city": city,
             "state_code": stateCode,
             "zip_code": zipCode,
-            "best_canvass_response": bestCanvassResponse
+            "best_canvas_response": bestCanvassResponse
         ]
 
         include = [

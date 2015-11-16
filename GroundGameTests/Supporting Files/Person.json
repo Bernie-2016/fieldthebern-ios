@@ -5,6 +5,6 @@
         "first_name": "Josh",
         "last_name": "Smith",
         "party_affiliation": "Democrat",
-        "canvass_response": "leaning_for"
+        "canvas_response": "leaning_for"
     }
 }
