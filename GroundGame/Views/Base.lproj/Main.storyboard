@@ -4592,12 +4592,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-er-LMD">
                                         <rect key="frame" x="279" y="280" width="42" height="21"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="216" width="360" height="33"/>
-                                        </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-map" translatesAutoresizingMaskIntoConstraints="NO" id="64W-yy-bFO">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -4628,11 +4625,11 @@
                                         <string key="text">We’ll teach you to canvas
 your neighborhood and learn
 useful talking points.</string>
-                                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="20" y="257" width="320" height="70"/>
+                                            <rect key="frame" x="20" y="242" width="320" height="58"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -4649,9 +4646,11 @@ useful talking points.</string>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="L9r-C8-wmW" secondAttribute="bottom" id="XEE-cP-3XT"/>
                                     <constraint firstItem="DPy-er-LMD" firstAttribute="leading" secondItem="Ydj-07-P4F" secondAttribute="leading" id="YYs-wV-Tjb"/>
-                                    <constraint firstItem="L9r-C8-wmW" firstAttribute="top" secondItem="DPy-er-LMD" secondAttribute="bottom" constant="8" id="kw2-5z-i5C"/>
-                                    <constraint firstItem="DPy-er-LMD" firstAttribute="top" secondItem="64W-yy-bFO" secondAttribute="bottom" constant="20" id="yD4-jX-fW6">
-                                        <variation key="widthClass=compact" constant="10"/>
+                                    <constraint firstItem="L9r-C8-wmW" firstAttribute="top" secondItem="DPy-er-LMD" secondAttribute="bottom" constant="4" id="kw2-5z-i5C">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
+                                    <constraint firstItem="DPy-er-LMD" firstAttribute="top" secondItem="64W-yy-bFO" secondAttribute="bottom" constant="8" id="yD4-jX-fW6">
+                                        <variation key="widthClass=compact" constant="8"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="DPy-er-LMD" secondAttribute="trailing" id="yke-VZ-Ptn"/>
                                 </constraints>
@@ -4675,7 +4674,7 @@ useful talking points.</string>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="137" width="360" height="327"/>
+                                    <rect key="frame" x="20" y="151" width="360" height="300"/>
                                     <mask key="subviews">
                                         <include reference="DPy-er-LMD"/>
                                         <include reference="64W-yy-bFO"/>
@@ -4699,9 +4698,7 @@ useful talking points.</string>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Ydj-07-P4F" secondAttribute="leading" id="DzD-x5-rTK"/>
-                            <constraint firstItem="45Y-4u-TuE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ydj-07-P4F" secondAttribute="bottom" constant="121" id="UEU-Zg-9ag">
-                                <variation key="widthClass=compact" constant="40"/>
-                            </constraint>
+                            <constraint firstItem="45Y-4u-TuE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ydj-07-P4F" secondAttribute="bottom" constant="20" id="UEU-Zg-9ag"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ydj-07-P4F" secondAttribute="trailing" id="ekQ-hu-KDV"/>
                             <constraint firstItem="Ydj-07-P4F" firstAttribute="centerY" secondItem="g7n-Ns-0K8" secondAttribute="centerY" id="g24-SU-SZr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DPy-er-LMD" secondAttribute="trailing" id="gwP-aN-yeb"/>
