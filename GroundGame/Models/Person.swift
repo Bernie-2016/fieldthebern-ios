@@ -60,6 +60,9 @@ public struct Person {
         lastName = nil
         partyAffiliation = .Unknown
         canvasResponse = .Unknown
+        email = nil
+        phone = nil
+        preferredContactMethod = nil
     }
     
     init(json: JSON) {

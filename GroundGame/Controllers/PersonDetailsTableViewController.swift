@@ -88,6 +88,31 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             // Select their canvas response
             let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
             self.didSelectCanvasResponseOption(personCanvasResponse)
+            
+            // Set their phone
+            if let phone = person.phone {
+                phoneField.text = phone
+            }
+            
+            // Set their email
+            if let email = person.email {
+                emailField.text = email
+            }
+            
+            // Set the preferred contact method
+            if let preferredContactMethod = person.preferredContactMethod {
+                if preferredContactMethod == "phone" {
+                    phoneSwitch.setOn(true, animated: false)
+                }
+                if preferredContactMethod == "email" {
+                    emailSwitch.setOn(true, animated: false)
+                }
+            }
+            
+            // Set their previously participated information
+            if let previouslyParticipatedInCaucusOrPrimary = person.previouslyParticipatedInCaucusOrPrimary {
+                previouslyParticipatedSwitch.setOn(previouslyParticipatedInCaucusOrPrimary, animated: false)
+            }
         } else {
             // We have no person, but we need a new one to save changes to
             self.person = Person()

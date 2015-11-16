@@ -95,28 +95,45 @@ class PersonDetailsViewController: UIViewController {
             case "UnwindToConversationTableSegue":
                 
                 guard let returnedPerson = self.delegate?.willSubmit() else { print("should not happen"); break }
-                guard let firstName = returnedPerson.firstName else { print("should not happen"); break }
-                
-                if !firstName.isEmpty
-                    && returnedPerson.partyAffiliation != .Unknown
-                    && returnedPerson.canvasResponse != .Unknown {
-                        
-                        self.returnedPerson = returnedPerson
-                        return true
+
+                guard let firstName = returnedPerson.firstName where firstName.characters.count > 0 else { self.showValidationError("Missing first name", message: "Make sure to enter the person's first name."); break }
+
+                if returnedPerson.partyAffiliation == .Unknown {
+                    self.showValidationError("Missing party affiliation", message: "Make sure to enter the person's party affiliation.")
+                    return false
                 }
-                else {
-                        let alert = UIAlertController(title: "Incomplete information", message: "Please make sure to enter a name, select party affiliation and feeling towards Bernie", preferredStyle: UIAlertControllerStyle.Alert)
-                        
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) in}
-                        alert.addAction(okAction)
-                        
-                        self.presentViewController(alert, animated: true, completion: nil)
+                
+                if returnedPerson.canvasResponse == .Unknown {
+                    self.showValidationError("Missing canvas response", message: "Make sure to enter how the person felt about Bernie.")
+                    return false
+                }
+
+                if let email = returnedPerson.email {
+                    guard email.isValidEmail else { self.showValidationError("Invalid email", message: "Double-check the email you entered."); break }
+                    
+                }
+                                
+                let hasEmailOrPhone = returnedPerson.email != nil || returnedPerson.phone != nil
+                if hasEmailOrPhone {
+                    guard let preferredContactMethod = returnedPerson.preferredContactMethod where preferredContactMethod == "phone" || preferredContactMethod == "email" else {
+                        self.showValidationError("Missing preferred contact method", message: "Make sure to enter the person's preferred contact method.")
+                        break
                     }
+                }
+                
+                self.returnedPerson = returnedPerson
+                return true
             
             default:
                 return false
         }
         
         return false
+    }
+    
+    func showValidationError(title: String, message: String) {
+        let alert = UIAlertController.errorAlertControllerWithTitle(title, message: message)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
