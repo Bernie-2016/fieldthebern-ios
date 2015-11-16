@@ -1,5 +1,5 @@
 //
-//  CanvasViewController.swift
+//  CanvassViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 9/30/15.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Dollar
 
-class CanvasViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
+class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     

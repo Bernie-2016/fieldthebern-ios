@@ -1079,10 +1079,10 @@
             </objects>
             <point key="canvasLocation" x="3255" y="3172"/>
         </scene>
-        <!--Canvas-->
+        <!--Canvass-->
         <scene sceneID="RRh-1v-zWz">
             <objects>
-                <viewController storyboardIdentifier="CanvasViewController" id="q3D-ZR-KaW" userLabel="Canvas" customClass="CanvasViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CanvassViewController" id="q3D-ZR-KaW" userLabel="Canvass" customClass="CanvassViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ove-lT-p7O"/>
                         <viewControllerLayoutGuide type="bottom" id="Lqf-Ax-BtP"/>
@@ -4595,6 +4595,9 @@
                                         <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="214" width="360" height="31"/>
+                                        </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-map" translatesAutoresizingMaskIntoConstraints="NO" id="64W-yy-bFO">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -4622,14 +4625,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-C8-wmW">
                                         <rect key="frame" x="279" y="280" width="42" height="21"/>
                                         <animations/>
-                                        <string key="text">We’ll teach you to canvas
+                                        <string key="text">We’ll teach you to canvass
 your neighborhood and learn
 useful talking points.</string>
                                         <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="20" y="242" width="320" height="58"/>
+                                            <rect key="frame" x="20" y="249" width="320" height="63"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -4674,7 +4677,7 @@ useful talking points.</string>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="151" width="360" height="300"/>
+                                    <rect key="frame" x="20" y="144" width="360" height="312"/>
                                     <mask key="subviews">
                                         <include reference="DPy-er-LMD"/>
                                         <include reference="64W-yy-bFO"/>
@@ -5464,6 +5467,9 @@ useful talking points.</string>
                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="50" y="14" width="342" height="21"/>
+                                            </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="qvK-jD-A4U">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -8430,10 +8436,10 @@ useful talking points.</string>
             </objects>
             <point key="canvasLocation" x="645" y="6179"/>
         </scene>
-        <!--How to Canvas-->
+        <!--How to Canvass-->
         <scene sceneID="mSU-Vi-6U2">
             <objects>
-                <tableViewController title="How to Canvas" id="ajY-tp-dhQ" customClass="HowToCanvassTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="How to Canvass" id="ajY-tp-dhQ" customClass="HowToCanvassTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bbq-61-Rfy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8509,7 +8515,7 @@ useful talking points.</string>
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="hY7-TU-cJ1" kind="show" identifier="CanvasItemDetail" id="WNe-YZ-sZG"/>
+                        <segue destination="hY7-TU-cJ1" kind="show" identifier="CanvassItemDetail" id="WNe-YZ-sZG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsU-pk-VdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8925,9 +8931,9 @@ useful talking points.</string>
         <image name="us-map" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Oa-DT-4CZ"/>
-        <segue reference="3nY-LF-DGD"/>
-        <segue reference="ovj-FK-nQJ"/>
         <segue reference="Rbd-US-3DY"/>
+        <segue reference="5Oa-DT-4CZ"/>
+        <segue reference="ovj-FK-nQJ"/>
+        <segue reference="3nY-LF-DGD"/>
     </inferredMetricsTieBreakers>
 </document>

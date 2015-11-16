@@ -145,7 +145,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location services are required to help you canvas.</string>
+	<string>Location services are required to help you canvass.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Heavy.ttf</string>
@@ -166,7 +166,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>privacy - location usage description</key>
-	<string>Location services are required to help you canvas.</string>
+	<string>Location services are required to help you canvass.</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 </dict>

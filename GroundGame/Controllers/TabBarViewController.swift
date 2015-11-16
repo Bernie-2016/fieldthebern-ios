@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
             "title": "Learn"
         ],
         [
-            "title": "Canvas"
+            "title": "Canvass"
         ],
         [
             "title": "Profile"

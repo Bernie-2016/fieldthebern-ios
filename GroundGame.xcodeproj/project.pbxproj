@@ -17,7 +17,7 @@
 		A72999BD1BE6CBBC0053CE23 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */; };
 		A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */; };
 		A72F88B11BCC498F001B185B /* PartySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */; };
-		A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */; };
+		A72F88B31BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F88B21BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift */; };
 		A73A0B191BD99141008ECC2E /* BlueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */; };
 		A73A0B1B1BD991C3008ECC2E /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */; };
 		A73A0B1D1BD995AD008ECC2E /* UserScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */; };
@@ -40,7 +40,7 @@
 		A74279851BD016190020EE29 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74279841BD016190020EE29 /* ScoreViewController.swift */; };
 		A748424C1BCD926000D62868 /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
 		A748424D1BCD942500D62868 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; };
-		A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
+		A748424F1BCD942E00D62868 /* CanvassResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvassResponseOption.swift */; };
 		A74842501BCD945500D62868 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
 		A74F33D61BCAFE4400191E3C /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33D51BCAFE4400191E3C /* PersonSpec.swift */; };
 		A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74FCE931BBB081C005C4D34 /* HTTP.swift */; };
@@ -59,7 +59,7 @@
 		A76890381BC8732D008F394C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
 		A768903C1BC87FAD008F394C /* PersonDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */; };
 		A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768903D1BC88527008F394C /* PersonDetailsViewController.swift */; };
-		A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; };
+		A768C1F11BBCA62200DBDFEA /* CanvassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvassViewController.swift */; };
 		A768C1F31BBCA9B000DBDFEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F21BBCA9B000DBDFEA /* TabBar.swift */; };
 		A768C1F61BBD18AF00DBDFEA /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */; };
 		A768C1F81BBD21C800DBDFEA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F71BBD21C800DBDFEA /* ProfileViewController.swift */; };
@@ -71,7 +71,7 @@
 		A771C58C1BD812B200179F04 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58B1BD812B200179F04 /* States.swift */; };
 		A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58D1BD8137700179F04 /* VisitResult.swift */; };
 		A771C5901BD8139400179F04 /* PinImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C58F1BD8139400179F04 /* PinImage.swift */; };
-		A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5911BD813C900179F04 /* CanvasResponseList.swift */; };
+		A771C5921BD813C900179F04 /* CanvassResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5911BD813C900179F04 /* CanvassResponseList.swift */; };
 		A771C5981BD8141E00179F04 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A771C5971BD8141E00179F04 /* OAuth.swift */; };
 		A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9EB1BC0692100510924 /* MKMapView.swift */; };
 		A775B9EE1BC077E400510924 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9ED1BC077E400510924 /* APIURL.swift */; };
@@ -138,10 +138,10 @@
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; };
 		A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */; };
-		A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; };
+		A7D12D321BC99FC5005EB417 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
 		A7D3F6E21BCB04A400232234 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
-		A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */; };
-		A7D3F6E41BCB05B900232234 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */; };
+		A7D3F6E31BCB054700232234 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
+		A7D3F6E41BCB05B900232234 /* CanvassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvassViewController.swift */; };
 		A7D3F6E51BCB05C700232234 /* AddressPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D66421BBF373600127245 /* AddressPointAnnotation.swift */; };
 		A7D3F6E61BCB05CA00232234 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D663C1BBEE44000127245 /* Address.swift */; };
 		A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ABA3F1BBC913A007FA40B /* Color.swift */; };
@@ -158,8 +158,8 @@
 		A7D3F6F51BCC2A3600232234 /* PartyAffiliationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */; };
 		A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */; };
 		A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */; };
-		A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */; };
-		A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */; };
+		A7D3F6FD1BCC36BF00232234 /* CanvassResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FC1BCC36BF00232234 /* CanvassResponseTableViewController.swift */; };
+		A7D3F6FF1BCC370000232234 /* CanvassResponseOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3F6FE1BCC370000232234 /* CanvassResponseOption.swift */; };
 		A7DAACC11BCD6F4600F0BDBC /* VisitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */; };
 		A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAACC21BCD6FC200F0BDBC /* Visit.swift */; };
 		A7E6E4091BF3A8CE00AD23F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */; };
@@ -207,7 +207,7 @@
 		A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A72CCB5D1BCD7A6100BA8828 /* VisitJSONSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitJSONSpec.swift; sourceTree = "<group>"; };
 		A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySelectionDelegate.swift; sourceTree = "<group>"; };
-		A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOptionSelectionDelegate.swift; sourceTree = "<group>"; };
+		A72F88B21BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponseOptionSelectionDelegate.swift; sourceTree = "<group>"; };
 		A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueNavigationController.swift; sourceTree = "<group>"; };
 		A73A0B1A1BD991C3008ECC2E /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
 		A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		A76890371BC8732D008F394C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A768903B1BC87FAD008F394C /* PersonDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsTableViewController.swift; sourceTree = "<group>"; };
 		A768903D1BC88527008F394C /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
-		A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		A768C1F01BBCA62200DBDFEA /* CanvassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassViewController.swift; sourceTree = "<group>"; };
 		A768C1F21BBCA9B000DBDFEA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 		A771C58B1BD812B200179F04 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		A771C58D1BD8137700179F04 /* VisitResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitResult.swift; sourceTree = "<group>"; };
 		A771C58F1BD8139400179F04 /* PinImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinImage.swift; sourceTree = "<group>"; };
-		A771C5911BD813C900179F04 /* CanvasResponseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseList.swift; sourceTree = "<group>"; };
+		A771C5911BD813C900179F04 /* CanvassResponseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponseList.swift; sourceTree = "<group>"; };
 		A771C5971BD8141E00179F04 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		A775B9EB1BC0692100510924 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A775B9ED1BC077E400510924 /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
@@ -329,13 +329,13 @@
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonDelegate.swift; sourceTree = "<group>"; };
-		A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponse.swift; sourceTree = "<group>"; };
+		A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponse.swift; sourceTree = "<group>"; };
 		A7D3F6F21BCB0C6E00232234 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
 		A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
 		A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckableTableViewCell.swift; sourceTree = "<group>"; };
 		A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliation.swift; sourceTree = "<group>"; };
-		A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseTableViewController.swift; sourceTree = "<group>"; };
-		A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasResponseOption.swift; sourceTree = "<group>"; };
+		A7D3F6FC1BCC36BF00232234 /* CanvassResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponseTableViewController.swift; sourceTree = "<group>"; };
+		A7D3F6FE1BCC370000232234 /* CanvassResponseOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponseOption.swift; sourceTree = "<group>"; };
 		A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitService.swift; sourceTree = "<group>"; };
 		A7DAACC21BCD6FC200F0BDBC /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -416,7 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */,
-				A72F88B21BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift */,
+				A72F88B21BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift */,
 				A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */,
 				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
 				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
@@ -463,9 +463,9 @@
 				A765599C1BE7DE0D005CEA0F /* API */,
 				A73D663C1BBEE44000127245 /* Address.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
-				A7D12D311BC99FC4005EB417 /* CanvasResponse.swift */,
-				A771C5911BD813C900179F04 /* CanvasResponseList.swift */,
-				A7D3F6FE1BCC370000232234 /* CanvasResponseOption.swift */,
+				A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */,
+				A771C5911BD813C900179F04 /* CanvassResponseList.swift */,
+				A7D3F6FE1BCC370000232234 /* CanvassResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
 				A7CA342C1BDFE6D7007A9495 /* Content */,
 				A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */,
@@ -491,7 +491,7 @@
 		A74FCE981BBB377E005C4D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A76559A71BE830DB005CEA0F /* CanvasCells */,
+				A76559A71BE830DB005CEA0F /* CanvassCells */,
 				A73D66401BBF36A900127245 /* AddressPinView.swift */,
 				A780A4D31BC863440090B979 /* BlueTableViewCell.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
@@ -538,8 +538,8 @@
 				A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */,
 				A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */,
 				A73A0B181BD99141008ECC2E /* BlueNavigationController.swift */,
-				A7D3F6FC1BCC36BF00232234 /* CanvasResponseTableViewController.swift */,
-				A768C1F01BBCA62200DBDFEA /* CanvasViewController.swift */,
+				A7D3F6FC1BCC36BF00232234 /* CanvassResponseTableViewController.swift */,
+				A768C1F01BBCA62200DBDFEA /* CanvassViewController.swift */,
 				A775B9F71BC2F8A600510924 /* ConversationViewController.swift */,
 				A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */,
 				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
@@ -607,12 +607,12 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		A76559A71BE830DB005CEA0F /* CanvasCells */ = {
+		A76559A71BE830DB005CEA0F /* CanvassCells */ = {
 			isa = PBXGroup;
 			children = (
 				A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */,
 			);
-			name = CanvasCells;
+			name = CanvassCells;
 			sourceTree = "<group>";
 		};
 		A7A579431BB092E100D8885E = {
@@ -1078,7 +1078,7 @@
 				A742797A1BCED5BB0020EE29 /* AddressJSON.swift in Sources */,
 				A7CA34261BDFE6B6007A9495 /* UIAlertControllerExtensions.swift in Sources */,
 				A7E6E40B1BF3C9E800AD23F8 /* UIButton.swift in Sources */,
-				A72F88B31BCC5343001B185B /* CanvasResponseOptionSelectionDelegate.swift in Sources */,
+				A72F88B31BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift in Sources */,
 				A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */,
 				A7CA343F1BDFE6D7007A9495 /* FTBModel.swift in Sources */,
 				A771C58E1BD8137700179F04 /* VisitResult.swift in Sources */,
@@ -1089,7 +1089,7 @@
 				A7A97C961BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift in Sources */,
 				A7F451811BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift in Sources */,
 				A76559A91BE830F0005CEA0F /* ParagraphTableViewCell.swift in Sources */,
-				A7D3F6FD1BCC36BF00232234 /* CanvasResponseTableViewController.swift in Sources */,
+				A7D3F6FD1BCC36BF00232234 /* CanvassResponseTableViewController.swift in Sources */,
 				A7A5797E1BB20E5200D8885E /* PageContentViewController.swift in Sources */,
 				A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */,
 				A7CA34431BDFE6D7007A9495 /* ModelTypeMap.swift in Sources */,
@@ -1098,7 +1098,7 @@
 				A7F014861BDEE950009282F6 /* LoadingTableViewCell.swift in Sources */,
 				A775B9F01BC0967D00510924 /* NSDate.swift in Sources */,
 				A7CA34251BDFE6B6007A9495 /* UIAlertActionExtensions.swift in Sources */,
-				A771C5921BD813C900179F04 /* CanvasResponseList.swift in Sources */,
+				A771C5921BD813C900179F04 /* CanvassResponseList.swift in Sources */,
 				A7CA34201BDFE6B6007A9495 /* FTBConfig.swift in Sources */,
 				A76ABA401BBC913A007FA40B /* Color.swift in Sources */,
 				A768903E1BC88527008F394C /* PersonDetailsViewController.swift in Sources */,
@@ -1120,9 +1120,9 @@
 				A742797C1BCED5DB0020EE29 /* VisitJSON.swift in Sources */,
 				A7CA343C1BDFE6D7007A9495 /* ParagraphModel.swift in Sources */,
 				A73A0B271BDA9E7D008ECC2E /* User.swift in Sources */,
-				A7D12D321BC99FC5005EB417 /* CanvasResponse.swift in Sources */,
+				A7D12D321BC99FC5005EB417 /* CanvassResponse.swift in Sources */,
 				A7CA344D1BDFE6E9007A9495 /* TopicsDownloadOperation.swift in Sources */,
-				A7D3F6FF1BCC370000232234 /* CanvasResponseOption.swift in Sources */,
+				A7D3F6FF1BCC370000232234 /* CanvassResponseOption.swift in Sources */,
 				A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */,
 				A7CA343A1BDFE6D7007A9495 /* ImageModel.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
@@ -1138,7 +1138,7 @@
 				A7CA344E1BDFE6E9007A9495 /* TopicsImageCacheOperation.swift in Sources */,
 				A7CA34601BDFE709007A9495 /* ItemCollectionCell.swift in Sources */,
 				A7DAACC31BCD6FC200F0BDBC /* Visit.swift in Sources */,
-				A768C1F11BBCA62200DBDFEA /* CanvasViewController.swift in Sources */,
+				A768C1F11BBCA62200DBDFEA /* CanvassViewController.swift in Sources */,
 				A72999BB1BE6AE300053CE23 /* SignInViewController.swift in Sources */,
 				A7D3F6F71BCC2CF700232234 /* CheckableTableViewCell.swift in Sources */,
 				A7CA342B1BDFE6C2007A9495 /* CacheManager.swift in Sources */,
@@ -1168,13 +1168,13 @@
 				A7D3F6EF1BCB064E00232234 /* APIURL.swift in Sources */,
 				A72CCB5E1BCD7A6100BA8828 /* VisitJSONSpec.swift in Sources */,
 				A7D3F6EB1BCB062A00232234 /* MKMapView.swift in Sources */,
-				A7D3F6E31BCB054700232234 /* CanvasResponse.swift in Sources */,
+				A7D3F6E31BCB054700232234 /* CanvassResponse.swift in Sources */,
 				A742797F1BCED6700020EE29 /* VisitJSON.swift in Sources */,
-				A748424F1BCD942E00D62868 /* CanvasResponseOption.swift in Sources */,
+				A748424F1BCD942E00D62868 /* CanvassResponseOption.swift in Sources */,
 				A7A579651BB092E100D8885E /* GroundGameTests.swift in Sources */,
 				A7D3F6ED1BCB064300232234 /* API.swift in Sources */,
 				A7D3F6E21BCB04A400232234 /* Person.swift in Sources */,
-				A7D3F6E41BCB05B900232234 /* CanvasViewController.swift in Sources */,
+				A7D3F6E41BCB05B900232234 /* CanvassViewController.swift in Sources */,
 				A7D3F6EC1BCB063700232234 /* AddressService.swift in Sources */,
 				A74842501BCD945500D62868 /* Visit.swift in Sources */,
 				A7D3F6E71BCB05DD00232234 /* Color.swift in Sources */,

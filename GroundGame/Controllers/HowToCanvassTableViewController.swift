@@ -54,7 +54,7 @@ class HowToCanvassTableViewController: UITableViewController {
             selectedItem = dictionary
         }
         
-        self.performSegueWithIdentifier("CanvasItemDetail", sender: self)
+        self.performSegueWithIdentifier("CanvassItemDetail", sender: self)
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -66,7 +66,7 @@ class HowToCanvassTableViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CanvasItemDetail" {
+        if segue.identifier == "CanvassItemDetail" {
             if let destinationVC = segue.destinationViewController as? HowToCanvassItemDetailTableViewController {
                 destinationVC.dictionary = selectedItem
             }
