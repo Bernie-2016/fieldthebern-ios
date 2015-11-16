@@ -16,7 +16,7 @@ public struct Person {
     var lastName: String?
 
     var partyAffiliation: PartyAffiliation = .Unknown
-    var canvasResponse: CanvasResponse = .Unknown
+    var canvasResponse: CanvassResponse = .Unknown
     var atHomeStatus: Bool = false
     var askedToLeave: Bool = true
     
@@ -76,12 +76,12 @@ public struct Person {
         }
         
         if let response = attributes["canvas_response"].string {
-            canvasResponse = CanvasResponse.fromJSONString(response)
+            canvasResponse = CanvassResponse.fromJSONString(response)
         }
 
     }
     
-    init(firstName: String?, lastName: String?, partyAffiliation: String?, canvasResponse: CanvasResponse) {
+    init(firstName: String?, lastName: String?, partyAffiliation: String?, canvasResponse: CanvassResponse) {
         self.id = nil
         self.firstName = firstName
         self.lastName = lastName

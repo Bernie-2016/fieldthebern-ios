@@ -1,5 +1,5 @@
 //
-//  CanvasResponseSelectionDelegate.swift
+//  CanvassResponseSelectionDelegate.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/12/15.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CanvasResponseOptionSelectionDelegate {
-    func didSelectCanvasResponseOption(canvasResponseOption: CanvasResponseOption)
+protocol CanvassResponseOptionSelectionDelegate {
+    func didSelectCanvassResponseOption(canvasResponseOption: CanvassResponseOption)
 }

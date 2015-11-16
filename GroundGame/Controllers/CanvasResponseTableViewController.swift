@@ -1,5 +1,5 @@
 //
-//  CanvasResponseTableViewController.swift
+//  CanvassResponseTableViewController.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/12/15.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CanvasResponseTableViewController: UITableViewController {
+class CanvassResponseTableViewController: UITableViewController {
     
-    let canvasResponseOptions = CanvasResponseList().options
+    let canvasResponseOptions = CanvassResponseList().options
 
-    var delegate: CanvasResponseOptionSelectionDelegate?
-    var canvasResponseOption: CanvasResponseOption?
+    var delegate: CanvassResponseOptionSelectionDelegate?
+    var canvasResponseOption: CanvassResponseOption?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class CanvasResponseTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CanvasResponseCell") as! CheckableTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CanvassResponseCell") as! CheckableTableViewCell
         
         let option = canvasResponseOptions[indexPath.row]
         
@@ -70,7 +70,7 @@ class CanvasResponseTableViewController: UITableViewController {
         let option = canvasResponseOptions[indexPath.row]
 
         canvasResponseOption = option
-        delegate?.didSelectCanvasResponseOption(option)
+        delegate?.didSelectCanvassResponseOption(option)
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

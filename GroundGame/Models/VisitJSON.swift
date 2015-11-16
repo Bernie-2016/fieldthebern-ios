@@ -26,11 +26,11 @@ struct VisitJSON {
         
         if askedToLeave && !peopleAreHome {
             // This must come first, since you could have no people and still be asked to leave
-            self.address.bestCanvasResponse = "asked_to_leave"
+            self.address.bestCanvassResponse = "asked_to_leave"
         } else if !peopleAreHome {
-            self.address.bestCanvasResponse = "not_home"
+            self.address.bestCanvassResponse = "not_home"
         } else {
-            self.address.bestCanvasResponse = nil
+            self.address.bestCanvassResponse = nil
         }
         
         let addressDictionary: [String: AnyObject] = AddressJSON(address: self.address).include

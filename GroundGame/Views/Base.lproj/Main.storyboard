@@ -3351,7 +3351,7 @@
                         <outlet property="phoneField" destination="CAB-w0-ltW" id="f3D-CL-98S"/>
                         <outlet property="phoneSwitch" destination="jyZ-tF-LfM" id="pJf-Tf-U66"/>
                         <outlet property="previouslyParticipatedSwitch" destination="44C-CU-Xpp" id="DMz-qG-KGA"/>
-                        <segue destination="2Nb-wL-JZO" kind="show" identifier="CanvasResponseSegue" id="WbO-nJ-Op1"/>
+                        <segue destination="2Nb-wL-JZO" kind="show" identifier="CanvassResponseSegue" id="WbO-nJ-Op1"/>
                         <segue destination="QQf-by-csz" kind="show" identifier="PersonDetailsPartySegue" id="Ae6-NT-Gz3"/>
                     </connections>
                 </tableViewController>
@@ -5441,17 +5441,17 @@ useful talking points.</string>
             </objects>
             <point key="canvasLocation" x="2604" y="1037"/>
         </scene>
-        <!--Canvas Response Table View Controller-->
+        <!--Canvass Response Table View Controller-->
         <scene sceneID="Ygc-mf-OBe">
             <objects>
-                <tableViewController id="2Nb-wL-JZO" customClass="CanvasResponseTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2Nb-wL-JZO" customClass="CanvassResponseTableViewController" customModule="GroundGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="eaY-xa-APz">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.56078431370000004" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CanvasResponseCell" id="G2d-xj-0ui" customClass="CheckableTableViewCell" customModule="GroundGame" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CanvassResponseCell" id="G2d-xj-0ui" customClass="CheckableTableViewCell" customModule="GroundGame" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="400" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G2d-xj-0ui" id="Gju-lL-J4y">
@@ -5464,9 +5464,6 @@ useful talking points.</string>
                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="50" y="14" width="342" height="21"/>
-                                            </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="qvK-jD-A4U">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

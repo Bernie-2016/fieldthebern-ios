@@ -1,5 +1,5 @@
 //
-//  CanvasResponseOption.swift
+//  CanvassResponseOption.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/12/15.
@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-struct CanvasResponseOption {
+struct CanvassResponseOption {
     let title: String
     let textColor: UIColor
     let backgroundColor: UIColor
-    let canvasResponse: CanvasResponse
+    let canvasResponse: CanvassResponse
     let checkImage: UIImage?
     let disclosureImage: UIImage?
     
-    init(canvasResponse: CanvasResponse) {
+    init(canvasResponse: CanvassResponse) {
 
         self.canvasResponse = canvasResponse
         

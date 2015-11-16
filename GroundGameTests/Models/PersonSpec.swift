@@ -51,7 +51,7 @@ class PersonSpec: QuickSpec {
             describe("init with properties manually") {
         
                 beforeEach {
-                    josh = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvasResponse.LeaningFor)
+                    josh = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvasResponse: CanvassResponse.LeaningFor)
                 }
 
                 it("has the right properties") {

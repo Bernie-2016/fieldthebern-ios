@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PersonDetailsTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvasResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
+class PersonDetailsTableViewController: UITableViewController, UITextFieldDelegate, PartySelectionDelegate, CanvassResponseOptionSelectionDelegate, AddOrEditPersonDelegate {
     
     var person: Person?
     var partySelection: PartyAffiliation?
-    var canvasResponseOption: CanvasResponseOption?
+    var canvasResponseOption: CanvassResponseOption?
 
     @IBOutlet weak var firstNameField: PaddedTextField! {
         didSet {
@@ -86,8 +86,8 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             self.didSelectParty(person.partyAffiliation)
 
             // Select their canvas response
-            let personCanvasResponse = CanvasResponseOption(canvasResponse: person.canvasResponse)
-            self.didSelectCanvasResponseOption(personCanvasResponse)
+            let personCanvassResponse = CanvassResponseOption(canvasResponse: person.canvasResponse)
+            self.didSelectCanvassResponseOption(personCanvassResponse)
             
             // Set their phone
             if let phone = person.phone {
@@ -252,7 +252,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             self.performSegueWithIdentifier("PersonDetailsPartySegue", sender: self)
         }
         if indexPath.row == 3 {
-            self.performSegueWithIdentifier("CanvasResponseSegue", sender: self)
+            self.performSegueWithIdentifier("CanvassResponseSegue", sender: self)
         }
     }
     
@@ -264,8 +264,8 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
                 partyAffiliationViewController.partySelection = partySelection
             }
         }
-        if segue.identifier == "CanvasResponseSegue" {
-            if let canvasResponseViewController = segue.destinationViewController as? CanvasResponseTableViewController {
+        if segue.identifier == "CanvassResponseSegue" {
+            if let canvasResponseViewController = segue.destinationViewController as? CanvassResponseTableViewController {
                 canvasResponseViewController.delegate = self
                 canvasResponseViewController.canvasResponseOption = canvasResponseOption
             }
@@ -280,7 +280,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         partyLabel.text = partySelection.title()
     }
     
-    func didSelectCanvasResponseOption(canvasResponseOption: CanvasResponseOption) {
+    func didSelectCanvassResponseOption(canvasResponseOption: CanvassResponseOption) {
         // Update the person we're returning
         self.person?.canvasResponse = canvasResponseOption.canvasResponse
         

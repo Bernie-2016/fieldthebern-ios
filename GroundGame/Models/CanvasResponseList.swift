@@ -1,5 +1,5 @@
 //
-//  CanvasResponseList.swift
+//  CanvassResponseList.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/21/15.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct CanvasResponseList {
+struct CanvassResponseList {
     
-    let options: [CanvasResponseOption]
+    let options: [CanvassResponseOption]
     
     init() {
         options = [
-            CanvasResponseOption(canvasResponse: .StronglyFor),
-            CanvasResponseOption(canvasResponse: .LeaningFor),
-            CanvasResponseOption(canvasResponse: .Undecided),
-            CanvasResponseOption(canvasResponse: .LeaningAgainst),
-            CanvasResponseOption(canvasResponse: .StronglyAgainst)
+            CanvassResponseOption(canvasResponse: .StronglyFor),
+            CanvassResponseOption(canvasResponse: .LeaningFor),
+            CanvassResponseOption(canvasResponse: .Undecided),
+            CanvassResponseOption(canvasResponse: .LeaningAgainst),
+            CanvassResponseOption(canvasResponse: .StronglyAgainst)
         ]
     }
 }

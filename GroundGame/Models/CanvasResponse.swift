@@ -1,5 +1,5 @@
 //
-//  CanvasResponse.swift
+//  CanvassResponse.swift
 //  GroundGame
 //
 //  Created by Josh Smith on 10/10/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CanvasResponse {
+enum CanvassResponse {
     case Unknown, StronglyAgainst, LeaningAgainst, Undecided, LeaningFor, StronglyFor
     
     func description() -> String {
@@ -45,7 +45,7 @@ enum CanvasResponse {
         }
     }
     
-    static func fromJSONString(string: String) -> CanvasResponse {
+    static func fromJSONString(string: String) -> CanvassResponse {
         switch string {
         case "strongly_against":
             return .StronglyAgainst
