@@ -233,7 +233,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
                 if let name = person.name {
                     cell.nameLabel.text = name
                 }
-                cell.resultLabel.text = person.canvassResponseString
+                cell.resultLabel.text = person.canvass_String
                 cell.partyAffiliationImage.image = person.partyAffiliationImage
                 
                 return cell

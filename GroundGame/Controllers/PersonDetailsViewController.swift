@@ -103,7 +103,7 @@ class PersonDetailsViewController: UIViewController {
                     return false
                 }
                 
-                if returnedPerson.canvassResponse == .Unknown {
+                if returnedPerson.canvass_ == .Unknown {
                     self.showValidationError("Missing canvas response", message: "Make sure to enter how the person felt about Bernie.")
                     return false
                 }

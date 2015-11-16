@@ -20,7 +20,7 @@ struct PersonJSON {
     let phone: String?
     let preferredContactMethod: String?
     let partyAffiliationString: String
-    let canvassResponseJSONString: String
+    let canvass_JSONString: String
     let previouslyParticipatedInCaucusOrPrimary: Bool?
     
     init(person: Person) {
@@ -32,7 +32,7 @@ struct PersonJSON {
         preferredContactMethod = person.preferredContactMethod
         previouslyParticipatedInCaucusOrPrimary = person.previouslyParticipatedInCaucusOrPrimary
         partyAffiliationString = person.partyAffiliationString        
-        canvassResponseJSONString = person.canvassResponse.JSONString()
+        canvass_JSONString = person.canvass_.JSONString()
         
         attributes = [
             "first_name": firstName ?? NSNull(),
@@ -42,7 +42,7 @@ struct PersonJSON {
             "preferred_contact_method": preferredContactMethod ?? NSNull(),
             "previously_participated_in_caucus_or_primary": previouslyParticipatedInCaucusOrPrimary ?? NSNull(),
             "party_affiliation": partyAffiliationString,
-            "canvas_response": canvassResponseJSONString
+            "canvas_response": canvass_JSONString
         ]
         
         include = [
