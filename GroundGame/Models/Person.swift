@@ -16,7 +16,7 @@ public struct Person {
     var lastName: String?
 
     var partyAffiliation: PartyAffiliation = .Unknown
-    var canvass_: CanvassResponse = .Unknown
+    var canvassResponse: CanvassResponse = .Unknown
     var atHomeStatus: Bool = false
     var askedToLeave: Bool = true
     
@@ -36,9 +36,9 @@ public struct Person {
         }
     }
     
-    var canvass_String: String {
+    var canvassResponseString: String {
         get {
-            return canvass_.description()
+            return canvassResponse.description()
         }
     }
     
@@ -59,7 +59,7 @@ public struct Person {
         firstName = nil
         lastName = nil
         partyAffiliation = .Unknown
-        canvass_ = .Unknown
+        canvassResponse = .Unknown
         email = nil
         phone = nil
         preferredContactMethod = nil
@@ -76,12 +76,12 @@ public struct Person {
         }
         
         if let response = attributes["canvas_response"].string {
-            canvass_ = CanvassResponse.fromJSONString(response)
+            canvassResponse = CanvassResponse.fromJSONString(response)
         }
 
     }
     
-    init(firstName: String?, lastName: String?, partyAffiliation: String?, canvass_: CanvassResponse) {
+    init(firstName: String?, lastName: String?, partyAffiliation: String?, canvassResponse: CanvassResponse) {
         self.id = nil
         self.firstName = firstName
         self.lastName = lastName
@@ -90,7 +90,7 @@ public struct Person {
             setPartyAffiliation(partyAffiliationString)
         }
         
-        self.canvass_ = canvass_
+        self.canvassResponse = canvassResponse
     }
     
     private mutating func setPartyAffiliation(partyAffiliationString: String) {

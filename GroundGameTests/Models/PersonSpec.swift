@@ -43,7 +43,7 @@ class PersonSpec: QuickSpec {
                     expect(josh.lastName).to(equal("Smith"))
                     expect(josh.name).to(equal("Josh Smith"))
                     expect(josh.partyAffiliation).to(equal(PartyAffiliation.Democrat))
-                    expect(josh.canvass_String).to(equal("Leaning for Bernie"))
+                    expect(josh.canvassResponseString).to(equal("Leaning for Bernie"))
                 }
             
             }
@@ -51,7 +51,7 @@ class PersonSpec: QuickSpec {
             describe("init with properties manually") {
         
                 beforeEach {
-                    josh = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvass_: CanvassResponse.LeaningFor)
+                    josh = Person(firstName: "Josh", lastName: "Smith", partyAffiliation: "Democrat", canvassResponse: CanvassResponse.LeaningFor)
                 }
 
                 it("has the right properties") {
@@ -60,7 +60,7 @@ class PersonSpec: QuickSpec {
                     expect(josh.lastName).to(equal("Smith"))
                     expect(josh.name).to(equal("Josh Smith"))
                     expect(josh.partyAffiliation).to(equal(PartyAffiliation.Democrat))
-                    expect(josh.canvass_String).to(equal("Leaning for Bernie"))
+                    expect(josh.canvassResponseString).to(equal("Leaning for Bernie"))
                 }
                 
                 it("has the right image") {

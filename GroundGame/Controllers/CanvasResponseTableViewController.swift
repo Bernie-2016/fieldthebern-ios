@@ -10,10 +10,10 @@ import UIKit
 
 class CanvassResponseTableViewController: UITableViewController {
     
-    let canvass_Options = CanvassResponseList().options
+    let canvassResponseOptions = CanvassResponseList().options
 
     var delegate: CanvassResponseOptionSelectionDelegate?
-    var canvass_Option: CanvassResponseOption?
+    var canvassResponseOption: CanvassResponseOption?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,8 @@ class CanvassResponseTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        for (index, option) in canvass_Options.enumerate() {
-            if option.canvass_ == canvass_Option?.canvass_ {
+        for (index, option) in canvassResponseOptions.enumerate() {
+            if option.canvassResponse == canvassResponseOption?.canvassResponse {
                 let rowToSelect = NSIndexPath(forRow: index, inSection: 0)
                 tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
                 self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect)
@@ -40,7 +40,7 @@ class CanvassResponseTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return canvass_Options.count
+        return canvassResponseOptions.count
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -51,7 +51,7 @@ class CanvassResponseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CanvassResponseCell") as! CheckableTableViewCell
         
-        let option = canvass_Options[indexPath.row]
+        let option = canvassResponseOptions[indexPath.row]
         
         cell.checked = false
         cell.label.text = option.title
@@ -67,9 +67,9 @@ class CanvassResponseTableViewController: UITableViewController {
         
         cell.checked = true
         
-        let option = canvass_Options[indexPath.row]
+        let option = canvassResponseOptions[indexPath.row]
 
-        canvass_Option = option
+        canvassResponseOption = option
         delegate?.didSelectCanvassResponseOption(option)
     }
     

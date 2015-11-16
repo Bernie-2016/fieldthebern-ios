@@ -13,15 +13,15 @@ struct CanvassResponseOption {
     let title: String
     let textColor: UIColor
     let backgroundColor: UIColor
-    let canvass_: CanvassResponse
+    let canvassResponse: CanvassResponse
     let checkImage: UIImage?
     let disclosureImage: UIImage?
     
-    init(canvass_: CanvassResponse) {
+    init(canvassResponse: CanvassResponse) {
 
-        self.canvass_ = canvass_
+        self.canvassResponse = canvassResponse
         
-        switch canvass_ {
+        switch canvassResponse {
         case .StronglyAgainst:
             title = "Strongly against Bernie"
             textColor = UIColor.whiteColor()
