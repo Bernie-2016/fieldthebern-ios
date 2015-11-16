@@ -137,7 +137,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     }
     
     func scrollToField(textField: UITextField) {
-        if let cell = textField.superview?.superview?.superview as? UITableViewCell,
+        if let cell = textField.superview?.superview as? UITableViewCell,
             let indexPath = tableView.indexPathForCell(cell) {
                 tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
         }
@@ -247,6 +247,13 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         hideKeyboard()
+
+        if indexPath.row == 2 {
+            self.performSegueWithIdentifier("PersonDetailsPartySegue", sender: self)
+        }
+        if indexPath.row == 3 {
+            self.performSegueWithIdentifier("CanvasResponseSegue", sender: self)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

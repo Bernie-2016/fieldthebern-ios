@@ -2430,7 +2430,7 @@
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -2543,9 +2543,6 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="QQf-by-csz" kind="show" identifier="PersonDetailsPartySegue" id="EgK-jQ-kJH"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="qQu-cQ-3ij">
                                         <rect key="frame" x="0.0" y="144" width="400" height="48"/>
@@ -2624,9 +2621,6 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.65098039220000004" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="2Nb-wL-JZO" kind="show" identifier="CanvasResponseSegue" id="JoC-nW-KE1"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="2l9-RY-8ui">
                                         <rect key="frame" x="0.0" y="192" width="400" height="48"/>
@@ -2640,7 +2634,7 @@
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -3357,6 +3351,8 @@
                         <outlet property="phoneField" destination="CAB-w0-ltW" id="f3D-CL-98S"/>
                         <outlet property="phoneSwitch" destination="jyZ-tF-LfM" id="pJf-Tf-U66"/>
                         <outlet property="previouslyParticipatedSwitch" destination="44C-CU-Xpp" id="DMz-qG-KGA"/>
+                        <segue destination="2Nb-wL-JZO" kind="show" identifier="CanvasResponseSegue" id="WbO-nJ-Op1"/>
+                        <segue destination="QQf-by-csz" kind="show" identifier="PersonDetailsPartySegue" id="Ae6-NT-Gz3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-zO-ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
