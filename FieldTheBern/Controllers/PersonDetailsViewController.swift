@@ -94,7 +94,11 @@ class PersonDetailsViewController: UIViewController {
         
             case "UnwindToConversationTableSegue":
                 
-                guard let returnedPerson = self.delegate?.willSubmit() else { print("should not happen"); break }
+                guard let returnedPerson = self.delegate?.willSubmit() else
+                {
+                    print("should not happen");
+                    break
+                }
 
                 guard let firstName = returnedPerson.firstName where firstName.characters.count > 0 else { self.showValidationError("Missing first name", message: "Make sure to enter the person's first name."); break }
 
@@ -119,9 +123,19 @@ class PersonDetailsViewController: UIViewController {
                         self.showValidationError("Missing preferred contact method", message: "Make sure to enter the person's preferred contact method.")
                         break
                     }
+                    
+                    if(preferredContactMethod == "phone")
+                    {
+                        if(!(returnedPerson.phone!.characters.count == 16 || returnedPerson.phone!.characters.count == 14))
+                        {
+                            self.showValidationError("Invalid phone", message: "Double-check the phone number you entered")
+                            break;
+                        }
+                    }
                 }
                 
                 self.returnedPerson = returnedPerson
+                
                 return true
             
             default:
