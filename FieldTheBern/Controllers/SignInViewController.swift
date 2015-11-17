@@ -79,7 +79,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         if (password!.isEmpty || !email!.isValidEmail) {
             
-            let alert = UIAlertController.errorAlertControllerWithTitle("Details Missing", message: "Please check your email and password and try again.")
+            let alert = UIAlertController.errorAlertControllerWithTitle("Details Missing", message: "Please check your email and/or password and try again.")
             self.presentViewController(alert, animated: true, completion: nil)
             
             return

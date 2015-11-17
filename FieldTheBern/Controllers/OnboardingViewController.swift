@@ -65,6 +65,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.OnboardingPageViewController) as! PageViewController
         self.pageViewController.dataSource = self
+        self.pageViewController.delegate = self;
         
         for _ in pages {
             let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllers.PageContentViewController) as! PageContentViewController
@@ -111,7 +112,18 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
             self.performSegueWithIdentifier("SignInModalSegue", sender: self)
         } else {
             // Skip to the last page
-            self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: nil)
+            weak var pvcw = self.pageViewController
+            self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: { (finished) -> Void in
+                    let pvcs = pvcw
+                    if((pvcs == nil)){ return}
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+                    pvcs!.setViewControllers([self.viewControllers[self.lastPageIndex]], direction: .Forward, animated: false, completion: nil)
+                })
+            })
+            
+            //self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: nil)
             setTopButtonForIndex(lastPageIndex)
         }
     }
@@ -122,7 +134,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         
         let vc = pageViewController.viewControllers?.last
         let index = self.viewControllers.indexOf(vc!)!
-
+        
         if pagesRange ~= index {
             setTopButtonForIndex(index)
         }
@@ -133,7 +145,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
 
         index++
         
+        
         if pagesRange ~= index {
+            
             return self.viewControllers[index]
         } else {
             return nil
@@ -146,6 +160,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         index--
 
         if pagesRange ~= index {
+            
             return self.viewControllers[index]
         } else {
             return nil
@@ -167,7 +182,9 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        let index = pageViewController.viewControllers?.count == 0 ? 0 :  viewControllers.indexOf((pageViewController.viewControllers?.first)!)!
+        
+        return index
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
