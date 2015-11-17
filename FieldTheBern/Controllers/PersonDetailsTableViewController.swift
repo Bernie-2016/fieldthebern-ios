@@ -117,9 +117,39 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             // We have no person, but we need a new one to save changes to
             self.person = Person()
         }
+        
+        self.addDoneButtonOnKeyboard()
     }
     
     // MARK: - Text Field Delegate Methods
+    
+    func addDoneButtonOnKeyboard()
+    {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        doneToolbar.barStyle = UIBarStyle.Default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("hideKeyboard"))
+        
+        var items:[UIBarButtonItem] = []
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.phoneField.inputAccessoryView = doneToolbar
+        
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if textField == phoneField
+        {
+            
+        }
+        
+        return true
+    }
     
     func textFieldDidBeginEditing(textField: UITextField) {
         switch textField {
@@ -309,17 +339,23 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         if emailSwitch.on && !emailField.text!.isEmpty {
             self.person?.preferredContactMethod = "email"
         }
-        
+
         if phoneSwitch.on && !phoneField.text!.isEmpty {
             self.person?.preferredContactMethod = "phone"
         }
-        
+
         self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
         
         self.person?.atHomeStatus = true
         self.person?.askedToLeave = askedToLeaveSwitch.on
 
         return self.person
+    }
+    
+    func showValidationError(title: String, message: String) {
+        let alert = UIAlertController.errorAlertControllerWithTitle(title, message: message)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }
