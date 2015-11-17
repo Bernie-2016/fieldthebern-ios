@@ -334,7 +334,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         
         self.person?.atHomeStatus = true
         self.person?.askedToLeave = askedToLeaveSwitch.on
-
+        
         return self.person
     }
     

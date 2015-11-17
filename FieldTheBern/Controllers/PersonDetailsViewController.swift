@@ -133,6 +133,9 @@ class PersonDetailsViewController: UIViewController {
                         }
                     }
                 }
+                
+                self.returnedPerson = returnedPerson
+                
                 return true
             
             default:
