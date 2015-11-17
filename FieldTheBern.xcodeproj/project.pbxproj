@@ -842,7 +842,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7A579471BB092E100D8885E /* Build configuration list for PBXProject "GroundGame" */;
+			buildConfigurationList = A7A579471BB092E100D8885E /* Build configuration list for PBXProject "FieldTheBern" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1590,7 +1590,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7A579471BB092E100D8885E /* Build configuration list for PBXProject "GroundGame" */ = {
+		A7A579471BB092E100D8885E /* Build configuration list for PBXProject "FieldTheBern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB971BDEC7E4004ED201 /* DebugStaging */,

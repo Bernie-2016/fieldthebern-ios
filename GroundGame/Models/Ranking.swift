@@ -37,8 +37,8 @@ struct Ranking {
         } else {
             self.rank = nil
         }
-
-        if let scoreNumber = json["attribtues"]["score"].number {
+        
+        if let scoreNumber = json["attributes"]["score"].number {
             self.score = Int(scoreNumber)
         } else {
             self.score = 0

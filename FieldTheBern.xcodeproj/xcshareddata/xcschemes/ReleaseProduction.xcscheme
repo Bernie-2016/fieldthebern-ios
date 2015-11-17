@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
                BuildableName = "GroundGame.app"
                BlueprintName = "GroundGame"
-               ReferencedContainer = "container:GroundGame.xcodeproj">
+               ReferencedContainer = "container:FieldTheBern.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,14 +35,14 @@
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
             BuildableName = "GroundGame.app"
             BlueprintName = "GroundGame"
-            ReferencedContainer = "container:GroundGame.xcodeproj">
+            ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "DebugStaging"
+      buildConfiguration = "ReleaseProduction"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -58,14 +58,14 @@
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
             BuildableName = "GroundGame.app"
             BlueprintName = "GroundGame"
-            ReferencedContainer = "container:GroundGame.xcodeproj">
+            ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "DebugStaging"
+      buildConfiguration = "ReleaseProduction"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
             BuildableName = "GroundGame.app"
             BlueprintName = "GroundGame"
-            ReferencedContainer = "container:GroundGame.xcodeproj">
+            ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -85,7 +85,7 @@
       buildConfiguration = "DebugStaging">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "DebugStaging"
+      buildConfiguration = "ReleaseProduction"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:GroundGame.xcodeproj">
+      location = "group:/Users/joshsmith/Apps/GroundGame/FieldTheBern.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
