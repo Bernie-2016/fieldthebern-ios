@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>state</key>
+		<string>Alabama</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Friday, February 19, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>AL</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Alaska</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<true/>
+		<key>date</key>
+		<string>Saturday, March 26, 2016</string>
+		<key>deadline</key>
+		<string>Received 30 days before the election</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders. However, you can change affiliation on the day of the caucus.</string>
+		<key>code</key>
+		<string>AK</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Arizona</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 22, 2016</string>
+		<key>deadline</key>
+		<string>Received by Monday, February 22, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>AZ</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Arkansas</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, January 31, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>AR</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>California</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 7, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Monday, May 23, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>CA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Colorado</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Affiliated by Friday, January 1, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>CO</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Connecticut</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 26, 2016</string>
+		<key>deadline</key>
+		<string>Affiliated by Tuesday, January 26, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>CT</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Delaware</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 26, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Saturday, April 2, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>DE</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Washington, DC</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 14, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, May 15, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>DC</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Florida</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 15, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, February 16, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>FL</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Georgia</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Monday, February 1, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>GA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Hawaii</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, March 26, 2016</string>
+		<key>deadline</key>
+		<string>Saturday, March 26, 2016</string>
+		<key>details</key>
+		<string>Hawaii residents are able to change party at primary election ballots.</string>
+		<key>code</key>
+		<string>HI</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Idaho</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 22, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked 25 days before the election</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>ID</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Illinois</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<true/>
+		<key>date</key>
+		<string>Tuesday, March 15, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, February 16, 2016</string>
+		<key>details</key>
+		<string>You are able to change party at election ballots.</string>
+		<key>code</key>
+		<string>IL</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Indiana</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, May 3, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Monday, April 4, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>IN</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Iowa</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>semi-open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Monday, February 1, 2016</string>
+		<key>deadline</key>
+		<string>Monday, February 1, 2016</string>
+		<key>details</key>
+		<string>Iowans are able to change party at primary election ballots.</string>
+		<key>code</key>
+		<string>IA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Kansas</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, March 5, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Saturday, February 13, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>KS</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Kentucky</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, May 17, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Monday, April 18, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>KY</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Louisiana</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Saturday, March 5, 2016</string>
+		<key>deadline</key>
+		<string>Received by Thursday, February 4, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>LA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Maine</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Sunday, March 6, 2016</string>
+		<key>deadline</key>
+		<string>Received by Sunday, February 14, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>ME</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Maryland</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, April 26, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, April 5, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>MD</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Massachusetts</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Wednesday, February 10, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>MA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Michigan</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 8, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, February 7, 2016</string>
+		<key>details</key>
+		<string>Voters do not have to declare a party to vote, but must vote for a single party after entering the voting booth.</string>
+		<key>code</key>
+		<string>MI</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Minnesota</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Received by Tuesday, February 9, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>MN</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Mississippi</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 8, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, February 7, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>MS</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Missouri</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 15, 2016</string>
+		<key>deadline</key>
+		<string>Received by 5pm on Wednesday, February 17, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>MO</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Montana</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 7, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, May 8, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>MT</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Nebraska</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, March 5, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Friday, February 19, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>NE</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Nevada</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, February 20, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Saturday, January 20, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>NV</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>New Hampshire</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, February 9, 2016</string>
+		<key>deadline</key>
+		<string>Received by Saturday, January 30, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders. However, undeclared voters are able to change party at election ballots.</string>
+		<key>code</key>
+		<string>NH</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>New Jersey</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 7, 2016</string>
+		<key>deadline</key>
+		<string>Received by Wednesday, April 13, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders. However, undeclared voters are able to change party at election ballots.</string>
+		<key>code</key>
+		<string>NJ</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>New Mexico</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 7, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, May 10, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>NM</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>New York</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 19, 2016</string>
+		<key>deadline</key>
+		<string>Received by Friday, October 9, 2015</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>NY</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>North Carolina</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 15, 2016</string>
+		<key>deadline</key>
+		<string>Received by Friday, February 19, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>NC</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>North Dakota</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>TBD</string>
+		<key>deadline</key>
+		<string>TBD</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>ND</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Ohio</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 15, 2016</string>
+		<key>deadline</key>
+		<string>Received by Sunday, February 14, 2016</string>
+		<key>details</key>
+		<string>Ohioans are able to change party at primary election ballots.</string>
+		<key>code</key>
+		<string>OH</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Oklahoma</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Friday, February 5, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>OK</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Oregon</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, May 17, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, April 26, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>OR</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Pennsylvania</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 26, 2016</string>
+		<key>deadline</key>
+		<string>Received by Sunday, March 27, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>PA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Puerto Rico</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Sunday, June 5, 2016</string>
+		<key>deadline</key>
+		<string>TBD</string>
+		<key>details</key>
+		<string>Although Puerto Ricans are currently not able to vote in general elections, residents are able to vote for Bernie in their primaries.</string>
+		<key>code</key>
+		<string>PR</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Rhode Island</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 26, 2016</string>
+		<key>deadline</key>
+		<string>Received by Sunday, March 27, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>RI</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>South Carolina</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, February 27, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Thursday, January 28, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>SC</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>South Dakota</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, June 7, 2016</string>
+		<key>deadline</key>
+		<string>Received by Monday, May 23, 2016</string>
+		<key>details</key>
+		<string>If you are registered as a republican, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>SD</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Tennessee</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, January 31, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>TN</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Texas</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, January 31, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>TX</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Utah</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>semi-open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, March 22, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Sunday, February 21, 2016</string>
+		<key>details</key>
+		<string>If you are registered as a republican, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>UT</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Vermont</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Received by 5pm on Wednesday, February 24, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>VT</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Virginia</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Tuesday, March 1, 2016</string>
+		<key>deadline</key>
+		<string>Received by Monday, February 8, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>VA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Washington</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<string>yes</string>
+		<key>date</key>
+		<string>Saturday, March 26, 2016</string>
+		<key>deadline</key>
+		<string>Received by Wednesday, July 6, 2016</string>
+		<key>details</key>
+		<string>Any resident of voting age by the general election may vote for Bernie Sanders in the caucus.</string>
+		<key>code</key>
+		<string>WA</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>West Virginia</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>semi-closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, May 10, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Tuesday, April 19, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat or undeclared, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>WV</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Wisconsin</string>
+		<key>type</key>
+		<string>primaries</string>
+		<key>status</key>
+		<string>open</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Tuesday, April 5, 2016</string>
+		<key>deadline</key>
+		<string>Postmarked by Wednesday, March 16, 2016</string>
+		<key>details</key>
+		<string>You can vote for Bernie Sanders regardless of registered party.</string>
+		<key>code</key>
+		<string>WI</string>
+	</dict>
+	<dict>
+		<key>state</key>
+		<string>Wyoming</string>
+		<key>type</key>
+		<string>caucuses</string>
+		<key>status</key>
+		<string>closed</string>
+		<key>only_17</key>
+		<false/>
+		<key>date</key>
+		<string>Saturday, April 9, 2016</string>
+		<key>deadline</key>
+		<string>Received by Saturday, March 26, 2016</string>
+		<key>details</key>
+		<string>If you are not registered as a democrat, you cannot vote for Bernie Sanders.</string>
+		<key>code</key>
+		<string>WY</string>
+	</dict>
+</array>
+</plist>
