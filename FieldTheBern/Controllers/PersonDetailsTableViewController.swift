@@ -142,15 +142,6 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if textField == phoneField
-        {
-            
-        }
-        
-        return true
-    }
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         switch textField {
         case firstNameField:
