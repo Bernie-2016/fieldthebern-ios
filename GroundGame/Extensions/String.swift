@@ -1,6 +1,6 @@
 //
 //  String.swift
-//  GroundGame
+//  FieldTheBern
 //
 //  Created by Alon Rosenfeld on 10/24/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.

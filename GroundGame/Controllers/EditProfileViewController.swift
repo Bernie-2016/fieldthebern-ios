@@ -1,6 +1,6 @@
 //
 //  EditProfileViewController.swift
-//  GroundGame
+//  FieldTheBern
 //
 //  Created by Josh Smith on 11/1/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.

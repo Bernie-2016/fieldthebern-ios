@@ -9,11 +9,11 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.groundgameapp.GroundGame</string>
+	<string>com.groundgameapp.FieldTheBern</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>GroundGame</string>
+	<string>FieldTheBern</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -37,7 +37,7 @@
 	<key>FacebookAppID</key>
 	<string>823950097719547</string>
 	<key>FacebookDisplayName</key>
-	<string>GroundGame</string>
+	<string>FieldTheBern</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

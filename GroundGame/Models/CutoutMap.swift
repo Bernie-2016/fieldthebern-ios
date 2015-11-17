@@ -1,6 +1,6 @@
 //
 //  CutoutMap.swift
-//  GroundGame
+//  FieldTheBern
 //
 //  Created by Josh Smith on 10/31/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.

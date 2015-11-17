@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
-               BuildableName = "GroundGame.app"
-               BlueprintName = "GroundGame"
+               BuildableName = "FieldTheBern.app"
+               BlueprintName = "FieldTheBern"
                ReferencedContainer = "container:FieldTheBern.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7A5795F1BB092E100D8885E"
-               BuildableName = "GroundGameTests.xctest"
-               BlueprintName = "GroundGameTests"
+               BuildableName = "FieldTheBernTests.xctest"
+               BlueprintName = "FieldTheBernTests"
                ReferencedContainer = "container:FieldTheBern.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7A5796A1BB092E100D8885E"
-               BuildableName = "GroundGameUITests.xctest"
-               BlueprintName = "GroundGameUITests"
+               BuildableName = "FieldTheBernUITests.xctest"
+               BlueprintName = "FieldTheBernUITests"
                ReferencedContainer = "container:FieldTheBern.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
-            BuildableName = "GroundGame.app"
-            BlueprintName = "GroundGame"
+            BuildableName = "FieldTheBern.app"
+            BlueprintName = "FieldTheBern"
             ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
-            BuildableName = "GroundGame.app"
-            BlueprintName = "GroundGame"
+            BuildableName = "FieldTheBern.app"
+            BlueprintName = "FieldTheBern"
             ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7A5794B1BB092E100D8885E"
-            BuildableName = "GroundGame.app"
-            BlueprintName = "GroundGame"
+            BuildableName = "FieldTheBern.app"
+            BlueprintName = "FieldTheBern"
             ReferencedContainer = "container:FieldTheBern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

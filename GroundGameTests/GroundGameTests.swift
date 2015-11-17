@@ -1,15 +1,15 @@
 //
-//  GroundGameTests.swift
-//  GroundGameTests
+//  FieldTheBernTests.swift
+//  FieldTheBernTests
 //
 //  Created by Josh Smith on 9/21/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.
 //
 
 import XCTest
-@testable import GroundGame
+@testable import FieldTheBern
 
-class GroundGameTests: XCTestCase {
+class FieldTheBernTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

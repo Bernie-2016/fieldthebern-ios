@@ -1,6 +1,6 @@
 //
 //  HowToCanvassTableViewController.swift
-//  GroundGame
+//  FieldTheBern
 //
 //  Created by Josh Smith on 11/2/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.

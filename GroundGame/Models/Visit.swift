@@ -1,6 +1,6 @@
 //
 //  Visit.swift
-//  GroundGame
+//  FieldTheBern
 //
 //  Created by Josh Smith on 10/13/15.
 //  Copyright © 2015 Josh Smith. All rights reserved.

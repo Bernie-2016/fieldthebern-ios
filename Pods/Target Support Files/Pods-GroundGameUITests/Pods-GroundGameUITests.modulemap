@@ -1,6 +1,0 @@
-framework module Pods_GroundGameUITests {
-  umbrella header "Pods-GroundGameUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

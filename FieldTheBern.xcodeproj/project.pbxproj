@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
+		5C933507A3A30D99FEC7C4FF /* Pods_FieldTheBernUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
+		A2BC6AF1ABF795AAAB2342EA /* Pods_FieldTheBernTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB941F82B84C769B26EA8E29 /* Pods_FieldTheBernTests.framework */; };
 		A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */; };
 		A72479001BF513980002481A /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72478FF1BF513980002481A /* Toucan.swift */; };
 		A72479021BF542920002481A /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72479011BF542920002481A /* Text.swift */; };
@@ -196,6 +198,7 @@
 		0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroundGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroundGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217C2609B20D533862FCB48E /* Pods-GroundGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FieldTheBernUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,14 +272,14 @@
 		A79ECAC61BDC105100923C36 /* UserJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserJSON.swift; sourceTree = "<group>"; };
 		A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellButtonDelegate.swift; sourceTree = "<group>"; };
-		A7A5794C1BB092E100D8885E /* GroundGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A5794C1BB092E100D8885E /* FieldTheBern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FieldTheBern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5794F1BB092E100D8885E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A579541BB092E100D8885E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7A5795B1BB092E100D8885E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7A579601BB092E100D8885E /* GroundGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroundGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A579601BB092E100D8885E /* FieldTheBernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldTheBernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A579641BB092E100D8885E /* GroundGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundGameTests.swift; sourceTree = "<group>"; };
 		A7A579661BB092E100D8885E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7A5796B1BB092E100D8885E /* GroundGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroundGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A5796B1BB092E100D8885E /* FieldTheBernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldTheBernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundGameUITests.swift; sourceTree = "<group>"; };
 		A7A579711BB092E100D8885E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A5797D1BB20E5200D8885E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +350,7 @@
 		A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
 		A7F451801BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		A7F451831BE561BA004CECC2 /* MapTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTransitionAnimator.swift; sourceTree = "<group>"; };
+		AB941F82B84C769B26EA8E29 /* Pods_FieldTheBernTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FieldTheBernTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D54FDE31D71F322C7049D1CB /* Pods-GroundGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFE22E071BDBA417009565E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */,
+				A2BC6AF1ABF795AAAB2342EA /* Pods_FieldTheBernTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */,
+				5C933507A3A30D99FEC7C4FF /* Pods_FieldTheBernUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +393,8 @@
 				4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */,
 				1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */,
 				0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */,
+				AB941F82B84C769B26EA8E29 /* Pods_FieldTheBernTests.framework */,
+				4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -618,9 +626,9 @@
 		A7A579431BB092E100D8885E = {
 			isa = PBXGroup;
 			children = (
-				A7A5794E1BB092E100D8885E /* GroundGame */,
-				A7A579631BB092E100D8885E /* GroundGameTests */,
-				A7A5796E1BB092E100D8885E /* GroundGameUITests */,
+				A7A5794E1BB092E100D8885E /* FieldTheBern */,
+				A7A579631BB092E100D8885E /* FieldTheBernTests */,
+				A7A5796E1BB092E100D8885E /* FieldTheBernUITests */,
 				30F76A0B0ACC05C453BE70FF /* Frameworks */,
 				A5315A268882C6EDDEBA8834 /* Pods */,
 				A7A5794D1BB092E100D8885E /* Products */,
@@ -630,14 +638,14 @@
 		A7A5794D1BB092E100D8885E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7A5794C1BB092E100D8885E /* GroundGame.app */,
-				A7A579601BB092E100D8885E /* GroundGameTests.xctest */,
-				A7A5796B1BB092E100D8885E /* GroundGameUITests.xctest */,
+				A7A5794C1BB092E100D8885E /* FieldTheBern.app */,
+				A7A579601BB092E100D8885E /* FieldTheBernTests.xctest */,
+				A7A5796B1BB092E100D8885E /* FieldTheBernUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A7A5794E1BB092E100D8885E /* GroundGame */ = {
+		A7A5794E1BB092E100D8885E /* FieldTheBern */ = {
 			isa = PBXGroup;
 			children = (
 				A72478FC1BF513320002481A /* Toucan */,
@@ -652,10 +660,11 @@
 				A74FCE981BBB377E005C4D34 /* Views */,
 				A74FCE991BBB3788005C4D34 /* Supporting Files */,
 			);
+			name = FieldTheBern;
 			path = GroundGame;
 			sourceTree = "<group>";
 		};
-		A7A579631BB092E100D8885E /* GroundGameTests */ = {
+		A7A579631BB092E100D8885E /* FieldTheBernTests */ = {
 			isa = PBXGroup;
 			children = (
 				A74F33D21BCAFABA00191E3C /* Models */,
@@ -663,15 +672,17 @@
 				A7A579641BB092E100D8885E /* GroundGameTests.swift */,
 				A7A579661BB092E100D8885E /* Info.plist */,
 			);
+			name = FieldTheBernTests;
 			path = GroundGameTests;
 			sourceTree = "<group>";
 		};
-		A7A5796E1BB092E100D8885E /* GroundGameUITests */ = {
+		A7A5796E1BB092E100D8885E /* FieldTheBernUITests */ = {
 			isa = PBXGroup;
 			children = (
 				A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */,
 				A7A579711BB092E100D8885E /* Info.plist */,
 			);
+			name = FieldTheBernUITests;
 			path = GroundGameUITests;
 			sourceTree = "<group>";
 		};
@@ -756,9 +767,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7A5794B1BB092E100D8885E /* GroundGame */ = {
+		A7A5794B1BB092E100D8885E /* FieldTheBern */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7A579741BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGame" */;
+			buildConfigurationList = A7A579741BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBern" */;
 			buildPhases = (
 				10139E6C0B2CDCFDBC6C1823 /* Check Pods Manifest.lock */,
 				A7A579481BB092E100D8885E /* Sources */,
@@ -771,14 +782,14 @@
 			);
 			dependencies = (
 			);
-			name = GroundGame;
+			name = FieldTheBern;
 			productName = GroundGame;
-			productReference = A7A5794C1BB092E100D8885E /* GroundGame.app */;
+			productReference = A7A5794C1BB092E100D8885E /* FieldTheBern.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A7A5795F1BB092E100D8885E /* GroundGameTests */ = {
+		A7A5795F1BB092E100D8885E /* FieldTheBernTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7A579771BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGameTests" */;
+			buildConfigurationList = A7A579771BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBernTests" */;
 			buildPhases = (
 				1E12A86372F805E1C78A96DE /* Check Pods Manifest.lock */,
 				A7A5795C1BB092E100D8885E /* Sources */,
@@ -792,14 +803,14 @@
 			dependencies = (
 				A7A579621BB092E100D8885E /* PBXTargetDependency */,
 			);
-			name = GroundGameTests;
+			name = FieldTheBernTests;
 			productName = GroundGameTests;
-			productReference = A7A579601BB092E100D8885E /* GroundGameTests.xctest */;
+			productReference = A7A579601BB092E100D8885E /* FieldTheBernTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A7A5796A1BB092E100D8885E /* GroundGameUITests */ = {
+		A7A5796A1BB092E100D8885E /* FieldTheBernUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7A5797A1BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGameUITests" */;
+			buildConfigurationList = A7A5797A1BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBernUITests" */;
 			buildPhases = (
 				429B55A5D5A292A439575FB6 /* Check Pods Manifest.lock */,
 				A7A579671BB092E100D8885E /* Sources */,
@@ -812,9 +823,9 @@
 			dependencies = (
 				A7A5796D1BB092E100D8885E /* PBXTargetDependency */,
 			);
-			name = GroundGameUITests;
+			name = FieldTheBernUITests;
 			productName = GroundGameUITests;
-			productReference = A7A5796B1BB092E100D8885E /* GroundGameUITests.xctest */;
+			productReference = A7A5796B1BB092E100D8885E /* FieldTheBernUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -855,9 +866,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7A5794B1BB092E100D8885E /* GroundGame */,
-				A7A5795F1BB092E100D8885E /* GroundGameTests */,
-				A7A5796A1BB092E100D8885E /* GroundGameUITests */,
+				A7A5794B1BB092E100D8885E /* FieldTheBern */,
+				A7A5795F1BB092E100D8885E /* FieldTheBernTests */,
+				A7A5796A1BB092E100D8885E /* FieldTheBernUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -937,7 +948,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FieldTheBernTests/Pods-FieldTheBernTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		429B55A5D5A292A439575FB6 /* Check Pods Manifest.lock */ = {
@@ -982,7 +993,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FieldTheBernUITests/Pods-FieldTheBernUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E57C11B2C7F5767650378D3E /* Copy Pods Resources */ = {
@@ -1012,7 +1023,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FieldTheBernTests/Pods-FieldTheBernTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1199,12 +1210,12 @@
 /* Begin PBXTargetDependency section */
 		A7A579621BB092E100D8885E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A7A5794B1BB092E100D8885E /* GroundGame */;
+			target = A7A5794B1BB092E100D8885E /* FieldTheBern */;
 			targetProxy = A7A579611BB092E100D8885E /* PBXContainerItemProxy */;
 		};
 		A7A5796D1BB092E100D8885E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A7A5794B1BB092E100D8885E /* GroundGame */;
+			target = A7A5794B1BB092E100D8885E /* FieldTheBern */;
 			targetProxy = A7A5796C1BB092E100D8885E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1601,7 +1612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseProduction;
 		};
-		A7A579741BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGame" */ = {
+		A7A579741BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB981BDEC7E4004ED201 /* DebugStaging */,
@@ -1612,7 +1623,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseProduction;
 		};
-		A7A579771BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGameTests" */ = {
+		A7A579771BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBernTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB991BDEC7E4004ED201 /* DebugStaging */,
@@ -1623,7 +1634,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseProduction;
 		};
-		A7A5797A1BB092E100D8885E /* Build configuration list for PBXNativeTarget "GroundGameUITests" */ = {
+		A7A5797A1BB092E100D8885E /* Build configuration list for PBXNativeTarget "FieldTheBernUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB9A1BDEC7E4004ED201 /* DebugStaging */,
