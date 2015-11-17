@@ -289,7 +289,7 @@
 		A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A7B1EE011BE4273300EA50C2 /* DeviceJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceJSON.swift; sourceTree = "<group>"; };
-		A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTBConfig.swift; path = ../Extensions/FTBConfig.swift; sourceTree = "<group>"; };
+		A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTBConfig.swift; sourceTree = "<group>"; };
 		A7CA34181BDFE6B6007A9495 /* NSArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayExtensions.swift; sourceTree = "<group>"; };
 		A7CA34191BDFE6B6007A9495 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
 		A7CA341A1BDFE6B6007A9495 /* NSDictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtensions.swift; sourceTree = "<group>"; };
@@ -417,19 +417,19 @@
 			children = (
 				A72478FF1BF513980002481A /* Toucan.swift */,
 			);
-			name = Toucan;
+			path = Toucan;
 			sourceTree = "<group>";
 		};
 		A72F88AF1BCC4979001B185B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */,
+				A7F451801BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift */,
+				A7CA346B1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift */,
 				A72F88B21BCC5343001B185B /* CanvassResponseOptionSelectionDelegate.swift */,
 				A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */,
 				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
 				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
-				A7CA346B1BE12DBB007A9495 /* AskedToLeaveSwitchDelegate.swift */,
-				A7F451801BE560BB004CECC2 /* AnimatedNavigationControllerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -437,21 +437,21 @@
 		A73D66441BBF3EF900127245 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A775B9EB1BC0692100510924 /* MKMapView.swift */,
 				A7CA34181BDFE6B6007A9495 /* NSArrayExtensions.swift */,
 				A7CA34191BDFE6B6007A9495 /* NSAttributedStringExtensions.swift */,
+				A775B9EF1BC0967D00510924 /* NSDate.swift */,
 				A7CA341A1BDFE6B6007A9495 /* NSDictionaryExtensions.swift */,
 				A7CA341B1BDFE6B6007A9495 /* SLComposeViewControllerExtensions.swift */,
+				DFE22E071BDBA417009565E1 /* String.swift */,
 				A7CA341C1BDFE6B6007A9495 /* UIAlertActionExtensions.swift */,
 				A7CA341D1BDFE6B6007A9495 /* UIAlertControllerExtensions.swift */,
-				A7CA341E1BDFE6B6007A9495 /* UIImageExtensions.swift */,
-				A7CA341F1BDFE6B6007A9495 /* UIStoryboardExtensions.swift */,
-				A775B9EB1BC0692100510924 /* MKMapView.swift */,
-				A775B9EF1BC0967D00510924 /* NSDate.swift */,
-				DFE22E071BDBA417009565E1 /* String.swift */,
+				A72479031BF559BA0002481A /* UIBarButtonItem.swift */,
+				A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */,
 				A76ABA431BBC9B7F007FA40B /* UIImage+Color.swift */,
 				A76ABA411BBC93C3007FA40B /* UIImage+Overlay.swift */,
-				A7E6E40A1BF3C9E800AD23F8 /* UIButton.swift */,
-				A72479031BF559BA0002481A /* UIBarButtonItem.swift */,
+				A7CA341E1BDFE6B6007A9495 /* UIImageExtensions.swift */,
+				A7CA341F1BDFE6B6007A9495 /* UIStoryboardExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,17 +469,17 @@
 			isa = PBXGroup;
 			children = (
 				A765599C1BE7DE0D005CEA0F /* API */,
+				A7CA342C1BDFE6D7007A9495 /* Content */,
+				A7CA34341BDFE6D7007A9495 /* Items */,
 				A73D663C1BBEE44000127245 /* Address.swift */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
 				A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */,
 				A771C5911BD813C900179F04 /* CanvassResponseList.swift */,
 				A7D3F6FE1BCC370000232234 /* CanvassResponseOption.swift */,
 				A76ABA3F1BBC913A007FA40B /* Color.swift */,
-				A7CA342C1BDFE6D7007A9495 /* Content */,
 				A7F4517C1BE52A2A004CECC2 /* CutoutMap.swift */,
 				A7CA34171BDFE6B6007A9495 /* FTBConfig.swift */,
 				A7CA34331BDFE6D7007A9495 /* FTBModel.swift */,
-				A7CA34341BDFE6D7007A9495 /* Items */,
 				A73A0B221BD9F457008ECC2E /* Leaderboard.swift */,
 				A7CA34381BDFE6D7007A9495 /* ModelTypeMap.swift */,
 				A7D3F6FA1BCC313400232234 /* PartyAffiliation.swift */,
@@ -488,10 +488,10 @@
 				A73A0B201BD9F19E008ECC2E /* Ranking.swift */,
 				A7CC4E401BC364FE0086831C /* State.swift */,
 				A771C58B1BD812B200179F04 /* States.swift */,
+				A72479011BF542920002481A /* Text.swift */,
 				A73A0B261BDA9E7D008ECC2E /* User.swift */,
 				A7DAACC21BCD6FC200F0BDBC /* Visit.swift */,
 				A771C58D1BD8137700179F04 /* VisitResult.swift */,
-				A72479011BF542920002481A /* Text.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,16 +500,17 @@
 			isa = PBXGroup;
 			children = (
 				A76559A71BE830DB005CEA0F /* CanvassCells */,
+				A7CA34561BDFE709007A9495 /* ContentCells */,
 				A73D66401BBF36A900127245 /* AddressPinView.swift */,
 				A780A4D31BC863440090B979 /* BlueTableViewCell.swift */,
 				A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */,
 				A76890351BC86DD9008F394C /* ConversationTableHeaderView.swift */,
-				A78F3BD21BEAAC3000DAFBB7 /* LaunchScreen.storyboard */,
 				A7F014871BDEF2AC009282F6 /* ElectionTableViewCell.swift */,
+				A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */,
 				A7A97C951BD6D29D00E1FE05 /* IndividualScoreTableViewCell.swift */,
-				A7CA34561BDFE709007A9495 /* ContentCells */,
-				A7CA345B1BDFE709007A9495 /* ItemCollectionCell.swift */,
 				A79ECAC81BDC276200923C36 /* InviteFriendsTableViewCell.swift */,
+				A7CA345B1BDFE709007A9495 /* ItemCollectionCell.swift */,
+				A78F3BD21BEAAC3000DAFBB7 /* LaunchScreen.storyboard */,
 				A7F014851BDEE950009282F6 /* LoadingTableViewCell.swift */,
 				A7A579531BB092E100D8885E /* Main.storyboard */,
 				A7CB4A641BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift */,
@@ -518,7 +519,6 @@
 				A768C1F21BBCA9B000DBDFEA /* TabBar.swift */,
 				A7A97C931BD6D29000E1FE05 /* TotalScoreTableViewCell.swift */,
 				A73A0B1C1BD995AD008ECC2E /* UserScoreTableViewCell.swift */,
-				A76559A31BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,16 +526,16 @@
 		A74FCE991BBB3788005C4D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A78F3BD41BEAAD7C00DAFBB7 /* Assets.xcassets */,
 				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
+				A78F3BD41BEAAD7C00DAFBB7 /* Assets.xcassets */,
+				A7CA346F1BE17D29007A9495 /* BridgingHeader.h */,
+				A765599F1BE80E6E005CEA0F /* Canvassing.plist */,
 				A7A5795B1BB092E100D8885E /* Info.plist */,
 				A768C1F41BBD18AF00DBDFEA /* KeychainWrapper.h */,
 				A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */,
 				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
 				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
 				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
-				A7CA346F1BE17D29007A9495 /* BridgingHeader.h */,
-				A765599F1BE80E6E005CEA0F /* Canvassing.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -552,6 +552,9 @@
 				A72999BC1BE6CBBC0053CE23 /* EditProfileViewController.swift */,
 				A7F014891BDEFB82009282F6 /* ElectionDetailsViewController.swift */,
 				A7CA34501BDFE6FC007A9495 /* HomeItemsViewController.swift */,
+				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
+				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
+				A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */,
 				A7CA34511BDFE6FC007A9495 /* ItemsViewController.swift */,
 				A7CA34631BDFFEE1007A9495 /* LearnTableViewController.swift */,
 				A7F4517E1BE53368004CECC2 /* LoadingAnimationViewController.swift */,
@@ -567,12 +570,9 @@
 				A74279841BD016190020EE29 /* ScoreViewController.swift */,
 				A73A0B241BDA9997008ECC2E /* SettingsTableViewController.swift */,
 				A72999BA1BE6AE300053CE23 /* SignInViewController.swift */,
-				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
-				A76559A11BE81566005CEA0F /* HowToCanvassTableViewController.swift */,
-				A76559A51BE822AC005CEA0F /* HowToCanvassItemDetailTableViewController.swift */,
-				A76559AA1BE96B77005CEA0F /* HowToTableViewController.swift */,
-				A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */,
 				A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */,
+				A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */,
+				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A765599B1BE7DDDE005CEA0F /* JSON */ = {
@@ -597,22 +597,22 @@
 				A79ECAC61BDC105100923C36 /* UserJSON.swift */,
 				A742797B1BCED5DB0020EE29 /* VisitJSON.swift */,
 			);
-			name = JSON;
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		A765599C1BE7DE0D005CEA0F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A765599B1BE7DDDE005CEA0F /* JSON */,
+				A765599A1BE7DDAC005CEA0F /* Services */,
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
 				A7CA34701BE194EB007A9495 /* APIError.swift */,
 				A775B9ED1BC077E400510924 /* APIURL.swift */,
 				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
-				A765599B1BE7DDDE005CEA0F /* JSON */,
 				A771C5971BD8141E00179F04 /* OAuth.swift */,
-				A765599A1BE7DDAC005CEA0F /* Services */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A76559A71BE830DB005CEA0F /* CanvassCells */ = {
@@ -620,7 +620,7 @@
 			children = (
 				A76559A81BE830F0005CEA0F /* ParagraphTableViewCell.swift */,
 			);
-			name = CanvassCells;
+			path = CanvassCells;
 			sourceTree = "<group>";
 		};
 		A7A579431BB092E100D8885E = {
@@ -648,20 +648,19 @@
 		A7A5794E1BB092E100D8885E /* FieldTheBern */ = {
 			isa = PBXGroup;
 			children = (
-				A72478FC1BF513320002481A /* Toucan */,
 				A7F451821BE561A1004CECC2 /* Animators */,
+				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
 				A72F88AF1BCC4979001B185B /* Delegates */,
 				A73D66441BBF3EF900127245 /* Extensions */,
 				A7CA34291BDFE6C2007A9495 /* Managers */,
+				A74FCE971BBB376A005C4D34 /* Models */,
 				A7CA34441BDFE6E9007A9495 /* Operations */,
 				A7CA34491BDFE6E9007A9495 /* Reachability */,
-				A74FCE9A1BBB37A9005C4D34 /* Controllers */,
-				A74FCE971BBB376A005C4D34 /* Models */,
-				A74FCE981BBB377E005C4D34 /* Views */,
 				A74FCE991BBB3788005C4D34 /* Supporting Files */,
+				A72478FC1BF513320002481A /* Toucan */,
+				A74FCE981BBB377E005C4D34 /* Views */,
 			);
-			name = FieldTheBern;
-			path = GroundGame;
+			path = FieldTheBern;
 			sourceTree = "<group>";
 		};
 		A7A579631BB092E100D8885E /* FieldTheBernTests */ = {
@@ -672,8 +671,7 @@
 				A7A579641BB092E100D8885E /* GroundGameTests.swift */,
 				A7A579661BB092E100D8885E /* Info.plist */,
 			);
-			name = FieldTheBernTests;
-			path = GroundGameTests;
+			path = FieldTheBernTests;
 			sourceTree = "<group>";
 		};
 		A7A5796E1BB092E100D8885E /* FieldTheBernUITests */ = {
@@ -682,8 +680,7 @@
 				A7A5796F1BB092E100D8885E /* GroundGameUITests.swift */,
 				A7A579711BB092E100D8885E /* Info.plist */,
 			);
-			name = FieldTheBernUITests;
-			path = GroundGameUITests;
+			path = FieldTheBernUITests;
 			sourceTree = "<group>";
 		};
 		A7CA34291BDFE6C2007A9495 /* Managers */ = {
@@ -700,10 +697,10 @@
 				A7CA342D1BDFE6D7007A9495 /* ContentModel.swift */,
 				A7CA342E1BDFE6D7007A9495 /* ImageModel.swift */,
 				A7CA342F1BDFE6D7007A9495 /* LinkModel.swift */,
+				A7CA34651BE029AA007A9495 /* ListModel.swift */,
 				A7CA34301BDFE6D7007A9495 /* ParagraphModel.swift */,
 				A7CA34311BDFE6D7007A9495 /* TextModel.swift */,
 				A7CA34321BDFE6D7007A9495 /* VideoModel.swift */,
-				A7CA34651BE029AA007A9495 /* ListModel.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -761,7 +758,7 @@
 			children = (
 				A7F451831BE561BA004CECC2 /* MapTransitionAnimator.swift */,
 			);
-			name = Animators;
+			path = Animators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1272,7 +1269,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
 				PROVISIONING_PROFILE = "7253212e-8b06-4f6f-b853-5a16d781c227";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = ReleaseProduction;
@@ -1283,7 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1365,7 +1362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
 				PROVISIONING_PROFILE = "9b5bc01a-f3da-4d71-945a-58ac724b150b";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = DebugStaging;
@@ -1376,7 +1373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1458,7 +1455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
 				PROVISIONING_PROFILE = "9b5bc01a-f3da-4d71-945a-58ac724b150b";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = DebugLocal;
@@ -1469,7 +1466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
@@ -1551,7 +1548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
 				PROVISIONING_PROFILE = "7253212e-8b06-4f6f-b853-5a16d781c227";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "GroundGame/Supporting Files/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = ReleaseStaging;
@@ -1562,7 +1559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "GroundGame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
