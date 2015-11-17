@@ -306,13 +306,8 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         if !phoneField.text!.isEmpty { self.person?.phone = phoneField.text }
         if !emailField.text!.isEmpty { self.person?.email = emailField.text }
         
-        if emailSwitch.on && !emailField.text!.isEmpty {
-            self.person?.preferredContactMethod = "email"
-        }
-        
-        if phoneSwitch.on && !phoneField.text!.isEmpty {
-            self.person?.preferredContactMethod = "phone"
-        }
+        if emailSwitch.on { self.person?.preferredContactMethod = "email" }
+        if phoneSwitch.on { self.person?.preferredContactMethod = "phone" }
         
         self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
         
