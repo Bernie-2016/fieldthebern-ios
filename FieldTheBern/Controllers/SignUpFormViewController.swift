@@ -98,6 +98,9 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
             // Set the photo to the default thumb
             self.profileImage.image = UIImage(named: "default_thumb")
         }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
     }
     
@@ -113,6 +116,12 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
         alert.addAction(OKAction)
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func submitForm() {
@@ -279,19 +288,46 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
         }
     }
     
+    func animationOptionsWithCurve(curve:Int) ->UIViewAnimationOptions
+    {
+        let bitShift = (curve << 16)
+        let animOptions = UIViewAnimationOptions(rawValue: UInt(bitShift))
+        
+        return animOptions
+        
+    }
+    
     func keyboardWasShown(notification: NSNotification) {
         var info = notification.userInfo!
+        let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = keyboardFrame.size.height - self.submitButton.frame.size.height
-        })
+        self.bottomConstraint.constant = keyboardFrame.size.height - self.submitButton.frame.size.height
+        
+        self.view.setNeedsUpdateConstraints()
+        
+        UIView.animateWithDuration(duration, delay: 0, options: animationOptionsWithCurve(animationCurve), animations: { () -> Void in
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
+        
     }
     
     func keyboardWasHidden(notification: NSNotification) {
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = 0
-        })
+        
+        var info = notification.userInfo!
+        let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue
+        
+        self.bottomConstraint.constant = 0
+        
+        self.view.setNeedsUpdateConstraints()
+        
+        UIView.animateWithDuration(duration, delay: 0, options: animationOptionsWithCurve(animationCurve), animations: { () -> Void in
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
     }
     
     // MARK: - Error Handling

@@ -46,6 +46,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let backButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
         self.navigationItem.leftBarButtonItem = backButton
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Lato-Medium", size: 16)!], forState: UIControlState.Normal)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,7 +74,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func cancel(sender: UINavigationItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     func submitForm() {
         let email = emailField.text
         let password = passwordField.text
@@ -154,18 +163,45 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Keyboard Delegate Methods
     
+    func animationOptionsWithCurve(curve:Int) ->UIViewAnimationOptions
+    {
+        let bitShift = (curve << 16)
+        let animOptions = UIViewAnimationOptions(rawValue: UInt(bitShift))
+        
+        return animOptions
+
+    }
+    
     func keyboardWasShown(notification: NSNotification) {
         var info = notification.userInfo!
+        let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = keyboardFrame.size.height + 10
-        })
+        self.bottomConstraint.constant = keyboardFrame.size.height + 10
+
+        self.view.setNeedsUpdateConstraints()
+        
+        UIView.animateWithDuration(duration, delay: 0, options: animationOptionsWithCurve(animationCurve), animations: { () -> Void in
+            self.view.layoutIfNeeded()
+
+            }, completion: nil)
+
     }
     
     func keyboardWasHidden(notification: NSNotification) {
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant = 20
-        })
+        
+        var info = notification.userInfo!
+        let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue
+        
+        self.bottomConstraint.constant = 20
+
+        self.view.setNeedsUpdateConstraints()
+
+        UIView.animateWithDuration(duration, delay: 0, options: animationOptionsWithCurve(animationCurve), animations: { () -> Void in
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
     }
 }

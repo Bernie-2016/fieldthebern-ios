@@ -112,18 +112,8 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
             self.performSegueWithIdentifier("SignInModalSegue", sender: self)
         } else {
             // Skip to the last page
-            weak var pvcw = self.pageViewController
-            self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: { (finished) -> Void in
-                    let pvcs = pvcw
-                    if((pvcs == nil)){ return}
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-
-                    pvcs!.setViewControllers([self.viewControllers[self.lastPageIndex]], direction: .Forward, animated: false, completion: nil)
-                })
-            })
             
-            //self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: nil)
+            self.pageViewController.setViewControllers([self.viewControllers[lastPageIndex]], direction: .Forward, animated: true, completion: nil)
             setTopButtonForIndex(lastPageIndex)
         }
     }
