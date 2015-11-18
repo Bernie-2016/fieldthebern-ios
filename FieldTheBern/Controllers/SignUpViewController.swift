@@ -56,11 +56,11 @@ class SignUpViewController: UIViewController {
                     UserService().checkUserWithFacebookIdExists(token.userID, callback: { (userExists, apiSuccess, error) -> Void in
 
                         if userExists {
-                            session.authorizeWithFacebook(token: token, callback: { (success) -> Void in
+                            session.authorize(.Facebook, email: nil, password: nil, facebookToken: token) { (success) -> Void in
                                 if success {
                                     self.performSegueWithIdentifier("Login", sender: self)
                                 }
-                            })
+                            }
                         } else {
                             if apiSuccess {
                                 let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name"])

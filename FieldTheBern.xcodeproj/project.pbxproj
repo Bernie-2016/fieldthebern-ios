@@ -81,6 +81,7 @@
 		A775B9F41BC1D4B000510924 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */; };
 		A775B9F61BC1DA8200510924 /* AddAddressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */; };
 		A775B9F81BC2F8A600510924 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775B9F71BC2F8A600510924 /* ConversationViewController.swift */; };
+		A77A89F71BFBB41E0006E33E /* CompatibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A89F61BFBB41E0006E33E /* CompatibilityService.swift */; };
 		A780A4D41BC863440090B979 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780A4D31BC863440090B979 /* BlueTableViewCell.swift */; };
 		A78F3BD31BEAAC3000DAFBB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78F3BD21BEAAC3000DAFBB7 /* LaunchScreen.storyboard */; };
 		A78F3BD51BEAAD7C00DAFBB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78F3BD41BEAAD7C00DAFBB7 /* Assets.xcassets */; };
@@ -140,6 +141,8 @@
 		A7CC4E3F1BC35B410086831C /* Primaries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7CC4E3E1BC35B410086831C /* Primaries.plist */; };
 		A7CC4E411BC364FE0086831C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC4E401BC364FE0086831C /* State.swift */; };
 		A7D0D4261BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */; };
+		A7D0E8671BFBC10600ED3C4F /* UpdateAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0E8661BFBC10600ED3C4F /* UpdateAppViewController.swift */; };
+		A7D0E8691BFBE9DB00ED3C4F /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0E8681BFBE9DB00ED3C4F /* Compatibility.swift */; };
 		A7D12D321BC99FC5005EB417 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
 		A7D3F6E21BCB04A400232234 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
 		A7D3F6E31BCB054700232234 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
@@ -266,6 +269,7 @@
 		A775B9F31BC1D4B000510924 /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		A775B9F51BC1DA8200510924 /* AddAddressNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressNavigationController.swift; sourceTree = "<group>"; };
 		A775B9F71BC2F8A600510924 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		A77A89F61BFBB41E0006E33E /* CompatibilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibilityService.swift; sourceTree = "<group>"; };
 		A780A4D31BC863440090B979 /* BlueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueTableViewCell.swift; sourceTree = "<group>"; };
 		A78F3BD21BEAAC3000DAFBB7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A78F3BD41BEAAD7C00DAFBB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 		A7CC4E3E1BC35B410086831C /* Primaries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Primaries.plist; sourceTree = "<group>"; };
 		A7CC4E401BC364FE0086831C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		A7D0D4251BCC6E3E00613CA0 /* AddOrEditPersonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonDelegate.swift; sourceTree = "<group>"; };
+		A7D0E8661BFBC10600ED3C4F /* UpdateAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateAppViewController.swift; sourceTree = "<group>"; };
+		A7D0E8681BFBE9DB00ED3C4F /* Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
 		A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponse.swift; sourceTree = "<group>"; };
 		A7D3F6F21BCB0C6E00232234 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
 		A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
@@ -573,6 +579,7 @@
 				A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */,
 				A7E6E4081BF3A8CE00AD23F8 /* SignUpViewController.swift */,
 				A76ABA3D1BBC8E92007FA40B /* TabBarViewController.swift */,
+				A7D0E8661BFBC10600ED3C4F /* UpdateAppViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -584,6 +591,7 @@
 				A73A0B1E1BD9F13B008ECC2E /* LeaderboardService.swift */,
 				A74FCE9B1BBB3933005C4D34 /* UserService.swift */,
 				A7DAACC01BCD6F4600F0BDBC /* VisitService.swift */,
+				A77A89F61BFBB41E0006E33E /* CompatibilityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -611,6 +619,7 @@
 				A74FCE931BBB081C005C4D34 /* HTTP.swift */,
 				A771C5971BD8141E00179F04 /* OAuth.swift */,
 				A74FCE951BBB0A7C005C4D34 /* Session.swift */,
+				A7D0E8681BFBE9DB00ED3C4F /* Compatibility.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1036,6 +1045,7 @@
 				A79ECAC71BDC105100923C36 /* UserJSON.swift in Sources */,
 				A7CB4A651BD049FF00B9FC44 /* NoOneHomeTableViewCell.swift in Sources */,
 				A73D663F1BBEE87400127245 /* AddressService.swift in Sources */,
+				A7D0E8671BFBC10600ED3C4F /* UpdateAppViewController.swift in Sources */,
 				A7CA34531BDFE6FC007A9495 /* HomeItemsViewController.swift in Sources */,
 				A72479041BF559BA0002481A /* UIBarButtonItem.swift in Sources */,
 				A76ABA371BBB910E007FA40B /* PaddedTextField.swift in Sources */,
@@ -1133,7 +1143,9 @@
 				A7D3F6FF1BCC370000232234 /* CanvassResponseOption.swift in Sources */,
 				A73A0B1F1BD9F13B008ECC2E /* LeaderboardService.swift in Sources */,
 				A7CA343A1BDFE6D7007A9495 /* ImageModel.swift in Sources */,
+				A7D0E8691BFBE9DB00ED3C4F /* Compatibility.swift in Sources */,
 				A74FCE941BBB081C005C4D34 /* HTTP.swift in Sources */,
+				A77A89F71BFBB41E0006E33E /* CompatibilityService.swift in Sources */,
 				A7A579501BB092E100D8885E /* AppDelegate.swift in Sources */,
 				A76890361BC86DD9008F394C /* ConversationTableHeaderView.swift in Sources */,
 				A775B9EC1BC0692100510924 /* MKMapView.swift in Sources */,

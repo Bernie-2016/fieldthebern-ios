@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
-        
+                
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -67,12 +67,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        Compatibility.sharedInstance.checkCompatibility { (success) -> Void in
+            self.handleCompatibilitySuccess(success)
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         NSNotificationCenter.defaultCenter().postNotificationName("appDidBecomeActive", object: nil)
+        
+        Compatibility.sharedInstance.checkCompatibility { (success) -> Void in
+            self.handleCompatibilitySuccess(success)
+        }
         
         FBSDKAppEvents.activateApp()
     }
@@ -98,6 +105,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
+    }
+        
+    private func handleCompatibilitySuccess(success: Bool) {
+        if success {
+            NSNotificationCenter.defaultCenter().postNotificationName("appDoesNotNeedUpdate", object: nil)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("appNeedsUpdate", object: nil)
+        }
     }
 }
 

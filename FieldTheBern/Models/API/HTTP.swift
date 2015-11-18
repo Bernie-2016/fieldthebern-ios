@@ -19,7 +19,7 @@ class HTTP {
         
     func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
 
-        session.reauthorize { (success) -> Void in
+        session.authorize(.Reauthorization) { (success) -> Void in
 
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
