@@ -10,26 +10,24 @@ import Foundation
 import Alamofire
 
 class API {
+    typealias APIResponse = (NSData?, Bool, APIError?) -> Void
+    
     private let http = HTTP()
     private let baseURL = APIURL.url
     
-    func get(endpoint: String, parameters: [String: AnyObject]?, callback: (NSData?, Bool, APIError?) -> Void) {
+    func get(endpoint: String, parameters: [String: AnyObject]?, callback: APIResponse) {
         let url = baseURL + "/" + endpoint
         http.authorizedRequest(.GET, url, parameters: parameters) { response in
             switch response.result {
             case .Success:
                 callback(response.data, true, nil)
             case .Failure(let error):
-                if let httpResponse = response.response {
-                    let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
-                    callback(response.data, false, apiError)
-                }
+                self.handleAPIFailure(response: response, error: error, callback: callback)
             }
         }
     }
     
-    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
-
+    func post(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: APIResponse) {
         let url = baseURL + "/" + endpoint
                 
         if let parameters = parameters {
@@ -38,17 +36,13 @@ class API {
                 case .Success:
                     callback(response.data, true, nil)
                 case .Failure(let error):
-                    if let httpResponse = response.response {
-                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
-                        callback(response.data, false, apiError)
-                    }
+                    self.handleAPIFailure(response: response, error: error, callback: callback)
                 }
             }
         }
     }
 
-    func patch(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
-        
+    func patch(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: APIResponse) {
         let url = baseURL + "/" + endpoint
         
         if let parameters = parameters {
@@ -57,32 +51,26 @@ class API {
                 case .Success:
                     callback(response.data, true, nil)
                 case .Failure(let error):
-                    if let httpResponse = response.response {
-                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
-                        callback(response.data, false, apiError)
-                    }
+                    self.handleAPIFailure(response: response, error: error, callback: callback)
                 }
             }
         }
     }
 
-    func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: (NSData?, Bool, APIError?) -> Void) {
+    func unauthorizedGet(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: APIResponse) {
         let url = baseURL + "/" + endpoint
+        
         http.unauthorizedRequest(.GET, url, parameters: parameters, encoding: encoding) { response in
             switch response.result {
             case .Success:
                 callback(response.data, true, nil)
             case .Failure(let error):
-                if let httpResponse = response.response {
-                    let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
-                    callback(response.data, false, apiError)
-                }
+                self.handleAPIFailure(response: response, error: error, callback: callback)
             }
         }
     }
 
-    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .JSON, callback: (NSData?, Bool, APIError?) -> Void) {
-        
+    func unauthorizedPost(endpoint: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .JSON, callback: APIResponse) {
         let url = baseURL + "/" + endpoint
         
         if let parameters = parameters {
@@ -91,12 +79,19 @@ class API {
                 case .Success:
                     callback(response.data, true, nil)
                 case .Failure(let error):
-                    if let httpResponse = response.response {
-                        let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
-                        callback(nil, false, apiError)
-                    }
+                    self.handleAPIFailure(response: response, error: error, callback: callback)
                 }
             }
+        }
+    }
+    
+    private func handleAPIFailure(response response: Response<AnyObject, NSError>, error: NSError, callback: APIResponse) {
+        if let httpResponse = response.response {
+            let apiError = APIError(error: error, data: response.data, statusCode: httpResponse.statusCode)
+            callback(response.data, false, apiError)
+        } else {
+            let apiError = APIError(error: error, data: response.data, statusCode: 503) // 503 because service is unavailable
+            callback(response.data, false, apiError)
         }
     }
 }

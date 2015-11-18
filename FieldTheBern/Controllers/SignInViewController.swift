@@ -99,7 +99,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
         let session = Session.sharedInstance
         
-        session.authorize(email!, password: password!) { (success) -> Void in
+        session.authorize(.Email, email: email!, password: password!, facebookToken: nil) { (success) -> Void in
             if success {
                 self.performSegueWithIdentifier("LoginFromSignIn", sender: self)
             } else {
@@ -138,11 +138,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     NSLog("Cancelled")
                 } else {
                     let session = Session.sharedInstance
-                    session.authorizeWithFacebook(token: result.token, callback: { (success) -> Void in
+                    session.authorize(.Facebook, email: nil, password: nil, facebookToken: result.token) { (success) -> Void in
                         if success {
                             self.performSegueWithIdentifier("LoginFromSignIn", sender: self)
                         }
-                    })
+                    }
                 }
             }
         })

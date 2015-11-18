@@ -35,6 +35,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().postNotificationName("appNeedsUpdate", object: nil)
+        
         self.title = "Profile"
 
         // Set the navigation elements

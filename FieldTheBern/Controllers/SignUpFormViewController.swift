@@ -161,11 +161,11 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
             if success {
                 let session = Session.sharedInstance
                 if let token = self.facebookToken {
-                    session.authorizeWithFacebook(token: token, callback: { (success) -> Void in
+                    session.authorize(.Facebook, email: nil, password: nil, facebookToken: token) { (success) -> Void in
                         if success {
                             self.performSegueWithIdentifier("LoginFromSignUp", sender: self)
                         }
-                    })
+                    }
                 }
             } else {
                 self.stopAnimatingButton()
@@ -183,14 +183,14 @@ class SignUpFormViewController: UIViewController, UITextFieldDelegate, UINavigat
             self.submitButton.titleLabel?.layer.opacity = 1
             if success {
                 let session = Session.sharedInstance
-                session.authorize(email, password: password, callback: { (success) -> Void in
+                session.authorize(.Email, email: email, password: password) { (success) -> Void in
                     if success {
                         self.performSegueWithIdentifier("LoginFromSignUp", sender: self)
                     } else {
                         // Handle error
                         self.stopAnimatingButton()
                     }
-                })
+                }
             } else {
                 self.stopAnimatingButton()
                 if let error = error {
