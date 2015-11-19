@@ -444,7 +444,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
         if let mapPin = view as? AddressPointPinAnnotation {
             
-            mapPin.setSelected(false, animated: false)
+            mapPin.setSelected(false, animated: true)
            /* if mapPin.preventDeselection {
                 mapView.selectAnnotation(view.annotation!, animated: false)
             } */
