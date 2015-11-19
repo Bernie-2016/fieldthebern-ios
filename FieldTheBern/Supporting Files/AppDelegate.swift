@@ -109,9 +109,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     private func handleCompatibilitySuccess(success: Bool) {
         if success {
-            NSNotificationCenter.defaultCenter().postNotificationName("appDoesNotNeedUpdate", object: nil)
         } else {
-            NSNotificationCenter.defaultCenter().postNotificationName("appNeedsUpdate", object: nil)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let updateAppViewController = storyboard.instantiateViewControllerWithIdentifier("UpdateAppViewController") as! UpdateAppViewController
+            
+            var topmostController = UIApplication.sharedApplication().keyWindow?.rootViewController
+            
+            while((topmostController?.presentedViewController) != nil)
+            {
+                topmostController = topmostController?.presentedViewController
+            }
+            
+            topmostController?.presentViewController(updateAppViewController, animated: true, completion: nil)
+
         }
     }
 }
