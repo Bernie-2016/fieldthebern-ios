@@ -143,6 +143,6 @@ class AddressPointPinAnnotation: MKAnnotationView {
         
         hitOutside = hitView == nil
         
-        return hitView;
+        return hitView
     }
 }
