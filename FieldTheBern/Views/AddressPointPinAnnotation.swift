@@ -15,7 +15,8 @@ class AddressPointPinAnnotation: MKAnnotationView {
         return "mapPin"
     }
     
-    private var calloutView:AddressPointAnnotationView?
+    private var containerView: UIView?
+    private var calloutView: AddressPointAnnotationView?
     private var triangleView: UIView?
     private var hitOutside:Bool = true
     
@@ -30,10 +31,12 @@ class AddressPointPinAnnotation: MKAnnotationView {
     }
     
     let pinWidth: CGFloat = 20.5
-    let triangleHeight: CGFloat = 15
-    let triangleWidth: CGFloat = 30
+    let triangleHeight: CGFloat = 13
+    let triangleWidth: CGFloat = 26
+    let borderWidth: CGFloat = 0.5
 
     override func setSelected(selected: Bool, animated: Bool) {
+        let containerViewAdded = containerView?.superview != nil
         let calloutViewAdded = calloutView?.superview != nil
         let triangleViewAdded = triangleView?.superview != nil
         
@@ -44,11 +47,16 @@ class AddressPointPinAnnotation: MKAnnotationView {
         
         self.superview?.bringSubviewToFront(self)
         
-        if (calloutView == nil) {
+        if calloutView == nil {
             calloutView = (NSBundle.mainBundle().loadNibNamed("AddressPointAnnotationView", owner: self, options: nil))[0] as? AddressPointAnnotationView
+        }
+        
+        if (containerView == nil) {
+            
+            containerView = UIView()
             
             let pinAnnotation = annotation as! AddressPointAnnotation
-                        
+            
             calloutView!.addressLabel.text = annotation!.title!
             calloutView!.bestCanvassResponseLabel.text = annotation!.subtitle!
             if let lastVisited = pinAnnotation.lastVisited {
@@ -64,35 +72,32 @@ class AddressPointPinAnnotation: MKAnnotationView {
             )
             
             calloutView?.layer.borderColor = Color.TanGray.CGColor
-            calloutView?.layer.borderWidth = 0.5
+            calloutView?.layer.borderWidth = borderWidth
             calloutView?.layer.cornerRadius = 10
             calloutView?.layer.masksToBounds = true
+            calloutView?.clipsToBounds = false
+            
+            triangleView = TriangleView(frame: CGRect(x: 8, y: -(triangleHeight + borderWidth), width: triangleWidth, height: triangleHeight))
+            containerView?.bringSubviewToFront(triangleView!)
         }
         
-        triangleView = TriangleView(frame: CGRect(x: pinWidth - triangleWidth/2, y: (-triangleHeight - 1), width: triangleWidth, height: triangleHeight))
-        
-        if (self.selected && !calloutViewAdded && !triangleViewAdded) {
+        if (self.selected && !containerViewAdded && !calloutViewAdded && !triangleViewAdded) {
             
             if (animated) {
-                calloutView!.alpha = 0
-                calloutView!.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                
-                triangleView!.alpha = 0
-                triangleView!.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                containerView!.alpha = 0
+                containerView!.transform = CGAffineTransformMakeScale(0.5, 0.5)
             }
             
-            self.addSubview(calloutView!)
+            self.addSubview(containerView!)
+            self.containerView!.addSubview(calloutView!)
 
             triangleView!.backgroundColor = UIColor.clearColor()
-            self.addSubview(triangleView!)
+            self.containerView!.addSubview(triangleView!)
             
             if (animated) {
-                UIView.animateWithDuration(Double(0.3), delay: Double(0.0), usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
-                    self.calloutView!.alpha = 1
-                    self.calloutView!.transform = CGAffineTransformMakeScale(1, 1)
-
-                    self.triangleView!.alpha = 1
-                    self.triangleView!.transform = CGAffineTransformMakeScale(1, 1)
+                UIView.animateWithDuration(Double(0.2), delay: Double(0.0), usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+                    self.containerView!.alpha = 1
+                    self.containerView!.transform = CGAffineTransformMakeScale(1, 1)
                     }, completion: nil)
             }
         }
@@ -102,29 +107,24 @@ class AddressPointPinAnnotation: MKAnnotationView {
             if(animated) {
                 
                 UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                    self.calloutView!.alpha = 0
-                    self.calloutView!.transform = CGAffineTransformMakeScale(0.75, 0.75)
+                    self.containerView!.alpha = 0
+                    self.containerView!.transform = CGAffineTransformMakeScale(0.75, 0.75)
                     
-                    self.triangleView!.alpha = 0
-                    self.triangleView!.transform = CGAffineTransformMakeScale(0.75, 0.75)
-
                     }, completion: nil)
                     
                 let delay = 0.51 * Double(NSEC_PER_SEC)
                 let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay)) // completion code in animateWithDuration was executing too early
                
                 dispatch_after(time, dispatch_get_main_queue()) {
-                    self.calloutView?.removeFromSuperview()
+                    self.containerView?.removeFromSuperview()
+                    self.containerView = nil
                     self.calloutView = nil
-
-                    self.triangleView?.removeFromSuperview()
                     self.triangleView = nil
                 }
             } else {
-                self.calloutView!.removeFromSuperview()
+                self.containerView?.removeFromSuperview()
+                self.containerView = nil
                 self.calloutView = nil
-                
-                self.triangleView!.removeFromSuperview()
                 self.triangleView = nil
             }
         }

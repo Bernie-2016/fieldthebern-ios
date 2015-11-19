@@ -36,8 +36,8 @@ class TriangleView: UIView {
         CGContextSetRGBFillColor(ctx, 1, 1, 1, 1)
         CGContextFillPath(ctx)
         
-        let topLeft = CGPoint(x: minX, y: minY + 1)
-        let topRight = CGPoint(x: maxX, y: minY + 1)
+        let topLeft = CGPoint(x: minX, y: minY + 0.5)
+        let topRight = CGPoint(x: maxX, y: minY + 0.5)
         let bottom = CGPoint(x: (maxX/2.0), y: maxY)
 
         let lineWidth = CGFloat(0.5)
@@ -54,5 +54,12 @@ class TriangleView: UIView {
         rightBorderPath.moveToPoint(topRight)
         rightBorderPath.addLineToPoint(bottom)
         rightBorderPath.stroke()
+        
+        let topBorderPath = UIBezierPath()
+        topBorderPath.lineWidth = lineWidth
+        topBorderPath.moveToPoint(topLeft)
+        topBorderPath.moveToPoint(topRight)
+        UIColor.whiteColor().setStroke()
+        topBorderPath.stroke()
     }
 }
