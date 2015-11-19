@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -15,28 +15,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddressPointAnnotationView" customModule="FieldTheBern" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="262" height="77"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kb-Of-RpU">
-                    <rect key="frame" x="8" y="8" width="584" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kb-Of-RpU">
+                    <rect key="frame" x="8" y="8" width="246" height="20"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkN-dk-BLq">
-                    <rect key="frame" x="8" y="32" width="584" height="17"/>
+                    <rect key="frame" x="8" y="32" width="246" height="17"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-r6-cTg">
-                    <rect key="frame" x="8" y="53" width="584" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-r6-cTg">
+                    <rect key="frame" x="8" y="53" width="246" height="17"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
                     <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="MkN-dk-BLq" firstAttribute="top" secondItem="4Kb-Of-RpU" secondAttribute="bottom" constant="4" id="5Ct-pY-Yru"/>
@@ -44,17 +48,19 @@
                 <constraint firstItem="MkN-dk-BLq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="6sd-fU-EsQ"/>
                 <constraint firstItem="4Kb-Of-RpU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="HIT-AK-Ha6"/>
                 <constraint firstItem="7o2-r6-cTg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cNO-Mo-ycH"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7o2-r6-cTg" secondAttribute="bottom" constant="10" id="fHv-WQ-dFs"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7o2-r6-cTg" secondAttribute="bottom" constant="7" id="fHv-WQ-dFs"/>
                 <constraint firstAttribute="trailing" secondItem="MkN-dk-BLq" secondAttribute="trailing" constant="8" id="hNd-tS-uKq"/>
                 <constraint firstAttribute="trailing" secondItem="7o2-r6-cTg" secondAttribute="trailing" constant="8" id="sa9-ri-Wqx"/>
                 <constraint firstAttribute="trailing" secondItem="4Kb-Of-RpU" secondAttribute="trailing" constant="8" id="vhH-XU-eUE"/>
                 <constraint firstItem="4Kb-Of-RpU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="voj-kI-5Yp"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="addressLabel" destination="4Kb-Of-RpU" id="fwC-JT-5bx"/>
-                <outlet property="bestCanvassResponseLabel" destination="MkN-dk-BLq" id="hwJ-8Y-cM9"/>
-                <outlet property="lastVisitedAtLabel" destination="7o2-r6-cTg" id="SYD-qr-Vad"/>
+                <outlet property="addressLabel" destination="4Kb-Of-RpU" id="9Zh-kG-fTT"/>
+                <outlet property="bestCanvassResponseLabel" destination="MkN-dk-BLq" id="pe8-Ss-FNE"/>
+                <outlet property="lastVisitedAtLabel" destination="7o2-r6-cTg" id="Vaa-Fl-p8o"/>
             </connections>
+            <point key="canvasLocation" x="82" y="87.5"/>
         </view>
     </objects>
 </document>

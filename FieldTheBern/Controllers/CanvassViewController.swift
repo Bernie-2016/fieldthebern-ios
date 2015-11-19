@@ -416,27 +416,51 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             var pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin")
 
             if pinAnnotation == nil {
-                pinAnnotation = MKAnnotationView.init(annotation: addressAnnotation, reuseIdentifier: "Pin")
+                pinAnnotation = AddressPointPinAnnotation.init(annotation:annotation)
                 
-//                let customView = (NSBundle.mainBundle().loadNibNamed("AddressPointAnnotationView", owner: self, options: nil))[0] as! AddressPointAnnotationView
-//                
-//                customView.addressLabel.text = annotation.title!
-//                customView.bestCanvassResponseLabel.text = annotation.subtitle!
-//                customView.lastVisitedAtLabel.text = "Last visited 4 days ago"
-//                
+                // if you want to use a button, you'll need to pass in a delegate and modify the hitTest calls -nick D.
+                
 //                pinAnnotation?.leftCalloutAccessoryView = customView
             }
             
             pinAnnotation?.image = addressAnnotation?.image
             
             pinAnnotation?.layer.anchorPoint = anchorPoint
-            pinAnnotation?.canShowCallout = true
+            pinAnnotation?.canShowCallout = false
         
             return pinAnnotation
 
         } else {
             return nil
         }
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if let mapPin = view as? AddressPointPinAnnotation {
+            updatePinPosition(mapPin)
+        }
+    }
+    
+    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        if let mapPin = view as? AddressPointPinAnnotation {
+            
+            mapPin.setSelected(false, animated: false)
+           /* if mapPin.preventDeselection {
+                mapView.selectAnnotation(view.annotation!, animated: false)
+            } */
+        }
+    }
+    
+    func updatePinPosition(pin:AddressPointPinAnnotation) {
+        let defaultShift:CGFloat = 150
+        let pinPosition = CGPointMake(pin.frame.midX, pin.frame.maxY)
+        
+        let y = pinPosition.y - defaultShift
+        
+        let controlPoint = CGPointMake(pinPosition.x, y)
+        let controlPointCoordinate = mapView.convertPoint(controlPoint, toCoordinateFromView: mapView)
+        
+        mapView.setCenterCoordinate(controlPointCoordinate, animated: true)
     }
     
     func addressToPin(address: Address) -> AddressPointAnnotation {
