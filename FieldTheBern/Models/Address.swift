@@ -21,6 +21,7 @@ struct Address {
     let stateCode: String?
     let zipCode: String?
     let coordinate: CLLocationCoordinate2D?
+    let visitedAt: NSDate?
 
     var bestResult: VisitResult = .NotVisited
     var lastResult: VisitResult = .Unknown
@@ -112,6 +113,16 @@ struct Address {
             }
         }
     }
+    
+    var visitedAtString: String? {
+        get {
+            if let date = visitedAt {
+                return NSDate().offsetFrom(date)
+            } else {
+                return nil
+            }
+        }
+    }
 
     init(id: String?, addressJSON: JSON) {
         self.id = id
@@ -122,6 +133,12 @@ struct Address {
         city = addressJSON["city"].string
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
+
+        if let dateString = addressJSON["visited_at"].string {
+            visitedAt = NSDate.dateFromISOString(dateString)
+        } else {
+            visitedAt = NSDate()
+        }
         
         if let bestResultString = addressJSON["best_canvass_response"].string {
             switch bestResultString {
@@ -187,6 +204,7 @@ struct Address {
         self.zipCode = zipCode
         self.bestResult = bestResult
         self.lastResult = lastResult
+        self.visitedAt = nil
 
         if let latitude = latitude, let longitude = longitude {
             self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)

@@ -460,6 +460,8 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         dropPin.title = address.title
         dropPin.subtitle = address.subtitle
         dropPin.image = address.image
+        dropPin.lastVisited = address.visitedAtString
+        print(address.visitedAtString)
         
         return dropPin
     }

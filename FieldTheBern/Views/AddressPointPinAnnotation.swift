@@ -42,9 +42,16 @@ class AddressPointPinAnnotation: MKAnnotationView {
         
         if (calloutView == nil) {
             calloutView = (NSBundle.mainBundle().loadNibNamed("AddressPointAnnotationView", owner: self, options: nil))[0] as? AddressPointAnnotationView
+            
+            let pinAnnotation = annotation as! AddressPointAnnotation
+            
+            print(pinAnnotation.lastVisited)
+            
             calloutView!.addressLabel.text = annotation!.title!
             calloutView!.bestCanvassResponseLabel.text = annotation!.subtitle!
-            calloutView!.lastVisitedAtLabel.text = "Last visited 4 days ago"
+            if let lastVisited = pinAnnotation.lastVisited {
+                calloutView!.lastVisitedAtLabel.text = lastVisited
+            }
             
             calloutView!.frame = CGRect(
                 origin: CGPoint(
