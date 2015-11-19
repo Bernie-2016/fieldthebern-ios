@@ -54,7 +54,7 @@ struct UserService {
     func updateMyDevice(deviceToken: String?, callback: UserResponse) {
         let parameters = DeviceJSON(deviceToken: deviceToken).json
 
-        api.patch("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
+        api.post("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
             self.handleUserResponse(data, success, error, callback: callback)
         }
     }

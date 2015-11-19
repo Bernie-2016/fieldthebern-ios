@@ -55,6 +55,8 @@ class AddressPointPinAnnotation: MKAnnotationView {
             
             containerView = UIView()
             
+            containerView?.center = CGPoint(x: 0.5, y: 0.5)
+            
             let pinAnnotation = annotation as! AddressPointAnnotation
             
             calloutView!.addressLabel.text = annotation!.title!
