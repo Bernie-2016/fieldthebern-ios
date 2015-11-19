@@ -31,17 +31,17 @@ enum CanvassResponse {
     func JSONString() -> String {
         switch self {
         case .Unknown:
-            return "Unknown"
+            return "unknown"
         case .StronglyAgainst:
-            return "Strongly against"
+            return "strongly_against"
         case .LeaningAgainst:
-            return "Leaning against"
+            return "leaning_against"
         case .Undecided:
-            return "Undecided"
+            return "undecided"
         case .LeaningFor:
-            return "Leaning for"
+            return "leaning_for"
         case .StronglyFor:
-            return "Strongly for"
+            return "strongly_for"
         }
     }
     

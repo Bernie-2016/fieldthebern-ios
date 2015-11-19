@@ -32,8 +32,8 @@ class LoadingAnimationViewController: UIViewController {
             self.attemptTransition()
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showApplicationUpdateNotification:", name: "appNeedsUpdate", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideApplicationUpdateNotification:", name: "appDoesNotNeedUpdate", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showApplicationUpdateNotification:", name: "appNeedsUpdate", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideApplicationUpdateNotification:", name: "appDoesNotNeedUpdate", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,16 +63,5 @@ class LoadingAnimationViewController: UIViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
-    }
-    
-    func showApplicationUpdateNotification(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let updateAppViewController = storyboard.instantiateViewControllerWithIdentifier("UpdateAppViewController") as! UpdateAppViewController
-        
-        self.presentViewController(updateAppViewController, animated: true, completion: nil)
-    }
-    
-    func hideApplicationUpdateNotification(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

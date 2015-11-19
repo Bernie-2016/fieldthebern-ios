@@ -396,6 +396,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         return map
     }
     
+    
     func mapView(mapView: MKMapView, didChangeUserTrackingMode mode: MKUserTrackingMode, animated: Bool) {
         
         // When the compass is tapped in iOS 9, change the button state back to tracking
@@ -416,13 +417,18 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             var pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin")
 
             if pinAnnotation == nil {
-                pinAnnotation = MKAnnotationView.init(annotation: addressAnnotation, reuseIdentifier: "Pin")
+                pinAnnotation = AddressPointPinAnnotation.init(annotation:annotation)
+                
+                // if you want to use a button, you'll need to pass in a delegate and modify the hitTest calls -nick D.
+                
+//                pinAnnotation?.leftCalloutAccessoryView = customView
+
             }
             
             pinAnnotation?.image = addressAnnotation?.image
             
             pinAnnotation?.layer.anchorPoint = anchorPoint
-            pinAnnotation?.canShowCallout = true
+            pinAnnotation?.canShowCallout = false
         
             return pinAnnotation
 
@@ -431,15 +437,30 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+
+    }
+    
+    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        if let mapPin = view as? AddressPointPinAnnotation {
+            
+            mapPin.setSelected(false, animated: true)
+           /* if mapPin.preventDeselection {
+                mapView.selectAnnotation(view.annotation!, animated: false)
+            } */
+        }
+    }
+    
     func addressToPin(address: Address) -> AddressPointAnnotation {
         let dropPin = AddressPointAnnotation()
 
         dropPin.id = address.id
-        dropPin.result = address.result
+        dropPin.result = address.displayedResult
         dropPin.coordinate = address.coordinate!
         dropPin.title = address.title
         dropPin.subtitle = address.subtitle
         dropPin.image = address.image
+        dropPin.lastVisited = address.visitedAtString
         
         return dropPin
     }

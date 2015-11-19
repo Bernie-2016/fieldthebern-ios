@@ -21,9 +21,11 @@ struct Address {
     let stateCode: String?
     let zipCode: String?
     let coordinate: CLLocationCoordinate2D?
+    let visitedAt: NSDate?
 
-    var result: VisitResult = .NotVisited
-    var bestCanvassResponse: String?
+    var bestResult: VisitResult = .NotVisited
+    var lastResult: VisitResult = .Unknown
+    var bestCanvassResponseString: String?
 
     var title: String {
         get {
@@ -40,7 +42,7 @@ struct Address {
     
     var subtitle: String {
         get {
-            switch result {
+            switch displayedResult {
             case .NotVisited:
                 return "Not yet visited"
             case .NotHome:
@@ -63,7 +65,7 @@ struct Address {
     
     var image: UIImage? {
         get {
-            switch result {
+            switch displayedResult {
             case .NotVisited:
                 return PinImage.Gray
             case .NotHome:
@@ -101,6 +103,26 @@ struct Address {
             return nil
         }
     }
+    
+    var displayedResult: VisitResult {
+        get {
+            if lastResult == .NotHome {
+                return lastResult
+            } else {
+                return bestResult
+            }
+        }
+    }
+    
+    var visitedAtString: String? {
+        get {
+            if let date = visitedAt {
+                return NSDate().offsetFrom(date)
+            } else {
+                return nil
+            }
+        }
+    }
 
     init(id: String?, addressJSON: JSON) {
         self.id = id
@@ -111,30 +133,59 @@ struct Address {
         city = addressJSON["city"].string
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
-        
-        if let resultString = addressJSON["best_canvass_response"].string {
-            switch resultString {
-            case "not_visited":
-                result = .NotVisited
-            case "not_home":
-                result = .NotHome
-            case "unknown":
-                result = .Unknown
-            case "strongly_for":
-                result = .StronglyFor
-            case "leaning_for":
-                result = .LeaningFor
-            case "undecided":
-                result = .Undecided
-            case "leaning_against":
-                result = .LeaningAgainst
-            case "strongly_against":
-                result = .StronglyAgainst
-            default:
-                result = .NotVisited
-            }
+
+        if let dateString = addressJSON["visited_at"].string {
+            visitedAt = NSDate.dateFromISOString(dateString)
+        } else {
+            visitedAt = NSDate()
         }
         
+        if let bestResultString = addressJSON["best_canvass_response"].string {
+            switch bestResultString {
+            case "not_visited":
+                bestResult = .NotVisited
+            case "not_home":
+                bestResult = .NotHome
+            case "unknown":
+                bestResult = .Unknown
+            case "strongly_for":
+                bestResult = .StronglyFor
+            case "leaning_for":
+                bestResult = .LeaningFor
+            case "undecided":
+                bestResult = .Undecided
+            case "leaning_against":
+                bestResult = .LeaningAgainst
+            case "strongly_against":
+                bestResult = .StronglyAgainst
+            default:
+                bestResult = .NotVisited
+            }
+        }
+
+        if let lastResultString = addressJSON["last_canvass_response"].string {
+            switch lastResultString {
+            case "not_visited":
+                lastResult = .NotVisited
+            case "not_home":
+                lastResult = .NotHome
+            case "unknown":
+                lastResult = .Unknown
+            case "strongly_for":
+                lastResult = .StronglyFor
+            case "leaning_for":
+                lastResult = .LeaningFor
+            case "undecided":
+                lastResult = .Undecided
+            case "leaning_against":
+                lastResult = .LeaningAgainst
+            case "strongly_against":
+                lastResult = .StronglyAgainst
+            default:
+                lastResult = .NotVisited
+            }
+        }
+
         if let latitude = latitude, let longitude = longitude {
             coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
         } else {
@@ -142,7 +193,7 @@ struct Address {
         }
     }
     
-    init(latitude: CLLocationDegrees?, longitude: CLLocationDegrees?, street1: String?, street2: String?, city: String?, stateCode: String?, zipCode: String?, result: VisitResult) {
+    init(latitude: CLLocationDegrees?, longitude: CLLocationDegrees?, street1: String?, street2: String?, city: String?, stateCode: String?, zipCode: String?, bestResult: VisitResult, lastResult: VisitResult) {
         self.id = nil
         self.latitude = latitude
         self.longitude = longitude
@@ -151,7 +202,9 @@ struct Address {
         self.city = city
         self.stateCode = stateCode
         self.zipCode = zipCode
-        self.result = result
+        self.bestResult = bestResult
+        self.lastResult = lastResult
+        self.visitedAt = nil
 
         if let latitude = latitude, let longitude = longitude {
             self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)

@@ -67,9 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        Compatibility.sharedInstance.checkCompatibility { (success) -> Void in
-            self.handleCompatibilitySuccess(success)
-        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -108,10 +105,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     private func handleCompatibilitySuccess(success: Bool) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let updateAppViewController = storyboard.instantiateViewControllerWithIdentifier("UpdateAppViewController") as! UpdateAppViewController
+        
+        var topmostController = UIApplication.sharedApplication().keyWindow?.rootViewController
+        
+        while((topmostController?.presentedViewController) != nil)
+        {
+            topmostController = topmostController?.presentedViewController
+        }
+
         if success {
-            NSNotificationCenter.defaultCenter().postNotificationName("appDoesNotNeedUpdate", object: nil)
+            if let topVC = topmostController {
+                if topVC.isKindOfClass(UpdateAppViewController) {
+                    topVC.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
         } else {
-            NSNotificationCenter.defaultCenter().postNotificationName("appNeedsUpdate", object: nil)
+            
+            if let topVC = topmostController {
+                if !topVC.isKindOfClass(UpdateAppViewController) {
+                    topVC.presentViewController(updateAppViewController, animated: true, completion: nil)
+                }
+            }
+
         }
     }
 }
