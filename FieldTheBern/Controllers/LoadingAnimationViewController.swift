@@ -32,8 +32,8 @@ class LoadingAnimationViewController: UIViewController {
             self.attemptTransition()
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showApplicationUpdateNotification:", name: "appNeedsUpdate", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideApplicationUpdateNotification:", name: "appDoesNotNeedUpdate", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showApplicationUpdateNotification:", name: "appNeedsUpdate", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideApplicationUpdateNotification:", name: "appDoesNotNeedUpdate", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
