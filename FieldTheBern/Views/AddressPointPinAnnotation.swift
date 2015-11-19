@@ -84,7 +84,7 @@ class AddressPointPinAnnotation: MKAnnotationView {
             if(animated)
             {
                 
-            UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                 self.calloutView!.alpha = 0;
                 self.calloutView!.transform = CGAffineTransformMakeScale(0.75, 0.75)
 
