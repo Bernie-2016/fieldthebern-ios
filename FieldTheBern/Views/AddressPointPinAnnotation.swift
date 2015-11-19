@@ -72,7 +72,7 @@ class AddressPointPinAnnotation: MKAnnotationView {
             addSubview(calloutView!)
             if(animated)
             {
-                UIView.animateWithDuration(Double(0.3), delay: Double(0.0), usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+                UIView.animateWithDuration(Double(0.3), delay: Double(0.0), usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
                     self.calloutView!.alpha = 1;
                     self.calloutView!.transform = CGAffineTransformMakeScale(1, 1)
                     }, completion: nil)
