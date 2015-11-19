@@ -407,7 +407,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
     
-    let anchorPoint = CGPointMake(0.5, 0.5)
+    let anchorPoint = CGPointMake(0.5, 1.0)
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 

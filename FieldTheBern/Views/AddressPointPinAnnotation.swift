@@ -29,6 +29,8 @@ class AddressPointPinAnnotation: MKAnnotationView {
         canShowCallout = false;
     }
     
+    let pinWidth: CGFloat = 20.5
+    
     override func setSelected(selected: Bool, animated: Bool) {
         let calloutViewAdded = calloutView?.superview != nil
         
@@ -43,7 +45,14 @@ class AddressPointPinAnnotation: MKAnnotationView {
             calloutView!.addressLabel.text = annotation!.title!
             calloutView!.bestCanvassResponseLabel.text = annotation!.subtitle!
             calloutView!.lastVisitedAtLabel.text = "Last visited 4 days ago"
-            calloutView!.frame = CGRect(origin: CGPoint(x: calloutView!.frame.origin.x - calloutView!.frame.width/2, y: calloutView!.frame.origin.y - calloutView!.frame.height), size: calloutView!.frame.size)
+            
+            calloutView!.frame = CGRect(
+                origin: CGPoint(
+                    x: calloutView!.frame.origin.x + pinWidth - calloutView!.frame.width / 2,
+                    y: calloutView!.frame.origin.y - calloutView!.frame.height
+                ),
+                size: calloutView!.frame.size
+            )
         }
         
         if (self.selected && !calloutViewAdded) {
