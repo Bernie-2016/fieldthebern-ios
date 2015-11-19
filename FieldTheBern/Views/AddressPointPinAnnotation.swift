@@ -63,11 +63,46 @@ class AddressPointPinAnnotation: MKAnnotationView {
         }
         
         if (self.selected && !calloutViewAdded) {
+            
+            if(animated)
+            {
+            calloutView!.alpha = 0;
+            calloutView!.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            }
             addSubview(calloutView!)
+            if(animated)
+            {
+                UIView.animateWithDuration(Double(0.3), delay: Double(0.0), usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+                    self.calloutView!.alpha = 1;
+                    self.calloutView!.transform = CGAffineTransformMakeScale(1, 1)
+                    }, completion: nil)
+            }
         }
         
         if (!selected) {
-            calloutView?.removeFromSuperview()
+            
+            if(animated)
+            {
+                
+            UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                self.calloutView!.alpha = 0;
+                self.calloutView!.transform = CGAffineTransformMakeScale(0.75, 0.75)
+
+                }, completion: nil)
+                
+                let delay = 0.51 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay)) // completion code in animateWithDuration was executing too early
+               
+                dispatch_after(time, dispatch_get_main_queue()) {
+                   self.calloutView?.removeFromSuperview()
+                    self.calloutView = nil
+                }
+            }
+            else
+            {
+                self.calloutView!.removeFromSuperview()
+                self.calloutView = nil;
+            }
         }
     }
     
