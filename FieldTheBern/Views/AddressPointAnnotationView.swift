@@ -31,7 +31,7 @@ class AddressPointAnnotationView: UIView {
         
         let view = super.hitTest(viewPoint, withEvent: event)
         
-        return view
+        return isInsideView ? view : nil
     }
     
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {

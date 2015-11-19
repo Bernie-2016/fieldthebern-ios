@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AddressPointPinAnnotation: MKPinAnnotationView {
+class AddressPointPinAnnotation: MKAnnotationView {
 
     class var reuseIdentifier:String {
         return "mapPin"

@@ -396,6 +396,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         return map
     }
     
+    
     func mapView(mapView: MKMapView, didChangeUserTrackingMode mode: MKUserTrackingMode, animated: Bool) {
         
         // When the compass is tapped in iOS 9, change the button state back to tracking
@@ -406,7 +407,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
     
-    let anchorPoint = CGPointMake(0.5, 1.0)
+    let anchorPoint = CGPointMake(0.5, 0.5)
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
@@ -421,6 +422,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                 // if you want to use a button, you'll need to pass in a delegate and modify the hitTest calls -nick D.
                 
 //                pinAnnotation?.leftCalloutAccessoryView = customView
+
             }
             
             pinAnnotation?.image = addressAnnotation?.image
@@ -436,9 +438,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if let mapPin = view as? AddressPointPinAnnotation {
-            updatePinPosition(mapPin)
-        }
+
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
@@ -449,18 +449,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                 mapView.selectAnnotation(view.annotation!, animated: false)
             } */
         }
-    }
-    
-    func updatePinPosition(pin:AddressPointPinAnnotation) {
-        let defaultShift:CGFloat = 150
-        let pinPosition = CGPointMake(pin.frame.midX, pin.frame.maxY)
-        
-        let y = pinPosition.y - defaultShift
-        
-        let controlPoint = CGPointMake(pinPosition.x, y)
-        let controlPointCoordinate = mapView.convertPoint(controlPoint, toCoordinateFromView: mapView)
-        
-        mapView.setCenterCoordinate(controlPointCoordinate, animated: true)
     }
     
     func addressToPin(address: Address) -> AddressPointAnnotation {
