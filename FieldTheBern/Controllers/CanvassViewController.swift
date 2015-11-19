@@ -417,6 +417,14 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
 
             if pinAnnotation == nil {
                 pinAnnotation = MKAnnotationView.init(annotation: addressAnnotation, reuseIdentifier: "Pin")
+                
+//                let customView = (NSBundle.mainBundle().loadNibNamed("AddressPointAnnotationView", owner: self, options: nil))[0] as! AddressPointAnnotationView
+//                
+//                customView.addressLabel.text = annotation.title!
+//                customView.bestCanvassResponseLabel.text = annotation.subtitle!
+//                customView.lastVisitedAtLabel.text = "Last visited 4 days ago"
+//                
+//                pinAnnotation?.leftCalloutAccessoryView = customView
             }
             
             pinAnnotation?.image = addressAnnotation?.image
@@ -435,7 +443,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         let dropPin = AddressPointAnnotation()
 
         dropPin.id = address.id
-        dropPin.result = address.result
+        dropPin.result = address.displayedResult
         dropPin.coordinate = address.coordinate!
         dropPin.title = address.title
         dropPin.subtitle = address.subtitle
