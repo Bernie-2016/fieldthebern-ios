@@ -236,9 +236,10 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                        
                         if let lastVisited = self.address?.visitedAt
                         {
-                            if(NSDate().hoursFrom(lastVisited) <= 24)
-                            {
-                                let alert = UIAlertController.errorAlertControllerWithTitle("Already visited", message: "This address has already been canvassed. Please try another location.")
+                            if(NSDate().hoursFrom(lastVisited) < 24) {
+                                let timeSince = NSDate().offsetFrom(lastVisited)
+                                
+                                let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
                                 self.presentViewController(alert, animated: true, completion: nil)
                                 self.submitButton.enabled = true
 
