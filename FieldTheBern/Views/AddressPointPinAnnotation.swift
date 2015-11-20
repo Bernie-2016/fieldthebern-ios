@@ -55,6 +55,8 @@ class AddressPointPinAnnotation: MKAnnotationView {
             
             containerView = UIView()
             
+            containerView?.center = CGPoint(x: 0.5, y: 0.5)
+            
             let pinAnnotation = annotation as! AddressPointAnnotation
             
             calloutView!.addressLabel.text = annotation!.title!
@@ -84,14 +86,10 @@ class AddressPointPinAnnotation: MKAnnotationView {
         
         
         if (self.selected && !containerViewAdded && !calloutViewAdded && !triangleViewAdded) {
-            
-            containerView?.sizeToFit()
-            let centerPoint = containerView?.center
 
             if (animated) {
                 containerView!.alpha = 0
                 containerView!.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                containerView!.layer.position = centerPoint!
             }
             
             self.addSubview(containerView!)
@@ -104,7 +102,6 @@ class AddressPointPinAnnotation: MKAnnotationView {
                 UIView.animateWithDuration(Double(0.2), delay: Double(0.0), usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
                     self.containerView!.alpha = 1
                     self.containerView!.transform = CGAffineTransformMakeScale(1, 1)
-                    self.containerView!.layer.position = centerPoint!
                     }, completion: nil)
             }
         }
