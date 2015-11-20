@@ -854,7 +854,7 @@
 				TargetAttributes = {
 					A7A5794B1BB092E100D8885E = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = XCUKPHF39R;
+						DevelopmentTeam = 45H77T99SC;
 					};
 					A7A5795F1BB092E100D8885E = {
 						CreatedOnToolsVersion = 7.0;
@@ -1290,7 +1290,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DRelease -DProduction";
-				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PROVISIONING_PROFILE = "103f3343-2f8e-42bb-985b-8931c8d3b8a5";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
@@ -1303,11 +1303,12 @@
 			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1383,7 +1384,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DStaging";
-				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PROVISIONING_PROFILE = "4789d124-96f7-42a1-9598-501795a4a1c4";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
@@ -1396,11 +1397,12 @@
 			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1476,7 +1478,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DLocal";
-				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PROVISIONING_PROFILE = "4789d124-96f7-42a1-9598-501795a4a1c4";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
@@ -1489,11 +1491,12 @@
 			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1569,8 +1572,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DRelease -DStaging";
-				PRODUCT_BUNDLE_IDENTIFIER = com.groundgameapp.GroundGame;
-				PROVISIONING_PROFILE = "4789d124-96f7-42a1-9598-501795a4a1c4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
+				PROVISIONING_PROFILE = "0ddaf226-e5f6-4fe7-9882-a13c35bec2c7";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1582,11 +1585,12 @@
 			baseConfigurationReference = 50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
