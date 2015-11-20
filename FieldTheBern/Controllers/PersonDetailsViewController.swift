@@ -94,13 +94,15 @@ class PersonDetailsViewController: UIViewController {
         
             case "UnwindToConversationTableSegue":
                 
-                guard let returnedPerson = self.delegate?.willSubmit() else
-                {
-                    print("should not happen");
+                guard let returnedPerson = self.delegate?.willSubmit() else {
+                    log.error("Person was not returned")
                     break
                 }
 
-                guard let firstName = returnedPerson.firstName where firstName.characters.count > 0 else { self.showValidationError("Missing first name", message: "Make sure to enter the person's first name."); break }
+                guard let firstName = returnedPerson.firstName where firstName.characters.count > 0 else {
+                    self.showValidationError("Missing first name", message: "Make sure to enter the person's first name.")
+                    break
+                }
 
                 if returnedPerson.partyAffiliation == .Unknown {
                     self.showValidationError("Missing party affiliation", message: "Make sure to enter the person's party affiliation.")
@@ -113,9 +115,11 @@ class PersonDetailsViewController: UIViewController {
                 }
 
                 if let email = returnedPerson.email {
-                    if email.characters.count > 0
-                    {
-                    guard email.isValidEmail else { self.showValidationError("Invalid email", message: "Double-check the email you entered."); break }
+                    if email.characters.count > 0 {
+                        guard email.isValidEmail else {
+                            self.showValidationError("Invalid email", message: "Double-check the email you entered.")
+                            break
+                        }
                     }
                 }
                                 
@@ -126,12 +130,10 @@ class PersonDetailsViewController: UIViewController {
                         break
                     }
                     
-                    if(returnedPerson.phone != nil && preferredContactMethod == "phone")
-                    {
-                        if(!(returnedPerson.phone!.characters.count == 16 || returnedPerson.phone!.characters.count == 14))
-                        {
-                            self.showValidationError("Invalid phone", message: "Double-check the phone number you entered")
-                            break;
+                    if(returnedPerson.phone != nil && preferredContactMethod == "phone") {
+                        if(!(returnedPerson.phone!.characters.count == 16 || returnedPerson.phone!.characters.count == 14)) {
+                            self.showValidationError("Invalid phone", message: "Double-check the phone number you entered.")
+                            break
                         }
                     }
                 }

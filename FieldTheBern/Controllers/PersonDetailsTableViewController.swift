@@ -205,36 +205,27 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
        
-        if textField == emailField
-        {
-            if let text = textField.text
-            {
+        if textField == emailField {
+            if let text = textField.text {
                 let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
                 
-                if(newString.characters.count > 0)
-                {
+                if(newString.characters.count > 0) {
                     emailSwitch.userInteractionEnabled = true
-                }
-                else
-                {
+                } else {
                     emailSwitch.userInteractionEnabled = false
                 }
             }
         }
         
         
-        if textField == phoneField
-        {
+        if textField == phoneField {
             if let text = textField.text {
                 let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
                 
-                if(newString.characters.count > 0)
-                {
-                    phoneSwitch.userInteractionEnabled = true;
-                }
-                else
-                {
-                    phoneSwitch.userInteractionEnabled = false;
+                if(newString.characters.count > 0) {
+                    phoneSwitch.userInteractionEnabled = true
+                } else {
+                    phoneSwitch.userInteractionEnabled = false
                 }
                 
                 let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
@@ -244,30 +235,28 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
                 
                 let hasLeadingOne = length > 0 && newString[newString.startIndex] == "1"
                 
-                if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
-                {
+                if length == 0 || (length > 10 && !hasLeadingOne) || length > 11 {
                     let newLength = (text as NSString).length + (string as NSString).length - range.length as Int
                     
                     return (newLength > 10) ? false : true
                 }
+                
                 var index = 0 as Int
                 let formattedString = NSMutableString()
                 
-                if hasLeadingOne && !(range.location == 1 && range.length == 1)
-                {
+                if hasLeadingOne && !(range.location == 1 && range.length == 1) {
                     let leadingOne = decimalString.substringWithRange(NSMakeRange(index, 1))
                     formattedString.appendFormat("%@ ", leadingOne)
                     index += 1
                 }
                 
-                if (length - index) > 3
-                {
+                if (length - index) > 3 {
                     let areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
                     formattedString.appendFormat("(%@) ", areaCode)
                     index += 3
                 }
-                if length - index > 3
-                {
+                
+                if length - index > 3 {
                     let prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
                     formattedString.appendFormat("%@-", prefix)
                     index += 3
@@ -276,6 +265,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
                 let remainder = decimalString.substringFromIndex(index)
                 formattedString.appendString(remainder)
                 textField.text = formattedString as String
+                
                 return false
             } else {
                 return true
@@ -313,6 +303,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         if indexPath.row == 2 {
             self.performSegueWithIdentifier("PersonDetailsPartySegue", sender: self)
         }
+        
         if indexPath.row == 3 {
             self.performSegueWithIdentifier("CanvassResponseSegue", sender: self)
         }
@@ -326,6 +317,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
                 partyAffiliationViewController.partySelection = partySelection
             }
         }
+        
         if segue.identifier == "CanvassResponseSegue" {
             if let canvassResponseViewController = segue.destinationViewController as? CanvassResponseTableViewController {
                 canvassResponseViewController.delegate = self
@@ -354,19 +346,14 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     }
     
     
-    @IBAction func tappedPhoneSwitch()
-    {
-        
-        if(emailField.text?.characters.count > 0)
-        {
-                emailSwitch.setOn(!phoneSwitch.on, animated: true)
+    @IBAction func tappedPhoneSwitch() {
+        if(emailField.text?.characters.count > 0) {
+            emailSwitch.setOn(!phoneSwitch.on, animated: true)
         }
     }
     
-    @IBAction func tappedEmailSwitch()
-    {
-        if(phoneField.text?.characters.count > 0)
-        {
+    @IBAction func tappedEmailSwitch() {
+        if(phoneField.text?.characters.count > 0) {
             phoneSwitch.setOn(!emailSwitch.on, animated: true)
         }
     }
@@ -381,11 +368,13 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         //if !phoneField.text!.isEmpty { self.person?.phone = phoneField.text }
         //if !emailField.text!.isEmpty { self.person?.email = emailField.text }
         
-        if emailSwitch.on { self.person?.preferredContactMethod = "email" }
-        
-        else if phoneSwitch.on { self.person?.preferredContactMethod = "phone" }
-        
-        else { self.person?.preferredContactMethod = nil}
+        if emailSwitch.on {
+            self.person?.preferredContactMethod = "email"
+        } else if phoneSwitch.on {
+            self.person?.preferredContactMethod = "phone"
+        } else {
+            self.person?.preferredContactMethod = nil
+        }
         
         self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
         
