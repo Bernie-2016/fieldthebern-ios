@@ -240,7 +240,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.pointsLabel.text = scoreString
             }
             if let rankingUser = ranking.user {
-                if let name = rankingUser.name {
+                if let name = rankingUser.abbreviatedName {
                     cell.nameLabel.text = "\(name)"
                 }
                 
