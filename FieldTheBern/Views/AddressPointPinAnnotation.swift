@@ -83,8 +83,10 @@ class AddressPointPinAnnotation: MKAnnotationView {
             containerView?.bringSubviewToFront(triangleView!)
         }
         
+        
+        
         if (self.selected && !containerViewAdded && !calloutViewAdded && !triangleViewAdded) {
-            
+
             if (animated) {
                 containerView!.alpha = 0
                 containerView!.transform = CGAffineTransformMakeScale(0.5, 0.5)

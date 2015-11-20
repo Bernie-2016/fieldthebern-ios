@@ -73,7 +73,6 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
             return
         }
         
-        
         let alert = UIAlertController(title: "Verify Address", message: "\n\(addressString)\n\nAre you sure this is the right address? GPS is not 100% accurate.", preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in
@@ -234,6 +233,20 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                         } else {
                             self.address = address
                         }
+                       
+                        if let lastVisited = self.address?.visitedAt
+                        {
+                            if(NSDate().hoursFrom(lastVisited) < 24) {
+                                let timeSince = NSDate().offsetFrom(lastVisited)
+                                
+                                let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
+                                self.presentViewController(alert, animated: true, completion: nil)
+                                self.submitButton.enabled = true
+
+                                return
+                            }
+                        }
+                        
                         self.performSegueWithIdentifier("SubmitAddress", sender: self)
                     } else {
                         if let error = error {
