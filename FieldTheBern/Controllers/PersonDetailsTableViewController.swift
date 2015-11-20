@@ -204,10 +204,39 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+       
+        if textField == emailField
+        {
+            if let text = textField.text
+            {
+                let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+                
+                if(newString.characters.count > 0)
+                {
+                    emailSwitch.userInteractionEnabled = true
+                }
+                else
+                {
+                    emailSwitch.userInteractionEnabled = false
+                }
+            }
+        }
+        
+        
         if textField == phoneField
         {
             if let text = textField.text {
                 let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+                
+                if(newString.characters.count > 0)
+                {
+                    phoneSwitch.userInteractionEnabled = true;
+                }
+                else
+                {
+                    phoneSwitch.userInteractionEnabled = false;
+                }
+                
                 let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
                 
                 let decimalString = components.joinWithSeparator("") as NSString
@@ -325,33 +354,20 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     }
     
     
-    @IBAction func tappedPhoneSwitch() {
+    @IBAction func tappedPhoneSwitch()
+    {
         
-        if(phoneField.text?.characters.count < 1)
+        if(emailField.text?.characters.count > 0)
         {
-            phoneSwitch.setOn(false, animated: true)
-        }
-        else
-        {
-            if(emailField.text?.characters.count > 0)
-            {
                 emailSwitch.setOn(!phoneSwitch.on, animated: true)
-            }
         }
     }
     
-    @IBAction func tappedEmailSwitch() {
-        
-        if(emailField.text?.characters.count < 1)
+    @IBAction func tappedEmailSwitch()
+    {
+        if(phoneField.text?.characters.count > 0)
         {
-            emailSwitch.setOn(false, animated: true)
-        }
-        else
-        {
-            if(phoneField.text?.characters.count > 0)
-            {
             phoneSwitch.setOn(!emailSwitch.on, animated: true)
-            }
         }
     }
     
@@ -369,7 +385,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         
         else if phoneSwitch.on { self.person?.preferredContactMethod = "phone" }
         
-        else { self.person?.preferredContactMethod = ""}
+        else { self.person?.preferredContactMethod = nil}
         
         self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
         

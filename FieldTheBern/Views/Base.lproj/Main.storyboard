@@ -2717,7 +2717,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jyZ-tF-LfM">
+                                                        <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jyZ-tF-LfM">
                                                             <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                             <animations/>
                                                             <constraints>
@@ -2738,7 +2738,7 @@
                                                                 <action selector="tappedPhoneSwitch" destination="EVh-8F-DhQ" eventType="valueChanged" id="emn-i7-rqN"/>
                                                             </connections>
                                                         </switch>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F70-Td-ADe">
+                                                        <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F70-Td-ADe">
                                                             <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                             <animations/>
                                                             <constraints>
