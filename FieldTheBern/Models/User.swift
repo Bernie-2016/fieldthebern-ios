@@ -29,6 +29,16 @@ struct User {
         }
     }
     
+    var abbreviatedName: String? {
+        get {
+            if let first = firstName, last = lastName {
+                return "\(first) \(last.characters.first!)."
+            } else {
+                return firstName
+            }
+        }
+    }
+    
     var totalPointsString: String? {
         get {
             let numberFormatter = NSNumberFormatter()

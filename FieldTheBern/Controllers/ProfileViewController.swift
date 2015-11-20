@@ -240,7 +240,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.pointsLabel.text = scoreString
             }
             if let rankingUser = ranking.user {
-                if let name = rankingUser.name {
+                if let name = rankingUser.abbreviatedName {
                     cell.nameLabel.text = "\(name)"
                 }
                 
@@ -257,8 +257,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     imageView.layer.cornerRadius = imageView.frame.height/2
                     
                     cell.imageContainer.addSubview(imageView)
-                    
-                    print(url)
                     
                     imageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder"), completion: nil)
                 }
