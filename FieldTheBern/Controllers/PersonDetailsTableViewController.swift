@@ -171,6 +171,18 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             self.person?.firstName = firstNameField.text
         case lastNameField:
             self.person?.lastName = lastNameField.text
+            
+        case emailField:
+            if(emailField.text?.characters.count < 1 && emailSwitch.on)
+            {
+                emailSwitch.setOn(false, animated: true)
+            }
+            
+        case phoneField:
+            if(phoneField.text?.characters.count < 1 && phoneSwitch.on)
+            {
+                phoneSwitch.setOn(false, animated: true)
+            }
         default:
             break
         }
@@ -314,21 +326,50 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
     
     
     @IBAction func tappedPhoneSwitch() {
-        emailSwitch.setOn(!phoneSwitch.on, animated: true)
+        
+        if(phoneField.text?.characters.count < 1)
+        {
+            phoneSwitch.setOn(false, animated: true)
+        }
+        else
+        {
+            if(emailField.text?.characters.count > 0)
+            {
+                emailSwitch.setOn(!phoneSwitch.on, animated: true)
+            }
+        }
     }
     
     @IBAction func tappedEmailSwitch() {
-        phoneSwitch.setOn(!emailSwitch.on, animated: true)
+        
+        if(emailField.text?.characters.count < 1)
+        {
+            emailSwitch.setOn(false, animated: true)
+        }
+        else
+        {
+            if(phoneField.text?.characters.count > 0)
+            {
+            phoneSwitch.setOn(!emailSwitch.on, animated: true)
+            }
+        }
     }
     
     func willSubmit() -> Person? {
         if !firstNameField.text!.isEmpty { self.person?.firstName = firstNameField.text }
         if !lastNameField.text!.isEmpty { self.person?.lastName = lastNameField.text }
-        if !phoneField.text!.isEmpty { self.person?.phone = phoneField.text }
-        if !emailField.text!.isEmpty { self.person?.email = emailField.text }
+        
+        self.person?.phone = phoneField.text
+        self.person?.email = emailField.text
+        
+        //if !phoneField.text!.isEmpty { self.person?.phone = phoneField.text }
+        //if !emailField.text!.isEmpty { self.person?.email = emailField.text }
         
         if emailSwitch.on { self.person?.preferredContactMethod = "email" }
-        if phoneSwitch.on { self.person?.preferredContactMethod = "phone" }
+        
+        else if phoneSwitch.on { self.person?.preferredContactMethod = "phone" }
+        
+        else { self.person?.preferredContactMethod = ""}
         
         self.person?.previouslyParticipatedInCaucusOrPrimary = previouslyParticipatedSwitch.on
         

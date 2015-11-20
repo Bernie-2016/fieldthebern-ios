@@ -113,18 +113,20 @@ class PersonDetailsViewController: UIViewController {
                 }
 
                 if let email = returnedPerson.email {
+                    if email.characters.count > 0
+                    {
                     guard email.isValidEmail else { self.showValidationError("Invalid email", message: "Double-check the email you entered."); break }
-                    
+                    }
                 }
                                 
-                let hasEmailOrPhone = returnedPerson.email != nil || returnedPerson.phone != nil
+                let hasEmailOrPhone = !returnedPerson.email!.isEmpty || !returnedPerson.phone!.isEmpty
                 if hasEmailOrPhone {
                     guard let preferredContactMethod = returnedPerson.preferredContactMethod where preferredContactMethod == "phone" || preferredContactMethod == "email" else {
                         self.showValidationError("Missing preferred contact method", message: "Make sure to enter the person's preferred contact method.")
                         break
                     }
                     
-                    if(preferredContactMethod == "phone")
+                    if(returnedPerson.phone != nil && preferredContactMethod == "phone")
                     {
                         if(!(returnedPerson.phone!.characters.count == 16 || returnedPerson.phone!.characters.count == 14))
                         {
