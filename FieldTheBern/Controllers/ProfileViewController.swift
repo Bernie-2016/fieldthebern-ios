@@ -258,8 +258,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     
                     cell.imageContainer.addSubview(imageView)
                     
-                    print(url)
-                    
                     imageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder"), completion: nil)
                 }
             }
