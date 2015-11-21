@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var rankings: [Ranking] = []
     var loadingRankings = false
     var imagePicker = UIImagePickerController()
+    var isPickingImage = false
     var user: User? {
         didSet {
             if let user = user {
@@ -66,8 +67,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        getLeaderboardWithSegmentedControl(segmentedControl)
-        getUser()
+        if !isPickingImage { // Don't refresh everything when we're just returning from picking an image
+            getLeaderboardWithSegmentedControl(segmentedControl)
+            getUser()
+        }
     }
     
     func getUser() {
@@ -154,8 +157,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func takePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            isPickingImage = true
+
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
             imagePicker.allowsEditing = false
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -164,8 +169,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func pickImage() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            isPickingImage = true
+
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
             imagePicker.allowsEditing = false
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -173,16 +180,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            
-        })
         
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            // We're done picking the image
+            self.isPickingImage = false
+        }
+        
+        // Reize the image to the max size we're using on the server
         let resizedImage = Toucan(image: image).resize(CGSize(width: 500, height: 500), fitMode: Toucan.Resize.FitMode.Crop).image
         
+        // Compress the image to reduce upload size
         let imageData = UIImageJPEGRepresentation(resizedImage, 0.7)
         
+        // Upload the image
         if let base64String = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) {
             UserService().editMePhoto(base64String) { (user, success, error) -> Void in
+                
                 if success {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.profileImageView.image = resizedImage
