@@ -92,11 +92,17 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
             // Set their phone
             if let phone = person.phone {
                 phoneField.text = phone
+                
+                // Enable the switch since their phone was already entered
+                phoneSwitch.userInteractionEnabled = true
             }
             
             // Set their email
             if let email = person.email {
                 emailField.text = email
+                
+                // Enable the switch since their email was already entered
+                emailSwitch.userInteractionEnabled = true
             }
             
             // Set the preferred contact method
@@ -208,7 +214,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         if textField == emailField {
             if let text = textField.text {
                 let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-                
+                print(newString)
                 if(newString.characters.count > 0) {
                     emailSwitch.userInteractionEnabled = true
                 } else {

@@ -392,7 +392,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="113" y="12.5" width="34.5" height="14"/>
+                                                        <rect key="frame" x="113" y="12" width="34.5" height="14"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POINTS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-79-vZn">
@@ -749,7 +749,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="30" y="32.5" width="180" height="34.5"/>
+                                                        <rect key="frame" x="30" y="32" width="180" height="34.5"/>
                                                         <mask key="constraints">
                                                             <include reference="AVK-58-Dv7"/>
                                                             <exclude reference="HsP-K7-sIo"/>
@@ -1136,7 +1136,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="10" y="7.5" width="50.5" height="43"/>
+                                            <rect key="frame" x="10" y="7" width="50.5" height="43"/>
                                             <mask key="constraints">
                                                 <exclude reference="74A-RW-zGU"/>
                                                 <exclude reference="EEK-vD-oP4"/>
@@ -2759,7 +2759,7 @@
                                                                 </mask>
                                                             </variation>
                                                             <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="62" y="2.5" width="51" height="31"/>
+                                                                <rect key="frame" x="62" y="2" width="51" height="31"/>
                                                                 <mask key="constraints">
                                                                     <include reference="wV5-Zq-1Sv"/>
                                                                 </mask>
@@ -2781,7 +2781,7 @@
                                                                 </mask>
                                                             </variation>
                                                             <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="174.5" y="2.5" width="51" height="31"/>
+                                                                <rect key="frame" x="174" y="2" width="51" height="31"/>
                                                                 <mask key="constraints">
                                                                     <include reference="hwb-ll-rRM"/>
                                                                 </mask>
@@ -2987,7 +2987,7 @@
                                                                 </mask>
                                                             </variation>
                                                             <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="38" y="2.5" width="51" height="31"/>
+                                                                <rect key="frame" x="38" y="2" width="51" height="31"/>
                                                                 <mask key="constraints">
                                                                     <include reference="IPw-Pj-yZt"/>
                                                                 </mask>
@@ -3195,7 +3195,7 @@
                                                                 </mask>
                                                             </variation>
                                                             <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="38" y="2.5" width="51" height="31"/>
+                                                                <rect key="frame" x="38" y="2" width="51" height="31"/>
                                                                 <mask key="constraints">
                                                                     <include reference="fBX-gN-oNH"/>
                                                                 </mask>
@@ -4627,7 +4627,7 @@ useful talking points.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="20" y="248.5" width="320" height="63"/>
+                                            <rect key="frame" x="20" y="248" width="320" height="63"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -4672,7 +4672,7 @@ useful talking points.</string>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="144.5" width="360" height="311.5"/>
+                                    <rect key="frame" x="20" y="144" width="360" height="311.5"/>
                                     <mask key="subviews">
                                         <include reference="DPy-er-LMD"/>
                                         <include reference="64W-yy-bFO"/>
@@ -5470,7 +5470,7 @@ useful talking points.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="50" y="13.5" width="342" height="21"/>
+                                                <rect key="frame" x="50" y="13" width="342" height="21"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="qvK-jD-A4U">
@@ -5567,7 +5567,7 @@ useful talking points.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="62.5" width="384" height="17.5"/>
+                                                        <rect key="frame" x="8" y="62" width="384" height="17.5"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sft-c4-9En" customClass="SpringLabel" customModule="Spring">
@@ -8927,7 +8927,7 @@ useful talking points.</string>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="40" y="43.5" width="320" height="228.5"/>
+                                            <rect key="frame" x="40" y="43" width="320" height="228.5"/>
                                             <mask key="constraints">
                                                 <exclude reference="6cd-Xk-Qph"/>
                                                 <include reference="YiW-9O-sYT"/>
@@ -8942,7 +8942,7 @@ useful talking points.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="83.5" y="0.0" width="233" height="23.5"/>
+                                            <rect key="frame" x="83" y="0.0" width="233" height="23.5"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must download the latest update to continue using the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-ha-IK0">
