@@ -133,7 +133,7 @@ struct Address {
         city = addressJSON["city"].string
         stateCode = addressJSON["state_code"].string
         zipCode = addressJSON["zip_code"].string
-
+        
         if let dateString = addressJSON["visited_at"].string {
             visitedAt = NSDate.dateFromISOString(dateString)
         } else {

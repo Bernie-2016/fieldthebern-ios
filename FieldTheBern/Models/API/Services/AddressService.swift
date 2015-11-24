@@ -59,8 +59,12 @@ struct AddressService {
                     
                     var addressesArray: [Address] = []
                     
-                    for (_, addresses) in json {
-                        for (_, address) in addresses {
+                    for (_, address) in json["data"] {
+                        
+                        // Check for addresses only
+                        let type = address["type"].string
+                        
+                        if type == "addresses" {
                             let newAddress = Address(id: address["id"].string, addressJSON: address["attributes"])
                             addressesArray.append(newAddress)
                         }

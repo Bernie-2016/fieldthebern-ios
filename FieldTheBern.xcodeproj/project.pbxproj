@@ -1291,7 +1291,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DRelease -DProduction";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PROVISIONING_PROFILE = "103f3343-2f8e-42bb-985b-8931c8d3b8a5";
+				PROVISIONING_PROFILE = "e4932962-2559-474d-9e64-48b2b0a5569f";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				VALIDATE_PRODUCT = YES;
@@ -1386,7 +1386,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DStaging";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PROVISIONING_PROFILE = "4789d124-96f7-42a1-9598-501795a4a1c4";
+				PROVISIONING_PROFILE = "1e3c689b-8da6-4082-bdbf-a0fc38d72a02";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1481,7 +1481,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDebug -DLocal";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PROVISIONING_PROFILE = "4789d124-96f7-42a1-9598-501795a4a1c4";
+				PROVISIONING_PROFILE = "1e3c689b-8da6-4082-bdbf-a0fc38d72a02";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1576,7 +1576,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DRelease -DStaging";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PROVISIONING_PROFILE = "0ddaf226-e5f6-4fe7-9882-a13c35bec2c7";
+				PROVISIONING_PROFILE = "e4932962-2559-474d-9e64-48b2b0a5569f";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
