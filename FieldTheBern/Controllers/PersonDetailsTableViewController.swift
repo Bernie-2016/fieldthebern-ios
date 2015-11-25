@@ -214,7 +214,7 @@ class PersonDetailsTableViewController: UITableViewController, UITextFieldDelega
         if textField == emailField {
             if let text = textField.text {
                 let newString = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-                print(newString)
+
                 if(newString.characters.count > 0) {
                     emailSwitch.userInteractionEnabled = true
                 } else {
