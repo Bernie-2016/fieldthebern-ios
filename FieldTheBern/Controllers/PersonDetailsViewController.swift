@@ -130,7 +130,7 @@ class PersonDetailsViewController: UIViewController {
                         break
                     }
                     
-                    if(returnedPerson.phone != nil) {
+                    if(!returnedPerson.phone!.isEmpty) {
                         if(!(returnedPerson.phone!.characters.count == 16 || returnedPerson.phone!.characters.count == 14)) {
                             self.showValidationError("Invalid phone", message: "Double-check the phone number you entered.")
                             break
