@@ -17,14 +17,11 @@ extension UIImage {
         var widthScaleRatio: CGFloat = 1.0
         var heightScaleRatio: CGFloat = 1.0
         
-        if (self.size.width > targetSize.width) {
-            widthScaleRatio = targetSize.width / self.size.width
-        }
-        if (self.size.height > targetSize.height) {
-            heightScaleRatio = targetSize.height / self.size.height
-        }
-        
+        widthScaleRatio = targetSize.width / self.size.width
+        heightScaleRatio = targetSize.height / self.size.height
+
         let scaledRatio = max(widthScaleRatio, heightScaleRatio)
+        
         UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.mainScreen().scale)
         let context = UIGraphicsGetCurrentContext()
         
