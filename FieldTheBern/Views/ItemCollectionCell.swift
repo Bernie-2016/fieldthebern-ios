@@ -31,7 +31,6 @@ class ItemCollectionCell: UICollectionViewCell {
             let image = operation.image
             dispatch_async(dispatch_get_main_queue()) {
                 self?.itemImageView.image = image
-                self?.itemImageView.contentMode = UIViewContentMode.ScaleAspectFill
             }
         }
         
