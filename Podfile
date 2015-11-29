@@ -22,11 +22,11 @@ def testing_pods
     pod 'Nimble', '2.0.0'
 end
 
-target 'GroundGameTests' do
+target 'FieldTheBernTests' do
     testing_pods
 end
 
-target 'GroundGameUITests' do
+target 'FieldTheBernUITests' do
     testing_pods
 end
 
