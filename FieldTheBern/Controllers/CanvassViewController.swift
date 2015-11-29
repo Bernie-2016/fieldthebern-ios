@@ -543,6 +543,23 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
     
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
+            
+            self.findMyLocation()
+            
+            var region:MKCoordinateRegion = self.mapView.region
+            region.center = self.mapView.userLocation.coordinate
+            region.span.longitudeDelta = 0.15
+            region.span.latitudeDelta = 0.15
+            
+            self.mapView.setRegion(region, animated: true)
+            
+            updateClosestLocation()
+            self.animateNearestAddressViewIfNeeded()
+        }
+    }
+    
     // MARK: - Error Handling
     
     func handleError(error: APIError) {
