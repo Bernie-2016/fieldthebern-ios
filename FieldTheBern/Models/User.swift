@@ -32,7 +32,13 @@ struct User {
     var abbreviatedName: String? {
         get {
             if let first = firstName, last = lastName {
-                return "\(first) \(last.characters.first!)."
+                let count = last.characters.count
+                var lastString = ""
+                if count > 0 {
+                    let index = last.startIndex.advancedBy(1)
+                    lastString = "\(last.substringToIndex(index))."
+                }
+                return "\(first) \(lastString)"
             } else {
                 return firstName
             }
