@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Heap.enableVisualizer()
         #endif
         
-        Parse.setApplicationId("Do1Z4inNlESdLB7JsW7DVUPGlQJCkkKRyKp8h1Fv", clientKey: "Hm3Slw0OZL3D8lShBTrGLOMjxHkvJpFTL9X40bz3")
+        Parse.setApplicationId("8QAl1h1M9DmZwFq87KUTfRXsGZwmjGhhKIskbkLW", clientKey: "oLs31Fd9TROEH9it4AvEuHNs0xrP6PLkyOA0BiTJ")
         
         BITHockeyManager.sharedHockeyManager().configureWithIdentifier("4c903ef8431a4cf5bd727a8d4077edec")
         BITHockeyManager.sharedHockeyManager().startManager()

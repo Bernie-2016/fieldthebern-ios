@@ -18,4 +18,8 @@ struct APIURL {
     #if Staging
         static let url = "http://api.groundgameapp-staging.com"
     #endif
+    
+    #if Production
+        static let url = "https://api.fieldthebern.com"
+    #endif
 }

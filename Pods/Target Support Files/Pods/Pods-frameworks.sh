@@ -155,3 +155,21 @@ if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
   install_framework "Pods/XCGLogger.framework"
   install_framework "Pods/p2_OAuth2.framework"
 fi
+if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
+  install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/Bolts.framework"
+  install_framework "Pods/Dollar.framework"
+  install_framework "Pods/FBSDKCoreKit.framework"
+  install_framework "Pods/FBSDKLoginKit.framework"
+  install_framework "Pods/FBSDKShareKit.framework"
+  install_framework "Pods/FLAnimatedImage.framework"
+  install_framework "Pods/KFSwiftImageLoader.framework"
+  install_framework "Pods/KeychainAccess.framework"
+  install_framework "Pods/Parse.framework"
+  install_framework "Pods/Realm.framework"
+  install_framework "Pods/RealmSwift.framework"
+  install_framework "Pods/Spring.framework"
+  install_framework "Pods/SwiftyJSON.framework"
+  install_framework "Pods/XCGLogger.framework"
+  install_framework "Pods/p2_OAuth2.framework"
+fi
