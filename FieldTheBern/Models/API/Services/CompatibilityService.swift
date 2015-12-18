@@ -16,6 +16,7 @@ struct CompatibilityService {
     func checkCompatibility(versionNumber: String, callback: ((success: Bool, isCompatible: Bool?) -> Void)) {
 
         api.unauthorizedGet("compatibility", parameters: ["version": versionNumber]) { (data, success, error) in
+
             if success {
                 // Extract our addresses into models
                 if let data = data {

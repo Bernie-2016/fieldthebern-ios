@@ -18,7 +18,12 @@ struct OAuth {
     static let ClientId = "8df63fdfced189eebd867fb6d60ea7b7927d728a7f492e529ac8ea4df7a1735a"
     static let ClientSecret = "c1bad6f79050addd225b687beb884c018111236ff4f0a2aa2bc347857e3715e3"
     #endif
-    
+
+    #if Production
+    static let ClientId = "309dd32837988e7f0639f8dfc04ec758777974cc2686c8a52232666ce5164389"
+    static let ClientSecret = "24ba44cea7e2b7ea7b6b804c7150617a0268836c40ca27c33f47f24e783d2f4b"
+    #endif
+
     static let AuthorizeURI = APIURL.url + "/oauth/token"
     static let TokenURI = APIURL.url + "/oauth/token"
 }

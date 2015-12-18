@@ -163,3 +163,23 @@ if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
   install_framework "Pods-FieldTheBernUITests/Nimble.framework"
   install_framework "Pods-FieldTheBernUITests/Quick.framework"
 fi
+if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
+  install_framework "Pods-FieldTheBernUITests/Alamofire.framework"
+  install_framework "Pods-FieldTheBernUITests/Bolts.framework"
+  install_framework "Pods-FieldTheBernUITests/Dollar.framework"
+  install_framework "Pods-FieldTheBernUITests/FBSDKCoreKit.framework"
+  install_framework "Pods-FieldTheBernUITests/FBSDKLoginKit.framework"
+  install_framework "Pods-FieldTheBernUITests/FBSDKShareKit.framework"
+  install_framework "Pods-FieldTheBernUITests/FLAnimatedImage.framework"
+  install_framework "Pods-FieldTheBernUITests/KFSwiftImageLoader.framework"
+  install_framework "Pods-FieldTheBernUITests/KeychainAccess.framework"
+  install_framework "Pods-FieldTheBernUITests/Parse.framework"
+  install_framework "Pods-FieldTheBernUITests/Realm.framework"
+  install_framework "Pods-FieldTheBernUITests/RealmSwift.framework"
+  install_framework "Pods-FieldTheBernUITests/Spring.framework"
+  install_framework "Pods-FieldTheBernUITests/SwiftyJSON.framework"
+  install_framework "Pods-FieldTheBernUITests/XCGLogger.framework"
+  install_framework "Pods-FieldTheBernUITests/p2_OAuth2.framework"
+  install_framework "Pods-FieldTheBernUITests/Nimble.framework"
+  install_framework "Pods-FieldTheBernUITests/Quick.framework"
+fi

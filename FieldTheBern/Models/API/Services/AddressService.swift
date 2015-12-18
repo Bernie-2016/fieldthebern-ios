@@ -27,9 +27,14 @@ struct AddressService {
                     
                     var people: [Person] = []
                     
-                    for (_, person) in json["included"] {
-                        let newPerson = Person(json: person)
-                        people.append(newPerson)
+                    for (_, included) in json["included"] {
+                        // Check for people only
+                        let type = included["type"].string
+                        
+                        if type == "people" {
+                            let newPerson = Person(json: included)
+                            people.append(newPerson)
+                        }
                     }
                     
                     let addressJSON = json["data"][0]
@@ -59,13 +64,13 @@ struct AddressService {
                     
                     var addressesArray: [Address] = []
                     
-                    for (_, address) in json["data"] {
+                    for (_, included) in json["data"] {
                         
                         // Check for addresses only
-                        let type = address["type"].string
+                        let type = included["type"].string
                         
                         if type == "addresses" {
-                            let newAddress = Address(id: address["id"].string, addressJSON: address["attributes"])
+                            let newAddress = Address(id: included["id"].string, addressJSON: included["attributes"])
                             addressesArray.append(newAddress)
                         }
                     }
