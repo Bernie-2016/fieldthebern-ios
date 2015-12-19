@@ -16,14 +16,17 @@ typealias HTTPCallback = (Response<AnyObject, NSError>) -> Void
 class HTTP {
     
     private let session: Session = Session.sharedInstance
-        
+    private let appVersionProvider = AppVersionProvider()
+    
     func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
 
         session.authorize(.Reauthorization) { (success) -> Void in
-
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
-                    let headers = ["Authorization": "Bearer \(accessToken)"]
+                    let headers = [
+                        "User-Agent": self.appVersionProvider.versionString(),
+                        "Authorization": "Bearer \(accessToken)"
+                    ]
                     Alamofire.request(method, url, parameters: parameters, encoding: encoding, headers: headers)
                         .validate()
                         .responseJSON { response in
@@ -36,6 +39,8 @@ class HTTP {
     
     func unauthorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
         Alamofire.request(method, url, parameters: parameters, encoding: encoding)
+        let headers = ["User-Agent": self.appVersionProvider.versionString()]
+        Alamofire.request(method, url, parameters: parameters, headers: headers)
             .validate()
             .responseJSON { response in
                 callback(response)
