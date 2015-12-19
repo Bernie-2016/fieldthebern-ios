@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.0.1)
+  - Alamofire (3.1.4)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -42,7 +42,7 @@ PODS:
   - XCGLogger (3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0.0-beta.3)
+  - Alamofire (~> 3.1)
   - Dollar
   - FBSDKCoreKit (= 4.8.0)
   - FBSDKLoginKit (= 4.8.0)
@@ -77,7 +77,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   Dollar: a058e2659e0d3261307c12630dbc2fd8e32f80bf
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8

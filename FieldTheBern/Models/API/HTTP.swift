@@ -23,11 +23,9 @@ class HTTP {
         session.authorize(.Reauthorization) { (success) -> Void in
             if success {
                 if let accessToken = self.session.oauth2?.accessToken {
-                    let credentialData = "\(accessToken)".dataUsingEncoding(NSUTF8StringEncoding)!
-                    let base64Credentials = credentialData.base64EncodedStringWithOptions([])
                     let headers = [
                         "User-Agent": self.appVersionProvider.versionString(),
-                        "Authorization": "Bearer \(base64Credentials)"
+                        "Authorization": "Bearer \(accessToken)"
                     ]
                     Alamofire.request(method, url, parameters: parameters, encoding: encoding, headers: headers)
                         .validate()
