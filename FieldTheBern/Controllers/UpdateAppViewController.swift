@@ -20,7 +20,7 @@ class UpdateAppViewController: UIViewController {
     }
 
     @IBAction func pressUpdateNow(sender: UIButton) {
-        let url = NSURL(string: "itms-apps://itunes.apple.com/app/id734831524")
+        let url = NSURL(string: "itms-apps://itunes.apple.com/app/id1061795493")
         if UIApplication.sharedApplication().canOpenURL(url!) == true  {
         UIApplication.sharedApplication().openURL(url!)
         }
