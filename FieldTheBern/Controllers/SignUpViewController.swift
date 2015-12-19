@@ -43,15 +43,16 @@ class SignUpViewController: UIViewController {
         login.logInWithReadPermissions(["public_profile", "email", "user_friends"], fromViewController: self, handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
             self.animateFacebookButton()
             
-            let token = result.token
-            
             if error != nil {
                 log.error("Process error")
+                log.error("\(error)")
             } else {
                 if result.isCancelled {
                     log.error("Cancelled")
                 } else {
                     let session = Session.sharedInstance
+
+                    let token = result.token
 
                     UserService().checkUserWithFacebookIdExists(token.userID, callback: { (userExists, apiSuccess, error) -> Void in
 
