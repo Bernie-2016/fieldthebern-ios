@@ -185,8 +185,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        findMyLocation()
         
         // Set the map view
         mapView.delegate = self
@@ -214,6 +212,19 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         // Subscribe to placemark updated notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldUpdatePlacemark:", name: "placemarkUpdated", object: nil)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+      //  findMyLocation()
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        findMyLocation()
+
     }
     
 

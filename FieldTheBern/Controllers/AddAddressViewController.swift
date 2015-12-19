@@ -18,6 +18,8 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     var address: Address?
     var people: [Person]?
     
+    let timeoutConstantInHours = 24
+    
     var addressString: String {
         get {
             let street = streetAddress.text
@@ -99,6 +101,11 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         submitButton.setBackgroundImage(UIImage.imageFromColor(Color.Gray), forState: UIControlState.Disabled)
         
         placemark = previousPlacemark
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         if locationNeedsUpdating() {
             self.addressIsLoading()
@@ -216,7 +223,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     
     func submitForm() {
 
-        if (streetAddress.text != "") {
+        if (!streetAddress.text!.isEmpty) {
             
             if let location = self.location, let placemark = self.placemark {
                 
@@ -236,7 +243,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                        
                         if let lastVisited = self.address?.visitedAt
                         {
-                            if(NSDate().hoursFrom(lastVisited) < 24) {
+                            if(NSDate().hoursFrom(lastVisited) < self.timeoutConstantInHours) {
                                 let timeSince = NSDate().offsetFrom(lastVisited)
                                 
                                 let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")

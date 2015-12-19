@@ -27,9 +27,11 @@ class MapTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? LoadingAnimationViewController
         toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         
-        containerView!.addSubview(fromViewController!.view)
-
-        shrinkMap()
+        if (containerView != nil)
+        {
+            containerView!.addSubview(fromViewController!.view)
+            shrinkMap()
+        }
     }
     
     func shrinkMap() {
