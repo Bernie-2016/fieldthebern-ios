@@ -25,7 +25,7 @@ struct UserService {
     }
     
     func createUser(email email: String, password: String, firstName: String, lastName: String, facebookAccessToken: String?, facebookId: String?, photoString: String?, callback: UserResponse) {
-
+        
         let json = UserJSON(firstName: firstName, lastName: lastName, email: email, password: password, facebookId: facebookId, facebookAccessToken: facebookAccessToken, base64PhotoData: photoString).json
         
         api.unauthorizedPost("users", parameters: json.object as? [String : AnyObject]) { (data, success, error) in
