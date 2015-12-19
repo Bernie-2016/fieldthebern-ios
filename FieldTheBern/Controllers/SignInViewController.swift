@@ -127,7 +127,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         let login: FBSDKLoginManager = FBSDKLoginManager()
         login.loginBehavior = FBSDKLoginBehavior.Native
-        login.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
+        login.logInWithReadPermissions(["public_profile", "email", "user_friends"], fromViewController: self, handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
             self.facebookButton.titleLabel?.layer.opacity = 1
             self.facebookSpinner.stopAnimating()
             

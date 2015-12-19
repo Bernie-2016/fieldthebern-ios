@@ -321,7 +321,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func showFacebookInviteDialog() {
         let content: FBSDKAppInviteContent = FBSDKAppInviteContent()
         content.appLinkURL = NSURL(string: "https://fb.me/835938513187372")
-        FBSDKAppInviteDialog.showWithContent(content, delegate: self)
+        FBSDKAppInviteDialog.showFromViewController(self, withContent: content, delegate: self)
+//        FBSDKAppInviteDialog.showWithContent(content, delegate: self)
     }
     
     func composeTextMessage() {
