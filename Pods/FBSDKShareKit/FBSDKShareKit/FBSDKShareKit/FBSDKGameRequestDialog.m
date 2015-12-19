@@ -100,19 +100,19 @@ static FBSDKGameRequestFrictionlessRecipientCache *_recipientCache = nil;
   }
 
   NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-  [FBSDKInternalUtility dictionary:parameters setObject:[content.to componentsJoinedByString:@","] forKey:@"to"];
+  [FBSDKInternalUtility dictionary:parameters setObject:[content.recipients componentsJoinedByString:@","] forKey:@"to"];
   [FBSDKInternalUtility dictionary:parameters setObject:content.message forKey:@"message"];
   [FBSDKInternalUtility dictionary:parameters setObject:[self _actionTypeNameForActionType:content.actionType] forKey:@"action_type"];
   [FBSDKInternalUtility dictionary:parameters setObject:content.objectID forKey:@"object_id"];
   [FBSDKInternalUtility dictionary:parameters setObject:[self _filtersNameForFilters:content.filters] forKey:@"filters"];
-  [FBSDKInternalUtility dictionary:parameters setObject:[content.suggestions componentsJoinedByString:@","] forKey:@"suggestions"];
+  [FBSDKInternalUtility dictionary:parameters setObject:[content.recipientSuggestions componentsJoinedByString:@","] forKey:@"suggestions"];
   [FBSDKInternalUtility dictionary:parameters setObject:content.data forKey:@"data"];
   [FBSDKInternalUtility dictionary:parameters setObject:content.title forKey:@"title"];
 
   // check if we are sending to a specific set of recipients.  if we are and they are all frictionless recipients, we
   // can perform this action without displaying the web dialog
   _webDialog.deferVisibility = NO;
-  NSArray *recipients = content.to;
+  NSArray *recipients = content.recipients;
   if (_frictionlessRequestsEnabled && recipients) {
     // specify these parameters to get the frictionless recipients from the dialog when it is presented
     parameters[@"frictionless"] = @YES;
@@ -149,6 +149,24 @@ static FBSDKGameRequestFrictionlessRecipientCache *_recipientCache = nil;
 
   NSError *error = [FBSDKShareError errorWithCode:[FBSDKTypeUtility unsignedIntegerValue:results[@"error_code"]]
                                           message:[FBSDKTypeUtility stringValue:results[@"error_message"]]];
+  if (!error.code) {
+    // reformat "to[x]" keys into an array.
+    int counter = 0;
+    NSMutableArray *toArray = [NSMutableArray array];
+    while (true) {
+      NSString *key = [NSString stringWithFormat:@"to[%d]", counter++];
+      if (results[key]) {
+        [toArray addObject:results[key]];
+      } else {
+        break;
+      }
+    }
+    if (toArray.count) {
+      NSMutableDictionary *mutableResults = [results mutableCopy];
+      mutableResults[@"to"] = toArray;
+      results = mutableResults;
+    }
+  }
   [self _handleCompletionWithDialogResults:results error:error];
   [FBSDKInternalUtility unregisterTransientObject:self];
 }

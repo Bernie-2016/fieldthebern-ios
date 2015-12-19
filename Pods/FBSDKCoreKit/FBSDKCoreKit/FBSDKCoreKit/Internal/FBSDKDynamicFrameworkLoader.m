@@ -451,6 +451,18 @@ Class fbsdkdfl_ASIdentifierManagerClass(void)
   return c;
 }
 
+#pragma mark - Safari Services
+_fbsdkdfl_load_framework_once_impl_(SafariServices)
+_fbsdkdfl_handle_get_impl_(SafariServices)
+
+#define _fbsdkdfl_SafariServices_get_c(SYMBOL) _fbsdkdfl_symbol_get_c(SafariServices, SYMBOL);
+
+Class fbsdkdfl_SFSafariViewControllerClass(void)
+{
+  _fbsdkdfl_SafariServices_get_c(SFSafariViewController);
+  return c;
+}
+
 #pragma mark - Accounts Constants
 
 _fbsdkdfl_load_framework_once_impl_(Accounts)
@@ -528,4 +540,17 @@ Class fbsdkdfl_ALAssetsLibraryClass(void)
 {
   _fbsdkdfl_AssetsLibrary_get_c(ALAssetsLibrary);
   return c;
+}
+
+#pragma mark - CoreTelephony Classes
+
+_fbsdkdfl_load_framework_once_impl_(CoreTelephony)
+_fbsdkdfl_handle_get_impl_(CoreTelephony)
+
+#define _fbsdkdfl_CoreTelephonyLibrary_get_c(SYMBOL) _fbsdkdfl_symbol_get_c(CoreTelephony, SYMBOL);
+
+Class fbsdkdfl_CTTelephonyNetworkInfoClass(void)
+{
+    _fbsdkdfl_CoreTelephonyLibrary_get_c(CTTelephonyNetworkInfo);
+    return c;
 }

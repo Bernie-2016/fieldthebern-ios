@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController {
         
         let login = FBSDKLoginManager()
         login.loginBehavior = FBSDKLoginBehavior.Native
-        login.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
+        login.logInWithReadPermissions(["public_profile", "email", "user_friends"], fromViewController: self, handler: { (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
             self.animateFacebookButton()
             
             let token = result.token

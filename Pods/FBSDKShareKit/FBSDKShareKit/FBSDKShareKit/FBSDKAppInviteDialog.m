@@ -26,13 +26,13 @@
 
 @implementation FBSDKAppInviteDialog
 
-#define FBSDK_APP_INVITE_APP_SCHEME @"fbapi"
 #define FBSDK_APP_INVITE_METHOD_MIN_VERSION @"20140410"
 #define FBSDK_APP_INVITE_METHOD_NAME @"appinvites"
 
 + (void)initialize
 {
   if ([FBSDKAppInviteDialog class] == self) {
+    [FBSDKInternalUtility checkRegisteredCanOpenURLScheme:FBSDK_CANOPENURL_FACEBOOK];
     // ensure that we have updated the dialog configs if we haven't already
     [FBSDKServerConfigurationManager loadServerConfigurationWithCompletionBlock:NULL];
   }
@@ -40,11 +40,20 @@
 
 #pragma mark - Class Methods
 
+
 + (instancetype)showWithContent:(FBSDKAppInviteContent *)content delegate:(id<FBSDKAppInviteDialogDelegate>)delegate
+{
+  return [self showFromViewController:nil withContent:content delegate:delegate];
+}
+
++ (instancetype)showFromViewController:(UIViewController *)viewController
+                           withContent:(FBSDKAppInviteContent *)content
+                              delegate:(id<FBSDKAppInviteDialogDelegate>)delegate;
 {
   FBSDKAppInviteDialog *appInvite = [[self alloc] init];
   appInvite.content = content;
   appInvite.delegate = delegate;
+  appInvite.fromViewController = viewController;
   [appInvite show];
   return appInvite;
 }
@@ -72,29 +81,48 @@
 
   NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
   [FBSDKInternalUtility dictionary:parameters setObject:self.content.appLinkURL forKey:@"app_link_url"];
-  [FBSDKInternalUtility dictionary:parameters setObject:self.content.previewImageURL forKey:@"preview_image_url"];
-  FBSDKBridgeAPIRequest *request;
-  if ([self _canShowNative]) {
-    request = [FBSDKBridgeAPIRequest bridgeAPIRequestWithProtocolType:FBSDKBridgeAPIProtocolTypeNative
-                                                               scheme:FBSDK_APP_INVITE_APP_SCHEME
-                                                           methodName:FBSDK_APP_INVITE_METHOD_NAME
-                                                        methodVersion:FBSDK_APP_INVITE_METHOD_MIN_VERSION
-                                                           parameters:parameters
-                                                             userInfo:nil];
-  } else {
-    request = [FBSDKBridgeAPIRequest bridgeAPIRequestWithProtocolType:FBSDKBridgeAPIProtocolTypeWeb
-                                                               scheme:FBSDK_SHARE_JS_DIALOG_SCHEME
-                                                           methodName:FBSDK_APP_INVITE_METHOD_NAME
-                                                        methodVersion:nil
-                                                           parameters:parameters
-                                                             userInfo:nil];
-  }
-
+  [FBSDKInternalUtility dictionary:parameters setObject:self.content.appInvitePreviewImageURL forKey:@"preview_image_url"];
+  FBSDKBridgeAPIRequest *webBridgeRequest = [FBSDKBridgeAPIRequest bridgeAPIRequestWithProtocolType:FBSDKBridgeAPIProtocolTypeWeb
+                                                                                             scheme:FBSDK_SHARE_JS_DIALOG_SCHEME
+                                                                                         methodName:FBSDK_APP_INVITE_METHOD_NAME
+                                                                                      methodVersion:nil
+                                                                                         parameters:parameters
+                                                                                           userInfo:nil];
   FBSDKBridgeAPICallbackBlock completionBlock = ^(FBSDKBridgeAPIResponse *response) {
     [self _handleCompletionWithDialogResults:response.responseParameters error:response.error];
   };
+
   [self _logDialogShow];
-  [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:request completionBlock:completionBlock];
+
+  FBSDKServerConfiguration *configuration = [FBSDKServerConfigurationManager cachedServerConfiguration];
+  BOOL useSafariViewController = [configuration useSafariViewControllerForDialogName:FBSDKDialogConfigurationNameAppInvite];
+  if ([self _canShowNative]) {
+    FBSDKBridgeAPIRequest *nativeRequest = [FBSDKBridgeAPIRequest bridgeAPIRequestWithProtocolType:FBSDKBridgeAPIProtocolTypeNative
+                                                                                            scheme:FBSDK_CANOPENURL_FACEBOOK
+                                                                                        methodName:FBSDK_APP_INVITE_METHOD_NAME
+                                                                                     methodVersion:FBSDK_APP_INVITE_METHOD_MIN_VERSION
+                                                                                        parameters:parameters
+                                                                                          userInfo:nil];
+    void (^nativeCompletionBlock)(FBSDKBridgeAPIResponse *) = ^(FBSDKBridgeAPIResponse *response) {
+      if (response.error.code == FBSDKAppVersionUnsupportedErrorCode) {
+        [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:webBridgeRequest
+                                                useSafariViewController:useSafariViewController
+                                                     fromViewController:self.fromViewController
+                                                        completionBlock:completionBlock];
+      } else {
+        completionBlock(response);
+      }
+    };
+    [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:nativeRequest
+                                            useSafariViewController:useSafariViewController
+                                                 fromViewController:self.fromViewController
+                                                    completionBlock:nativeCompletionBlock];
+  } else {
+    [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:webBridgeRequest
+                                            useSafariViewController:useSafariViewController
+                                                 fromViewController:self.fromViewController
+                                                    completionBlock:completionBlock];
+  }
   return YES;
 }
 
@@ -107,15 +135,9 @@
 
 - (BOOL)_canShowNative
 {
-  NSString *scheme = FBSDK_APP_INVITE_APP_SCHEME;
-  if (![FBSDKBridgeAPIRequest checkProtocolForType:FBSDKBridgeAPIProtocolTypeNative scheme:scheme]) {
-    return NO;
-  }
-
-  NSURL *URL = [[NSURL alloc] initWithScheme:[scheme stringByAppendingString:FBSDK_APP_INVITE_METHOD_MIN_VERSION]
-                                        host:nil
-                                        path:@"/"];
-  return [[UIApplication sharedApplication] canOpenURL:URL];
+  FBSDKServerConfiguration *configuration = [FBSDKServerConfigurationManager cachedServerConfiguration];
+  BOOL useNativeDialog = [configuration useNativeDialogForDialogName:FBSDKDialogConfigurationNameAppInvite];
+  return (useNativeDialog && [FBSDKInternalUtility isFacebookAppInstalled]);
 }
 
 - (void)_handleCompletionWithDialogResults:(NSDictionary *)results error:(NSError *)error

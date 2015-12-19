@@ -116,17 +116,19 @@ static FBSDKLikeActionControllerCache *_cache = nil;
     if (accessTokenString) {
       NSURL *fileURL = [self _cacheFileURL];
       NSData *data = [[NSData alloc] initWithContentsOfURL:fileURL];
-      NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-      unarchiver.requiresSecureCoding = YES;
-      @try {
-        _cache = [unarchiver decodeObjectOfClass:[FBSDKLikeActionControllerCache class]
-                                          forKey:NSKeyedArchiveRootObjectKey];
-      }
-      @catch (NSException *ex) {
-        // ignore decoding exceptions from previous versions of the archive, etc
-      }
-      if (![_cache.accessTokenString isEqualToString:accessTokenString]) {
-        _cache = nil;
+      if (data) {
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        unarchiver.requiresSecureCoding = YES;
+        @try {
+          _cache = [unarchiver decodeObjectOfClass:[FBSDKLikeActionControllerCache class]
+                                            forKey:NSKeyedArchiveRootObjectKey];
+        }
+        @catch (NSException *ex) {
+          // ignore decoding exceptions from previous versions of the archive, etc
+        }
+        if (![_cache.accessTokenString isEqualToString:accessTokenString]) {
+          _cache = nil;
+        }
       }
     }
     if (!_cache) {
@@ -293,7 +295,7 @@ static FBSDKLikeActionControllerCache *_cache = nil;
   [self _refreshWithMode:FBSDKLikeActionControllerRefreshModeForce];
 }
 
-- (void)toggleLikeWithSoundEnabled:(BOOL)soundEnabled analyticsParameters:(NSDictionary *)analyticsParameters
+- (void)toggleLikeWithSoundEnabled:(BOOL)soundEnabled analyticsParameters:(NSDictionary *)analyticsParameters fromViewController:(UIViewController *)fromViewController
 {
   [FBSDKAppEvents logImplicitEvent:FBSDKAppEventNameFBSDKLikeControlDidTap
                         valueToSum:nil
@@ -343,15 +345,15 @@ static FBSDKLikeActionControllerCache *_cache = nil;
 
   if (objectIsLiked) {
     if (useOGLike) {
-      [self _publishLikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _publishLikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     } else {
-      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     }
   } else {
     if (useOGLike && _unlikeToken) {
-      [self _publishUnlikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _publishUnlikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     } else {
-      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     }
   }
 }
@@ -775,6 +777,7 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
 
 - (void)_presentLikeDialogWithUpdateBlock:(fbsdk_like_action_block)updateBlock
                       analyticsParameters:(NSDictionary *)analyticsParameters
+                       fromViewController:(UIViewController *)fromViewController
 {
   [FBSDKAppEvents logImplicitEvent:FBSDKAppEventNameFBSDKLikeControlDidPresentDialog
                         valueToSum:nil
@@ -784,6 +787,7 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
   dialog.objectID = _objectID;
   dialog.objectType = _objectType;
   dialog.delegate = self;
+  dialog.fromViewController = fromViewController;
   [_dialogToUpdateBlockMap setObject:updateBlock forKey:dialog];
   [_dialogToAnalyticsParametersMap setObject:analyticsParameters forKey:dialog];
   if (![dialog like]) {
@@ -793,19 +797,21 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
 
 - (void)_publishIfNeededWithUpdateBlock:(fbsdk_like_action_block)updateBlock
                     analyticsParameters:(NSDictionary *)analyticsParameters
+                     fromViewController:(UIViewController *)fromViewController
 {
   BOOL objectIsLiked = _objectIsLiked;
   if (_objectIsLikedOnServer != objectIsLiked) {
     if (objectIsLiked) {
-      [self _publishLikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _publishLikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     } else {
-      [self _publishUnlikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _publishUnlikeWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     }
   }
 }
 
 - (void)_publishLikeWithUpdateBlock:(fbsdk_like_action_block)updateBlock
                 analyticsParameters:(NSDictionary *)analyticsParameters
+                 fromViewController:(UIViewController *)fromViewController
 {
   _objectIsLikedIsPending = YES;
   [self _ensureVerifiedObjectID:^(NSString *verifiedObjectID) {
@@ -831,9 +837,9 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
                       NO,
                       NO);
         }
-        [self _publishIfNeededWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+        [self _publishIfNeededWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
       } else {
-        [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+        [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
       }
     };
     FBSDKLikeActionControllerAddPublishLikeRequest(_accessToken,
@@ -847,6 +853,7 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
 
 - (void)_publishUnlikeWithUpdateBlock:(fbsdk_like_action_block)updateBlock
                   analyticsParameters:(NSDictionary *)analyticsParameters
+                   fromViewController:(UIViewController *)fromViewController
 {
   _objectIsLikedIsPending = YES;
   FBSDKGraphRequestConnection *connection = [[FBSDKGraphRequestConnection alloc] init];
@@ -870,9 +877,9 @@ static void FBSDKLikeActionControllerAddRefreshRequests(FBSDKAccessToken *access
                     NO,
                     NO);
       }
-      [self _publishIfNeededWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _publishIfNeededWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     } else {
-      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters];
+      [self _presentLikeDialogWithUpdateBlock:updateBlock analyticsParameters:analyticsParameters fromViewController:fromViewController];
     }
   };
   FBSDKLikeActionControllerAddPublishUnlikeRequest(_accessToken,
