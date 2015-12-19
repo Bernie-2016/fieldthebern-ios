@@ -60,6 +60,9 @@ install_resource()
 if [[ "$CONFIGURATION" == "DebugStaging" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
 fi
+if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
+  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
+fi
 if [[ "$CONFIGURATION" == "DebugLocal" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
 fi
@@ -67,9 +70,6 @@ if [[ "$CONFIGURATION" == "ReleaseStaging" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
-  install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
-fi
-if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
 fi
 

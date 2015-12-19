@@ -33,6 +33,14 @@
 
 #pragma mark - Class Methods
 
++ (void)initialize
+{
+  if ([FBSDKMessageDialog class] == self) {
+    [FBSDKInternalUtility checkRegisteredCanOpenURLScheme:FBSDK_CANOPENURL_MESSENGER];
+    [FBSDKServerConfigurationManager loadServerConfigurationWithCompletionBlock:NULL];
+  }
+}
+
 + (instancetype)showWithContent:(id<FBSDKSharingContent>)content delegate:(id<FBSDKSharingDelegate>)delegate
 {
   FBSDKMessageDialog *dialog = [[self alloc] init];
@@ -82,11 +90,16 @@
                                                       methodVersion:FBSDK_MESSAGE_METHOD_MIN_VERSION
                                                          parameters:parameters
                                                            userInfo:nil];
+  FBSDKServerConfiguration *configuration = [FBSDKServerConfigurationManager cachedServerConfiguration];
+  BOOL useSafariViewController = [configuration useSafariViewControllerForDialogName:FBSDKDialogConfigurationNameMessage];
   FBSDKBridgeAPICallbackBlock completionBlock = ^(FBSDKBridgeAPIResponse *response) {
     [self _handleCompletionWithDialogResults:response.responseParameters response:response];
     [FBSDKInternalUtility unregisterTransientObject:self];
   };
-  [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:request completionBlock:completionBlock];
+  [[FBSDKApplicationDelegate sharedInstance] openBridgeAPIRequest:request
+                                          useSafariViewController:useSafariViewController
+                                               fromViewController:nil
+                                                  completionBlock:completionBlock];
 
   [self _logDialogShow];
   [FBSDKInternalUtility registerTransientObject:self];
@@ -102,6 +115,11 @@
     }
     return NO;
   }
+  if ([shareContent isKindOfClass:[FBSDKShareVideoContent class]]) {
+    if (![FBSDKShareUtility validateAssetLibraryURLWithShareVideoContent:(FBSDKShareVideoContent *)shareContent name:@"videoURL" error:errorRef]) {
+      return NO;
+    }
+  }
   return [FBSDKShareUtility validateShareContent:self.shareContent error:errorRef];
 }
 
@@ -109,15 +127,9 @@
 
 - (BOOL)_canShowNative
 {
-  NSString *scheme = FBSDK_MESSAGE_DIALOG_APP_SCHEME;
-  if (![FBSDKBridgeAPIRequest checkProtocolForType:FBSDKBridgeAPIProtocolTypeNative scheme:scheme]) {
-    return NO;
-  }
-
-  NSURL *URL = [[NSURL alloc] initWithScheme:[scheme stringByAppendingString:FBSDK_MESSAGE_METHOD_MIN_VERSION]
-                                        host:nil
-                                        path:@"/"];
-  return [[UIApplication sharedApplication] canOpenURL:URL];
+  FBSDKServerConfiguration *configuration = [FBSDKServerConfigurationManager cachedServerConfiguration];
+  BOOL useNativeDialog = [configuration useNativeDialogForDialogName:FBSDKDialogConfigurationNameMessage];
+  return (useNativeDialog && [FBSDKInternalUtility isMessengerAppInstalled]);
 }
 
 - (void)_handleCompletionWithDialogResults:(NSDictionary *)results response:(FBSDKBridgeAPIResponse *)response

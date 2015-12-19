@@ -65,7 +65,7 @@
 - (void)configureButton
 {
   NSString *title =
-  NSLocalizedStringWithDefaultValue(@"SendButton.Send", @"FacebookSDK", [NSBundle mainBundle],
+  NSLocalizedStringWithDefaultValue(@"SendButton.Send", @"FacebookSDK", [FBSDKInternalUtility bundleForStrings],
                                     @"Send",
                                     @"The label for FBSDKSendButton");
 
@@ -90,6 +90,7 @@
 
 - (void)_share:(id)sender
 {
+  [self logTapEventWithEventName:FBSDKAppEventNameFBSDKSendButtonDidTap parameters:[self analyticsParameters]];
   [_dialog show];
 }
 

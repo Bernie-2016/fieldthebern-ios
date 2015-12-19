@@ -103,6 +103,26 @@ if [[ "$CONFIGURATION" == "DebugStaging" ]]; then
   install_framework "Pods-FieldTheBernTests/Nimble.framework"
   install_framework "Pods-FieldTheBernTests/Quick.framework"
 fi
+if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
+  install_framework "Pods-FieldTheBernTests/Alamofire.framework"
+  install_framework "Pods-FieldTheBernTests/Bolts.framework"
+  install_framework "Pods-FieldTheBernTests/Dollar.framework"
+  install_framework "Pods-FieldTheBernTests/FBSDKCoreKit.framework"
+  install_framework "Pods-FieldTheBernTests/FBSDKLoginKit.framework"
+  install_framework "Pods-FieldTheBernTests/FBSDKShareKit.framework"
+  install_framework "Pods-FieldTheBernTests/FLAnimatedImage.framework"
+  install_framework "Pods-FieldTheBernTests/KFSwiftImageLoader.framework"
+  install_framework "Pods-FieldTheBernTests/KeychainAccess.framework"
+  install_framework "Pods-FieldTheBernTests/Parse.framework"
+  install_framework "Pods-FieldTheBernTests/Realm.framework"
+  install_framework "Pods-FieldTheBernTests/RealmSwift.framework"
+  install_framework "Pods-FieldTheBernTests/Spring.framework"
+  install_framework "Pods-FieldTheBernTests/SwiftyJSON.framework"
+  install_framework "Pods-FieldTheBernTests/XCGLogger.framework"
+  install_framework "Pods-FieldTheBernTests/p2_OAuth2.framework"
+  install_framework "Pods-FieldTheBernTests/Nimble.framework"
+  install_framework "Pods-FieldTheBernTests/Quick.framework"
+fi
 if [[ "$CONFIGURATION" == "DebugLocal" ]]; then
   install_framework "Pods-FieldTheBernTests/Alamofire.framework"
   install_framework "Pods-FieldTheBernTests/Bolts.framework"
@@ -144,26 +164,6 @@ if [[ "$CONFIGURATION" == "ReleaseStaging" ]]; then
   install_framework "Pods-FieldTheBernTests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "ReleaseProduction" ]]; then
-  install_framework "Pods-FieldTheBernTests/Alamofire.framework"
-  install_framework "Pods-FieldTheBernTests/Bolts.framework"
-  install_framework "Pods-FieldTheBernTests/Dollar.framework"
-  install_framework "Pods-FieldTheBernTests/FBSDKCoreKit.framework"
-  install_framework "Pods-FieldTheBernTests/FBSDKLoginKit.framework"
-  install_framework "Pods-FieldTheBernTests/FBSDKShareKit.framework"
-  install_framework "Pods-FieldTheBernTests/FLAnimatedImage.framework"
-  install_framework "Pods-FieldTheBernTests/KFSwiftImageLoader.framework"
-  install_framework "Pods-FieldTheBernTests/KeychainAccess.framework"
-  install_framework "Pods-FieldTheBernTests/Parse.framework"
-  install_framework "Pods-FieldTheBernTests/Realm.framework"
-  install_framework "Pods-FieldTheBernTests/RealmSwift.framework"
-  install_framework "Pods-FieldTheBernTests/Spring.framework"
-  install_framework "Pods-FieldTheBernTests/SwiftyJSON.framework"
-  install_framework "Pods-FieldTheBernTests/XCGLogger.framework"
-  install_framework "Pods-FieldTheBernTests/p2_OAuth2.framework"
-  install_framework "Pods-FieldTheBernTests/Nimble.framework"
-  install_framework "Pods-FieldTheBernTests/Quick.framework"
-fi
-if [[ "$CONFIGURATION" == "DebugProduction" ]]; then
   install_framework "Pods-FieldTheBernTests/Alamofire.framework"
   install_framework "Pods-FieldTheBernTests/Bolts.framework"
   install_framework "Pods-FieldTheBernTests/Dollar.framework"

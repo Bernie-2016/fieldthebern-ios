@@ -39,6 +39,11 @@ static FBSDKProfile *g_currentProfile;
 
 @implementation FBSDKProfile
 
+- (instancetype)init NS_UNAVAILABLE
+{
+  assert(0);
+}
+
 - (instancetype)initWithUserID:(NSString *)userID
                      firstName:(NSString *)firstName
                     middleName:(NSString *)middleName
@@ -77,6 +82,18 @@ static FBSDKProfile *g_currentProfile;
                                                         object:[self class]
                                                       userInfo:userInfo];
   }
+}
+
+- (NSURL *)imageURLForPictureMode:(FBSDKProfilePictureMode)mode size:(CGSize)size
+{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+  NSString *path = [self imagePathForPictureMode:FBSDKProfilePictureModeNormal size:size];
+#pragma clang diagnostic pop
+  return [FBSDKInternalUtility facebookURLWithHostPrefix:@"graph"
+                                                    path:path
+                                         queryParameters:nil
+                                                   error:NULL];
 }
 
 - (NSString *)imagePathForPictureMode:(FBSDKProfilePictureMode)mode size:(CGSize)size

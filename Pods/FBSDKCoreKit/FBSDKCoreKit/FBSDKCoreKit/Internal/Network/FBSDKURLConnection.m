@@ -43,10 +43,13 @@
   if ((self = [super init])) {
       _requestStartTime = [FBSDKInternalUtility currentTimeInMilliseconds];
       _loggerSerialNumber = [FBSDKLogger generateSerialNumber];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
       _connection = [[NSURLConnection alloc]
                      initWithRequest:request
                      delegate:self
                      startImmediately:NO];
+#pragma clang diagnostic pop
       _data = [[NSMutableData alloc] init];
 
       _handler = [handler copy];
@@ -131,6 +134,14 @@ didReceiveResponse:(NSURLResponse *)response
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error {
   @try {
+    if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == kCFURLErrorSecureConnectionFailed) {
+      NSOperatingSystemVersion iOS9Version = { .majorVersion = 9, .minorVersion = 0, .patchVersion = 0 };
+      if ([FBSDKInternalUtility isOSRunTimeVersionAtLeast:iOS9Version]) {
+        [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors
+                               logEntry:@"WARNING: FBSDK secure network request failed. Please verify you have configured your "
+         "app for Application Transport Security compatibility described at https://developers.facebook.com/docs/ios/ios9"];
+      }
+    }
     [self logAndInvokeHandler:self.handler error:error];
   } @finally {
     self.handler = nil;

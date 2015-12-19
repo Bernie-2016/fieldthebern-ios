@@ -37,6 +37,11 @@ static NSString *const kGetHTTPMethod = @"GET";
 
 @implementation FBSDKGraphRequest
 
+- (instancetype)init NS_UNAVAILABLE
+{
+  assert(0);
+}
+
 - (instancetype)initWithGraphPath:(NSString *)graphPath
                        parameters:(NSDictionary *)parameters {
   return [self initWithGraphPath:graphPath
@@ -141,7 +146,10 @@ static NSString *const kGetHTTPMethod = @"GET";
                 httpMethod:(NSString *)httpMethod {
   params = [self preprocessParams: params];
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
   NSURL *parsedURL = [NSURL URLWithString:[baseUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+#pragma clang pop
   NSString *queryPrefix = parsedURL.query ? @"&" : @"?";
 
   NSString *query = [FBSDKInternalUtility queryStringWithDictionary:params error:NULL invalidObjectHandler:^id(id object, BOOL *stop) {
