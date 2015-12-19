@@ -40,7 +40,7 @@ class HTTP {
     func unauthorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
 
         let headers = ["User-Agent": self.appVersionProvider.versionString()]
-        Alamofire.request(method, url, parameters: parameters, headers: headers)
+        Alamofire.request(method, url, parameters: parameters, encoding: encoding, headers: headers)
             .validate()
             .responseJSON { response in
                 callback(response)
