@@ -328,7 +328,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if MFMessageComposeViewController.canSendText() {
             let messageVC = MFMessageComposeViewController()
                 
-            messageVC.body = "Enter a message"
+            messageVC.body = "Help canvass for Bernie Sanders on your phone. Download for iOS and Android at https://fieldthebern.com"
             messageVC.messageComposeDelegate = self
             
             self.presentViewController(messageVC, animated: false, completion: nil)
@@ -339,7 +339,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if MFMailComposeViewController.canSendMail() {
             let mailVC = MFMailComposeViewController()
             
-            mailVC.setMessageBody("", isHTML: false)
+            mailVC.setMessageBody("Help canvass for Bernie Sanders on your phone. Download for iOS and Android at https://fieldthebern.com", isHTML: false)
             mailVC.mailComposeDelegate = self
             
             self.presentViewController(mailVC, animated: false, completion: nil)
