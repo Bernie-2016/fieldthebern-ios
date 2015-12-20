@@ -49,7 +49,7 @@ struct UserService {
         }
     }
     
-    func updateMyDevice(deviceToken: String?, callback: UserResponse) {
+    func updateMyDevice(deviceToken: String, callback: UserResponse) {
         let parameters = DeviceJSON(deviceToken: deviceToken).json
 
         api.post("devices", parameters: parameters.object as? [String : AnyObject]) { (data, success, error) -> Void in
