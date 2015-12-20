@@ -517,6 +517,12 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
     }
     
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+            findMyLocation()
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         updateClosestLocation()
