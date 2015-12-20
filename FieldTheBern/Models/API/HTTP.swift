@@ -17,6 +17,11 @@ class HTTP {
     
     private let session: Session = Session.sharedInstance
     private let appVersionProvider = AppVersionProvider()
+    private let serverTrustPolicy = ServerTrustPolicy.PinCertificates(
+        certificates: ServerTrustPolicy.certificatesInBundle(),
+        validateCertificateChain: true,
+        validateHost: true
+    )
     
     func authorizedRequest(method: Alamofire.Method, _ url: String, parameters: [String: AnyObject]?, encoding: ParameterEncoding = .URL, callback: HTTPCallback) {
 

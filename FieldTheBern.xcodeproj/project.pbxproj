@@ -210,6 +210,7 @@
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6562DFA61C269EDB00F5B74B /* sni253063.cloudflaressl.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = sni253063.cloudflaressl.com.cer; path = ../../../../../Desktop/sni253063.cloudflaressl.com.cer; sourceTree = "<group>"; };
 		657470C41C254C10001F9CD9 /* AppVersionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionProvider.swift; sourceTree = "<group>"; };
 		A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		A72478FF1BF513980002481A /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
@@ -413,6 +414,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6562DFA51C269EC900F5B74B /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				6562DFA61C269EDB00F5B74B /* sni253063.cloudflaressl.com.cer */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
 		A5315A268882C6EDDEBA8834 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +552,7 @@
 		A74FCE991BBB3788005C4D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6562DFA51C269EC900F5B74B /* Certificates */,
 				A7A5794F1BB092E100D8885E /* AppDelegate.swift */,
 				A78F3BD41BEAAD7C00DAFBB7 /* Assets.xcassets */,
 				A7CA346F1BE17D29007A9495 /* BridgingHeader.h */,

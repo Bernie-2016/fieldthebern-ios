@@ -134,7 +134,7 @@ class HomeItemsViewController: ItemsViewController {
                     forIndexPath: indexPath)
                 return headerView
             default:
-                assert(false, "Unexpected element kind")
+                fatalError("Unexpected element kind")
             }
     }
     
