@@ -107,9 +107,11 @@ class Session {
         self.internalAuthorize(self.oauth2) { (wasFailure, error) -> Void in
             if !wasFailure {
                 // Update device token for push notifications
-                UserService().updateMyDevice(PFInstallation.currentInstallation().deviceToken, callback: { (success) -> Void in
-                    
-                })
+                if let token = PFInstallation.currentInstallation().deviceToken {
+                    UserService().updateMyDevice(token, callback: { (success) -> Void in
+                        // Do nothing
+                    })
+                }
             }
             
             callback(!wasFailure)
