@@ -481,7 +481,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
 
     func displayLocationServicesAlert() {
         
-        let alert = UIAlertController(title: "Location Services", message: "Please press OK to be taken to the Settings page so that you can enable Location Services for Ground Game App", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Location Services", message: "Please press OK to be taken to the Settings page so that you can enable Location Services for Field the Bern", preferredStyle: UIAlertControllerStyle.Alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
             (_) in UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)}
