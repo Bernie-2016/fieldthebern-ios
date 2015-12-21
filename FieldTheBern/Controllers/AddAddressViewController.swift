@@ -9,14 +9,19 @@
 import UIKit
 import MapKit
 
-class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate, SubmitButtonDelegate {
+class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate, SubmitButtonWithoutAPIDelegate {
 
     var previousLocation: CLLocation?
     var location: CLLocation?
+    var userLocation: CLLocation?
     var placemark: CLPlacemark?
     var previousPlacemark: CLPlacemark?
     var address: Address?
     var people: [Person]?
+    var updatingLocation: Bool = false
+    var locationUpdated: Bool = false
+    
+    let filterRadiusInMeters:Double = 200
     
     let timeoutConstantInHours = 24
     
@@ -151,10 +156,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         submitButton.enabled = false
     }
     
-    func finishedSubmittingWithError(error: APIError) {
-        
-        let errorTitle = error.errorTitle
-        let errorMessage = error.errorDescription
+    func finishedSubmittingWithError(errorTitle: String, errorMessage: String) {
         
         let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
         
@@ -181,7 +183,103 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         }
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        switch textField {
+        case streetAddress:
+            self.locationUpdated = false
+            break
+        default:
+            break
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField {
+        case streetAddress:
+            forwardGeocodeBasedOnTextField()
+            break
+        default:
+            break
+        }
+    }
+
     // MARK: - Location updating methods
+    
+    func forwardGeocodeBasedOnTextField(onSuccess: ((success: Bool, errorTitle:String?, errorMessage:String?) -> Void)? = nil) {
+        
+        if(self.streetAddress.text?.length > 0) {
+            
+            if let city = self.placemark!.locality, let state = self.placemark!.administrativeArea {
+                
+                let address = self.streetAddress.text! + " " + city + " " + state
+                let geocoder:CLGeocoder = CLGeocoder()
+                
+                // We're about to update the location
+                self.updatingLocation = true
+
+                geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+                    
+                    if (error == nil && placemarks!.count > 0) {
+                        let tempPlacemark = placemarks![0]
+                        let tempLocation = tempPlacemark.location!
+                        let tempThoroughfare = tempPlacemark.thoroughfare
+                        
+                        let meters: CLLocationDistance = tempLocation.distanceFromLocation(self.userLocation!)
+                        
+                        // 200 meters is about a radius of 4 NYC city blocks.
+                        if (meters > self.filterRadiusInMeters) {
+                            if(onSuccess != nil)
+                            {
+                                if(tempThoroughfare == nil)
+                                {
+                                    onSuccess!(success: false, errorTitle: "No location was found", errorMessage: "\n\(self.streetAddress.text!) could not be found. Try again.")
+                                }
+                                else
+                                {
+                                onSuccess!(success: false, errorTitle: "Too far from location", errorMessage: "\n\(tempThoroughfare!) is too far for you to submit. Try again.")
+                                }
+                            }
+                            else
+                            {
+                                if(tempThoroughfare == nil)
+                                {
+                                    self.finishedSubmittingWithError("No location was found", errorMessage: "\n\(self.streetAddress.text!) could not be found. Try again.")
+                                }
+                                else
+                                {
+                                    self.finishedSubmittingWithError("Too far from location", errorMessage: "\n\(tempThoroughfare!) is too far for you to submit. Try again.")
+                                }
+                            }
+                        } else {
+                            self.previousLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+                            self.location = tempLocation
+                            self.locationUpdated = true
+                            
+                            if(onSuccess != nil)
+                            {
+                                onSuccess!(success: true, errorTitle:nil, errorMessage:nil)
+                            }
+                        }
+                        
+                        // We've finished updating the location
+                        self.updatingLocation = false
+                    } else {
+                        // We've finished updating the location
+                        self.updatingLocation = false
+                        
+                        if(onSuccess != nil)
+                        {
+                            onSuccess!(success: false, errorTitle:"No location was found", errorMessage:"Please check the entered address and try again")
+                        }
+                        else
+                        {
+                            self.finishedSubmittingWithError("No location was found", errorMessage: "Please check the entered address and try again")
+                        }
+                    }
+                })
+            }
+        }
+    }
     
     func didLocationChange() -> Bool {
         
@@ -221,47 +319,83 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     
     // MARK: - Submitting form
     
+    func processAndSubmitForm()
+    {
+        if let location = self.location, let placemark = self.placemark {
+            
+            isSubmitting()
+            
+            let address = Address(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, street1: streetAddress.text, street2: apartmentNumber.text, city: placemark.locality, stateCode: placemark.administrativeArea, zipCode: placemark.postalCode, bestResult: .NotVisited, lastResult: .Unknown)
+            
+            AddressService().getAddress(address, callback: { (returnedAddress, people, success, error) -> Void in
+                
+                if success {
+                    if returnedAddress != nil {
+                        self.people = people
+                        self.address = returnedAddress
+                    } else {
+                        self.address = address
+                    }
+                    
+                    if let lastVisited = self.address?.visitedAt
+                    {
+                        if(NSDate().hoursFrom(lastVisited) < timeoutConstantInHours) {
+                            let timeSince = NSDate().offsetFrom(lastVisited)
+                            
+                            let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
+                            
+                            dispatch_async(dispatch_get_main_queue(),
+                                {
+                                    self.presentViewController(alert, animated: true, completion: nil)
+                                    self.submitButton.enabled = true
+                                    
+                                })
+                            
+                            return
+                        }
+                    }
+                    
+                    self.performSegueWithIdentifier("SubmitAddress", sender: self)
+                } else {
+                    if let error = error {
+                        let errorTitle = error.errorTitle
+                        let errorMessage = error.errorDescription
+                        
+                        dispatch_async(dispatch_get_main_queue(),
+                            {
+                        self.finishedSubmittingWithError(errorTitle, errorMessage: errorMessage)
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
     func submitForm() {
 
-        if (!streetAddress.text!.isEmpty) {
-            
-            if let location = self.location, let placemark = self.placemark {
-                
-                isSubmitting()
-                
-                let address = Address(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, street1: streetAddress.text, street2: apartmentNumber.text, city: placemark.locality, stateCode: placemark.administrativeArea, zipCode: placemark.postalCode, bestResult: .NotVisited, lastResult: .Unknown)
-                
-                AddressService().getAddress(address, callback: { (returnedAddress, people, success, error) -> Void in
-                    
-                    if success {
-                        if returnedAddress != nil {
-                            self.people = people
-                            self.address = returnedAddress
-                        } else {
-                            self.address = address
-                        }
-                       
-                        if let lastVisited = self.address?.visitedAt
+        if (streetAddress.text != "") {
+            if !locationUpdated {
+                forwardGeocodeBasedOnTextField({ (success, errorTitle, errorMessage) -> Void in
+                    if(success)
+                    {
+                        self.processAndSubmitForm()
+                    }
+                    else
+                    {
+                        if(errorTitle != nil && errorMessage != nil)
                         {
-                            if(NSDate().hoursFrom(lastVisited) < self.timeoutConstantInHours) {
-                                let timeSince = NSDate().offsetFrom(lastVisited)
-                                
-                                let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
-                                self.presentViewController(alert, animated: true, completion: nil)
-                                self.submitButton.enabled = true
-
-                                return
-                            }
-                        }
-                        
-                        self.performSegueWithIdentifier("SubmitAddress", sender: self)
-                    } else {
-                        if let error = error {
-                            self.finishedSubmittingWithError(error)
+                            self.finishedSubmittingWithError(errorTitle!, errorMessage: errorMessage!)
                         }
                     }
                 })
+
             }
+            else
+            {
+                self.processAndSubmitForm()
+            }
+            
+           
         }
     }
 

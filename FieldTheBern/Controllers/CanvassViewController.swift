@@ -173,6 +173,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                     rootController.location = currentLocation
                     rootController.previousLocation = previousLocation
                     rootController.previousPlacemark = previousPlacemark
+                    rootController.userLocation = currentLocation
                     
                     // Reset the previous location
                     self.previousLocation = currentLocation
@@ -212,21 +213,9 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         // Subscribe to placemark updated notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "shouldUpdatePlacemark:", name: "placemarkUpdated", object: nil)
         
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-      //  findMyLocation()
-
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         findMyLocation()
-
+        
     }
-    
 
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()
@@ -306,7 +295,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
     
-    func fetchAddresses() {
+    func fetchAddresses(onSuccess: ((success: Bool, errorTitle:String?, errorMessage:String?) -> Void)? = nil)  {
         lastUpdated = NSDate()
         
         let distance = mapView.getFurthestDistanceFromRegionCenter()
@@ -344,12 +333,21 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                     dispatch_async(dispatch_get_main_queue()) {
                         self.mapView.removeAnnotations(annotationsToRemove)
                         self.mapView.addAnnotations(annotationsToAdd)
+                        
+                        if(onSuccess != nil)
+                        {
+                            onSuccess!(success: true, errorTitle: nil, errorMessage: nil)
+                        }
                     }
                 }
             } else {
                 // API error
                 if let apiError = error {
                     self.handleError(apiError)
+                    if(onSuccess != nil)
+                    {
+                    onSuccess!(success: false, errorTitle: "API Error", errorMessage: "An API Error has ocurred")
+                    }
                 }
             }
         }
@@ -357,7 +355,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     var closestAddress: Address?
     
-    func updateClosestLocation() {
+    func updateClosestLocation()  {
 
         dispatch_async(dispatch_get_main_queue()) {
 
@@ -505,7 +503,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Location Fetching
     
     let locationManager = CLLocationManager()
-    let geocoder = CLGeocoder()
     
     var lastKnownLocation: CLLocation?
     var locality: String?
@@ -556,6 +553,21 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if error.domain == kCLErrorDomain && CLError(rawValue: error.code) == CLError.Denied {
             
             displayLocationServicesAlert()
+        }
+    }
+    
+    func mapViewDidFinishRenderingMap(mapView: MKMapView, fullyRendered: Bool) {
+        if(fullyRendered)
+        {
+            self.fetchAddresses({ (success, errorTitle, errorMessage) -> Void in
+                if(success)
+                {
+                    self.updateClosestLocation()
+                    self.animateNearestAddressViewIfNeeded()
+
+                }
+            })
+
         }
     }
     

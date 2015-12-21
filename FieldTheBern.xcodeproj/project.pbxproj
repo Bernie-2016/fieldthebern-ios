@@ -148,6 +148,7 @@
 		A7D0E86B1BFD400D00ED3C4F /* AddressPointAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D0E86A1BFD400D00ED3C4F /* AddressPointAnnotationView.xib */; };
 		A7D0E86F1BFD410900ED3C4F /* AddressPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0E86E1BFD410900ED3C4F /* AddressPointAnnotationView.swift */; };
 		A7D12D321BC99FC5005EB417 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
+		A7D3CC631C277BC7007B37E9 /* SubmitButtonWithoutAPIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CC621C277BC7007B37E9 /* SubmitButtonWithoutAPIDelegate.swift */; };
 		A7D3F6E21BCB04A400232234 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76890371BC8732D008F394C /* Person.swift */; };
 		A7D3F6E31BCB054700232234 /* CanvassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */; };
 		A7D3F6E41BCB05B900232234 /* CanvassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768C1F01BBCA62200DBDFEA /* CanvassViewController.swift */; };
@@ -347,6 +348,7 @@
 		A7D0E86A1BFD400D00ED3C4F /* AddressPointAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressPointAnnotationView.xib; sourceTree = "<group>"; };
 		A7D0E86E1BFD410900ED3C4F /* AddressPointAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPointAnnotationView.swift; sourceTree = "<group>"; };
 		A7D12D311BC99FC4005EB417 /* CanvassResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvassResponse.swift; sourceTree = "<group>"; };
+		A7D3CC621C277BC7007B37E9 /* SubmitButtonWithoutAPIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonWithoutAPIDelegate.swift; sourceTree = "<group>"; };
 		A7D3F6F21BCB0C6E00232234 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
 		A7D3F6F41BCC2A3600232234 /* PartyAffiliationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyAffiliationTableViewController.swift; sourceTree = "<group>"; };
 		A7D3F6F61BCC2CF700232234 /* CheckableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckableTableViewCell.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				A79ECACA1BDC2B0F00923C36 /* CellButtonDelegate.swift */,
 				A72F88B01BCC498F001B185B /* PartySelectionDelegate.swift */,
 				A74279821BCF0B770020EE29 /* SubmitButtonDelegate.swift */,
+				A7D3CC621C277BC7007B37E9 /* SubmitButtonWithoutAPIDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				A76ABA3E1BBC8E92007FA40B /* TabBarViewController.swift in Sources */,
 				A7CA34231BDFE6B6007A9495 /* NSDictionaryExtensions.swift in Sources */,
 				A76890321BC8680E008F394C /* PersonTableViewCell.swift in Sources */,
+				A7D3CC631C277BC7007B37E9 /* SubmitButtonWithoutAPIDelegate.swift in Sources */,
 				37F45DAE1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift in Sources */,
 				A7A97C941BD6D29000E1FE05 /* TotalScoreTableViewCell.swift in Sources */,
 				A76559AB1BE96B77005CEA0F /* HowToTableViewController.swift in Sources */,
