@@ -17,6 +17,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     var previousPlacemark: CLPlacemark?
     var address: Address?
     var people: [Person]?
+    var userLocation:CLLocation?
     
     let timeoutConstantInHours = 24
     
@@ -181,7 +182,58 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         }
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField {
+        case streetAddress:
+            forwardGeocodeBasedOnTextField()
+            break
+        default:
+            break
+        }
+    }
+    
     // MARK: - Location updating methods
+    
+    func forwardGeocodeBasedOnTextField()
+    {
+        if(self.streetAddress.text?.length > 6) // 6 is arbitrary, but at least it gives us a good length for a street address.
+        {
+        
+        if let city = self.placemark!.locality, let state = self.placemark!.administrativeArea
+        {
+            
+            let address = self.streetAddress.text! + " " + city + " " + state
+            let geocoder:CLGeocoder = CLGeocoder();
+            geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+                
+                if(error == nil && placemarks!.count > 0)
+                {
+                    let tempPlacemark = placemarks![0]
+                    let tempLocation = tempPlacemark.location!;
+                    
+                    self.previousLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+                    self.location = tempLocation;
+                    
+                    let meters:CLLocationDistance = tempLocation.distanceFromLocation(self.userLocation!)
+                    
+                    if(meters > 200) // 200 meters is about a radius of 4 NYC city blocks.
+                    {
+                        let alert = UIAlertController(title: "WHOA, WHOA, WHOA", message: "\n\(self.streetAddress.text!) is too far for you to be able to add. Try again.", preferredStyle: UIAlertControllerStyle.Alert) // please edit this with proper copy - Nick D.
+                        
+                        let OKAction = UIAlertAction(title: "OK...", style: .Default) { (action) in
+                            self.streetAddress.text = ""
+                        }
+                        alert.addAction(OKAction)
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                    
+                }
+                
+            })
+        }
+        }
+    }
     
     func didLocationChange() -> Bool {
         

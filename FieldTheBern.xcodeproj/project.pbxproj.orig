@@ -10,7 +10,6 @@
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
 		37F45DAE1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F45DAD1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift */; };
 		5C933507A3A30D99FEC7C4FF /* Pods_FieldTheBernUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */; };
-		657470C51C254C10001F9CD9 /* AppVersionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657470C41C254C10001F9CD9 /* AppVersionProvider.swift */; };
 		A06E333A8A8E8938C31E460D /* Pods_GroundGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */; };
 		A2BC6AF1ABF795AAAB2342EA /* Pods_FieldTheBernTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB941F82B84C769B26EA8E29 /* Pods_FieldTheBernTests.framework */; };
 		A71CC84F1BF3E9DB0097D433 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */; };
@@ -210,7 +209,6 @@
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECA9EF8BB9F8F1DF72DE8C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2B029A7D297BFA4B3C786 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		657470C41C254C10001F9CD9 /* AppVersionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionProvider.swift; sourceTree = "<group>"; };
 		A71CC84E1BF3E9DB0097D433 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		A72478FF1BF513980002481A /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		A72479011BF542920002481A /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -622,7 +620,6 @@
 		A765599C1BE7DE0D005CEA0F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				657470C41C254C10001F9CD9 /* AppVersionProvider.swift */,
 				A765599B1BE7DDDE005CEA0F /* JSON */,
 				A765599A1BE7DDAC005CEA0F /* Services */,
 				A74FCE9D1BBB3BFB005C4D34 /* API.swift */,
@@ -857,7 +854,11 @@
 				TargetAttributes = {
 					A7A5794B1BB092E100D8885E = {
 						CreatedOnToolsVersion = 7.0;
+<<<<<<< HEAD:GroundGame.xcodeproj/project.pbxproj
 						DevelopmentTeam = 6KM6T9S2VU;
+=======
+						DevelopmentTeam = 45H77T99SC;
+>>>>>>> development:FieldTheBern.xcodeproj/project.pbxproj
 					};
 					A7A5795F1BB092E100D8885E = {
 						CreatedOnToolsVersion = 7.0;
@@ -1065,7 +1066,6 @@
 				A76559A41BE81FC7005CEA0F /* HowToCanvassTableViewCell.swift in Sources */,
 				A7CA345E1BDFE709007A9495 /* LabelContentCell.swift in Sources */,
 				A72479021BF542920002481A /* Text.swift in Sources */,
-				657470C51C254C10001F9CD9 /* AppVersionProvider.swift in Sources */,
 				A7CA34661BE029AA007A9495 /* ListModel.swift in Sources */,
 				A7D3F6FB1BCC313400232234 /* PartyAffiliation.swift in Sources */,
 				A771C58C1BD812B200179F04 /* States.swift in Sources */,
@@ -1631,101 +1631,6 @@
 			};
 			name = ReleaseStaging;
 		};
-		A7AD385D1C08D4D300A85666 /* DebugProduction */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joshua Smith (2MK63237GG)";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-DDebug -DProduction";
-				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PROVISIONING_PROFILE = "1e3c689b-8da6-4082-bdbf-a0fc38d72a02";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "FieldTheBern/Supporting Files/BridgingHeader.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = DebugProduction;
-		};
-		A7AD385E1C08D4D300A85666 /* DebugProduction */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F6BB2A414EA7D57834A66E /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/FieldTheBern/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.berniesanders.fieldthebern;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = DebugProduction;
-		};
-		A7AD385F1C08D4D300A85666 /* DebugProduction */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCD56034328EFAB3F616C8A5 /* Pods-GroundGameTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = GroundGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGameTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroundGame.app/GroundGame";
-			};
-			name = DebugProduction;
-		};
-		A7AD38601C08D4D300A85666 /* DebugProduction */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = GroundGameUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderly.GroundGameUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = GroundGame;
-				USES_XCTRUNNER = YES;
-			};
-			name = DebugProduction;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1733,7 +1638,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB971BDEC7E4004ED201 /* DebugStaging */,
-				A7AD385D1C08D4D300A85666 /* DebugProduction */,
 				A7A7BB9B1BDEC877004ED201 /* DebugLocal */,
 				A7A7BB9F1BDED28E004ED201 /* ReleaseStaging */,
 				A7A579731BB092E100D8885E /* ReleaseProduction */,
@@ -1745,7 +1649,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB981BDEC7E4004ED201 /* DebugStaging */,
-				A7AD385E1C08D4D300A85666 /* DebugProduction */,
 				A7A7BB9C1BDEC877004ED201 /* DebugLocal */,
 				A7A7BBA01BDED28E004ED201 /* ReleaseStaging */,
 				A7A579761BB092E100D8885E /* ReleaseProduction */,
@@ -1757,7 +1660,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB991BDEC7E4004ED201 /* DebugStaging */,
-				A7AD385F1C08D4D300A85666 /* DebugProduction */,
 				A7A7BB9D1BDEC877004ED201 /* DebugLocal */,
 				A7A7BBA11BDED28E004ED201 /* ReleaseStaging */,
 				A7A579791BB092E100D8885E /* ReleaseProduction */,
@@ -1769,7 +1671,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7A7BB9A1BDEC7E4004ED201 /* DebugStaging */,
-				A7AD38601C08D4D300A85666 /* DebugProduction */,
 				A7A7BB9E1BDEC877004ED201 /* DebugLocal */,
 				A7A7BBA21BDED28E004ED201 /* ReleaseStaging */,
 				A7A5797C1BB092E100D8885E /* ReleaseProduction */,

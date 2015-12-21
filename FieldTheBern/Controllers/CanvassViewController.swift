@@ -173,6 +173,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                     rootController.location = currentLocation
                     rootController.previousLocation = previousLocation
                     rootController.previousPlacemark = previousPlacemark
+                    rootController.userLocation = locationManager.location
                     
                     // Reset the previous location
                     self.previousLocation = currentLocation
@@ -556,6 +557,23 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if error.domain == kCLErrorDomain && CLError(rawValue: error.code) == CLError.Denied {
             
             displayLocationServicesAlert()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
+            
+            self.findMyLocation()
+            
+            var region:MKCoordinateRegion = self.mapView.region
+            region.center = self.mapView.userLocation.coordinate
+            region.span.longitudeDelta = 0.15
+            region.span.latitudeDelta = 0.15
+            
+            self.mapView.setRegion(region, animated: true)
+            
+            updateClosestLocation()
+            self.animateNearestAddressViewIfNeeded()
         }
     }
     
