@@ -82,7 +82,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func submitForm() {
-        let email = emailField.text
+        let email = emailField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         let password = passwordField.text
         
         
