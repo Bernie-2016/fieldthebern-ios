@@ -173,6 +173,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                     rootController.location = currentLocation
                     rootController.previousLocation = previousLocation
                     rootController.previousPlacemark = previousPlacemark
+                    rootController.userLocation = currentLocation
                     
                     // Reset the previous location
                     self.previousLocation = currentLocation
@@ -494,7 +495,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Location Fetching
     
     let locationManager = CLLocationManager()
-    let geocoder = CLGeocoder()
     
     var lastKnownLocation: CLLocation?
     var locality: String?

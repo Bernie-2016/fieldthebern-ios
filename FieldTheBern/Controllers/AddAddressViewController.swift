@@ -9,14 +9,17 @@
 import UIKit
 import MapKit
 
-class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate, SubmitButtonDelegate {
+class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate, SubmitButtonWithoutAPIDelegate {
 
     var previousLocation: CLLocation?
     var location: CLLocation?
+    var userLocation: CLLocation?
     var placemark: CLPlacemark?
     var previousPlacemark: CLPlacemark?
     var address: Address?
     var people: [Person]?
+    var updatingLocation: Bool = false
+    var locationUpdated: Bool = false
     
     var addressString: String {
         get {
@@ -144,10 +147,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         submitButton.enabled = false
     }
     
-    func finishedSubmittingWithError(error: APIError) {
-        
-        let errorTitle = error.errorTitle
-        let errorMessage = error.errorDescription
+    func finishedSubmittingWithError(errorTitle: String, errorMessage: String) {
         
         let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
         
@@ -174,7 +174,57 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
         }
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField {
+        case streetAddress:
+            forwardGeocodeBasedOnTextField()
+            break
+        default:
+            break
+        }
+    }
+
     // MARK: - Location updating methods
+    
+    func forwardGeocodeBasedOnTextField() {
+        
+        if(self.streetAddress.text?.length > 0) {
+            
+            if let city = self.placemark!.locality, let state = self.placemark!.administrativeArea {
+                
+                let address = self.streetAddress.text! + " " + city + " " + state
+                let geocoder:CLGeocoder = CLGeocoder()
+                
+                // We're about to update the location
+                self.updatingLocation = true
+
+                geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+                    
+                    if (error == nil && placemarks!.count > 0) {
+                        let tempPlacemark = placemarks![0]
+                        let tempLocation = tempPlacemark.location!
+                        
+                        let meters: CLLocationDistance = tempLocation.distanceFromLocation(self.userLocation!)
+                        
+                        // 200 meters is about a radius of 4 NYC city blocks.
+                        if (meters > 200) {
+                            self.finishedSubmittingWithError("Too far from location", errorMessage: "\n\(self.streetAddress.text!) is too far for you to submit. Try again.")
+                        } else {
+                            self.previousLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+                            self.location = tempLocation
+                            self.locationUpdated = true
+                        }
+                        
+                        // We've finished updating the location
+                        self.updatingLocation = false
+                    } else {
+                        // We've finished updating the location
+                        self.updatingLocation = false
+                    }
+                })
+            }
+        }
+    }
     
     func didLocationChange() -> Bool {
         
@@ -217,6 +267,12 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     func submitForm() {
 
         if (streetAddress.text != "") {
+            print(locationUpdated)
+            if !locationUpdated {
+                forwardGeocodeBasedOnTextField()
+                self.updatingLocation = true
+                return
+            }
             
             if let location = self.location, let placemark = self.placemark {
                 
@@ -236,7 +292,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                        
                         if let lastVisited = self.address?.visitedAt
                         {
-                            if(NSDate().hoursFrom(lastVisited) < 24) {
+                            if(NSDate().hoursFrom(lastVisited) < 0) {
                                 let timeSince = NSDate().offsetFrom(lastVisited)
                                 
                                 let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
@@ -250,7 +306,10 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                         self.performSegueWithIdentifier("SubmitAddress", sender: self)
                     } else {
                         if let error = error {
-                            self.finishedSubmittingWithError(error)
+                            let errorTitle = error.errorTitle
+                            let errorMessage = error.errorDescription
+
+                            self.finishedSubmittingWithError(errorTitle, errorMessage: errorMessage)
                         }
                     }
                 })
