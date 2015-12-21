@@ -339,7 +339,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                     
                     if let lastVisited = self.address?.visitedAt
                     {
-                        if(NSDate().hoursFrom(lastVisited) < timeoutConstantInHours) {
+                        if(NSDate().hoursFrom(lastVisited) < self.timeoutConstantInHours) {
                             let timeSince = NSDate().offsetFrom(lastVisited)
                             
                             let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
