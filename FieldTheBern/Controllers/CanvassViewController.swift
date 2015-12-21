@@ -189,7 +189,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         // Set the map view
         mapView.delegate = self
-        mapView!.showsUserLocation = true
+        mapView?.showsUserLocation = true
         
         // Track pan gestures
         let panRecognizer: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "didDragMap:")
@@ -216,19 +216,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         findMyLocation()
         
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-      //  findMyLocation()
-
-    }
-    
 
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()

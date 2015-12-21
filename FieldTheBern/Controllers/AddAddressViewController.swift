@@ -339,7 +339,7 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
                     
                     if let lastVisited = self.address?.visitedAt
                     {
-                        if(NSDate().hoursFrom(lastVisited) < 0) {
+                        if(NSDate().hoursFrom(lastVisited) < timeoutConstantInHours) {
                             let timeSince = NSDate().offsetFrom(lastVisited)
                             
                             let alert = UIAlertController.errorAlertControllerWithTitle("Visit not allowed", message: "You can't canvass the same address so soon after it was last canvassed.\n\nThis address was last canvassed \(timeSince).")
@@ -374,7 +374,6 @@ class AddAddressViewController: UIViewController, UITableViewDelegate, UITextFie
     func submitForm() {
 
         if (streetAddress.text != "") {
-            print(locationUpdated)
             if !locationUpdated {
                 forwardGeocodeBasedOnTextField({ (success, errorTitle, errorMessage) -> Void in
                     if(success)
