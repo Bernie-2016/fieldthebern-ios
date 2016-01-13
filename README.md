@@ -1,5 +1,3 @@
-[![Circle CI](https://circleci.com/gh/Bernie-2016/Teams.svg?style=svg&circle-token=46b896ffd4706ac5b9bf722eac211ef0e86caaf7)](https://circleci.com/gh/Bernie-2016/Teams)
-
 # Field the Bern - iOS
 
 iOS application for crowdsourced voter canvassing.
