@@ -2,7 +2,7 @@
 
 # Field the Bern - iOS
 
-Recursive teams for hierarchical organization.
+iOS application for crowdsourced voter canvassing.
 
 ## Development
 
