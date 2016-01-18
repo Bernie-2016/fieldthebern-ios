@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F111A379A70CDAD18A0A037 /* Pods_GroundGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */; };
+		377BD5881C4CCB390091C8E4 /* field_offices_geocoded.json in Resources */ = {isa = PBXBuildFile; fileRef = 377BD5871C4CCB390091C8E4 /* field_offices_geocoded.json */; };
 		37F45DAE1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F45DAD1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift */; };
 		5C933507A3A30D99FEC7C4FF /* Pods_FieldTheBernUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */; };
 		657470C51C254C10001F9CD9 /* AppVersionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657470C41C254C10001F9CD9 /* AppVersionProvider.swift */; };
@@ -206,6 +207,7 @@
 		0CDA176EC9C55807BADD7BDB /* Pods_GroundGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroundGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A27CF52CE1820B9270610A4 /* Pods_GroundGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroundGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217C2609B20D533862FCB48E /* Pods-GroundGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameTests/Pods-GroundGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		377BD5871C4CCB390091C8E4 /* field_offices_geocoded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = field_offices_geocoded.json; sourceTree = "<group>"; };
 		37F45DAD1BFD974500DC9CF3 /* AddressPointPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPointPinAnnotation.swift; sourceTree = "<group>"; };
 		4BE98908DCF2EEE4657D47A3 /* Pods_FieldTheBernUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FieldTheBernUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0F507249FDAB3717AABE70 /* Pods-GroundGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroundGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroundGameUITests/Pods-GroundGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -415,6 +417,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		377BD5841C49D9D00091C8E4 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Alerts;
+			sourceTree = "<group>";
+		};
 		A5315A268882C6EDDEBA8834 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +524,7 @@
 		A74FCE981BBB377E005C4D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				377BD5841C49D9D00091C8E4 /* Alerts */,
 				A76559A71BE830DB005CEA0F /* CanvassCells */,
 				A7CA34561BDFE709007A9495 /* ContentCells */,
 				A73D66421BBF373600127245 /* AddressPointAnnotation.swift */,
@@ -555,6 +565,7 @@
 				A768C1F51BBD18AF00DBDFEA /* KeychainWrapper.m */,
 				A7A5797F1BB2105E00D8885E /* Lato-Heavy.ttf */,
 				A7A579801BB2105E00D8885E /* Lato-Medium.ttf */,
+				377BD5871C4CCB390091C8E4 /* field_offices_geocoded.json */,
 				A7CC4E3E1BC35B410086831C /* Primaries.plist */,
 			);
 			path = "Supporting Files";
@@ -900,6 +911,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A579821BB2105E00D8885E /* Lato-Medium.ttf in Resources */,
+				377BD5881C4CCB390091C8E4 /* field_offices_geocoded.json in Resources */,
 				A7A579811BB2105E00D8885E /* Lato-Heavy.ttf in Resources */,
 				A76559A01BE80E6E005CEA0F /* Canvassing.plist in Resources */,
 				A7A579551BB092E100D8885E /* Main.storyboard in Resources */,
