@@ -16,6 +16,7 @@ pod 'RealmSwift'
 pod 'Heap'
 pod 'Parse'
 pod 'HockeySDK'
+pod 'SCLAlertView'
 
 def testing_pods
     pod 'Quick'

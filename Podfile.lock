@@ -37,6 +37,7 @@ PODS:
   - Realm/Headers (0.96.2)
   - RealmSwift (0.96.2):
     - Realm (= 0.96.2)
+  - SCLAlertView (0.4.3)
   - Spring (1.0.3)
   - SwiftyJSON (2.3.1)
   - XCGLogger (3.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - Parse
   - Quick
   - RealmSwift
+  - SCLAlertView
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - XCGLogger
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
+  SCLAlertView: a5c726a80a938fd3127edd7dbc19da33fb936ca3
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   XCGLogger: 5802533aff8bafc8b3b9776ab8972576f31d0a4e

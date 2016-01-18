@@ -95,6 +95,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
+                
         
     }
     
