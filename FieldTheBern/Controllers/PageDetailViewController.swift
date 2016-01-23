@@ -39,16 +39,16 @@ class PageDetailViewController: UITableViewController {
         
         switch model {
             case let header as HeaderModel:
-                return labelContentCell(FTBConfig.HeaderCell, indexPath: indexPath, model: header)
+                return labelContentCell(FTBConfig.HeaderCell, indexPath: indexPath, model: header, font: FTBConfig.HeaderFont)
             
             case let title as TitleModel:
-                return labelContentCell(FTBConfig.TitleCell, indexPath: indexPath, model: title)
+                return labelContentCell(FTBConfig.TitleCell, indexPath: indexPath, model: title, font: FTBConfig.TitleFont)
 
             case let subtitle as SubtitleModel:
-                return labelContentCell(FTBConfig.SubtitleCell, indexPath: indexPath, model: subtitle)
+                return labelContentCell(FTBConfig.SubtitleCell, indexPath: indexPath, model: subtitle, font: FTBConfig.SubtitleFont)
 
             case let caption as CaptionModel:
-                return labelContentCell(FTBConfig.CaptionCell, indexPath: indexPath, model: caption)
+                return labelContentCell(FTBConfig.CaptionCell, indexPath: indexPath, model: caption, font: FTBConfig.CaptionFont)
 
             case let paragraph as ParagraphModel:
                 return paragraphContentCell(FTBConfig.ParagraphCell, indexPath: indexPath, model: paragraph)
@@ -71,9 +71,10 @@ class PageDetailViewController: UITableViewController {
     // MARK: Cell Methods
     //
     
-    func labelContentCell(identifier: String, indexPath: NSIndexPath, model: TextModel) -> LabelContentCell {
+    func labelContentCell(identifier: String, indexPath: NSIndexPath, model: TextModel, font: UIFont) -> LabelContentCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! LabelContentCell
         cell.contentLabel.text = model.text
+        cell.contentLabel.font = font
         return cell
     }
 
@@ -94,6 +95,7 @@ class PageDetailViewController: UITableViewController {
     func listContentCell(identifier: String, indexPath: NSIndexPath, model: ListModel) -> TextViewContentCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TextViewContentCell
         cell.contentTextView.text = model.text
+        cell.contentTextView.font = FTBConfig.ParagraphFont
         return cell
     }
 
