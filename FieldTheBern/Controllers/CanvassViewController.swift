@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import Dollar
+import SwiftyJSON
+import SCLAlertView
 
 class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
@@ -217,6 +219,172 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(CLLocationManager.authorizationStatus() == .AuthorizedAlways ||
+        CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
+        {
+            // introduce alert here. 
+            
+            let campaignOfficeLocationFilePath = NSBundle.mainBundle().URLForResource("field_offices_geocoded", withExtension: "json")
+            let campaignOfficeLocationStringPath = campaignOfficeLocationFilePath?.absoluteString
+            
+            let campaignOfficeLocationData = NSData(contentsOfURL: NSURL(string: campaignOfficeLocationStringPath!)!);
+            
+            let campaignOfficeLocationJSON = JSON(data: campaignOfficeLocationData!)
+            
+            // First check if we are not in an early state. 
+            
+            if let location = locationManager.location
+            {
+                let geocoder = CLGeocoder()
+                geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+                    
+                    if error != nil {
+                        print("Reverse geocoder failed with error" + error!.localizedDescription)
+                        return
+                    }
+                    
+                    if placemarks!.count > 0 {
+                        let placemark = placemarks![0] 
+                        
+                        if(!((placemark.administrativeArea! == "AR" || placemark.administrativeArea! == "Arkansas") ||
+                        (placemark.administrativeArea! == "AZ" || placemark.administrativeArea! == "Arizona") ||
+                        (placemark.administrativeArea! == "IA" || placemark.administrativeArea! == "Iowa") ||
+                        (placemark.administrativeArea! == "CO" || placemark.administrativeArea! == "Colorado") ||
+                        (placemark.administrativeArea! == "MA" || placemark.administrativeArea! == "Massachusetts") ||
+                        (placemark.administrativeArea! == "ME" || placemark.administrativeArea! == "Maine") ||
+                        (placemark.administrativeArea! == "MN" || placemark.administrativeArea! == "Minnesota") ||
+                        (placemark.administrativeArea! == "NH" || placemark.administrativeArea! == "New Hampshire") ||
+                        (placemark.administrativeArea! == "NV" || placemark.administrativeArea! == "Nevada") ||
+                        (placemark.administrativeArea! == "SC" || placemark.administrativeArea! == "South Carolina") ||
+                        (placemark.administrativeArea! == "VA" || placemark.administrativeArea! == "Virginia") ||
+                        (placemark.administrativeArea! == "TX" || placemark.administrativeArea! == "Texas")))
+                        {
+                            // we're not in an early state, show the alert. 
+                            // We should also time-restrict this. 
+                            
+                            let alert = SCLAlertView()
+                            alert.addButton("Take me there!")
+                                {
+                                    let url:NSURL = NSURL(string: "http://www.berniesanders.com/phonebank")!;
+                                    
+                                    if(!UIApplication.sharedApplication().openURL(url))
+                                    {
+                                        print("Failed to open URL: " + "http://www.berniesanders.com/phonebank")
+                                    }
+                            }
+                            
+                            alert.addButton("Thanks for letting me know")
+                            {
+                                
+                            }
+                            
+                            alert.showCloseButton = false
+                            alert.showInfo("Hey!", subTitle:"Want to make an even bigger impact for the campaign? \n\n We're getting all hands on deck to phonebank into crucial early states and build momentum for the political revolution. \n\n Press on \"Take me there!\" to make some phone calls for Bernie and get the movement going. \n\nThanks for supporting the campaign!");
+                        }
+                        else
+                        {
+                            // find closest campaign office
+                            
+                            self.closestCampaignOffice(placemark.location!, database: campaignOfficeLocationJSON.arrayObject as! [NSDictionary], onCompletion: { (closestCampaignOfficeAndDistance) -> Void in
+                                
+                                if(closestCampaignOfficeAndDistance!.1 <= 80467.2) // if we're less than or equal to 50 miles (80467.2 meters) to the campaign office
+                                {
+                                    let alert = SCLAlertView()
+                                    alert.addButton("Take me there!")
+                                        {
+                                            let place = MKPlacemark(coordinate: placemark.location!.coordinate, addressDictionary: nil)
+                                            let destination = MKMapItem(placemark: place)
+                                            destination.name = "Bernie Sanders Campaign Office"
+                                            
+                                            let items = [destination]
+                                            let options = [MKLaunchOptionsDirectionsModeDriving:MKLaunchOptionsDirectionsModeKey]
+                                            
+                                            MKMapItem.openMapsWithItems(items, launchOptions: options)
+                                    }
+                                    alert.addButton("Thanks for letting me know") {
+                                    }
+                                    alert.showCloseButton = false
+                                    
+                                    var officeLocation = (closestCampaignOfficeAndDistance!.0.objectForKey("address") as! String)
+                                    officeLocation = officeLocation +  " \n"
+                                    officeLocation = officeLocation + (closestCampaignOfficeAndDistance!.0.objectForKey("city") as! String)
+                                    officeLocation = officeLocation + ", "
+                                    officeLocation = officeLocation + (closestCampaignOfficeAndDistance!.0.objectForKey("state") as! String)
+                                    officeLocation = officeLocation + " "
+                                    officeLocation = officeLocation + (closestCampaignOfficeAndDistance!.0.objectForKey("zipCode") as! String) + "\n"
+                                    
+                                    officeLocation = officeLocation + (closestCampaignOfficeAndDistance!.0.objectForKey("phone") as! String)
+                                    
+                                    
+                                    alert.showInfo("Hey!", subTitle:"It looks like you're close to one of our field offices:\n\n" + officeLocation + ". \n\nYou should stop in and volunteer to canvass with us directly. It helps us target our canvassing efforts even better, and we always love to meet our volunteers. \n\nThanks for supporting the campaign!");
+                                }
+                            })
+                    
+                        }
+                    
+                    }
+                })
+            }
+        }
+    }
+    
+    func LLAAndDistanceDatabase(location:CLLocation, address:String, count:Int, onCompletion:([String:AnyObject]? -> Void))
+    {
+        let geocoder = CLGeocoder()
+
+        geocoder.geocodeAddressString(address) { (placemarks, error) -> Void in
+            if(error != nil)
+            {
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
+                return
+            }
+            
+            if placemarks!.count > 0 {
+                let placemark = placemarks![0]
+                let distance = location.distanceFromLocation(placemark.location!)
+                
+                onCompletion(["position":count, "distance":distance as Double!])
+            }
+        }
+    }
+   
+    func closestCampaignOffice(location:CLLocation, database:[NSDictionary], onCompletion:((NSDictionary, Double)? -> Void))
+    {
+        var arrayOfLLA:[[String:AnyObject]] = Array()
+        var count = -1
+        
+        for anEntry in database // compose array based on distance
+        {
+            count = count + 1
+        
+            var addressString = (anEntry.objectForKey("address") as! String) + ", "
+            
+            addressString = addressString + (anEntry["city"] as! String) + ", " + (anEntry["state"] as! String)
+            
+            self.LLAAndDistanceDatabase(location, address: addressString, count: count, onCompletion: { (result) -> Void in
+                arrayOfLLA.append(result!)
+                
+                if(arrayOfLLA.count == database.count)
+                {
+                    arrayOfLLA.sortInPlace {
+                        item1, item2 in
+                        let distance1 = (item1["distance"] as! NSNumber).doubleValue
+                        let distance2 = (item2["distance"] as! NSNumber).doubleValue
+                        return distance1 < distance2
+                    }
+                    let closest = arrayOfLLA[0]
+                   
+                    onCompletion((database[closest["position"] as! Int], closest["distance"] as! Double))
+                }
+            })
+        }
+        
+
+    }
+    
     func shouldReloadMap(sender: AnyObject) {
         fetchAddresses()
     }
