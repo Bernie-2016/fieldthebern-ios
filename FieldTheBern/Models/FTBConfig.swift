@@ -62,19 +62,32 @@ class FTBConfig {
     static let VideoCell = "VideoCell"
     
     static let HeaderCell = "HeaderCell"
-    static let HeaderFont = UIFont(name: "Lato-Heavy", size: 20.0)
+    static var HeaderFont: UIFont! {
+        if #available(iOS 9.0, *) { return UIFont(name: "Lato-Heavy", size: fontSize(UIFontTextStyleTitle2)) }
+        return UIFont(name: "Lato-Heavy", size: fontSize(UIFontTextStyleHeadline))
+    }
     
     static let TitleCell = "TitleCell"
-    static let TitleFont = UIFont(name: "Lato-Heavy", size: 17.0)
+    static var TitleFont: UIFont! {
+        if #available(iOS 9.0, *) { return UIFont(name: "Lato-Heavy", size: fontSize(UIFontTextStyleTitle3)) }
+        return UIFont(name: "Lato-Heavy", size: fontSize(UIFontTextStyleSubheadline))
+    }
     
     static let SubtitleCell = "SubtitleCell"
-    static let SubtitleFont = UIFont(name: "Lato-Medium", size: 17.0)
+    static var SubtitleFont: UIFont! {
+        if #available(iOS 9.0, *) { return UIFont(name: "Lato-Medium", size: fontSize(UIFontTextStyleTitle3)) }
+        return UIFont(name: "Lato-Medium", size: fontSize(UIFontTextStyleSubheadline))
+    }
     
     static let CaptionCell = "CaptionCell"
-    static let CaptionFont = UIFont(name: "Lato-Medium", size: 14.0)
+    static var CaptionFont: UIFont! { return UIFont(name: "Lato-Medium", size: fontSize(UIFontTextStyleBody)) }
 
     static let ParagraphCell = "ParagraphCell"
-    static let ParagraphFont = UIFont(name: "Lato-Medium", size: 14.0)
+    static var ParagraphFont: UIFont! { return UIFont(name: "Lato-Medium", size: fontSize(UIFontTextStyleBody)) }
+    
+    static func fontSize(style: String = UIFontTextStyleBody) -> CGFloat {
+        return UIFontDescriptor.preferredFontDescriptorWithTextStyle(style).pointSize
+    }
     
     //
     // MARK: Errors
