@@ -742,11 +742,6 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Error Handling
     
     func handleError(error: APIError) {
-        let errorTitle = error.errorTitle
-        let errorMessage = error.errorDescription
-        
-        let alert = UIAlertController.errorAlertControllerWithTitle(errorTitle, message: errorMessage)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        NSLog("\(error.errorTitle) - \(error.errorDescription)");
     }
 }
