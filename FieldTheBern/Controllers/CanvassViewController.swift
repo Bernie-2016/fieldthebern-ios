@@ -236,6 +236,10 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             
             // First check if we are not in an early state. 
             
+            let earlyStateAlertViewed = NSUserDefaults.standardUserDefaults().boolForKey("kBernEarlyStateAlert")
+            
+            if(!earlyStateAlertViewed)
+            {
             if let location = locationManager.location
             {
                 let geocoder = CLGeocoder()
@@ -268,6 +272,8 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                             let alert = SCLAlertView()
                             alert.addButton("Take me there!")
                                 {
+                                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "kBernEarlyStateAlert")
+                                    
                                     let url:NSURL = NSURL(string: "http://www.berniesanders.com/phonebank")!;
                                     
                                     if(!UIApplication.sharedApplication().openURL(url))
@@ -278,7 +284,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                             
                             alert.addButton("Thanks for letting me know")
                             {
-                                
+                                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "kBernEarlyStateAlert")
                             }
                             
                             alert.showCloseButton = false
@@ -295,6 +301,8 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                                     let alert = SCLAlertView()
                                     alert.addButton("Take me there!")
                                         {
+                                            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "kBernEarlyStateAlert")
+                                            
                                             let place = MKPlacemark(coordinate: placemark.location!.coordinate, addressDictionary: nil)
                                             let destination = MKMapItem(placemark: place)
                                             destination.name = "Bernie Sanders Campaign Office"
@@ -304,7 +312,9 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                                             
                                             MKMapItem.openMapsWithItems(items, launchOptions: options)
                                     }
-                                    alert.addButton("Thanks for letting me know") {
+                                    alert.addButton("Thanks for letting me know")
+                                        {
+                                            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "kBernEarlyStateAlert")
                                     }
                                     alert.showCloseButton = false
                                     
@@ -327,6 +337,7 @@ class CanvassViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                     
                     }
                 })
+            }
             }
         }
     }
